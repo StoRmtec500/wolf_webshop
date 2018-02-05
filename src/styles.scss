@@ -1,1 +1,58 @@
-/* You can add global styles to this file, and also import other style files */
+@import '~@angular/material/prebuilt-themes/pink-bluegrey.css';
+
+
+h4 {
+    font-size: 1.0em;
+    color: #717274;
+}
+
+h2 {
+    font-size: 1.2em;
+    color: #717274;
+}
+
+body {
+    color:#717274;
+    font-size: 0.8em;
+    background-color: #fff;
+}
+
+b {
+    font-weight: normal;
+}
+
+.mat-tab-group.mat-primary .mat-ink-bar, .mat-tab-nav-bar.mat-primary .mat-ink-bar {
+    background-color: #fff199;
+}
+
+.mat-tab-label, .mat-tab-link {
+    color: #000;
+}
+
+mat-ink-bar.mat-ink-bar {
+    position: absolute;
+    top: 0px;
+    height: 4px !important;
+    transition: .5s cubic-bezier(.35,0,.25,1);
+}
+
+.mat-tab-label-active{
+    background-color: #f5f5f5;
+  }
+
+  .mat-tab-group.mat-primary .mat-tab-label:not(.mat-tab-disabled):focus, .mat-tab-group.mat-primary .mat-tab-link:not(.mat-tab-disabled):focus, .mat-tab-nav-bar.mat-primary .mat-tab-label:not(.mat-tab-disabled):focus, .mat-tab-nav-bar.mat-primary .mat-tab-link:not(.mat-tab-disabled):focus {
+    background-color: #f5f5f5;
+}
+
+.mat-expansion-panel, .mat-expansion-panel-header-title {
+    background: #fff;
+    color: #000;
+}
+
+.mat-expansion-panel-header.mat-expanded:focus, .mat-expansion-panel-header.mat-expanded:hover, .mat-expansion-panel-header.mat-expanded {
+    background-color: #fcdb00 !important;
+}
+
+.mat-expansion-indicator::after, .mat-expansion-panel-header-description {
+     color: #000;
+}
