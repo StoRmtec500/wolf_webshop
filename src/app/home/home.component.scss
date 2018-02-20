@@ -6,6 +6,10 @@
     width: 100%;
 }
 
+b {
+    color: #717274;
+}
+
 .main-header .logo {
     background-color: #fff;
     color: #000;
@@ -49,6 +53,16 @@
     min-height: 70px;
     border-radius: 0;
     border-bottom: 4px solid #fcdb00;
+}
+
+.artnr {
+    padding-left: 16px;
+    padding-bottom: 20px;
+    font-weight: bold;
+}
+
+tr{
+    cursor: pointer;
 }
 
 /* Sidebar Style*/
@@ -130,6 +144,10 @@
     width: 100%;
 }
 
+.row_new {
+    width: 100%;
+}
+
 .table_typ {
     width: 98%;
 }
@@ -148,7 +166,7 @@
 }
 
 .site_width {
-    width: 68%;
+   // width: 68%;
     padding-left: 15px;
 }
 
@@ -408,7 +426,7 @@ body {
     line-height: 30px;
 }
 
-.row {
+.row_header {
     width: 70%;
     line-height: 3;
 }
