@@ -9,6 +9,7 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { HttpClientModule } from '@angular/common/http';
 import { NagelplattenBasketComponent } from './home/nagelplatten-basket/nagelplatten-basket.component';
+import { databaseProvider } from './shared/databaseProvider/databaseProvider';
 
 
 @NgModule({
@@ -28,7 +29,8 @@ import { NagelplattenBasketComponent } from './home/nagelplatten-basket/nagelpla
     HttpClientModule
   ],
   providers: [
-    NagelplattenService
+    NagelplattenService, 
+    databaseProvider
   ],
   bootstrap: [AppComponent]
 })

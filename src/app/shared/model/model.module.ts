@@ -1,5 +1,7 @@
 export class Nagelplatten {
   PKArtikelID: number;
   Gewicht: number;
-  BezeichnungKonzernsprache: string;
+  ME: number;
+  Preis: number;
+  Groesse: string;
 }

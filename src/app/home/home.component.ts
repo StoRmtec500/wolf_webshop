@@ -21,13 +21,9 @@ export class HomeComponent implements OnInit {
   ngOnInit() {
   }
 
-  getNagelplattenWithTyp(typ: string) {
-    if (this.nagelplatten != null) {
+  getNagelplattenWithTyp(typ: number) {
       this.nagelplatten = null;
-      this.ns.getNagelplatten("SELECT PKArtikelID,Gewicht,BezeichnungKonzernsprache FROM PEKonzern.dbo.artikel WHERE BezeichnungKonzernsprache LIKE '%" + typ +"%'").subscribe(data => this.nagelplatten = data);
-    } else {
-      this.ns.getNagelplatten("SELECT PKArtikelID,Gewicht,BezeichnungKonzernsprache FROM PEKonzern.dbo.artikel WHERE BezeichnungKonzernsprache LIKE '%" + typ +"%'").subscribe(data => this.nagelplatten = data);
-    }
+      this.ns.getNagelplatten(typ).subscribe(data => this.nagelplatten = data);
   }
 
   showDetails(id) {

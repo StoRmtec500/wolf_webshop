@@ -23,7 +23,7 @@
       Wählen Sie einen Nagelplattentyp aus, und tragen Sie die Bestellmenge ein. Rabatt nach Bestellmenge pro Auftrag:
       <div class="line_height"></div>
       <div class="row_header">
-        <div class="col-md-12 col-sm-12 col-xs-12 col-lg-12 col-xl-12">
+        <div class="col-md-12 col-sm-12 col-xs-12 col-lg-12 col-xl-10">
           <div class="auftragsentwicklung">
             <table class="table">
               <tbody>
@@ -61,7 +61,7 @@
     <section>
         <div id="demoContainer">
             <div class="row">
-                <div class="col-lg-8">                
+                <div class="col-lg-12 col-xl-7">                
           <div class="artnr">
            Artikelnummer: {{details}}
           </div>
@@ -69,81 +69,76 @@
         <mat-tab-group class="demo-tab-group">
             <mat-tab label="Verzinkt">
                 <div class="demo-tab-content">
-                    <div class="col-md-12 col-sm-12 col-xs-12 col-lg-12 col-xl-12">
-                        <table class="table_typ">
-                          <tr>
-                    <th scope="row" width="60%" style="text-align: left">
-                      <b>Typ</b>
-                    </th>
-                    <td width="20%" style="text-align: left">
-                      <b>Euro / kg</b>
-                    </td>
-                    <td width="20%" style="text-align: right">
-                      <b>Euro / m²</b>
-                    </td>
-                  </tr>
-                </table>
+                    <div class="row">
+                        <div class="offset-sm-1 offset-lg-1 offset-xl-1 col-sm-4 col-lg-6 col-xl-5">Typ</div>
+                        <div class="col-sm-4 col-lg-2">Euro / kg</div>
+                        <div class="col-sm-2 col-lg-2 offset-sm-1 offset-lg-1">Euro / m²</div>
               </div>
                   <mat-accordion>
                     <mat-expansion-panel>
-                      <mat-expansion-panel-header (click)="getNagelplattenWithTyp('W101')">
-                        <div class="row_accordion">
-                          <div class="col-md-12 col-sm-12 col-xs-12 col-lg-12 col-xl-12">
-                              <table class="table">
-                                <tr>
-                          <th scope="row" width="60%" style="text-align: left">
-                            <b>W101</b>
-                          </th>
-                          <td width="20%" style="text-align: left">
-                            <b>test</b>
-                          </td>
-                          <td width="20%" style="text-align: right">
-                            <b>19,86</b>
-                          </td>
-                        </tr>
-                      </table>
-                    </div>
-                </div>
+                      <mat-expansion-panel-header (click)="getNagelplattenWithTyp('4949')">
+                       <div class="row_accordion">
+                          <div class="row">
+                            <div class="col-sm-5 col-lg-6 col-xl-6">W101</div>
+                            <div class="col-sm-4 col-lg-2">col-sm</div>
+                            <div class="col-sm-2 col-lg-2 offset-sm-1 offset-lg-1 offset-xl-1" style="text-align: right">col-sm</div>
+                          </div>
+                       </div>
                       </mat-expansion-panel-header>
-                      <ng-template matExpansionPanelContent>
+                    <ng-template matExpansionPanelContent>
                       <div class="row_accordion">
                           <div class="col-md-12 col-sm-12 col-xs-12 col-lg-12 col-xl-12">
-                              <table class="table">
-                               <tr>
-                                  <td width="5%" style="text-align: left">
-                                    <b>ArtNr.</b>
-                                  </td>
-                                  <th scope="row" width="50%" style="text-align: left">
-                            <b>Bezeichnung</b>
-                          </th>
-                          <td width="20%" style="text-align: left">
-                            <b>Gewicht</b>
-                          </td>
-                          <td width="20%" style="text-align: right">
-                            <b></b>
-                          </td>
-                               </tr>
-                               <tr *ngFor="let n of nagelplatten" (click)="showDetails(n.PKArtikelID)" >
-                                  <td width="5%" style="text-align: left">
-                                    <b>{{n.PKArtikelID}}</b>
-                                  </td>
-                                  <th scope="row" width="50%" style="text-align: left">
-                            <b>{{n.BezeichnungKonzernsprache}}</b>
-                          </th>
-                          <td width="20%" style="text-align: left">
-                            <b>{{n.Gewicht}}</b>
-                          </td>
-                          <td width="20%" style="text-align: right">
-                            <b>{{n.PKArtikelID}}</b>
-                          </td>
-                        </tr>
-                      </table>
-                    </div>
-                </div>
-              </ng-template>
-                    </mat-expansion-panel>
+                            <table class="table">
+                              <tr>
+                                <td width="5%" style="text-align: left">
+                                  <b>Menge</b>
+                                </td>
+                                <td width="5%" style="text-align: left">
+                                  <b>Art.Nr.</b>
+                                </td>
+                                <td scope="row" width="50%" style="text-align: left">
+                                  <b>Größe</b>
+                                </td>
+                                <td width="20%" style="text-align: left">
+                                  <b>kg/ME</b>
+                                </td>
+                                <td width="20%" style="text-align: left">
+                                  <b>ME</b>
+                                </td>
+                                <td width="20%" style="text-align: left">
+                                  <b>Preis/ME</b>
+                                </td>
+                                <td width="20%" style="text-align: right">
+                                  <b></b>
+                                </td>
+                              </tr>
+                              <tr *ngFor="let n of nagelplatten" (click)="showDetails(n.PKArtikelID)" >
+                                <td width="5%" style="text-align: left">
+                                  <b></b>
+                                </td>
+                                <th scope="row" width="50%" style="text-align: left">
+                                  <b>{{ n.PKArtikelID }}</b>
+                                </th>
+                                <th scope="row" width="50%" style="text-align: left">
+                                  <b>{{ n.Groesse }}</b>
+                                </th>
+                                <th scope="row" width="50%" style="text-align: left">
+                                  <b>{{ n.Gewicht }}</b>
+                                </th>
+                                <th scope="row" width="50%" style="text-align: left">
+                                  <b>{{ n.ME }}</b>
+                                </th>
+                                <td width="20%" style="text-align: right">
+                                  <b>{{n.Preis}}</b>
+                                </td>
+                              </tr>
+                            </table>
+                        </div>
+                      </div>
+                    </ng-template>
+                  </mat-expansion-panel>
                     <mat-expansion-panel>
-                        <mat-expansion-panel-header  (click)="getNagelplattenWithTyp('12N')">
+                        <mat-expansion-panel-header  (click)="getNagelplattenWithTyp('4941')">
                             <div class="row_accordion">
                               <div class="col-md-12 col-sm-12 col-xs-12 col-lg-12 col-xl-12">
                                   <table class="table">
@@ -185,7 +180,7 @@
                                        <b>{{n.PKArtikelID}}</b>
                                      </td>
                                      <th scope="row" width="50%" style="text-align: left">
-                               <b>{{n.BezeichnungKonzernsprache}}</b>
+                               <b>{{n.Groesse}}</b>
                              </th>
                              <td width="20%" style="text-align: left">
                                <b>{{n.Gewicht}}</b>

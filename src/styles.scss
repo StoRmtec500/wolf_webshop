@@ -13,16 +13,26 @@ h2 {
 
 body {
     color:#717274;
-    font-size: 0.8em;
+    font-size: 12px;
     background-color: #fff;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 b {
     font-weight: normal;
 }
 
+.mat-expansion-panel-header, .mat-expansion-panel-content {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.0em;
+}
+
 .mat-tab-group.mat-primary .mat-ink-bar, .mat-tab-nav-bar.mat-primary .mat-ink-bar {
     background-color: #fff199;
+}
+
+.mat-tab-label {
+    height: 36px !important;
 }
 
 .mat-tab-label, .mat-tab-link {
@@ -34,6 +44,10 @@ mat-ink-bar.mat-ink-bar {
     top: 0px;
     height: 4px !important;
     transition: .5s cubic-bezier(.35,0,.25,1);
+}
+
+.mat-expansion-panel-header {
+    height: 40px !important;
 }
 
 .mat-tab-label-active{

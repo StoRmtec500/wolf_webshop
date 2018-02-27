@@ -3,24 +3,21 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
 import { Nagelplatten } from '../shared/index';
+import { databaseProvider } from '../shared/databaseProvider/databaseProvider';
 
 @Injectable()
 export class NagelplattenService {
+ 
+    constructor(private httpClient: HttpClient, private db: databaseProvider) { }
 
-  constructor(private httpClient: HttpClient) { }
 
-
-  getNagelplatten(typ:string): Observable<Nagelplatten[]> {
-    var h = new HttpHeaders({
-      'Content-Type': 'application/json'
-    });
-    let sqlstring = encodeURIComponent(typ);
-    let string = '{"Befehl": "' + sqlstring + '","Datenbank": "DBScharnsteinTest", "Login": "martin.kuenz", "Passwort": "xqojUKt9>", "PKMitarbeiterID": "2640"}';
-    return this.httpClient.post<Nagelplatten[]>(environment.apiUrl, string, {headers: h});
+  getNagelplatten(typ:number): Observable<Nagelplatten[]> {
+    //let sqlstring = encodeURIComponent(typ);
+    const body = this.db.artikelSelect(typ);
+    return this.httpClient.post<Nagelplatten[]>(environment.apiUrlRead, body);
   }
 
   getNagelplattenDetail(id: number): Observable<Nagelplatten[]> {
-    return this.httpClient.get<Nagelplatten[]> ( environment.apiUrl + 'getNagelplattenDetail/' + id);
+    return this.httpClient.get<Nagelplatten[]> ( environment.apiUrlRead + 'getNagelplattenDetail/' + id);
   }
-
 }
