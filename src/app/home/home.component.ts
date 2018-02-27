@@ -16,6 +16,7 @@ export class HomeComponent implements OnInit {
   display = 'none';
 
    constructor(private ns: NagelplattenService, private router: Router) {
+
   }
 
   ngOnInit() {
@@ -31,4 +32,5 @@ export class HomeComponent implements OnInit {
     console.log(id);
    // this.router.navigate(['/basket/' + id]);
   }
+
 }

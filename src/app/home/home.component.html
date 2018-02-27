@@ -71,7 +71,7 @@
     <section>
         <div id="demoContainer">
             <div class="row">
-                <div class="col-lg-11 col-xl-9">                
+                <div class="col-lg-11 col-xl-7">                
           <div class="artnr">
            Artikelnummer: {{details}}
           </div>
@@ -136,7 +136,9 @@
                               <tr *ngFor="let n of nagelplatten; index as i; odd as isOdd; even as isEven" 
                               [ngClass]="{ odd: isOdd, even: isEven }" (click)="showDetails(n.PKArtikelID)" >
                                 <td width="20%" style="text-align: left">
-                                  <span> <input type="text"> Karton</span>
+                                  <span><input type="text"><div *ngIf="n.ME > 1;then karton else stueck"></div></span>
+                                  <ng-template #karton> Karton</ng-template>
+                                  <ng-template #stueck> Stück</ng-template>
                                 </td>
                                 <td scope="row" width="50%" style="text-align: left">
                                   <b>{{ n.PKArtikelID }}</b>
@@ -278,6 +280,6 @@
            <router-outlet></router-outlet>
           </div>
       </div>
-                </div>
+    </div>
     </section>
   </div>

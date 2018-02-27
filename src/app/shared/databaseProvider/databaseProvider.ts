@@ -29,8 +29,7 @@ export class databaseProvider {
           PKMitarbeiterID: this.pkEmployeeId
         };
       }
-      
-      
+
     public artikelSelect(artikelGruppeID: number) {
       return {
         Befehl: encodeURIComponent(
