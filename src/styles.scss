@@ -22,13 +22,34 @@ b {
     font-weight: normal;
 }
 
+.row_accordion.disabled {
+    color: #000;
+}
+
 .mat-expansion-panel-header, .mat-expansion-panel-content {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 1.0em;
 }
 
+.table td, .table th {
+    padding-top: 0.6em;
+    padding-left: 8px;
+    padding-right: 0px;
+    padding-bottom: 0.6em;
+    text-align: center;
+}
+
 .mat-tab-group.mat-primary .mat-ink-bar, .mat-tab-nav-bar.mat-primary .mat-ink-bar {
     background-color: #fff199;
+}
+
+input {
+    width: 30px;
+    height: 18px;
+}
+
+tr.even.ng-star-inserted {
+    background-color: #e2e2e2;
 }
 
 .mat-tab-label {
@@ -46,8 +67,16 @@ mat-ink-bar.mat-ink-bar {
     transition: .5s cubic-bezier(.35,0,.25,1);
 }
 
+@media (min-width:375px){
+    .mat-expansion-panel-header {
+        height: 64px !important;
+    }
+}
+
+@media (min-width:667px){
 .mat-expansion-panel-header {
     height: 40px !important;
+}
 }
 
 .mat-tab-label-active{

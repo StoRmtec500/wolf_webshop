@@ -4,12 +4,20 @@
     <section class="sidebar">
       <ul>
         <li class="main-sidebar-menu-Items">
+          <div class="menu">
           <a href="index.html">
-            <span>
-              <i class="fa fa-home" aria-hidden="true"></i>
-            </span>
-            <b>Übersicht</b>
+            <b>Bestellung Nagelplatten</b>
           </a>
+        </div>
+          <a href="index.html">
+              <b>Bestellung Nagelplatten</b>
+            </a>
+            <a href="index.html">
+                <b>Bestellung Nagelplatten</b>
+              </a>
+              <a href="index.html">
+                  <b>Bestellung Nagelplatten</b>
+                </a>
         </li>
       </ul>
     </section>
@@ -18,6 +26,8 @@
     <!-- Content Header -->
     <section class="content-header">
       <h2>{{headertitle}}</h2>
+      <a href="http://www.wolfnagelplatten.at/Online-Bestellung/AGB-Bestellung">Allgemeine Geschäftsbedingungen</a>
+      <br>
       <br>
       <h4>1. Artikelauswahl</h4>
       Wählen Sie einen Nagelplattentyp aus, und tragen Sie die Bestellmenge ein. Rabatt nach Bestellmenge pro Auftrag:
@@ -61,33 +71,44 @@
     <section>
         <div id="demoContainer">
             <div class="row">
-                <div class="col-lg-12 col-xl-7">                
+                <div class="col-lg-11 col-xl-9">                
           <div class="artnr">
            Artikelnummer: {{details}}
           </div>
       <div class="site_width">
-        <mat-tab-group class="demo-tab-group">
+        <mat-tab-group class="tab-group">
             <mat-tab label="Verzinkt">
-                <div class="demo-tab-content">
-                    <div class="row">
-                        <div class="offset-sm-1 offset-lg-1 offset-xl-1 col-sm-4 col-lg-6 col-xl-5">Typ</div>
-                        <div class="col-sm-4 col-lg-2">Euro / kg</div>
-                        <div class="col-sm-2 col-lg-2 offset-sm-1 offset-lg-1">Euro / m²</div>
-              </div>
-                  <mat-accordion>
+                <div class="tab-content visible-sm-12">
+                   <mat-accordion>
+                    <mat-expansion-panel [disabled]="true">
+                      <mat-expansion-panel-header>
+                       <div class="row_accordion disabled">
+                          <div class="row">
+                            <div class="col-xs-12 col-sm-5 col-lg-6 col-xl-7">Typ</div>
+                            <div class="col-xs-12 col-sm-4 col-lg-2 col-xl-2">Euro / kg</div>
+                            <div class="col-xs-12 col-sm-2 col-lg-2 col-xl-2 offset-sm-1 offset-lg-1 offset-xl-1">Euro / m²</div>
+                          </div>
+                       </div>
+                      </mat-expansion-panel-header>
+                    </mat-expansion-panel>
                     <mat-expansion-panel>
                       <mat-expansion-panel-header (click)="getNagelplattenWithTyp('4949')">
                        <div class="row_accordion">
                           <div class="row">
-                            <div class="col-sm-5 col-lg-6 col-xl-6">W101</div>
-                            <div class="col-sm-4 col-lg-2">col-sm</div>
-                            <div class="col-sm-2 col-lg-2 offset-sm-1 offset-lg-1 offset-xl-1" style="text-align: right">col-sm</div>
+                            <div class="col-sm-5 col-lg-6 col-xl-7">W101</div>
+                            <div class="col-sm-4 col-lg-2 col-xl-2"> 2,53</div>
+                            <div class="col-sm-2 col-lg-2 col-xl-2 offset-sm-1 offset-lg-1 offset-xl-1">19,86</div>
                           </div>
                        </div>
                       </mat-expansion-panel-header>
                     <ng-template matExpansionPanelContent>
                       <div class="row_accordion">
-                          <div class="col-md-12 col-sm-12 col-xs-12 col-lg-12 col-xl-12">
+                          <div class="col-md-12 col-xs-12 col-lg-12 col-xl-12">
+                              <br>
+                              Blechdicke: 1,00 mm
+                              <br>
+                              Zulassungsnummer: Z-9.1-757
+                              <br><br>
                             <table class="table">
                               <tr>
                                 <td width="5%" style="text-align: left">
@@ -112,22 +133,23 @@
                                   <b></b>
                                 </td>
                               </tr>
-                              <tr *ngFor="let n of nagelplatten" (click)="showDetails(n.PKArtikelID)" >
-                                <td width="5%" style="text-align: left">
-                                  <b></b>
+                              <tr *ngFor="let n of nagelplatten; index as i; odd as isOdd; even as isEven" 
+                              [ngClass]="{ odd: isOdd, even: isEven }" (click)="showDetails(n.PKArtikelID)" >
+                                <td width="20%" style="text-align: left">
+                                  <span> <input type="text"> Karton</span>
                                 </td>
-                                <th scope="row" width="50%" style="text-align: left">
+                                <td scope="row" width="50%" style="text-align: left">
                                   <b>{{ n.PKArtikelID }}</b>
-                                </th>
-                                <th scope="row" width="50%" style="text-align: left">
+                                </td>
+                                <td scope="row" width="50%" style="text-align: left">
                                   <b>{{ n.Groesse }}</b>
-                                </th>
-                                <th scope="row" width="50%" style="text-align: left">
+                                </td>
+                                <td scope="row" width="50%" style="text-align: left">
                                   <b>{{ n.Gewicht }}</b>
-                                </th>
-                                <th scope="row" width="50%" style="text-align: left">
+                                </td>
+                                <td scope="row" width="50%" style="text-align: left">
                                   <b>{{ n.ME }}</b>
-                                </th>
+                                </td>
                                 <td width="20%" style="text-align: right">
                                   <b>{{n.Preis}}</b>
                                 </td>
@@ -138,25 +160,15 @@
                     </ng-template>
                   </mat-expansion-panel>
                     <mat-expansion-panel>
-                        <mat-expansion-panel-header  (click)="getNagelplattenWithTyp('4941')">
-                            <div class="row_accordion">
-                              <div class="col-md-12 col-sm-12 col-xs-12 col-lg-12 col-xl-12">
-                                  <table class="table">
-                                    <tr>
-                              <th scope="row" width="60%" style="text-align: left">
-                                <b>12N</b>
-                              </th>
-                              <td width="20%" style="text-align: left">
-                                <b>2,38</b>
-                              </td>
-                              <td width="20%" style="text-align: right">
-                                <b>23,36</b>
-                              </td>
-                            </tr>
-                          </table>
+                        <mat-expansion-panel-header (click)="getNagelplattenWithTyp('4941')">
+                        <div class="row_accordion">
+                          <div class="row">
+                            <div class="col-sm-5 col-lg-6 col-xl-7">12N</div>
+                            <div class="col-sm-4 col-lg-2 col-xl-2"> 2,38</div>
+                            <div class="col-sm-2 col-lg-2 col-xl-2 offset-sm-1 offset-lg-1 offset-xl-1">23,36</div>
+                          </div>
                         </div>
-                    </div>
-                          </mat-expansion-panel-header>
+                        </mat-expansion-panel-header>
                       
                           <div class="row_accordion">
                               <div class="col-md-12 col-sm-12 col-xs-12 col-lg-12 col-xl-12">
@@ -194,25 +206,15 @@
                     </div>
                     </mat-expansion-panel>
                     <mat-expansion-panel>
-                        <mat-expansion-panel-header>
-                            <div class="row_accordion">
-                              <div class="col-md-12 col-sm-12 col-xs-12 col-lg-12 col-xl-12">
-                                  <table class="table">
-                                    <tr>
-                              <th scope="row" width="60%" style="text-align: left">
-                                <b>15N</b>
-                              </th>
-                              <td width="20%" style="text-align: left">
-                                <b>2,24</b>
-                              </td>
-                              <td width="20%" style="text-align: right">
-                                <b>26,38</b>
-                              </td>
-                            </tr>
-                          </table>
+                        <mat-expansion-panel-header (click)="getNagelplattenWithTyp('4941')">
+                        <div class="row_accordion">
+                          <div class="row">
+                            <div class="col-sm-5 col-lg-6 col-xl-7">15N</div>
+                            <div class="col-sm-4 col-lg-2 col-xl-2"> 2,24</div>
+                            <div class="col-sm-2 col-lg-2 col-xl-2 offset-sm-1 offset-lg-1 offset-xl-1">26,38</div>
+                          </div>
                         </div>
-                    </div>
-                          </mat-expansion-panel-header>
+                        </mat-expansion-panel-header>
                       
                           <div class="row_accordion">
                               <div class="col-md-12 col-sm-12 col-xs-12 col-lg-12 col-xl-12">
@@ -233,25 +235,15 @@
                     </div>
                     </mat-expansion-panel>
                     <mat-expansion-panel>
-                        <mat-expansion-panel-header>
-                            <div class="row_accordion">
-                              <div class="col-md-12 col-sm-12 col-xs-12 col-lg-12 col-xl-12">
-                                  <table class="table">
-                                    <tr>
-                              <th scope="row" width="60%" style="text-align: left">
-                                <b>20W</b>
-                              </th>
-                              <td width="20%" style="text-align: left">
-                                <b>2,58</b>
-                              </td>
-                              <td width="20%" style="text-align: right">
-                                <b>40,51</b>
-                              </td>
-                            </tr>
-                          </table>
+                        <mat-expansion-panel-header (click)="getNagelplattenWithTyp('4941')">
+                        <div class="row_accordion">
+                            <div class="row">
+                              <div class="col-sm-5 col-lg-6 col-xl-7">20W</div>
+                              <div class="col-sm-4 col-lg-2 col-xl-2"> 2,58</div>
+                              <div class="col-sm-2 col-lg-2 col-xl-2 offset-sm-1 offset-lg-1 offset-xl-1">40,51</div>
+                            </div>
                         </div>
-                    </div>
-                          </mat-expansion-panel-header>
+                        </mat-expansion-panel-header>
                       
                           <div class="row_accordion">
                               <div class="col-md-12 col-sm-12 col-xs-12 col-lg-12 col-xl-12">

@@ -27,11 +27,11 @@ b {
     border-bottom: 4px solid #fcdb00;
 }
 
-.demo-tab-group {
+.tab-group {
     border: 1px solid #e8e8e8;
   }
   
-  .demo-tab-content {
+  .tab-content {
     padding: 16px;
   }
   
@@ -235,6 +235,11 @@ tr{
     font-weight: bold;
 }
 
+.menu {
+    height: 30px;
+    display: block;   
+}
+
 .info-box-icon {
     height: 70px;
     float: left;
@@ -269,8 +274,13 @@ tr{
 
 /* Global Style */
 a {
-    color: #fff !important;
+    color: #000 !important;
     text-decoration: none !important;
+}
+
+h2 {
+    font-size: 2em;
+    font-weight: bold;
 }
 
 td.td-no-line {
@@ -282,7 +292,10 @@ td.td-no-line {
 }
 
 .table td, .table th {
-    padding: .25rem !important;
+    padding-top: 0.6em;
+    padding-left: 8px;
+    padding-right: 0px;
+    padding-bottom: 0.6em;
     text-align: center;
 }
 
@@ -478,6 +491,7 @@ body {
     .main-sidebar {
         width: 50px;
     }
+
 
     .content-wrapper {
         margin-left: 50px;
