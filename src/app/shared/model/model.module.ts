@@ -5,3 +5,8 @@ export class Nagelplatten {
   Preis: number;
   Groesse: string;
 }
+
+export class Warenkorb {
+  PKartikelID: number;
+  Menge: number;
+}

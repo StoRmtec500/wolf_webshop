@@ -26,21 +26,47 @@ b {
     color: #000;
 }
 
+.mat-expansion-panel-body {
+    padding-right: 0px !important;
+    padding-left: 5px !important;
+}
+
 .mat-expansion-panel-header, .mat-expansion-panel-content {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 1.0em;
 }
 
-tr.artikel {
-    height: 30px;
+.textalignright {
+    text-align: right;
 }
 
+tr.artikel {
+    height: 40px;
+}
+
+.table {
+    max-width: 104% !important;
+    width: 103%;
+}
 .artikel {
-    padding-top: 0.6em;
+    padding-top: 0.86em;
     padding-left: 18px;
     padding-right: 10px;
-    padding-bottom: 0.6em;
 }
+
+.artikelheader {
+    padding-left: 22px;
+}
+
+.artikelheader1 {
+    padding-left: 30px;
+}
+
+.artikelheader2 {
+    padding-left: 20px;
+}
+
+
 
 .table td, .table th {
     padding-top: 0.6em;
@@ -60,8 +86,11 @@ tr.artikel {
 }
 
 input {
-    width: 30px;
-    height: 18px;
+    width: 35px;
+    height: 25px;
+    padding-top: 0.5em;
+    margin-top: 7px;
+    margin-left: 5px;
 }
 
 tr.even.ng-star-inserted {
@@ -114,4 +143,30 @@ mat-ink-bar.mat-ink-bar {
 
 .mat-expansion-indicator::after, .mat-expansion-panel-header-description {
      color: #000;
+}
+
+@media (min-width:1025px) {
+    .table {
+        max-width: 99%;
+        width: 99%;
+    }
+
+    .artikelheader1 {
+        padding-right: 38px;
+        padding-left: 0px;
+        margin-right: -2px;
+    }
+
+    .artikelheader2 {
+        padding-left: 0px;
+    }
+    
+    .artikel {
+        padding-top: 0.86em;
+        padding-left: 1px;
+        padding-right: 25px;
+    }
+
+    
+    
 }

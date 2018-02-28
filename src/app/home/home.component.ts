@@ -1,6 +1,6 @@
 import { NagelplattenService } from './nagelplatten.service';
-import { Component, OnInit } from '@angular/core';
-import { Nagelplatten } from '../shared/index';
+import { Component, OnInit, Input } from '@angular/core';
+import { Nagelplatten, Warenkorb } from '../shared/index';
 import { Router } from '@angular/router';
 
 @Component({
@@ -12,11 +12,15 @@ export class HomeComponent implements OnInit {
 
   headertitle = 'Bestellung Nagelplatten';
   nagelplatten: Nagelplatten[];
+  basket: Warenkorb[];
   details = '';
   display = 'none';
 
-   constructor(private ns: NagelplattenService, private router: Router) {
+  @Input() myNumber: any;
 
+  
+   constructor(private ns: NagelplattenService, private router: Router) {
+    
   }
 
   ngOnInit() {
@@ -27,10 +31,22 @@ export class HomeComponent implements OnInit {
       this.ns.getNagelplatten(typ).subscribe(data => this.nagelplatten = data);
   }
 
-  showDetails(id) {
+  showDetails(id, quota) {
     this.details = id;
-    console.log(id);
+    console.log(id, quota);
    // this.router.navigate(['/basket/' + id]);
+  }
+
+  onSearchChange(searchValue : string ) {  
+    console.log(searchValue);}
+
+
+    addItemToCart(newItemBasket: number) {
+    if (newItemBasket) {  
+      this.basket.push(newItemBasket);
+        console.log("Basket" + this.basket);
+       // this.ns.getNagelplatten(newItemBasket).subscribe(data => this.nagelplatten = data);
+    }
   }
 
 }

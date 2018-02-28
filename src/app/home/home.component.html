@@ -71,10 +71,7 @@
     <section>
       <div id="demoContainer">
         <div class="row">
-          <div class="col-lg-11 col-xl-7">
-            <div class="artnr">
-              Artikelnummer: {{details}}
-            </div>
+          <div class="col-lg-12 col-xl-7">
             <div class="site_width">
               <mat-tab-group class="tab-group">
                 <mat-tab label="Verzinkt">
@@ -111,26 +108,29 @@
                                 <br>
                                 <br>
                                 <div class="row">
-                                  <div class="col-sm-5 col-lg-2 col-xl-2" style="text-align: center">Menge</div>
-                                  <div class="col-sm-5 col-lg-2 col-xl-1">Art.Nr.</div>
-                                  <div class="col-sm-5 col-lg-2 col-xl-4">Größe</div>
-                                  <div class="col-sm-5 col-lg-2 offset-xl-1 col-xl-1" style="text-align: right">kg/ME</div>
-                                  <div class="col-sm-5 col-lg-2 col-xl-1" style="text-align: right">ME</div>
-                                  <div class="col-sm-5 col-lg-2 col-xl-1" style="text-align: right">Preis/ME</div>  
+                                  <div class="artikelheader col-lg-2 col-xl-2">Menge</div>
+                                  <div class="artikelheader2 col-lg-1 col-xl-1">Art.Nr.</div>
+                                  <div class="artikelheader2 col-lg-4 col-xl-4">Größe</div>
+                                  <div class="artikelheader1 col-lg-1 col-xl-1 text-right">kg/ME</div>
+                                  <div class="artikelheader1 offset-lg-1 col-lg-1 col-xl-1 text-right">ME</div>
+                                  <div class="artikelheader1 offset-lg-1 col-lg-1 offset-xl-1 col-xl-1 text-right">Preis/ME</div>  
                                 </div>
-                              <table class="table">
+                                <table class="table">
                               <tr class="artikel" *ngFor="let n of nagelplatten; index as i; odd as isOdd; even as isEven" 
-                              [ngClass]="{ odd: isOdd, even: isEven }" (click)="showDetails(n.PKArtikelID)" >
+                              [ngClass]="{ odd: isOdd, even: isEven }" >
                               
                               <div class="row">
-                                <div class="artikel col-sm-5 col-lg-2 col-xl-2" style="text-align: left"><span><input type="text"><div *ngIf="n.ME > 1;then karton else stueck"></div></span><ng-template #karton> Karton</ng-template>
-                                <ng-template #stueck> Stück</ng-template></div>
-                                <div class="artikel col-sm-5 col-lg-2 col-xl-1">{{ n.PKArtikelID }}</div>
-                                <div class="artikel col-sm-5 col-lg-2 col-xl-4">{{ n.Groesse }}</div>
-                                <div class="artikel col-sm-5 col-lg-2 offset-xl-1 col-xl-1" style="text-align: right">{{ n.Gewicht }}</div>
-                                <div class="artikel col-sm-5 col-lg-2 col-xl-1" style="text-align: right">{{ n.ME }}</div>
-                                <div class="artikel col-sm-5 col-lg-2 col-xl-1 offset-xl-1" style="text-align: right">{{ n.Preis }}</div>  
+                                <div class="col-sm-5 col-lg-2 col-xl-2"><span><input name="stueck" ng-model="stueck" #qty><div *ngIf="n.ME > 1;then karton else stueck"></div></span><ng-template #karton> Karton</ng-template>
+                                <ng-template #stueck> Stück</ng-template><button (click)="addItemToCart(qty.value)"
+                >Add to cart</button></div>
+                                <div class="artikel col-sm-5 col-lg-1 col-xl-1">{{ n.PKArtikelID }}</div>
+                                <div class="artikel col-sm-5 col-lg-4 col-xl-4">{{ n.Groesse }}</div>
+                                <div class="artikel col-sm-5 col-lg-1 col-xl-1 text-right">{{ n.Gewicht | number: '1.4-4' }}</div>
+                                <div class="artikel col-sm-5 offset-lg-1 col-lg-1 col-xl-1 text-right">{{ n.ME }}</div>
+                                <div class="artikel col-sm-5 offset-lg-1 col-lg-1 offset-xl-1 col-xl-1 text-right">{{ n.Preis | number: '1.4-4'}}</div>  
+
                               </div>
+
                               <!-- <td width="20%" style="text-align: left">
                                   <span><input type="text"><div *ngIf="n.ME > 1;then karton else stueck"></div></span>
                                   <ng-template #karton> Karton</ng-template>
@@ -274,7 +274,7 @@
 
           </div>
           <div class="col-lg-4">
-            <router-outlet></router-outlet>
+            <app-nagelplatten-basket *ngFor="let b of basket"></app-nagelplatten-basket>
           </div>
         </div>
       </div>
