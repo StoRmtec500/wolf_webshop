@@ -120,9 +120,8 @@
                               [ngClass]="{ odd: isOdd, even: isEven }" >
                               
                               <div class="row">
-                                <div class="col-sm-5 col-lg-2 col-xl-2"><span><input name="stueck" ng-model="stueck" #qty><div *ngIf="n.ME > 1;then karton else stueck"></div></span><ng-template #karton> Karton</ng-template>
-                                <ng-template #stueck> Stück</ng-template><button (click)="addItemToCart(qty.value)"
-                >Add to cart</button></div>
+                                <div class="col-sm-5 col-lg-2 col-xl-2"><span><input  #qty><div *ngIf="n.ME > 1;then karton else stueck"></div></span><ng-template #karton> Karton</ng-template>
+                                <ng-template #stueck> Stück</ng-template></div>
                                 <div class="artikel col-sm-5 col-lg-1 col-xl-1">{{ n.PKArtikelID }}</div>
                                 <div class="artikel col-sm-5 col-lg-4 col-xl-4">{{ n.Groesse }}</div>
                                 <div class="artikel col-sm-5 col-lg-1 col-xl-1 text-right">{{ n.Gewicht | number: '1.4-4' }}</div>
@@ -151,7 +150,9 @@
                                 <td width="20%" style="text-align: right">
                                   <b>{{n.Preis}}</b>
                                 </td>-->
+                                <button [disabled]="qty.length == 1" (click)="addItemToCart(n.PKArtikelID, qty.value)">Add to cart</button>
                               </tr>
+                              
                             </table>
                               </div>
                             </div>
@@ -274,7 +275,7 @@
 
           </div>
           <div class="col-lg-4">
-            <app-nagelplatten-basket *ngFor="let b of basket"></app-nagelplatten-basket>
+            <app-nagelplatten-basket></app-nagelplatten-basket>
           </div>
         </div>
       </div>

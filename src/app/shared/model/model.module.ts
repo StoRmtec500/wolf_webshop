@@ -9,4 +9,9 @@ export class Nagelplatten {
 export class Warenkorb {
   PKartikelID: number;
   Menge: number;
+
+  constructor(artikel,stueck){
+    this.PKartikelID = artikel;
+    this.Menge = stueck;
+  }
 }
