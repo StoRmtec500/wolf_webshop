@@ -4,14 +4,18 @@ export class Nagelplatten {
   ME: number;
   Preis: number;
   Groesse: string;
+  Stk: number;
+  Gesamt: number;
 }
 
 export class Warenkorb {
-  PKartikelID: number;
-  Menge: number;
+  PKArtikelID: number;
+  Stk: number;
+  Gesamt: number;
 
-  constructor(artikel,stueck){
-    this.PKartikelID = artikel;
-    this.Menge = stueck;
+  constructor(artikel,stueck, gesamt){
+    this.PKArtikelID = artikel;
+    this.Stk = stueck;
+    this.Gesamt = gesamt;
   }
 }
