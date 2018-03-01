@@ -16,6 +16,7 @@ export class HomeComponent implements OnInit {
   details = '';
   display = 'none';
   newArray=[];
+  Gesamt;
  
    constructor(private ns: NagelplattenService, private router: Router) {
   }
@@ -27,7 +28,6 @@ export class HomeComponent implements OnInit {
   getNagelplattenWithTyp(typ: number) {
       this.nagelplatten = null;
       this.ns.getNagelplatten(typ).subscribe(data => this.nagelplatten = data);
-      
   }
 
   showDetails(id, quota) {
@@ -52,7 +52,8 @@ export class HomeComponent implements OnInit {
 
     onKeyUp(value: number, index: number) {
       this.nagelplatten[index].Stk = value;
-      
+      var sum = (this.nagelplatten[index].Preis * this.nagelplatten[index].Stk);
+      this.nagelplatten[index].Gesamt = sum;
       //var test = new Warenkorb(artikel, value );
       //for (let n of this.nagelplatten) {
         // var menge = n.PKArtikelID
@@ -61,14 +62,17 @@ export class HomeComponent implements OnInit {
        console.log("Basket: " + this.basket);
     }
 
+
+
   addToCart() {
     this.basket.splice(0, 1000);
     for (let n of this.nagelplatten) {
+     
          if(n.Stk != null) {
            this.basket.push(n);
           }
           console.log("BASKETNEW" + this.basket);
-
+          this.Gesamt = n.Gesamt;
       }
   }
 }

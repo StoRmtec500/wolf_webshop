@@ -5,14 +5,17 @@ export class Nagelplatten {
   Preis: number;
   Groesse: string;
   Stk: number;
+  Gesamt: number;
 }
 
 export class Warenkorb {
   PKArtikelID: number;
   Stk: number;
+  Gesamt: number;
 
-  constructor(artikel,stueck){
+  constructor(artikel,stueck, gesamt){
     this.PKArtikelID = artikel;
     this.Stk = stueck;
+    this.Gesamt = gesamt;
   }
 }
