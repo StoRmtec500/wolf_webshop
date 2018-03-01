@@ -1,26 +1,2 @@
-<div class="fixed">
-<div class="row" >
-    <div class="artikelheader col-lg-2 col-xl-2">Menge</div>
-    <div class="artikelheader2 col-lg-1 col-xl-1">Art.Nr.</div>
-    <div class="artikelheader2 col-lg-3 col-xl-3">Größe</div>
-    <div class="artikelheader1 col-lg-1 col-xl-1 text-right">kg/ME</div>
-    <div class="artikelheader1 offset-lg-1 col-lg-1 col-xl-1 text-right">ME</div>
-    <div class="artikelheader1 offset-lg-1 col-lg-1 offset-xl-1 col-xl-1 text-right">Preis/ME</div>  
-    <div class="artikelheader1 col-lg-1 col-xl-1 text-right"><b>Gesamt €</b></div>  
-  </div>
-<table class="table">
-    <tr class="artikel" *ngFor="let n of test; let in = index; index as i; odd as isOdd; even as isEven" 
-    [ngClass]="{ odd: isOdd, even: isEven }" >
-    <div class="row">
-      <div class="col-sm-5 col-lg-2 col-xl-2"><span><div *ngIf="n.ME > 1;then karton else stueck"></div></span><ng-template #karton>{{n.Stk }} Karton</ng-template>
-      <ng-template #stueck>{{n.Stk }} Stück </ng-template></div>
-      <div class="artikel col-sm-5 col-lg-1 col-xl-1">{{ n.PKArtikelID }}</div>
-      <div class="artikel col-sm-5 col-lg-3 col-xl-3">{{ n.Groesse }}</div>
-      <div class="artikel col-sm-5 col-lg-1 col-xl-1 text-right">{{ n.Gewicht | number: '1.4-4' }}</div>
-      <div class="artikel col-sm-5 offset-lg-1 col-lg-1 col-xl-1 text-right">{{ n.ME }}</div>
-      <div class="artikel col-sm-5 offset-lg-1 col-lg-1 offset-xl-1 col-xl-1 text-right">{{ n.Preis | number: '1.4-4'}}</div> 
-      <div class="artikelheader1 col-lg-1 col-xl-1 text-right">{{ n.Gesamt  | number: '1.2-2'}}</div>  
-    </div>
-    </tr>
-  </table>
-</div>
+
+

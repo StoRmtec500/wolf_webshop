@@ -1,9 +1,10 @@
+import { HomeComponent } from './../home.component';
 import { Warenkorb } from './../../shared/model/model.module';
 import { NagelplattenService } from './../nagelplatten.service';
 import { Component, OnInit } from '@angular/core';
 import { Nagelplatten } from '../../shared/index';
 import { ActivatedRoute } from '@angular/router';
-import { HomeComponent } from '../home.component';
+
 
 @Component({
   selector: 'app-nagelplatten-basket',
@@ -13,11 +14,11 @@ import { HomeComponent } from '../home.component';
 export class NagelplattenBasketComponent implements OnInit {
 
   test = [];
+  public show = false;
 
+  constructor(private service: NagelplattenService, private route: ActivatedRoute, private hc: HomeComponent) { }
 
-  constructor(private service: NagelplattenService, private route: ActivatedRoute, private np: HomeComponent) { }
-
-  ngOnInit() {
+  public ngOnInit() {
     //  this.service.getNagelplattenDetail(this.route.snapshot.params[ 'id' ])
     //  .subscribe( nageldetail => (this.nagelplattenDetails = nageldetail));
    // console.log(this.np.basket[0]);
@@ -26,7 +27,8 @@ export class NagelplattenBasketComponent implements OnInit {
    // } else {
    //   this.test = this.np.basket;
    // }
-   this.test = this.np.basket;
+   console.log("Leng Basket: " + this.test.length);
+   this.test = this.hc.basket;
     
    this.addToBasket();
   }

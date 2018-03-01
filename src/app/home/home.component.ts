@@ -1,3 +1,4 @@
+import { NagelplattenBasketComponent } from './nagelplatten-basket/nagelplatten-basket.component';
 import { NagelplattenService } from './nagelplatten.service';
 import { Component,ViewChild, OnInit, Input } from '@angular/core';
 import { Nagelplatten, Warenkorb } from '../shared/index';
@@ -17,6 +18,7 @@ export class HomeComponent implements OnInit {
   display = 'none';
   newArray=[];
   Gesamt;
+  showBasket = false;
  
    constructor(private ns: NagelplattenService, private router: Router) {
   }
@@ -59,8 +61,10 @@ export class HomeComponent implements OnInit {
         // var menge = n.PKArtikelID
         //   if(value >= '1') {
         //  this.basket.fill(test);
-       console.log("Basket: " + this.basket);
-       this.addToCart();
+
+       
+       this.addToCart(); 
+      
     }
 
 
@@ -74,6 +78,7 @@ export class HomeComponent implements OnInit {
           }
           console.log("BASKETNEW" + this.basket);
           this.Gesamt = n.Gesamt;
+          this.showBasket = true;
       }
   }
 }

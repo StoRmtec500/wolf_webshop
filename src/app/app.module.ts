@@ -32,7 +32,7 @@ import { FormsModule } from '@angular/forms';
   ],
   providers: [
     NagelplattenService, 
-    databaseProvider
+    databaseProvider, NagelplattenBasketComponent
   ],
   bootstrap: [AppComponent]
 })
