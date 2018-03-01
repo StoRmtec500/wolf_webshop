@@ -60,6 +60,7 @@ export class HomeComponent implements OnInit {
         //   if(value >= '1') {
         //  this.basket.fill(test);
        console.log("Basket: " + this.basket);
+       this.addToCart();
     }
 
 
