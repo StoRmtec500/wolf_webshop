@@ -10,6 +10,7 @@ import { HomeComponent } from './home/home.component';
 import { HttpClientModule } from '@angular/common/http';
 import { NagelplattenBasketComponent } from './home/nagelplatten-basket/nagelplatten-basket.component';
 import { databaseProvider } from './shared/databaseProvider/databaseProvider';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -26,7 +27,8 @@ import { databaseProvider } from './shared/databaseProvider/databaseProvider';
     BrowserAnimationsModule,
     MatFormFieldModule,
     MatInputModule,
-    HttpClientModule
+    HttpClientModule, 
+    FormsModule
   ],
   providers: [
     NagelplattenService, 

@@ -4,14 +4,15 @@ export class Nagelplatten {
   ME: number;
   Preis: number;
   Groesse: string;
+  Stk: number;
 }
 
 export class Warenkorb {
-  PKartikelID: number;
-  Menge: number;
+  PKArtikelID: number;
+  Stk: number;
 
   constructor(artikel,stueck){
-    this.PKartikelID = artikel;
-    this.Menge = stueck;
+    this.PKArtikelID = artikel;
+    this.Stk = stueck;
   }
 }

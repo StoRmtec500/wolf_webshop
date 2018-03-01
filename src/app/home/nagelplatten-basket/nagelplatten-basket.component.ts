@@ -12,8 +12,7 @@ import { HomeComponent } from '../home.component';
 })
 export class NagelplattenBasketComponent implements OnInit {
 
-  nagelplattenDetails: Nagelplatten[];
-  test;
+  test = [];
 
 
   constructor(private service: NagelplattenService, private route: ActivatedRoute, private np: HomeComponent) { }
@@ -21,9 +20,19 @@ export class NagelplattenBasketComponent implements OnInit {
   ngOnInit() {
     //  this.service.getNagelplattenDetail(this.route.snapshot.params[ 'id' ])
     //  .subscribe( nageldetail => (this.nagelplattenDetails = nageldetail));
-    console.log(this.np.basket[0]);
-    this.test == null;
-    this.test = this.np.basket;
+   // console.log(this.np.basket[0]);
+   // if ( this.test != null) {
+   //   this.test == null;
+   // } else {
+   //   this.test = this.np.basket;
+   // }
+   this.test = this.np.basket;
+    
+   this.addToBasket();
+  }
+
+  public addToBasket() {
+    console.log("Basketseite:" + this.test);
   }
 
 }

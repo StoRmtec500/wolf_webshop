@@ -1,5 +1,5 @@
 import { NagelplattenService } from './nagelplatten.service';
-import { Component, OnInit, Input } from '@angular/core';
+import { Component,ViewChild, OnInit, Input } from '@angular/core';
 import { Nagelplatten, Warenkorb } from '../shared/index';
 import { Router } from '@angular/router';
 
@@ -9,25 +9,25 @@ import { Router } from '@angular/router';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-
+  @ViewChild('name') name: HTMLInputElement;
   headertitle = 'Bestellung Nagelplatten';
   nagelplatten: Nagelplatten[];
   basket: Warenkorb[] = [];
   details = '';
   display = 'none';
-
-  @Input() myNumber: any;
-
-  
+  newArray=[];
+ 
    constructor(private ns: NagelplattenService, private router: Router) {
   }
 
   ngOnInit() {
+    console.log("Nagelplattenarray: " + this.nagelplatten);
   }
 
   getNagelplattenWithTyp(typ: number) {
       this.nagelplatten = null;
       this.ns.getNagelplatten(typ).subscribe(data => this.nagelplatten = data);
+      
   }
 
   showDetails(id, quota) {
@@ -40,11 +40,35 @@ export class HomeComponent implements OnInit {
     console.log(searchValue);}
 
 
-    addItemToCart(PKArtikelID, Menge){
-      var test = new Warenkorb(PKArtikelID, Menge);  
-      this.basket.push(test);
-        console.log("Basket" + this.basket);
+    addItemToCart(index){
+      //var test = new Warenkorb(index);  
+      this.newArray.push(this.nagelplatten[index]);
+      //  for (i = 0; i < P)
+     
+      //this.basket.push(test);
+        console.log("Basket" + this.newArray[0]);
        // this.ns.getNagelplatten(newItemBasket).subscribe(data => this.nagelplatten = data);
   }
 
+    onKeyUp(value: number, index: number) {
+      this.nagelplatten[index].Stk = value;
+      
+      //var test = new Warenkorb(artikel, value );
+      //for (let n of this.nagelplatten) {
+        // var menge = n.PKArtikelID
+        //   if(value >= '1') {
+        //  this.basket.fill(test);
+       console.log("Basket: " + this.basket);
+    }
+
+  addToCart() {
+    this.basket.splice(0, 1000);
+    for (let n of this.nagelplatten) {
+         if(n.Stk != null) {
+           this.basket.push(n);
+          }
+          console.log("BASKETNEW" + this.basket);
+
+      }
+  }
 }
