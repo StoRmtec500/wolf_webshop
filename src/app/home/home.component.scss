@@ -116,12 +116,6 @@ tr{
     font-size: 24px;
 }
 
-.fixed {
-    position: fixed;
-    border-style: solid;
-    border-width: 1px;
-    width: 35%;
-}
 
 .content-header>.breadcrumb {
     float: right;
@@ -450,7 +444,9 @@ body {
     line-height: 30px;
 }
 
-
+#demoContainer {
+    width: 99%;
+}
 
 .auftragsentwicklung .table td, .auftragsentwicklung .table th {
     padding: .75rem;
@@ -464,6 +460,50 @@ body {
     vertical-align: top;
     border-top: 0px  #fff;
     border-bottom: 0px #fff;
+}
+
+.fixed {
+    position: inherit;
+    border: 1px solid #e8e8e8;
+}
+
+.tableBasket {
+    padding-left: 10px;
+}
+
+.basketHeader {
+    height: 36px;
+    background-color: #f5f5f5;
+    opacity: 0.6;
+    color: #000;
+    font-weight: bold;
+    font-size: 15px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    white-space: nowrap;
+    position: relative;
+}
+
+.basketHeaderLine {
+    top:0px;
+    height: 4px;
+    background-color: #ffdd00;
+    
+}
+
+.basketDetailHeader {
+    background-color: #ffdd00;
+    color: #000;
+}
+
+.basketDetailTable {
+    width: 100%;
+}
+
+.artikelheader, .artikelheader1, .artikelheader2 {
+    margin-top: 5px;
 }
 
 /* MEDIAQUERY */
@@ -578,6 +618,13 @@ body {
         width: 98%;
         padding-left: 15px;
     }
+
+    .fixed {
+        border-style: solid;
+        border-width: 1px;
+        width: 100%;
+    }
+    
 }
 
 @media (max-width: 667px) and (min-width:375px){

@@ -76,9 +76,13 @@ export class HomeComponent implements OnInit {
          if(n.Stk != null) {
            this.basket.push(n);
           }
-          console.log("BASKETNEW" + this.basket);
+          console.log("BASKETNEW" + JSON.stringify(this.basket));
           this.Gesamt = n.Gesamt;
           this.showBasket = true;
       }
+  }
+
+  deleteEntry(index) {
+    this.basket.splice(index, 1);
   }
 }
