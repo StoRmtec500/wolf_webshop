@@ -1,6 +1,6 @@
 import { NagelplattenService } from './home/nagelplatten.service';
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, LOCALE_ID } from '@angular/core';
 import {MatTabsModule, MatFormFieldModule, MatInputModule} from '@angular/material';
 import { AppRoutingModule } from './app-routing.module';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
@@ -11,7 +11,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { NagelplattenBasketComponent } from './home/nagelplatten-basket/nagelplatten-basket.component';
 import { databaseProvider } from './shared/databaseProvider/databaseProvider';
 import { FormsModule } from '@angular/forms';
-
+import localeDe from '@angular/common/locales/de';
+import { registerLocaleData } from '@angular/common';
+registerLocaleData(localeDe)
 
 @NgModule({
   declarations: [
@@ -32,7 +34,8 @@ import { FormsModule } from '@angular/forms';
   ],
   providers: [
     NagelplattenService, 
-    databaseProvider, NagelplattenBasketComponent
+    databaseProvider, NagelplattenBasketComponent,
+    {provide: LOCALE_ID, useValue: "de-DE"}
   ],
   bootstrap: [AppComponent]
 })

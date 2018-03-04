@@ -116,6 +116,10 @@ tr{
     font-size: 24px;
 }
 
+.summe {
+    padding-right: 25px;
+    margin-top: 5px;
+}
 
 .content-header>.breadcrumb {
     float: right;
@@ -469,6 +473,7 @@ body {
 
 .tableBasket {
     padding-left: 10px;
+    width: 98%;
 }
 
 .basketHeader {
@@ -496,14 +501,23 @@ body {
 .basketDetailHeader {
     background-color: #ffdd00;
     color: #000;
+    margin-left: 10px;
+    margin-right: 10px;
+    height: 28px;
 }
 
 .basketDetailTable {
-    width: 100%;
+    width: 95%;
+    margin-left: 25px;
 }
 
 .artikelheader, .artikelheader1, .artikelheader2 {
     margin-top: 5px;
+}
+
+.basketgewicht {
+    font-weight: normal;
+    padding-top: 0.4em;
 }
 
 /* MEDIAQUERY */

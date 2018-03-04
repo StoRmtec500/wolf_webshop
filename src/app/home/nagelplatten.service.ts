@@ -2,7 +2,7 @@ import { environment } from './../../environments/environment';
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
-import { Nagelplatten } from '../shared/index';
+import { Nagelplatten, Rabatt } from '../shared/index';
 import { databaseProvider } from '../shared/databaseProvider/databaseProvider';
 
 @Injectable()
@@ -19,5 +19,9 @@ export class NagelplattenService {
 
   getNagelplattenDetail(id: number): Observable<Nagelplatten[]> {
     return this.httpClient.get<Nagelplatten[]> ( environment.apiUrlRead + 'getNagelplattenDetail/' + id);
+  }
+
+  getRabatt() : Promise<Rabatt[]> {
+    return this.httpClient.get<Rabatt[]>('assets/rabatte.json').toPromise();
   }
 }

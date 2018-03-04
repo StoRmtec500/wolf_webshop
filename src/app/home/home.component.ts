@@ -1,7 +1,7 @@
 import { NagelplattenBasketComponent } from './nagelplatten-basket/nagelplatten-basket.component';
 import { NagelplattenService } from './nagelplatten.service';
 import { Component,ViewChild, OnInit, Input } from '@angular/core';
-import { Nagelplatten, Warenkorb } from '../shared/index';
+import { Nagelplatten, Warenkorb, Rabatt } from '../shared/index';
 import { Router } from '@angular/router';
 
 @Component({
@@ -14,11 +14,14 @@ export class HomeComponent implements OnInit {
   headertitle = 'Bestellung Nagelplatten';
   nagelplatten: Nagelplatten[];
   basket: Warenkorb[] = [];
+  rabatte: Rabatt[];
   details = '';
   display = 'none';
   newArray=[];
   Gesamt;
-  showBasket = false;
+  showBasket = true;
+  basketSumme;
+  basketGewicht;
  
    constructor(private ns: NagelplattenService, private router: Router) {
   }
@@ -52,20 +55,13 @@ export class HomeComponent implements OnInit {
        // this.ns.getNagelplatten(newItemBasket).subscribe(data => this.nagelplatten = data);
   }
 
-    onKeyUp(value: number, index: number) {
-      this.nagelplatten[index].Stk = value;
-      var sum = (this.nagelplatten[index].Preis * this.nagelplatten[index].Stk);
-      this.nagelplatten[index].Gesamt = sum;
-      //var test = new Warenkorb(artikel, value );
-      //for (let n of this.nagelplatten) {
-        // var menge = n.PKArtikelID
-        //   if(value >= '1') {
-        //  this.basket.fill(test);
-
-       
-       this.addToCart(); 
-      
-    }
+  onKeyUp(value: number, index: number) {
+    this.nagelplatten[index].Stk = value;
+    var sum = (this.nagelplatten[index].Preis * this.nagelplatten[index].Stk);
+    this.nagelplatten[index].Gesamt = sum;
+    this.addToCart(); 
+    this.calcSumme(sum, index);
+  }
 
 
 
@@ -84,5 +80,24 @@ export class HomeComponent implements OnInit {
 
   deleteEntry(index) {
     this.basket.splice(index, 1);
+  }
+
+  calcSumme(preis:number, index: number) {
+    var basketSumme = 0;
+    var basketGewicht = 0;
+    for (let s of this.basket) {
+      basketSumme=basketSumme+s.Gesamt;
+      basketGewicht = basketGewicht+s.Gewicht * s.Stk
+    }
+    this.basketSumme = basketSumme;
+    this.basketGewicht = basketGewicht;
+
+    this.ns.getRabatt().then(data => this.rabatte = data);
+
+    for (let r of this.rabatte) {
+     // if  (this.basketGewicht == r) {
+        console.log("Rabatte: " + r.kg);
+      }
+        
   }
 }
