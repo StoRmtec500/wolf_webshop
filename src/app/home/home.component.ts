@@ -60,7 +60,7 @@ export class HomeComponent implements OnInit {
     var sum = (this.nagelplatten[index].Preis * this.nagelplatten[index].Stk);
     this.nagelplatten[index].Gesamt = sum;
     this.addToCart(); 
-    this.calcSumme(sum, index);
+    this.calcSumme();
   }
 
 
@@ -82,7 +82,7 @@ export class HomeComponent implements OnInit {
     this.basket.splice(index, 1);
   }
 
-  calcSumme(preis:number, index: number) {
+  calcSumme() {
     var basketSumme = 0;
     var basketGewicht = 0;
     for (let s of this.basket) {
@@ -92,12 +92,12 @@ export class HomeComponent implements OnInit {
     this.basketSumme = basketSumme;
     this.basketGewicht = basketGewicht;
 
-    this.ns.getRabatt().then(data => this.rabatte = data);
+  /*  this.ns.getRabatt().then(data => this.rabatte = data);
 
     for (let r of this.rabatte) {
      // if  (this.basketGewicht == r) {
         console.log("Rabatte: " + r.kg);
       }
-        
+        */
   }
 }
