@@ -466,6 +466,31 @@ body {
     border-bottom: 0px #fff;
 }
 
+.hidebasketZwischensumme {
+    display: none;
+}
+
+.showbasketZwischensumme {
+    background-color: #cccccc;
+}
+
+.basketZwischensumme {
+    margin-left: 25px;
+    margin-right: 10px;
+}
+
+.zwischensummetext {
+    padding-top: 0.4em;
+    padding-left: 23px;
+    font-weight: bold;
+}
+
+.zwischensumme {
+    padding-top: 0.4em;
+    padding-right: 25px;
+    font-weight: bold;
+}
+
 .fixed {
     position: inherit;
     border: 1px solid #e8e8e8;
@@ -507,8 +532,8 @@ body {
 }
 
 .basketDetailTable {
-    width: 95%;
     margin-left: 25px;
+    margin-right: 8px;
 }
 
 .artikelheader, .artikelheader1, .artikelheader2 {

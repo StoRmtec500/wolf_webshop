@@ -100,8 +100,13 @@ input {
 }
 
 tr.even.ng-star-inserted {
-    background-color: #e2e2e2;
+    background-color: #f3f3f3;
     height: 40px;
+}
+
+tr.even {
+    background-color: #cccccc;
+    height: 28px;
 }
 
 tr.odd {

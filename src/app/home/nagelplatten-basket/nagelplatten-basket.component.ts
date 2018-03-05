@@ -28,7 +28,7 @@ export class NagelplattenBasketComponent implements OnInit {
    //   this.test = this.np.basket;
    // }
    console.log("Leng Basket: " + this.test.length);
-   this.test = this.hc.basket;
+   this.test = this.hc.Warenkorb;
     
    this.addToBasket();
   }
