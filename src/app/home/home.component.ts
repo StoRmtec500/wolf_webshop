@@ -27,6 +27,7 @@ export class HomeComponent implements OnInit {
   basketZwischenSummeRabatt;
   basketRabattProzent;
   basketRabattAbKG;
+  basketTransport;
  
    constructor(private ns: NagelplattenService, private router: Router) {
   }
@@ -67,20 +68,22 @@ export class HomeComponent implements OnInit {
     this.Warenkorb.splice(0, 1000);
     for (let n of this.nagelplatten) {
      
-         if(n.Stk >= 0) {
+         if(n.Stk > 0) {
            this.Warenkorb.push(n);
-          }
-          //console.log("BASKETNEW" + JSON.stringify(this.Warenkorb));
+          } 
           this.Gesamt = n.Gesamt;
           this.showBasket = true;
           this.calcSumme();
           this.calczwischensumme();
-          console.log("Add Delete: " + JSON.stringify(this.Warenkorb));
+          console.log("Add Delete: " + JSON.stringify(this.Warenkorb));       
       }
   }
 
   deleteEntry(index) {
-      this.Warenkorb.splice(0 , 1);
+    if (index == 0) {
+      this.showBasket = false;
+    }
+      this.Warenkorb.splice(index , 1);
       console.log("Entry Delete: " + JSON.stringify(this.Warenkorb));
       }
 
@@ -91,6 +94,10 @@ export class HomeComponent implements OnInit {
       basketSumme=basketSumme+s.Gesamt;
       basketGewicht = basketGewicht+s.Gewicht * s.Stk
     } 
+
+    if(basketSumme == 0) {
+      this.showBasket = false;
+    }
     
     this.basketGewicht = basketGewicht;
     this.basketSumme = basketSumme;
@@ -107,6 +114,7 @@ export class HomeComponent implements OnInit {
       this.basketZwischenSumme = (this.basketSumme);
       this.basketRabattProzent = this.rabatte[i].rabatt;
       this.basketRabattAbKG = this.rabatte[i].kg;
+      this.basketTransport = this.rabatte[i].fracht;
       this.basketZwischenSummeRabatt = (basketRabatt);
     }
   }

@@ -1,26 +1,32 @@
 [
     {
         "kg" : "1000",
-        "rabatt" : "3" 
+        "rabatt" : "3",
+        "fracht" : ""  
     },
     {
         "kg" : "1500",
-        "rabatt" : "4" 
+        "rabatt" : "4",
+        "fracht" : ""  
     },
     {
         "kg" : "3000",
-        "rabatt" : "6" 
+        "rabatt" : "6",
+        "fracht" : ""  
     }, 
     {
         "kg" : "5000",
-        "rabatt" : "8" 
+        "rabatt" : "8",
+        "fracht" : "" 
     },
     {
         "kg" : "10000",
-        "rabatt" : "10" 
+        "rabatt" : "10", 
+        "fracht" : "+ Transport frei"
     },
     {
         "kg" : "15000",
-        "rabatt" : "12" 
+        "rabatt" : "12",
+        "fracht" : "+ Transport frei" 
     }
 ]

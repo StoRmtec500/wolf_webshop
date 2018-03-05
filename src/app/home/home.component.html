@@ -250,10 +250,10 @@
               </mat-tab-group>
             </div>
           </div>
-          
+<!-- Warenkorb ANFANG -->    
           <div class="col-lg-6 col-xl-6">
-            <div *ngIf="showBasket">
-                      <div class="fixed">
+            
+            <div *ngIf="showBasket" class="sticky">
                   <div class="basketHeaderLine"></div>
                       <div class="basketHeader">
                         Warenkorb Übersicht
@@ -269,17 +269,16 @@
                       <div class="artikelheader1 col-lg-1 col-xl-1 text-right">kg/ME</div>
                       <div class="artikelheader1 col-lg-1 col-xl-1 text-right">ME</div>
                       <div class="artikelheader1 offset-lg-1 col-lg-1 col-xl-1 text-right">Preis/ME</div>  
-                      <div class="artikelheader1 col-lg-2 offset-col-xl-1 col-xl-2 text-right">Gesamt €</div> 
+                      <div class="artikelheader1 col-lg-2 col-xl-offset-1 col-xl-2 text-right">Gesamt €</div> 
                     </div>
                   </div>
                   <div class="basketDetailTable">
                     <div class="row">
-                        <!--<div class="col-md-12 col-xs-12 col-lg-12 col-xl-12">-->
                   <table class="tableBasket">
                       <tr *ngFor="let n of Warenkorb; let in = index; index as i; odd as isOdd; even as isEven" 
                       [ngClass]="{ odd: isOdd, even: isEven }" >
                      <div class="row">
-                        <div class="menge col-lg-2 col-xl-2 text-left"><span><i class="far fa-trash-alt" (click)="deleteEntry(in)"></i><div *ngIf="n.ME > 1;then karton else stueck"></div></span><ng-template #karton>   {{n.Stk }} Karton</ng-template>
+                        <div class="menge col-lg-2 col-xl-2 text-left"><span><div *ngIf="n.ME > 1;then karton else stueck"></div></span><ng-template #karton>   {{n.Stk }} Karton</ng-template>
                         <ng-template #stueck>   {{n.Stk }} Stück </ng-template></div>
                         <div class="artikelbasket  col-lg-1 col-xl-1">{{ n.PKArtikelID }}</div>
                         <div class="artikelbasket  col-lg-3 col-xl-1">{{ n.Typ }}</div>
@@ -291,17 +290,14 @@
                      </div>
                     </tr>
                     </table>
-                 <!-- </div>-->
                   </div>
                 </div>
               <br>
+<!-- Zwischensumme wird eingeblendet wenn das erste gesamt Gewicht über 1000kg liegt -->              
               <div *ngIf="showBasketZwischensumme" class="basketZwischensumme">
                 <div class="row">
-                    <!--<div class="col-md-12 col-xs-12 col-lg-12 col-xl-12">-->
-                      <!--<div *ngIf="basketGewicht > 1000 ? 'showbasketZwischensumme' : 'hidebasketZwischensumme'">-->
               <table class="tableBasket">
-                
-                <tr class="even">
+                <tr class="even black">
                     <div class="row">
                         <div class="zwischensummetext col-sm-5 col-lg-6 col-xl-6">Zwischensumme</div>
                         <div class="col-sm-4 col-lg-2 col-xl-2"></div>
@@ -310,27 +306,31 @@
                 </tr>
                 <tr class="odd">
                     <div class="row">
-                        <div class="artikelheader col-sm-6 col-lg-8 col-xl-8">- {{basketRabattProzent}}% Mengenrabatt (ab {{basketRabattAbKG | number}} kg)</div>
+                        <div class="artikelheader col-sm-6 col-lg-8 col-xl-8">- {{basketRabattProzent}}% Mengenrabatt (ab {{basketRabattAbKG | number}} kg) {{basketTransport}}</div>
                         <div class="artikelheader1 col-sm-4 col-lg-4 col-xl-4 text-right">{{basketZwischenSummeRabatt | number: '1.2-2'}}</div>
                       </div>
                 </tr>
                 </table>
-                </div>
               </div>
-                 <b> <div class="basketDetailHeader">
+            </div>
+<!-- Bestellsumme über die ganze Bestellung wird angezeigt -->  
+                 <b> 
+                   <div class="basketDetailHeader">
                     <div class="row" >
                   <div class="artikelheader col-lg-5 col-xl-4">Bestellsumme in Euro</div>
                   <div class="basketgewicht col-lg-4 col-xl-4">(Gesamtgewicht {{ basketGewicht | number: '1.2-2'}} kg)</div>
                   <div class="summe col-lg-5 col-xl-4 text-right">{{(basketSumme - basketZwischenSummeRabatt) | number: '1.2-2'}}</div>
                 </div>
-              </div></b>
+              </div>
+          </b>
               <br>
-                    <button>Kundendaten eingeben & bestellen</button>
+                    <button class="buttonWarenkorb">Kundendaten eingeben & bestellen</button>
         </div>
           </div>
+
+<!-- Warenkorb ENDE -->
         </div>
       </div>
-    </div>
     </section>
   <!-- Modal -->
   <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">

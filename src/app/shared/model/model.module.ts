@@ -34,4 +34,5 @@ export class Warenkorb {
 export class Rabatt {
   kg: number;
   rabatt: number;
+  fracht: string;
 }

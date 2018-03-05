@@ -117,8 +117,17 @@ tr{
 }
 
 .summe {
-    padding-right: 25px;
+    padding-right: 27px;
     margin-top: 5px;
+}
+
+.buttonWarenkorb {
+    height: 30px;
+    background-color: #adafb2;
+    border: 0px;
+    margin-left: 11px;
+    margin-bottom: 14px;
+    cursor: pointer;
 }
 
 .content-header>.breadcrumb {
@@ -165,6 +174,13 @@ tr{
     padding-left: 20px;
 }
 
+.sticky {
+    position: -webkit-sticky; /* Safari */
+    position: sticky;
+    top: 0;
+    border: 1px solid #e8e8e8;
+}
+
 .content {
     min-height: 250px;
     padding: 15px;
@@ -181,7 +197,7 @@ tr{
 
 .row {
     margin-left: -15px;
-    margin-right: -15px;
+    margin-right: -12px;
 }
 
 .bg-aqua {
@@ -479,6 +495,10 @@ body {
     margin-right: 10px;
 }
 
+.black {
+    color: #000;
+}
+
 .zwischensummetext {
     padding-top: 0.4em;
     padding-left: 23px;
@@ -492,8 +512,10 @@ body {
 }
 
 .fixed {
-    position: inherit;
+    position: fixed;
     border: 1px solid #e8e8e8;
+    max-width: 40%;
+    min-width: 41%;
 }
 
 .tableBasket {
@@ -514,13 +536,14 @@ body {
     align-items: center;
     white-space: nowrap;
     position: relative;
+    cursor: auto;
 }
 
 .basketHeaderLine {
     top:0px;
     height: 4px;
     background-color: #ffdd00;
-    
+    cursor: auto;
 }
 
 .basketDetailHeader {
@@ -529,11 +552,13 @@ body {
     margin-left: 10px;
     margin-right: 10px;
     height: 28px;
+    cursor: auto;
 }
 
 .basketDetailTable {
     margin-left: 25px;
     margin-right: 8px;
+    cursor: auto;
 }
 
 .artikelheader, .artikelheader1, .artikelheader2 {
@@ -658,10 +683,11 @@ body {
         padding-left: 15px;
     }
 
-    .fixed {
+    #fixed {
+        position: fixed;
+        width: 45%;
         border-style: solid;
         border-width: 1px;
-        width: 100%;
     }
     
 }
