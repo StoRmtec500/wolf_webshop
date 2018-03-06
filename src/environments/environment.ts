@@ -6,6 +6,7 @@
 export const environment = {
   production: false,
   apiUrlRead:  'https://middleware.wolfsystem.at/ProjektExplorerMWTest/service/read',
+  apiUrlWrite:  'https://middleware.wolfsystem.at/ProjektExplorerMWTest/service/write',
   dataBase: 'DBScharnsteinTest',
   dbUsername: 'martin.kuenz',
   dbPassword: 'xqojUKt9>',

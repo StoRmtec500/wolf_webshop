@@ -46,4 +46,19 @@ export class databaseProvider {
       }
     }  
 
+    public makeBestellung() {
+      return {
+        Befehl: encodeURIComponent(
+          "DECLARE @outNummer INT;" +
+          "EXEC PELokal.dbo.spNeueNummer @typ = 'NPBestellung', "+
+          "@datum = '2018-03-06 08:20:35' , " +
+          "@outNummer = @outNummer OUTPUT; "+ 
+          "INSERT INTO PESchnittstelle.dbo.npBestellungKopf ( PKNpBestellungKopfID, name , erfdatum , ZwischenSumme , Rabatt , GesamtSumme , GesamtGewicht ) " +
+          "VALUES ( @outNummer , 'Martin' ,GETDATE() , NULL , NULL , NULL , NULL )"),
+        Datenbank: this.databaseName,
+        Login: this.userName,
+        Passwort: this.userPassword,
+        PKMitarbeiterID: this.pkEmployeeId
+      }
+    }
 }

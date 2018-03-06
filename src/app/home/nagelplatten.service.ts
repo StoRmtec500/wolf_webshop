@@ -24,4 +24,11 @@ export class NagelplattenService {
   getRabatt() : Promise<Rabatt[]> {
     return this.httpClient.get<Rabatt[]>('assets/rabatte.json').toPromise();
   }
+
+  makeBestellung(): void {
+    const body = this.db.makeBestellung();
+    this.httpClient.post(environment.apiUrlWrite, body)
+    .subscribe(() => console.log("Bestellung eingetragen"),
+  err => console.log(err));
+  }
 }

@@ -67,6 +67,8 @@
 
     <br />
     <br />
+
+<!-- Accordion für Arikel -->
     <section>
       <div id="container">
         <div class="row">
@@ -106,7 +108,7 @@
                                 <div class="col-sm-12 col-lg-12 col-xl-12"> Zulassungsnummer: Z-9.1-757</div>
                                 <br>
                                 <div class="buttonBasket" id="myHeader">
-                                    <button type="button" data-toggle="modal" data-target="#exampleModal" (click)="addToCart()">Übernehmen und Warenkorb berechnen</button>
+                                    <button type="button" (click)="addToCart()">Übernehmen und Warenkorb berechnen</button>
                                   </div>
                                   <br>
                                 <div class="row">
@@ -250,6 +252,8 @@
               </mat-tab-group>
             </div>
           </div>
+<!-- Accordion ENDE -->
+
 <!-- Warenkorb ANFANG -->    
           <div class="col-lg-6 col-xl-6">
             
@@ -293,6 +297,8 @@
                   </div>
                 </div>
               <br>
+<!-- Warenkorb -->
+
 <!-- Zwischensumme wird eingeblendet wenn das erste gesamt Gewicht über 1000kg liegt -->              
               <div *ngIf="showBasketZwischensumme" class="basketZwischensumme">
                 <div class="row">
@@ -313,6 +319,8 @@
                 </table>
               </div>
             </div>
+<!-- Zwischensumme ENDE-->
+
 <!-- Bestellsumme über die ganze Bestellung wird angezeigt -->  
                  <b> 
                    <div class="basketDetailHeader">
@@ -324,16 +332,19 @@
               </div>
           </b>
               <br>
-                    <button class="buttonWarenkorb">Kundendaten eingeben & bestellen</button>
+                    <button class="buttonWarenkorb" data-toggle="modal" data-target="#NagelplattenFormular">Kundendaten eingeben & bestellen</button>
         </div>
           </div>
+<!-- Bestellsumme ENDE -->
 
 <!-- Warenkorb ENDE -->
         </div>
       </div>
     </section>
-  <!-- Modal -->
-  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<!-- -->
+
+<!-- Nagelplatten Bestellformular ANFANG -->
+  <div class="modal fade" id="NagelplattenFormular" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
       <div class="modal-content">
         <div class="modal-header">
@@ -376,6 +387,9 @@
       </div>
     </div>
   </div>
+<!-- Nagelplatten Bestellformular ENDE -->
+
+<!-- ENDE -->
   </div>
   </div>
 

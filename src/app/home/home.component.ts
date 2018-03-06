@@ -19,7 +19,7 @@ export class HomeComponent implements OnInit {
   display = 'none';
   newArray=[];
   Gesamt;
-  showBasket = false;
+  showBasket = true;
   showBasketZwischensumme = false;
   basketSumme;
   basketGewicht;
@@ -128,5 +128,9 @@ export class HomeComponent implements OnInit {
     this.basketZwischenSummeRabatt = 0;
   }
    
+  }
+
+  makeBestellung() {
+    this.ns.makeBestellung();
   }
 }
