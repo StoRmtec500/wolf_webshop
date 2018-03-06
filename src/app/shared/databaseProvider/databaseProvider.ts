@@ -33,12 +33,12 @@ export class databaseProvider {
     public artikelSelect(artikelGruppeID: number) {
       return {
         Befehl: encodeURIComponent(
-          'SELECT a.PKArtikelID,SUBSTRING(a.Bezeichnung1, 17, 7) AS Groesse,a.Gewicht * ISNULL(aeu.Formel, 1) AS Gewicht,ISNULL(aeu.Formel, 1) AS ME,ROUND(av.Verkaufspreis / av.PreisPro * ISNULL(aeu.Formel, 1), 4) AS Preis '+
-          'FROM dbo.viewArtikel a '+
-          'LEFT OUTER JOIN PEKonzern.dbo.artikelEinheitUmrechnung aeu ON aeu.FKArtikelID = a.PKArtikelID AND aeu.FKMandantID = 3 AND aeu.FKMengeneinheit2ID = 7 '+
-          'LEFT OUTER JOIN PEKonzern.dbo.artikelVerkaufspreis av ON av.FKArtikelID = a.PKArtikelID AND av.FKMandantID = 3 AND av.FKPreislisteID = 1 AND av.GueltigVon <= CONVERT(DATE, GETDATE()) AND av.GueltigBis >= CONVERT(DATE, GETDATE()) '+
-          'WHERE a.FKArtikelgruppeID = '+ artikelGruppeID +' AND a.GueltigVon <= CONVERT(DATE, GETDATE()) AND a.GueltigBis >= CONVERT(DATE, GETDATE()) '+
-          'ORDER BY a.Bezeichnung1'),
+          `SELECT a.PKArtikelID,SUBSTRING(a.Bezeichnung1, 17, 7) AS Groesse,a.Gewicht * ISNULL(aeu.Formel, 1) AS Gewicht,ISNULL(aeu.Formel, 1) AS ME,ROUND(av.Verkaufspreis / av.PreisPro * ISNULL(aeu.Formel, 1), 4) AS Preis
+          FROM dbo.viewArtikel a
+          LEFT OUTER JOIN PEKonzern.dbo.artikelEinheitUmrechnung aeu ON aeu.FKArtikelID = a.PKArtikelID AND aeu.FKMandantID = 3 AND aeu.FKMengeneinheit2ID = 7
+          LEFT OUTER JOIN PEKonzern.dbo.artikelVerkaufspreis av ON av.FKArtikelID = a.PKArtikelID AND av.FKMandantID = 3 AND av.FKPreislisteID = 1 AND av.GueltigVon <= CONVERT(DATE, GETDATE()) AND av.GueltigBis >= CONVERT(DATE, GETDATE())
+          WHERE a.FKArtikelgruppeID = `+ artikelGruppeID +` AND a.GueltigVon <= CONVERT(DATE, GETDATE()) AND a.GueltigBis >= CONVERT(DATE, GETDATE())
+          ORDER BY a.Bezeichnung1`),
         Datenbank: this.databaseName,
         Login: this.userName,
         Passwort: this.userPassword,
@@ -49,12 +49,12 @@ export class databaseProvider {
     public makeBestellung() {
       return {
         Befehl: encodeURIComponent(
-          "DECLARE @outNummer INT;" +
-          "EXEC PELokal.dbo.spNeueNummer @typ = 'NPBestellung', "+
-          "@datum = '2018-03-06 08:20:35' , " +
-          "@outNummer = @outNummer OUTPUT; "+ 
-          "INSERT INTO PESchnittstelle.dbo.npBestellungKopf ( PKNpBestellungKopfID, name , erfdatum , ZwischenSumme , Rabatt , GesamtSumme , GesamtGewicht ) " +
-          "VALUES ( @outNummer , 'Martin' ,GETDATE() , NULL , NULL , NULL , NULL )"),
+          `DECLARE @outNummer INT;"
+          "EXEC PELokal.dbo.spNeueNummer @typ = 'NPBestellung',
+          "@datum = '2018-03-06 08:20:35' ,
+          "@outNummer = @outNummer OUTPUT;
+          "INSERT INTO PESchnittstelle.dbo.npBestellungKopf ( PKNpBestellungKopfID, name , erfdatum , ZwischenSumme , Rabatt , GesamtSumme , GesamtGewicht ) "
+          "VALUES ( @outNummer , 'Martin' ,GETDATE() , NULL , NULL , NULL , NULL )`),
         Datenbank: this.databaseName,
         Login: this.userName,
         Passwort: this.userPassword,
