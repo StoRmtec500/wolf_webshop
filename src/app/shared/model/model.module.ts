@@ -36,3 +36,10 @@ export class Rabatt {
   rabatt: number;
   fracht: string;
 }
+
+export class Kundendaten {
+  PKNpBestellungKopfID: number;
+  Name: string;
+  Vorname: string;
+  Firma: string;
+}

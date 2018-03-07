@@ -12,6 +12,7 @@ b {
 
 span {
     color: #717274;
+    margin-left: -2px;
 }
 
 .main-header .logo {
@@ -299,9 +300,10 @@ tr{
 /* MODALSTYLE*/
 
 .modal-content {
-    background-color: #ffdd00;
+    background-color: #fff;
     color: #000;
 }
+
 /* Global Style */
 a {
     color: #000 !important;
@@ -491,6 +493,17 @@ body {
     display: none;
 }
 
+.artWidth {
+    width: 79px;
+    margin-right: -15px;
+}
+
+.artWidthHeader {
+    width: 79px;
+    margin-right: -15px;
+    padding-top: 5px;
+    padding-left: 21px;
+}
 .showbasketZwischensumme {
     background-color: #cccccc;
 }

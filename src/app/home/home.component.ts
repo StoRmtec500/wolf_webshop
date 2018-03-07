@@ -1,7 +1,8 @@
 import { NagelplattenBasketComponent } from './nagelplatten-basket/nagelplatten-basket.component';
 import { NagelplattenService } from './nagelplatten.service';
 import { Component,ViewChild, OnInit, Input } from '@angular/core';
-import { Nagelplatten, Warenkorb, Rabatt } from '../shared/index';
+import { Nagelplatten, Warenkorb, Rabatt, Kundendaten } from '../shared/index';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 
 @Component({
@@ -16,20 +17,22 @@ export class HomeComponent implements OnInit {
   Warenkorb: Warenkorb[] = [];
   rabatte: Rabatt[];
   details = '';
-  display = 'none';
-  newArray=[];
-  Gesamt;
-  showBasket = true;
-  showBasketZwischensumme = false;
-  basketSumme;
-  basketGewicht;
-  basketZwischenSumme;
-  basketZwischenSummeRabatt;
-  basketRabattProzent;
-  basketRabattAbKG;
-  basketTransport;
- 
+  showBasket = true;  showBasketZwischensumme = false;
+  basketSumme; basketGewicht;  basketZwischenSumme;  basketZwischenSummeRabatt;
+  basketRabattProzent;  basketRabattAbKG;  basketTransport; Gesamt;
+  bookName: String;
+
+  kundenDaten: Kundendaten = {
+    PKNpBestellungKopfID: 0,
+    Name: "",
+    Vorname: "",
+    Firma: ""
+  };
+
+  kunde = new Kundendaten();
+
    constructor(private ns: NagelplattenService, private router: Router) {
+
   }
 
   ngOnInit() {
@@ -127,10 +130,15 @@ export class HomeComponent implements OnInit {
     this.showBasketZwischensumme = false;
     this.basketZwischenSummeRabatt = 0;
   }
-   
   }
 
-  makeBestellung() {
-    this.ns.makeBestellung();
-  }
+  saveBestellung(){
+      this.ns.makeBestellung(this.kunde)
+      .subscribe(res => {
+        console.log(JSON.stringify(res));
+      }), err => {
+        console.log("Error", JSON.stringify(err));
+      }
+      this.kunde = null;
+    } 
 }

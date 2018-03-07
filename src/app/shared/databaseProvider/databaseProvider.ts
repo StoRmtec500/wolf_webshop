@@ -20,16 +20,6 @@ export class databaseProvider {
 
     constructor(private httpClient: HttpClient) { }
 
-    public createCommand(sqlString: string) {
-        return {
-          Befehl: sqlString,
-          Datenbank: this.databaseName,
-          Login: this.userName,
-          Passwort: this.userPassword,
-          PKMitarbeiterID: this.pkEmployeeId
-        };
-      }
-
     public artikelSelect(artikelGruppeID: number) {
       return {
         Befehl: encodeURIComponent(
@@ -45,16 +35,16 @@ export class databaseProvider {
         PKMitarbeiterID: this.pkEmployeeId
       }
     }  
+/* */
 
-    public makeBestellung() {
+/* Bestelldaten in Datenbank schreiben */
+    public makeOrderInDb(kundendaten) {
       return {
         Befehl: encodeURIComponent(
-          `DECLARE @outNummer INT;"
-          "EXEC PELokal.dbo.spNeueNummer @typ = 'NPBestellung',
-          "@datum = '2018-03-06 08:20:35' ,
-          "@outNummer = @outNummer OUTPUT;
-          "INSERT INTO PESchnittstelle.dbo.npBestellungKopf ( PKNpBestellungKopfID, name , erfdatum , ZwischenSumme , Rabatt , GesamtSumme , GesamtGewicht ) "
-          "VALUES ( @outNummer , 'Martin' ,GETDATE() , NULL , NULL , NULL , NULL )`),
+          `INSERT INTO PESchnittstelle.dbo.npBestellungKopf ( PKNpBestellungKopfID ,Name ,Vorname ,Firma ,Strasse ,Plz ,Ort ,Land ,eMail ,Bemerkung ,gewuenschterLiefertermin ,ZwischenSumme ,Rabatt ,
+           GesamtSumme ,GesamtGewicht , erfdatum )
+          VALUES ( 21 ,'`+kundendaten.Name+`' ,'`+kundendaten.Vorname+`','Test' , '' ,4644 ,'Scharnstein' ,'Österreich' ,
+                   'martin.kuenz@wolfsystem.at' , '' ,GETDATE() ,NULL ,NULL , NULL ,NULL ,GETDATE())`),
         Datenbank: this.databaseName,
         Login: this.userName,
         Passwort: this.userPassword,

@@ -112,24 +112,24 @@
                                   </div>
                                   <br>
                                 <div class="row">
-                                  <div class="artikelheader col-lg-2 col-xl-2">Menge</div>
-                                  <div class="artikelheader2 col-lg-1 col-xl-1">Art.Nr.</div>
-                                  <div class="artikelheader2 col-lg-3 col-xl-3">Größe</div>
-                                  <div class="artikelheader1 col-lg-1 col-xl-1 text-right">kg/ME</div>
+                                  <div class="artWidthHeader col-lg-2 col-xl-2">Menge</div>
+                                  <div class="artikelheader2 col-lg-1 col-xl-2">Art.Nr.</div>
+                                  <div class="artikelheader2 col-lg-3 col-xl-2">Größe</div>
+                                  <div class="artikelheader1 col-lg-1 col-xl-2 text-right">kg/ME</div>
                                   <div class="artikelheader1 offset-lg-1 col-lg-1 col-xl-1 text-right">ME</div>
                                   <div class="artikelheader1 offset-lg-1 col-lg-1 offset-xl-1 col-xl-1 text-right">Preis/ME</div>  
                                 </div>
                                 <table class="table">
-                              <tr class="artikel" *ngFor="let n of nagelplatten; let in = index; index as i; odd as isOdd; even as isEven" 
+                              <tr class="" *ngFor="let n of nagelplatten; let in = index; index as i; odd as isOdd; even as isEven" 
                               [ngClass]="{ odd: isOdd, even: isEven }" >
                               <div class="row">
-                                <div class=" col-lg-2 col-xl-2"><span><input type="number" pattern="[0-9]" name='name' (keyup)="onKeyUp(name.value, in, 'W101')" #name><div *ngIf="n.ME > 1;then karton else stueck"></div></span><ng-template #karton> Karton</ng-template>
-                                <ng-template #stueck> Stück </ng-template></div>
-                                <div class="artikel col-lg-1 col-xl-1">{{ n.PKArtikelID }}</div>
-                                <div class="artikel col-lg-3 col-xl-3">{{ n.Groesse }}</div>
-                                <div class="artikel col-lg-1 col-xl-1 text-right">{{ n.Gewicht | number: '1.4-4' }}</div>
-                                <div class="artikel offset-lg-1 col-lg-1 col-xl-1 text-right">{{ n.ME }}</div>
-                                <div class="artikel offset-lg-1 col-lg-1 offset-xl-1 col-xl-1 text-right">{{ n.Preis | number: '1.4-4'}}</div>  
+                                <div class="artWidth col-lg-2 col-xl-2"><span><input type="number" pattern="[0-9]" name='name' (keyup)="onKeyUp(name.value, in, 'W101')" #name><div *ngIf="n.ME > 1;then karton else stueck"></div></span><ng-template #karton> Karton</ng-template>
+                                <ng-template #stueck> Stück</ng-template></div>
+                                <div class="artikel col-lg-2 col-xl-2">{{ n.PKArtikelID }}</div>
+                                <div class="artikel col-lg-1 col-xl-2">{{ n.Groesse }}</div>
+                                <div class="artikel col-lg-2 col-xl-2 text-right">{{ n.Gewicht | number: '1.4-4' }}</div>
+                                <div class="artikel col-lg-2 col-xl-2 text-right">{{ n.ME }}</div>
+                                <div class="artikel col-lg-2 col-xl-2 text-right">{{ n.Preis | number: '1.4-4'}}</div>  
                               </div>
                               </tr>
                             </table>
@@ -355,44 +355,21 @@
         </div>
         <div class="modal-body">
           <div class="container-fluid">
-            <div class="row">
-              <div class="col-lg-6 col-xl-6"> 
-               <mat-form-field>
-                <mat-select placeholder="Select">
-                  <mat-option value="option">Option</mat-option>
-                </mat-select>
-              </mat-form-field></div>
-              <div class="col-lg-6 col-xl-6">
-                  <mat-form-field class="example-full-width">
-                    <input matInput placeholder="Firma" value="">
-                  </mat-form-field>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-md-3 ml-auto">.col-md-3 .ml-auto</div>
-              <div class="col-md-2 ml-auto">.col-md-2 .ml-auto</div>
-            </div>
-            <div class="row">
-              <div class="col-md-6 ml-auto">.col-md-6 .ml-auto</div>
-            </div>
-            <div class="row">
-              <div class="col-sm-9">
-                Level 1: .col-sm-9
-                <div class="row">
-                  <div class="col-8 col-sm-6">
-                    Level 2: .col-8 .col-sm-6
+              <form #bookForm="ngForm">
+                  <div class="row">
+                    <div class="col-6"> <mat-form-field class="example-full-width">
+                        <input matInput placeholder="Vorname" [(ngModel)]="kunde.Vorname" required name="vorname">
+                      </mat-form-field></div>
+                    <div class="col-6"> <mat-form-field class="example-full-width">
+                        <input matInput placeholder="Nachname" [(ngModel)]="kunde.Name" required name="nachname">
+                      </mat-form-field></div>
                   </div>
-                  <div class="col-4 col-sm-6">
-                    Level 2: .col-4 .col-sm-6
-                  </div>
-                </div>
-              </div>
-            </div>
+              </form>
           </div>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Save changes</button>
+          <button type="submit" class="btn btn-default" [disabled]="!bookForm.form.valid" (click)="saveBestellung()" data-dismiss="modal">Absenden</button>
         </div>
       </div>
     </div>

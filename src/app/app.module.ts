@@ -10,7 +10,7 @@ import { HomeComponent } from './home/home.component';
 import { HttpClientModule } from '@angular/common/http';
 import { NagelplattenBasketComponent } from './home/nagelplatten-basket/nagelplatten-basket.component';
 import { databaseProvider } from './shared/databaseProvider/databaseProvider';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import localeDe from '@angular/common/locales/de';
 import { registerLocaleData } from '@angular/common';
 registerLocaleData(localeDe)
@@ -31,7 +31,8 @@ registerLocaleData(localeDe)
     MatInputModule,
     HttpClientModule, 
     FormsModule,
-    MatSelectModule
+    MatSelectModule,
+    ReactiveFormsModule,
   ],
   providers: [
     NagelplattenService, 
