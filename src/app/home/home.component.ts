@@ -21,6 +21,8 @@ export class HomeComponent implements OnInit {
   basketSumme; basketGewicht;  basketZwischenSumme;  basketZwischenSummeRabatt;
   basketRabattProzent;  basketRabattAbKG;  basketTransport; Gesamt;
   bookName: String;
+isValid = true;
+error = false;
 
   kundenDaten: Kundendaten = {
     PKNpBestellungKopfID: 0,
@@ -134,11 +136,22 @@ export class HomeComponent implements OnInit {
 
   saveBestellung(){
       this.ns.makeBestellung(this.kunde)
-      .subscribe(res => {
-        console.log(JSON.stringify(res));
-      }), err => {
-        console.log("Error", JSON.stringify(err));
+      .subscribe((response) => {
+        console.log("Value Received: " + this.kunde);
+      },
+    (err) => {
+      if (err.error.text == "1;;") {
+        console.log("ERFOLGREICH:" + JSON.stringify(err));
+        this.isValid = true;
+        this.error = true;
+      } else {
+        console.log("ERROR: " + JSON.stringify(err));
+        this.isValid = false;
+        this.error = true;
       }
-      this.kunde = null;
+    },
+  () => {
+    console.log("COMPLETE");
+  })
     } 
 }

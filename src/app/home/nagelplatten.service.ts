@@ -11,6 +11,13 @@ export class NagelplattenService {
     constructor(private httpClient: HttpClient, private db: databaseProvider) { }
 
 
+    public options = {
+      headers: new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Accept': 'text/javascript'
+      })
+    };
+
   getNagelplatten(typ:number): Observable<Nagelplatten[]> {
     //let sqlstring = encodeURIComponent(typ);
     const body = this.db.artikelSelect(typ);

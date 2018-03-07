@@ -43,7 +43,7 @@ export class databaseProvider {
         Befehl: encodeURIComponent(
           `INSERT INTO PESchnittstelle.dbo.npBestellungKopf ( PKNpBestellungKopfID ,Name ,Vorname ,Firma ,Strasse ,Plz ,Ort ,Land ,eMail ,Bemerkung ,gewuenschterLiefertermin ,ZwischenSumme ,Rabatt ,
            GesamtSumme ,GesamtGewicht , erfdatum )
-          VALUES ( 21 ,'`+kundendaten.Name+`' ,'`+kundendaten.Vorname+`','Test' , '' ,4644 ,'Scharnstein' ,'Österreich' ,
+          VALUES ( 32 ,'`+kundendaten.Name+`' ,'`+kundendaten.Vorname+`','Test' , '' ,4644 ,'Scharnstein' ,'Österreich' ,
                    'martin.kuenz@wolfsystem.at' , '' ,GETDATE() ,NULL ,NULL , NULL ,NULL ,GETDATE())`),
         Datenbank: this.databaseName,
         Login: this.userName,

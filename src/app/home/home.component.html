@@ -346,7 +346,7 @@
 <!-- Nagelplatten Bestellformular ANFANG -->
   <div class="modal fade" id="NagelplattenFormular" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
-      <div class="modal-content">
+      <div class="modal-content" *ngIf="isValid && !error">
         <div class="modal-header">
           <h5 class="modal-title" id="exampleModalLabel">Nagelplatten Bestellformular</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -354,7 +354,7 @@
           </button>
         </div>
         <div class="modal-body">
-          <div class="container-fluid">
+          <div class="container-fluid" >
               <form #bookForm="ngForm">
                   <div class="row">
                     <div class="col-6"> <mat-form-field class="example-full-width">
@@ -369,11 +369,45 @@
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <button type="submit" class="btn btn-default" [disabled]="!bookForm.form.valid" (click)="saveBestellung()" data-dismiss="modal">Absenden</button>
+          <button type="submit" class="btn btn-default" [disabled]="!bookForm.form.valid" (click)="saveBestellung()">Absenden</button>
         </div>
       </div>
+        <div class="modal-content" *ngIf="isValid && error">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Herzlichen Dank für Ihre Bestellung</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <div class="container-fluid" style="color: rgb(2, 90, 2); font-size: 14px;">
+                  Die Bestellung wurde erfolgreich gespeichert !.<br><br>
+                  Sie bekommen in den nächsten Minuten eine Bestätigungsemail.
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Schließen</button>
+            </div>
+          </div>
+        <div class="modal-content" *ngIf="!isValid && error">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Nagelplatten Bestellformular</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <div class="container-fluid" style="color: red; font-size: 14px;">
+                  Beim speichern der Bestellung ist ein Fehler aufgetreten. <br>
+                  Bitte versuchen Sie es noch einmal.<br><br> Danke
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Schließen</button>
+            </div>
+          </div>
+   </div> 
     </div>
-  </div>
 <!-- Nagelplatten Bestellformular ENDE -->
 
 <!-- ENDE -->
