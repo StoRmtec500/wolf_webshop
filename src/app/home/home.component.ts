@@ -21,7 +21,7 @@ export class HomeComponent implements OnInit {
   details = '';
   showBasket = true;  showBasketZwischensumme = false;
   basketSumme; basketGewicht;  basketZwischenSumme;  basketZwischenSummeRabatt;
-  basketRabattProzent;  basketRabattAbKG;  basketTransport; Gesamt;
+  basketRabattProzent;  basketRabattAbKG;  basketTransport; Gesamt; basketSummeGesamt;
   bookName: String;
 isValid = true;
 error = false;
@@ -125,6 +125,7 @@ bestellID: number;
       this.basketRabattAbKG = this.rabatte[i].kg;
       this.basketTransport = this.rabatte[i].fracht;
       this.basketZwischenSummeRabatt = (basketRabatt);
+      this.basketSummeGesamt = (this.basketSumme - this.basketZwischenSummeRabatt);
     }
   }
 
@@ -140,11 +141,17 @@ bestellID: number;
 
   saveBestellung(){
 
+    if(this.basketRabattProzent == null) {
+        this.bestellung.Rabatt = 0;
+    }
+    if(this.basketSumme == null ) {
+      this.bestellung.GesamtSumme = 0;
+    }
     this.bestellung.PKNpBestellungKopfID = this.bestellID;
     this.bestellung.ZwischenSumme = this.basketZwischenSumme;
     this.bestellung.RabattSumme = this.basketZwischenSummeRabatt;
     this.bestellung.Rabatt = this.basketRabattProzent;
-    this.bestellung.GesamtSumme = (this.basketSumme - this.basketZwischenSummeRabatt);
+    this.bestellung.GesamtSumme = this.basketSummeGesamt;
     this.bestellung.GesamtGewicht = this.basketGewicht;
     
     console.log("das wird eingetragen: " + JSON.stringify(this.bestellung) +" "+JSON.stringify(this.warenkorb));

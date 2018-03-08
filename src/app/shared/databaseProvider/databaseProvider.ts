@@ -60,8 +60,8 @@ export class databaseProvider {
           `
           INSERT INTO PESchnittstelle.dbo.npBestellungKopf ( PKNpBestellungKopfID , Anrede ,Name ,Vorname ,Firma ,Strasse ,Plz ,Ort ,Land ,eMail, Telefon,Bemerkung , Liefertermin ,ZwischenSumme ,Rabatt , RabattSumme, 
            GesamtSumme ,GesamtGewicht , erfdatum )
-          VALUES ( `+ bestellungKopf.PKNpBestellungKopfID +` ,'`+ bestellungKopf.Anrede +`','`+ bestellungKopf.Name +`' ,'`+ bestellungKopf.Vorname +`','`+ bestellungKopf.Firma +`' , '` + bestellungKopf.Strasse + `' ,` + bestellungKopf.Plz + ` ,'` + bestellungKopf.Ort + `' ,'` + bestellungKopf.Land + `' ,
-                   '`+ bestellungKopf.eMail +`' ,'`+ bestellungKopf.Telefon +`' , '`+bestellungKopf.Bemerkung+`' ,GETDATE() ,`+bestellungKopf.ZwischenSumme+` ,`+bestellungKopf.Rabatt+` , ISNULL(`+bestellungKopf.RabattSumme+`, ''), 
+          VALUES ( `+ bestellungKopf.PKNpBestellungKopfID +` ,'`+ bestellungKopf.Anrede +`','`+ bestellungKopf.Name +`' ,'`+ bestellungKopf.Vorname +`','`+ bestellungKopf.Firma +`' , ISNULL('` + bestellungKopf.Strasse + `','') ,` + bestellungKopf.Plz + ` ,'` + bestellungKopf.Ort + `' ,'` + bestellungKopf.Land + `' ,
+                   '`+ bestellungKopf.eMail +`' ,'`+ bestellungKopf.Telefon +`' , '`+bestellungKopf.Bemerkung+`' ,GETDATE() ,`+bestellungKopf.ZwischenSumme+` ,`+bestellungKopf.Rabatt+` , `+bestellungKopf.RabattSumme+`, 
                    `+bestellungKopf.GesamtSumme+` ,`+bestellungKopf.GesamtGewicht+` ,GETDATE())`
         ),
         Datenbank: this.databaseName,
