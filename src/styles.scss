@@ -28,6 +28,11 @@ $candy-app-theme: mat-light-theme($candy-app-primary, $candy-app-accent, $candy-
     caret-color: #000;
 }
 
+.cdk-overlay-container {
+    position: fixed;
+    z-index: 1400 !important;
+}
+
 .mat-focused .mat-form-field-label {
     color: rgba(0, 0, 0, 0.54);
 }

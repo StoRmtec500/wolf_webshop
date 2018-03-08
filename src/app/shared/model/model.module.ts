@@ -19,16 +19,6 @@ export class Warenkorb {
   Preis: number;
   Typ: string;
 
-  constructor(artikel,stueck, gesamt, gewicht, groesse, me, preis, typ){
-    this.PKArtikelID = artikel;
-    this.Stk = stueck;
-    this.Gesamt = gesamt;
-    this.Gewicht = gewicht;
-    this.Groesse = groesse;
-    this.ME = me;
-    this.Preis = preis;
-    this.Typ = typ;
-  }
 }
 
 export class Rabatt {
@@ -37,9 +27,42 @@ export class Rabatt {
   fracht: string;
 }
 
-export class Kundendaten {
+export class ID {
+  akt_nr: number;
+}
+
+export class BestellungKopf {
   PKNpBestellungKopfID: number;
+  Anrede: string = "NULL";
   Name: string;
   Vorname: string;
   Firma: string;
+  eMail: string;
+  Strasse: string;
+  Plz: number;
+  Ort: string;
+  Land: string;
+  Telefon: string;
+  Bemerkung: string = "NULL";
+  Liefertermin: string = "NULL";
+  ZwischenSumme: number = 0;
+  Rabatt: number = 0;
+  RabattSumme: number = 0;
+  GesamtSumme: number = 0;
+  GesamtGewicht: number = 0;
+}
+
+
+export class BestellungKopfDetail {
+  PKNpBestellungKopfDetailID: number;
+  FKNpBestellungKopfID: number;
+  BestellMenge: number;
+  BestellEinheit: string;
+  ArtNr: number;
+  Typ: string;
+  Groesse: string;
+  Gewicht: number;
+  MengenEinheit: number;
+  PreisMenge: number;
+  PreisGesamt: number;
 }

@@ -1,7 +1,7 @@
 import { NagelplattenBasketComponent } from './nagelplatten-basket/nagelplatten-basket.component';
 import { NagelplattenService } from './nagelplatten.service';
 import { Component,ViewChild, OnInit, Input } from '@angular/core';
-import { Nagelplatten, Warenkorb, Rabatt, Kundendaten } from '../shared/index';
+import { Nagelplatten, Warenkorb, Rabatt, BestellungKopf, ID } from '../shared/index';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 
@@ -11,11 +11,13 @@ import { Router } from '@angular/router';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
+  result: any;
   @ViewChild('name') name: HTMLInputElement;
   headertitle = 'Bestellung Nagelplatten';
   nagelplatten: Nagelplatten[];
-  Warenkorb: Warenkorb[] = [];
+  warenkorb: Warenkorb[] = [];
   rabatte: Rabatt[];
+  bestellungKopfID: ID[];
   details = '';
   showBasket = true;  showBasketZwischensumme = false;
   basketSumme; basketGewicht;  basketZwischenSumme;  basketZwischenSummeRabatt;
@@ -23,22 +25,24 @@ export class HomeComponent implements OnInit {
   bookName: String;
 isValid = true;
 error = false;
+errorMsg;
+ID;
+bestellID: number;
 
-  kundenDaten: Kundendaten = {
-    PKNpBestellungKopfID: 0,
-    Name: "",
-    Vorname: "",
-    Firma: ""
-  };
 
-  kunde = new Kundendaten();
+  anreden = [
+    {value: 'Firma', viewValue: 'Firma'},
+    {value: 'Herr', viewValue: 'Herr'},
+    {value: 'Frau', viewValue: 'Frau'}
+  ];
+
+  bestellung = new BestellungKopf();
 
    constructor(private ns: NagelplattenService, private router: Router) {
 
   }
 
   ngOnInit() {
-    console.log("Nagelplattenarray: " + this.nagelplatten);
     this.ns.getRabatt().then(data => this.rabatte = data);
     console.log("Rabatt JSON wurde geladen !!!");
   }
@@ -70,17 +74,17 @@ error = false;
 
 
   addToCart() {
-    this.Warenkorb.splice(0, 1000);
+    this.warenkorb.splice(0, 1000);
     for (let n of this.nagelplatten) {
      
          if(n.Stk > 0) {
-           this.Warenkorb.push(n);
+           this.warenkorb.push(n);
           } 
           this.Gesamt = n.Gesamt;
           this.showBasket = true;
           this.calcSumme();
           this.calczwischensumme();
-          console.log("Add Delete: " + JSON.stringify(this.Warenkorb));       
+          console.log("Add Delete: " + JSON.stringify(this.warenkorb));       
       }
   }
 
@@ -88,14 +92,14 @@ error = false;
     if (index == 0) {
       this.showBasket = false;
     }
-      this.Warenkorb.splice(index , 1);
-      console.log("Entry Delete: " + JSON.stringify(this.Warenkorb));
+      this.warenkorb.splice(index , 1);
+      console.log("Entry Delete: " + JSON.stringify(this.warenkorb));
       }
 
   calcSumme() {
     var basketSumme = 0;
     var basketGewicht = 0;
-    for (let s of this.Warenkorb) {
+    for (let s of this.warenkorb) {
       basketSumme=basketSumme+s.Gesamt;
       basketGewicht = basketGewicht+s.Gewicht * s.Stk
     } 
@@ -135,9 +139,21 @@ error = false;
   }
 
   saveBestellung(){
-      this.ns.makeBestellung(this.kunde)
+
+    this.bestellung.PKNpBestellungKopfID = this.bestellID;
+    this.bestellung.ZwischenSumme = this.basketZwischenSumme;
+    this.bestellung.RabattSumme = this.basketZwischenSummeRabatt;
+    this.bestellung.Rabatt = this.basketRabattProzent;
+    this.bestellung.GesamtSumme = (this.basketSumme - this.basketZwischenSummeRabatt);
+    this.bestellung.GesamtGewicht = this.basketGewicht;
+    
+    console.log("das wird eingetragen: " + JSON.stringify(this.bestellung) +" "+JSON.stringify(this.warenkorb));
+
+    
+    console.log("BestellID" + this.bestellID);
+      this.ns.makeBestellung(this.bestellung)
       .subscribe((response) => {
-        console.log("Value Received: " + this.kunde);
+        console.log("Value Received: " + this.bestellung);
       },
     (err) => {
       if (err.error.text == "1;;") {
@@ -148,10 +164,23 @@ error = false;
         console.log("ERROR: " + JSON.stringify(err));
         this.isValid = false;
         this.error = true;
+        this.errorMsg = JSON.stringify(err.error.text);
       }
     },
   () => {
     console.log("COMPLETE");
   })
-    } 
+}
+
+  makeOrder() {
+    this.ID = this.ns.getBestellungKopfID().subscribe(data => {
+      return this.getID(data);
+    });
+  }
+
+  getID(data) {
+    this.ID = data;
+    this.bestellID = this.ID[0].akt_nr;
+    this.saveBestellung();
+  }
 }

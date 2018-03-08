@@ -37,18 +37,62 @@ export class databaseProvider {
     }  
 /* */
 
-/* Bestelldaten in Datenbank schreiben */
-    public makeOrderInDb(kundendaten) {
+/* BestellungKopfID auslesen */
+    public getID() {
       return {
         Befehl: encodeURIComponent(
-          `INSERT INTO PESchnittstelle.dbo.npBestellungKopf ( PKNpBestellungKopfID ,Name ,Vorname ,Firma ,Strasse ,Plz ,Ort ,Land ,eMail ,Bemerkung ,gewuenschterLiefertermin ,ZwischenSumme ,Rabatt ,
-           GesamtSumme ,GesamtGewicht , erfdatum )
-          VALUES ( 32 ,'`+kundendaten.Name+`' ,'`+kundendaten.Vorname+`','Test' , '' ,4644 ,'Scharnstein' ,'Österreich' ,
-                   'martin.kuenz@wolfsystem.at' , '' ,GETDATE() ,NULL ,NULL , NULL ,NULL ,GETDATE())`),
+          `DECLARE @outNummer INT;
+          EXEC PELokal.dbo.spNeueNummer @typ = 'NPBestellung',
+               @datum = '2018-03-06 08:20:35',
+               @outNummer = @outNummer OUTPUT;`),
         Datenbank: this.databaseName,
         Login: this.userName,
         Passwort: this.userPassword,
         PKMitarbeiterID: this.pkEmployeeId
       }
     }
+/* BestellungKopfID ENDE*/
+
+/* BestelldatenKopf in Datenbank schreiben */
+    public makeOrderKopf(bestellungKopf) {
+      return {
+        Befehl: encodeURIComponent(
+          `
+          INSERT INTO PESchnittstelle.dbo.npBestellungKopf ( PKNpBestellungKopfID , Anrede ,Name ,Vorname ,Firma ,Strasse ,Plz ,Ort ,Land ,eMail, Telefon,Bemerkung , Liefertermin ,ZwischenSumme ,Rabatt , RabattSumme, 
+           GesamtSumme ,GesamtGewicht , erfdatum )
+          VALUES ( `+ bestellungKopf.PKNpBestellungKopfID +` ,'`+ bestellungKopf.Anrede +`','`+ bestellungKopf.Name +`' ,'`+ bestellungKopf.Vorname +`','`+ bestellungKopf.Firma +`' , '` + bestellungKopf.Strasse + `' ,` + bestellungKopf.Plz + ` ,'` + bestellungKopf.Ort + `' ,'` + bestellungKopf.Land + `' ,
+                   '`+ bestellungKopf.eMail +`' ,'`+ bestellungKopf.Telefon +`' , '`+bestellungKopf.Bemerkung+`' ,GETDATE() ,`+bestellungKopf.ZwischenSumme+` ,`+bestellungKopf.Rabatt+` , ISNULL(`+bestellungKopf.RabattSumme+`, ''), 
+                   `+bestellungKopf.GesamtSumme+` ,`+bestellungKopf.GesamtGewicht+` ,GETDATE())`
+        ),
+        Datenbank: this.databaseName,
+        Login: this.userName,
+        Passwort: this.userPassword,
+        PKMitarbeiterID: this.pkEmployeeId
+      }
+    }
+/* BestelldatenKopf ENDE*/
+
+
+/* BestelldatenDetails in Datenbank schreiben*/
+    public makeOrderDetails(bestellungKopfDetail) {
+      return {
+        Befehl: encodeURIComponent(
+          `
+          INSERT INTO PESchnittstelle.dbo.npBestellungKopfDetail 
+            ( 
+            PKNpBestellungKopfDetailID ,FKNpBestellungKopfID ,BestellMenge ,BestellEinheit ,ArtNr ,Typ ,Groesse ,Gewicht ,MengenEinheit ,PreisMenge ,PreisGesamt
+            )
+            VALUES 
+            ( 
+              `+ bestellungKopfDetail.PKNpBestellungKopfDetailID +` , `+bestellungKopfDetail.FKNpBestellungKopfID+` , `+bestellungKopfDetail.BestellMenge+` ,'`+bestellungKopfDetail.BestellEinheit+`' , `+bestellungKopfDetail.ArtNr+` ,'`+bestellungKopfDetail.Typ+`' ,
+              '`+bestellungKopfDetail.Groesse+`' , `+bestellungKopfDetail.Gewicht+` , `+bestellungKopfDetail.MengenEinheit+` , `+bestellungKopfDetail.PreisMenge+` ,`+bestellungKopfDetail.PreisGesamt+`
+            )`
+        ),
+        Datenbank: this.databaseName,
+        Login: this.userName,
+        Passwort: this.userPassword,
+        PKMitarbeiterID: this.pkEmployeeId
+      }
+    }
+/* BestelldatenDetails ENDE */
 }
