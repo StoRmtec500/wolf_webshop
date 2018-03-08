@@ -33,19 +33,19 @@ export class ID {
 
 export class BestellungKopf {
   PKNpBestellungKopfID: number;
-  Anrede: string;
+  Anrede: '';
   Name: string;
   Vorname: string;
   Firma: string;
   eMail: string;
-  Strasse = 'NULL';
+  Strasse = '';
   Plz: number;
   Ort: string;
   Land: string;
   Telefon: string;
   Bemerkung: string;
   Liefertermin: string;
-  ZwischenSumme = 0;
+  ZwischenSumme;
   Rabatt = 0;
   RabattSumme = 0;
   GesamtSumme  = 0;

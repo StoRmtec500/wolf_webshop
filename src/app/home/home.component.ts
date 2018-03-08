@@ -20,7 +20,7 @@ export class HomeComponent implements OnInit {
   bestellungKopfID: ID[];
   details = '';
   showBasket = true;  showBasketZwischensumme = false;
-  basketSumme; basketGewicht;  basketZwischenSumme;  basketZwischenSummeRabatt;
+  basketSumme; basketGewicht; public basketZwischenSumme; public basketZwischenSummeRabatt;
   basketRabattProzent;  basketRabattAbKG;  basketTransport; Gesamt; basketSummeGesamt;
   bookName: String;
 isValid = true;
@@ -140,15 +140,13 @@ bestellID: number;
   }
 
   saveBestellung(){
-
-    if(this.basketRabattProzent == null) {
-        this.bestellung.Rabatt = 0;
-    }
-    if(this.basketSumme == null ) {
-      this.bestellung.GesamtSumme = 0;
-    }
     this.bestellung.PKNpBestellungKopfID = this.bestellID;
-    this.bestellung.ZwischenSumme = this.basketZwischenSumme;
+
+    if(this.basketZwischenSumme == null) {
+      this.bestellung.ZwischenSumme = 0;
+    } else {
+      this.bestellung.ZwischenSumme = this.basketZwischenSumme;
+    }
     this.bestellung.RabattSumme = this.basketZwischenSummeRabatt;
     this.bestellung.Rabatt = this.basketRabattProzent;
     this.bestellung.GesamtSumme = this.basketSummeGesamt;

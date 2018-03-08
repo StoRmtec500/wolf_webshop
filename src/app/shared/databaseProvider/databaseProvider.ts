@@ -58,11 +58,11 @@ export class databaseProvider {
       return {
         Befehl: encodeURIComponent(
           `
-          INSERT INTO PESchnittstelle.dbo.npBestellungKopf ( PKNpBestellungKopfID , Anrede ,Name ,Vorname ,Firma ,Strasse ,Plz ,Ort ,Land ,eMail, Telefon,Bemerkung , Liefertermin ,ZwischenSumme ,Rabatt , RabattSumme, 
+          INSERT INTO PESchnittstelle.dbo.npBestellungKopf ( PKNpBestellungKopfID , Anrede ,Name ,Vorname ,Firma ,Strasse ,Plz ,Ort ,Land ,eMail, Telefon, Bemerkung , Liefertermin ,ZwischenSumme ,Rabatt , RabattSumme, 
            GesamtSumme ,GesamtGewicht , erfdatum )
-          VALUES ( `+ bestellungKopf.PKNpBestellungKopfID +` ,'`+ bestellungKopf.Anrede +`','`+ bestellungKopf.Name +`' ,'`+ bestellungKopf.Vorname +`','`+ bestellungKopf.Firma +`' , ISNULL('` + bestellungKopf.Strasse + `','') ,` + bestellungKopf.Plz + ` ,'` + bestellungKopf.Ort + `' ,'` + bestellungKopf.Land + `' ,
-                   '`+ bestellungKopf.eMail +`' ,'`+ bestellungKopf.Telefon +`' , '`+bestellungKopf.Bemerkung+`' ,GETDATE() ,`+bestellungKopf.ZwischenSumme+` ,`+bestellungKopf.Rabatt+` , `+bestellungKopf.RabattSumme+`, 
-                   `+bestellungKopf.GesamtSumme+` ,`+bestellungKopf.GesamtGewicht+` ,GETDATE())`
+          VALUES ( `+ bestellungKopf.PKNpBestellungKopfID +` ,'`+ bestellungKopf.Anrede +`','`+ bestellungKopf.Name +`' ,'`+ bestellungKopf.Vorname +`','`+ bestellungKopf.Firma +`' ,'` + bestellungKopf.Strasse + `',` + bestellungKopf.Plz + ` ,'` + bestellungKopf.Ort + `' ,'` + bestellungKopf.Land + `' ,
+                   '`+ bestellungKopf.eMail +`' ,'`+ bestellungKopf.Telefon +`' , '`+bestellungKopf.Bemerkung+`' ,GETDATE() ,`+bestellungKopf.ZwischenSumme+` ,NULL , NULL,
+                   NULL ,NULL ,GETDATE())`
         ),
         Datenbank: this.databaseName,
         Login: this.userName,
