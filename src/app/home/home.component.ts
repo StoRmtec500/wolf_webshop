@@ -156,8 +156,14 @@ bestellID: number;
       this.bestellung.RabattSumme = this.basketZwischenSummeRabatt;
     }
     
-    this.bestellung.GesamtSumme = (this.basketSumme - this.basketZwischenSummeRabatt);
-    this.bestellung.GesamtGewicht = this.basketGewicht;
+    if(this.basketSumme == null){
+      this.bestellung.GesamtSumme = 0;
+    } else {
+      this.bestellung.GesamtSumme = (this.basketSumme - this.basketZwischenSummeRabatt);
+      this.bestellung.GesamtGewicht = this.basketGewicht;
+    }
+    
+    
     
     // CONSOLE WAS WIRD ALLES EINGEFÜGT
     console.log("das wird eingetragen: " + JSON.stringify(this.bestellung) +" "+JSON.stringify(this.warenkorb));
@@ -169,6 +175,7 @@ bestellID: number;
     (err) => {
       if (err.error.text == "1;;") {
         console.log("ERFOLGREICH:" + JSON.stringify(err));
+        this.saveBestellungDetail();
         this.isValid = true;
         this.error = true;
       } else {
@@ -181,7 +188,7 @@ bestellID: number;
     () => {
     console.log("COMPLETE");
   })
-  this.saveBestellungDetail();
+ 
 }
 
 saveBestellungDetail() {
@@ -189,8 +196,31 @@ saveBestellungDetail() {
   console.log("FKNpBestellungKopfID:" +this.bestellungDetail.FKNpBestellungKopfID)
   for(let i = 0; i < this.warenkorb.length; i++) {
     this.bestellungDetail.Gewicht = this.warenkorb[i].Gewicht;
-    this.bestellungDetail.BestellMenge = this.warenkorb[i].ME;
-    this.ns.makeBestellungDetails(this.bestellungDetail).subscribe((response) => {console.log("Warenkorb wurde eingefügt:" +this.warenkorb)})
+    this.bestellungDetail.BestellMenge = this.warenkorb[i].Stk;
+    this.bestellungDetail.PKArtikelID = this.warenkorb[i].PKArtikelID;
+    this.bestellungDetail.Typ = this.warenkorb[i].Typ;
+    this.bestellungDetail.Groesse = this.warenkorb[i].Groesse;
+    this.bestellungDetail.PreisMenge = this.warenkorb[i].Preis;
+    this.bestellungDetail.MengenEinheit = this.warenkorb[i].ME;
+    this.bestellungDetail.PreisGesamt = this.warenkorb[i].Gesamt;
+    this.ns.makeBestellungDetails(this.bestellungDetail).subscribe((response) => {
+      console.log("Value Received: " + this.bestellung);
+    },
+  (err) => {
+    if (err.error.text == "1;;") {
+      console.log("ERFOLGREICH:" + JSON.stringify(err));
+      this.isValid = true;
+      this.error = true;
+    } else {
+      console.log("ERROR: " + JSON.stringify(err));
+      this.isValid = false;
+      this.error = true;
+      this.errorMsg = JSON.stringify(err.error.text);
+    }
+  },
+  () => {
+  console.log("COMPLETE");
+})
   }
 }
 

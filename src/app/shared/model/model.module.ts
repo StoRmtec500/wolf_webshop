@@ -55,13 +55,12 @@ export class BestellungKopfDetail {
 }
 
 export class Warenkorb {
-  PKArtikelID: number;
   Stk: number;
-  Gesamt: number;
-  Gewicht: number;
-  ME: number;
+  PKArtikelID: number;
+  Typ: string;
   Groesse: string;
   Preis: number;
-  Typ: string;
-
+  Gewicht: number;
+  ME: number;
+  Gesamt: number;
 }

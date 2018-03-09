@@ -74,8 +74,8 @@ export class databaseProvider {
     public makeOrderDetails(bestellungKopfDetail) {
       return {
         Befehl: encodeURIComponent(
-          `INSERT INTO PESchnittstelle.dbo.npBestellungKopfDetail ( FKNpBestellungKopfID ,BestellMenge ,BestellEinheit ,ArtNr ,Typ ,Groesse ,Gewicht , MengenEinheit ,PreisMenge ,PreisGesamt )
-          VALUES (`+bestellungKopfDetail.FKNpBestellungKopfID+` ,`+bestellungKopfDetail.BestellMenge+` ,'' , 0 ,'' ,'' ,NULL ,0 ,NULL ,NULL)`
+          `INSERT INTO PESchnittstelle.dbo.npBestellungKopfDetail ( FKNpBestellungKopfID ,BestellMenge ,ArtNr ,Typ ,Groesse ,Gewicht , MengenEinheit ,PreisMenge ,PreisGesamt )
+          VALUES (`+bestellungKopfDetail.FKNpBestellungKopfID+` ,`+bestellungKopfDetail.BestellMenge+`, `+bestellungKopfDetail.PKArtikelID+` ,'`+bestellungKopfDetail.Typ+`' ,'`+bestellungKopfDetail.Groesse+`' ,`+bestellungKopfDetail.Gewicht+` ,`+bestellungKopfDetail.MengenEinheit+` ,`+bestellungKopfDetail.PreisMenge+` ,`+bestellungKopfDetail.PreisGesamt+`)`
         ),
         Datenbank: this.databaseName,
         Login: this.userName,
