@@ -75,7 +75,7 @@ export class databaseProvider {
       return {
         Befehl: encodeURIComponent(
           `INSERT INTO PESchnittstelle.dbo.npBestellungKopfDetail ( FKNpBestellungKopfID ,BestellMenge ,BestellEinheit ,ArtNr ,Typ ,Groesse ,Gewicht , MengenEinheit ,PreisMenge ,PreisGesamt )
-          VALUES (`+bestellungKopfDetail.FKNpBestellungKopfID+` ,0 ,'' , 0 ,'' ,'' ,NULL ,0 ,NULL ,NULL)`
+          VALUES (`+bestellungKopfDetail.FKNpBestellungKopfID+` ,`+bestellungKopfDetail.BestellMenge+` ,'' , 0 ,'' ,'' ,NULL ,0 ,NULL ,NULL)`
         ),
         Datenbank: this.databaseName,
         Login: this.userName,

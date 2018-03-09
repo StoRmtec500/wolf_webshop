@@ -189,6 +189,7 @@ saveBestellungDetail() {
   console.log("FKNpBestellungKopfID:" +this.bestellungDetail.FKNpBestellungKopfID)
   for(let i = 0; i < this.warenkorb.length; i++) {
     this.bestellungDetail.Gewicht = this.warenkorb[i].Gewicht;
+    this.bestellungDetail.BestellMenge = this.warenkorb[i].ME;
     this.ns.makeBestellungDetails(this.bestellungDetail).subscribe((response) => {console.log("Warenkorb wurde eingefügt:" +this.warenkorb)})
   }
 }
