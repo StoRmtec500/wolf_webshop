@@ -2,7 +2,7 @@ import { environment } from './../../environments/environment';
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
-import { Nagelplatten, Rabatt, BestellungKopf, Warenkorb, ID } from '../shared/index';
+import { Nagelplatten, Rabatt, BestellungKopf, Warenkorb, ID, BestellungKopfDetail } from '../shared/index';
 import { databaseProvider } from '../shared/databaseProvider/databaseProvider';
 
 @Injectable()
@@ -42,8 +42,8 @@ export class NagelplattenService {
   return this.httpClient.post<BestellungKopf>(environment.apiUrlWrite, body);
   }
 
-  makeBestellungDetails(warenkorb: Warenkorb): Observable<Warenkorb> {
-    const body = this.db.makeOrderDetails(warenkorb);
-    return this.httpClient.post<Warenkorb>(environment.apiUrlWrite, body);
+  makeBestellungDetails(bestellungKopfDetail: BestellungKopfDetail): Observable<BestellungKopfDetail> {
+    const body = this.db.makeOrderDetails(bestellungKopfDetail);
+    return this.httpClient.post<BestellungKopfDetail>(environment.apiUrlWrite, body);
   }
 }

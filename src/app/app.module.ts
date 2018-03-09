@@ -1,7 +1,7 @@
 import { NagelplattenService } from './home/nagelplatten.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, LOCALE_ID } from '@angular/core';
-import {MatTabsModule, MatFormFieldModule, MatInputModule, MatSelectModule, MatDatepickerModule, MatIconModule, MatNativeDateModule} from '@angular/material';
+import {MatTabsModule, MatFormFieldModule, MatInputModule, MatSelectModule, MatDatepickerModule, MatIconModule, MatNativeDateModule, MAT_DATE_LOCALE} from '@angular/material';
 import { AppRoutingModule } from './app-routing.module';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatExpansionModule} from '@angular/material/expansion';
@@ -40,7 +40,11 @@ registerLocaleData(localeDe)
   providers: [
     NagelplattenService, 
     databaseProvider, NagelplattenBasketComponent,
-    {provide: LOCALE_ID, useValue: "de-DE"}
+    {provide: LOCALE_ID, useValue: "de-DE"},
+    {provide: MAT_DATE_LOCALE, useValue: 'de-DE'}
+
+
+
   ],
   bootstrap: [AppComponent]
 })

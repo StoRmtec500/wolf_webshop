@@ -410,13 +410,10 @@
                       <input matInput placeholder="Telefon" [(ngModel)]="bestellung.Telefon" name="telefon">
                       </mat-form-field></div>
                     <div class="col-6"> 
-                      <mat-form-field class="example-full-width">
-                          <input matInput [matDatepicker]="picker" placeholder="gewünschter Liefertermin" name="liefertermin" [(ngModel)]="bestellung.Liefertermin">
-                          <mat-datepicker-toggle matSuffix [for]="picker">
-                          <mat-icon matDatepickerToggleIcon>keyboard_arrow_down</mat-icon>
-                         </mat-datepicker-toggle>
-                        <mat-datepicker #picker></mat-datepicker>
-                    </mat-form-field></div>
+                        <mat-form-field class="example-full-width">
+                          <input matInput placeholder="gewünschter Liefertermin"  [(ngModel)]="bestellung.Liefertermin" name="liefertermin">
+                        </mat-form-field>
+                 </div>
                   </div> 
                   <div class="row">
 

@@ -9,18 +9,6 @@ export class Nagelplatten {
   Typ: string;
 }
 
-export class Warenkorb {
-  PKArtikelID: number;
-  Stk: number;
-  Gesamt: number;
-  Gewicht: number;
-  ME: number;
-  Groesse: string;
-  Preis: number;
-  Typ: string;
-
-}
-
 export class Rabatt {
   kg: number;
   rabatt: number;
@@ -33,19 +21,19 @@ export class ID {
 
 export class BestellungKopf {
   PKNpBestellungKopfID: number;
-  Anrede: '';
-  Name: string;
-  Vorname: string;
-  Firma: string;
-  eMail: string;
+  Anrede:string = '';
+  Name: string = '';
+  Vorname: string  = '';
+  Firma: string  = '';
+  eMail: string  = '';
   Strasse = '';
   Plz: number;
-  Ort: string;
-  Land: string;
-  Telefon: string;
-  Bemerkung: string;
-  Liefertermin: string;
-  ZwischenSumme;
+  Ort: string  = '';
+  Land: string  = '';
+  Telefon: string = '';
+  Bemerkung: string = '';
+  Liefertermin: string = '';
+  ZwischenSumme = 0;
   Rabatt = 0;
   RabattSumme = 0;
   GesamtSumme  = 0;
@@ -54,15 +42,26 @@ export class BestellungKopf {
 
 
 export class BestellungKopfDetail {
-  PKNpBestellungKopfDetailID: number;
   FKNpBestellungKopfID: number;
   BestellMenge: number;
   BestellEinheit: string;
-  ArtNr: number;
+  PKArtikelID: number;
   Typ: string;
   Groesse: string;
   Gewicht: number;
   MengenEinheit: number;
   PreisMenge: number;
   PreisGesamt: number;
+}
+
+export class Warenkorb {
+  PKArtikelID: number;
+  Stk: number;
+  Gesamt: number;
+  Gewicht: number;
+  ME: number;
+  Groesse: string;
+  Preis: number;
+  Typ: string;
+
 }

@@ -57,12 +57,9 @@ export class databaseProvider {
     public makeOrderKopf(bestellungKopf) {
       return {
         Befehl: encodeURIComponent(
-          `
-          INSERT INTO PESchnittstelle.dbo.npBestellungKopf ( PKNpBestellungKopfID , Anrede ,Name ,Vorname ,Firma ,Strasse ,Plz ,Ort ,Land ,eMail, Telefon, Bemerkung , Liefertermin ,ZwischenSumme ,Rabatt , RabattSumme, 
-           GesamtSumme ,GesamtGewicht , erfdatum )
-          VALUES ( `+ bestellungKopf.PKNpBestellungKopfID +` ,'`+ bestellungKopf.Anrede +`','`+ bestellungKopf.Name +`' ,'`+ bestellungKopf.Vorname +`','`+ bestellungKopf.Firma +`' ,'` + bestellungKopf.Strasse + `',` + bestellungKopf.Plz + ` ,'` + bestellungKopf.Ort + `' ,'` + bestellungKopf.Land + `' ,
-                   '`+ bestellungKopf.eMail +`' ,'`+ bestellungKopf.Telefon +`' , '`+bestellungKopf.Bemerkung+`' ,GETDATE() ,`+bestellungKopf.ZwischenSumme+` ,NULL , NULL,
-                   NULL ,NULL ,GETDATE())`
+        `INSERT INTO PESchnittstelle.dbo.npBestellungKopf ( PKNpBestellungKopfID ,Anrede ,Name ,Vorname ,Firma ,Strasse ,Plz ,Ort , Land ,eMail ,Telefon ,Bemerkung ,Liefertermin ,ZwischenSumme ,Rabatt ,RabattSumme ,GesamtSumme ,GesamtGewicht ,erfdatum )
+        VALUES ( `+bestellungKopf.PKNpBestellungKopfID+` ,'`+bestellungKopf.Anrede+`','`+bestellungKopf.Name+`' ,'`+bestellungKopf.Vorname+`' , '`+bestellungKopf.Firma+`' ,'`+bestellungKopf.Strasse+`' , `+bestellungKopf.Plz+` ,'`+bestellungKopf.Ort+`' ,'`+bestellungKopf.Land+`',
+        '`+bestellungKopf.eMail+`' ,'`+bestellungKopf.Telefon+`' ,'`+bestellungKopf.Bemerkung+`' ,'`+bestellungKopf.Liefertermin+`','`+bestellungKopf.ZwischenSumme+`' ,`+bestellungKopf.Rabatt+` ,`+bestellungKopf.RabattSumme+`, `+bestellungKopf.GesamtSumme+`, `+bestellungKopf.GesamtGewicht+` ,GETDATE())`
         ),
         Datenbank: this.databaseName,
         Login: this.userName,
@@ -77,16 +74,8 @@ export class databaseProvider {
     public makeOrderDetails(bestellungKopfDetail) {
       return {
         Befehl: encodeURIComponent(
-          `
-          INSERT INTO PESchnittstelle.dbo.npBestellungKopfDetail 
-            ( 
-            PKNpBestellungKopfDetailID ,FKNpBestellungKopfID ,BestellMenge ,BestellEinheit ,ArtNr ,Typ ,Groesse ,Gewicht ,MengenEinheit ,PreisMenge ,PreisGesamt
-            )
-            VALUES 
-            ( 
-              `+ bestellungKopfDetail.PKNpBestellungKopfDetailID +` , `+bestellungKopfDetail.FKNpBestellungKopfID+` , `+bestellungKopfDetail.BestellMenge+` ,'`+bestellungKopfDetail.BestellEinheit+`' , `+bestellungKopfDetail.ArtNr+` ,'`+bestellungKopfDetail.Typ+`' ,
-              '`+bestellungKopfDetail.Groesse+`' , `+bestellungKopfDetail.Gewicht+` , `+bestellungKopfDetail.MengenEinheit+` , `+bestellungKopfDetail.PreisMenge+` ,`+bestellungKopfDetail.PreisGesamt+`
-            )`
+          `INSERT INTO PESchnittstelle.dbo.npBestellungKopfDetail ( FKNpBestellungKopfID ,BestellMenge ,BestellEinheit ,ArtNr ,Typ ,Groesse ,Gewicht , MengenEinheit ,PreisMenge ,PreisGesamt )
+          VALUES (`+bestellungKopfDetail.FKNpBestellungKopfID+` ,0 ,'' , 0 ,'' ,'' ,NULL ,0 ,NULL ,NULL)`
         ),
         Datenbank: this.databaseName,
         Login: this.userName,

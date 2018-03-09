@@ -1,7 +1,7 @@
 import { NagelplattenBasketComponent } from './nagelplatten-basket/nagelplatten-basket.component';
 import { NagelplattenService } from './nagelplatten.service';
 import { Component,ViewChild, OnInit, Input } from '@angular/core';
-import { Nagelplatten, Warenkorb, Rabatt, BestellungKopf, ID } from '../shared/index';
+import { Nagelplatten, Warenkorb, Rabatt, BestellungKopf, ID, BestellungKopfDetail } from '../shared/index';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 
@@ -37,6 +37,7 @@ bestellID: number;
   ];
 
   bestellung = new BestellungKopf();
+  bestellungDetail = new BestellungKopfDetail();
 
    constructor(private ns: NagelplattenService, private router: Router) {
 
@@ -125,8 +126,8 @@ bestellID: number;
       this.basketRabattAbKG = this.rabatte[i].kg;
       this.basketTransport = this.rabatte[i].fracht;
       this.basketZwischenSummeRabatt = (basketRabatt);
-      this.basketSummeGesamt = (this.basketSumme - this.basketZwischenSummeRabatt);
     }
+    this.basketSummeGesamt = (this.basketSumme - this.basketZwischenSummeRabatt);
   }
 
   if (this.basketGewicht > 1000) {
@@ -141,22 +142,27 @@ bestellID: number;
 
   saveBestellung(){
     this.bestellung.PKNpBestellungKopfID = this.bestellID;
+    this.bestellungDetail.FKNpBestellungKopfID = this.bestellID;
 
-    if(this.basketZwischenSumme == null) {
+    if(this.basketZwischenSumme == null) 
+    {
       this.bestellung.ZwischenSumme = 0;
-    } else {
+      this.bestellung.Rabatt = 0;
+      this.bestellung.RabattSumme = 0;
+    } else
+    {
       this.bestellung.ZwischenSumme = this.basketZwischenSumme;
+      this.bestellung.Rabatt = this.basketRabattProzent;
+      this.bestellung.RabattSumme = this.basketZwischenSummeRabatt;
     }
-    this.bestellung.RabattSumme = this.basketZwischenSummeRabatt;
-    this.bestellung.Rabatt = this.basketRabattProzent;
-    this.bestellung.GesamtSumme = this.basketSummeGesamt;
+    
+    this.bestellung.GesamtSumme = (this.basketSumme - this.basketZwischenSummeRabatt);
     this.bestellung.GesamtGewicht = this.basketGewicht;
     
+    // CONSOLE WAS WIRD ALLES EINGEFÜGT
     console.log("das wird eingetragen: " + JSON.stringify(this.bestellung) +" "+JSON.stringify(this.warenkorb));
 
-    
-    console.log("BestellID" + this.bestellID);
-      this.ns.makeBestellung(this.bestellung)
+    this.ns.makeBestellung(this.bestellung)
       .subscribe((response) => {
         console.log("Value Received: " + this.bestellung);
       },
@@ -172,9 +178,19 @@ bestellID: number;
         this.errorMsg = JSON.stringify(err.error.text);
       }
     },
-  () => {
+    () => {
     console.log("COMPLETE");
   })
+  this.saveBestellungDetail();
+}
+
+saveBestellungDetail() {
+  
+  console.log("FKNpBestellungKopfID:" +this.bestellungDetail.FKNpBestellungKopfID)
+  for(let i = 0; i < this.warenkorb.length; i++) {
+    this.bestellungDetail.Gewicht = this.warenkorb[i].Gewicht;
+    this.ns.makeBestellungDetails(this.bestellungDetail).subscribe((response) => {console.log("Warenkorb wurde eingefügt:" +this.warenkorb)})
+  }
 }
 
   makeOrder() {
