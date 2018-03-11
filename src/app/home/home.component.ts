@@ -44,49 +44,42 @@ bestellID: number;
   }
 
   ngOnInit() {
+    this.nagelplatten = null;
     this.ns.getRabatt().then(data => this.rabatte = data);
     console.log("Rabatt JSON wurde geladen !!!");
   }
 
   getNagelplattenWithTyp(typ: number) {
-      this.nagelplatten = null;
+     // this.nagelplatten = null;
       this.ns.getNagelplatten(typ).subscribe(data => this.nagelplatten = data);
   }
 
-  showDetails(id, quota) {
-    this.details = id;
-    console.log(id, quota);
-   // this.router.navigate(['/basket/' + id]);
-  }
-
-  onSearchChange(searchValue : string ) {  
-    console.log(searchValue);}
-
-  onKeyUp(value: number, index: number, typ: string) {
-      this.nagelplatten[index].Stk = value;
-      this.nagelplatten[index].Typ = typ;
-      var sum = (this.nagelplatten[index].Preis * this.nagelplatten[index].Stk);
-      this.nagelplatten[index].Gesamt = sum;
-      this.addToCart(); 
-      this.calcSumme();
-      console.log("Delete: "+ this.nagelplatten);
-  }
-
-
-
-  addToCart() {
-    this.warenkorb.splice(0, 1000);
-    for (let n of this.nagelplatten) {
-     
-         if(n.Stk > 0) {
-           this.warenkorb.push(n);
+  addToCart(stk, index, artnr, typ: string) {
+    console.log("bal" + stk);
+    this.nagelplatten[index].Stk = stk;
+    this.nagelplatten[index].Typ = typ;
+    var sum = (this.nagelplatten[index].Preis * this.nagelplatten[index].Stk);
+    this.nagelplatten[index].Gesamt = sum;
+   // this.warenkorb.splice(0, 1000);
+    for (let i = 0; i < this.nagelplatten.length; i++) {
+         if(this.nagelplatten[i].PKArtikelID == artnr) {
+          for (let i = 0; i < this.warenkorb.length; i++) {
+            if(this.warenkorb[i].Stk == stk) {
+              this.warenkorb.splice(i, 1);
+            }
+           
+          }
+           this.warenkorb.push(this.nagelplatten[index]);
+           
+           console.log("ArtNrcheck" + JSON.stringify(this.warenkorb));
           } 
-          this.Gesamt = n.Gesamt;
+          this.Gesamt = this.nagelplatten[i].Gesamt;
+      }
+      
           this.showBasket = true;
           this.calcSumme();
           this.calczwischensumme();
-          console.log("Add Delete: " + JSON.stringify(this.warenkorb));       
-      }
+          console.log("Add to Warenkorb: " + JSON.stringify(this.warenkorb));   
   }
 
   deleteEntry(index) {
@@ -116,6 +109,7 @@ bestellID: number;
 
   calczwischensumme() {
     var basketRabatt = 0;
+    this.basketZwischenSummeRabatt = 0;
     for(let i = 0; i < this.rabatte.length; i++)
   {
     if (this.basketGewicht > this.rabatte[i].kg)
