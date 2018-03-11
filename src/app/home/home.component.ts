@@ -64,7 +64,7 @@ bestellID: number;
     for (let i = 0; i < this.nagelplatten.length; i++) {
          if(this.nagelplatten[i].PKArtikelID == artnr) {
           for (let i = 0; i < this.warenkorb.length; i++) {
-            if(this.warenkorb[i].Stk == stk) {
+            if(this.warenkorb[i].Stk == stk && this.warenkorb[i].PKArtikelID == artnr) {
               this.warenkorb.splice(i, 1);
             }
            
@@ -143,6 +143,7 @@ bestellID: number;
       this.bestellung.ZwischenSumme = 0;
       this.bestellung.Rabatt = 0;
       this.bestellung.RabattSumme = 0;
+      this.bestellung.GesamtSumme = this.basketSummeGesamt;
     } else
     {
       this.bestellung.ZwischenSumme = this.basketZwischenSumme;
@@ -151,9 +152,9 @@ bestellID: number;
     }
     
     if(this.basketSumme == null){
-      this.bestellung.GesamtSumme = 0;
+      this.bestellung.GesamtSumme = this.basketSummeGesamt;
     } else {
-      this.bestellung.GesamtSumme = (this.basketSumme - this.basketZwischenSummeRabatt);
+      this.bestellung.GesamtSumme = (this.basketZwischenSumme - this.basketZwischenSummeRabatt);
       this.bestellung.GesamtGewicht = this.basketGewicht;
     }
     
@@ -170,6 +171,7 @@ bestellID: number;
       if (err.error.text == "1;;") {
         console.log("ERFOLGREICH:" + JSON.stringify(err));
         this.saveBestellungDetail();
+
         this.isValid = true;
         this.error = true;
       } else {
@@ -229,4 +231,11 @@ saveBestellungDetail() {
     this.bestellID = this.ID[0].akt_nr;
     this.saveBestellung();
   }
+
+
+  clearAll() {
+
+    window.location.reload();
+  }
+
 }
