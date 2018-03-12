@@ -24,7 +24,7 @@
   <div class="content-wrapper">
     <!-- Content Header -->
     <section class="content-header">
-      <h2>{{headertitle}}</h2>
+      <h2 i18n>{{headertitle}}</h2>
       <a href="http://www.wolfnagelplatten.at/Online-Bestellung/AGB-Bestellung">Allgemeine Geschäftsbedingungen</a>
       <br>
       <br>
@@ -123,7 +123,7 @@
                               <tr class="" *ngFor="let n of nagelplatten; let in = index; index as i; odd as isOdd; even as isEven" 
                               [ngClass]="{ odd: isOdd, even: isEven }" >
                               <div class="row">
-                                <div class="artWidth col-lg-2 col-xl-2"><span><input type="number" pattern="[0-9]" name='name' (change)="addToCart(name.value, in, n.PKArtikelID, 'W101')" #name><div *ngIf="n.ME > 1;then karton else stueck"></div></span><ng-template #karton> Karton</ng-template>
+                                <div class="artWidth col-lg-2 col-xl-2"><span><input type="number" pattern="[0-9]" name='name' value="name.value" (change)="addToCart(name.value, in, n.PKArtikelID, 'W101')" #name><div *ngIf="n.ME > 1;then karton else stueck"></div></span><ng-template #karton> Karton</ng-template>
                                 <ng-template #stueck> Stück</ng-template></div>
                                 <div class="artikel col-lg-2 col-xl-2">{{ n.PKArtikelID }}</div>
                                 <div class="artikel col-lg-1 col-xl-2">{{ n.Groesse }}</div>
@@ -285,7 +285,7 @@
                       <tr *ngFor="let n of warenkorb; let in = index; index as i; odd as isOdd; even as isEven" 
                       [ngClass]="{ odd: isOdd, even: isEven }" >
                      <div class="row">
-                        <div class="menge col-lg-2 col-xl-2 text-left"><span><div *ngIf="n.ME > 1;then karton else stueck"></div></span><ng-template #karton>   {{n.Stk }} Karton</ng-template>
+                        <div class="menge col-lg-2 col-xl-2 text-left"><span> <i class="far fa-trash-alt" (click)="deleteEntry(in)"></i><div *ngIf="n.ME > 1;then karton else stueck"></div></span><ng-template #karton>   {{n.Stk }} Karton</ng-template>
                         <ng-template #stueck>   {{n.Stk }} Stück </ng-template></div>
                         <div class="artikelbasket  col-lg-1 col-xl-1">{{ n.PKArtikelID }}</div>
                         <div class="artikelbasket  col-lg-3 col-xl-1">{{ n.Typ }}</div>
@@ -361,7 +361,7 @@
               <form #bookForm="ngForm">
                   <div class="row">
                       <div class="col-6"> 
-                          <mat-form-field>
+                          <mat-form-field class="example-full-width">
                               <mat-select placeholder="Anrede" [(ngModel)]="bestellung.Anrede" name="anrede">
                                 <mat-option *ngFor="let anrede of anreden" [value]="anrede.value" >
                                   {{ anrede.viewValue }}
@@ -371,41 +371,46 @@
                       </div>
                       <div class="col-6"> 
                         <mat-form-field class="example-full-width">
-                          <input matInput type="email" placeholder="eMail" [(ngModel)]="bestellung.eMail" name="email">
+                          <input matInput type="email" placeholder="eMail" [(ngModel)]="bestellung.eMail" name="email" required>
                         </mat-form-field>
                       </div>
                     </div>
                   <div class="row">
                     <div class="col-6"> <mat-form-field class="example-full-width">
-                        <input matInput placeholder="Vorname" [(ngModel)]="bestellung.Vorname" name="vorname">
+                        <input matInput placeholder="Vorname" [(ngModel)]="bestellung.Vorname" name="vorname" required>
                       </mat-form-field></div>
                     <div class="col-6"> <mat-form-field class="example-full-width">
-                        <input matInput placeholder="Nachname" [(ngModel)]="bestellung.Name"  name="nachname">
+                        <input matInput placeholder="Nachname" [(ngModel)]="bestellung.Name"  name="nachname" required>
                       </mat-form-field></div>
                   </div>
                   <div class="row">
                       <div class="col-6"> <mat-form-field class="example-full-width">
-                          <input matInput placeholder="Firma" [(ngModel)]="bestellung.Firma" name="firma">
+                          <input matInput placeholder="Firma" [(ngModel)]="bestellung.Firma" name="firma" required>
                         </mat-form-field></div>
-                      <div class="col-6"> <mat-form-field class="example-full-width">
+                      <div class="col-6">
+                        <mat-form-field class="example-full-width">
                           <input matInput placeholder="Straße" [(ngModel)]="bestellung.Strasse" name="strasse">
                         </mat-form-field></div>
                     </div>
                     <div class="row">
-                        <div class="col-2"> 
+                        <div class="col-2">
                           <mat-form-field class="example-full-width">
-                            <input matInput type="number" placeholder="PLZ" [(ngModel)]="bestellung.Plz"  name="plz">
+                            <input matInput type="number" placeholder="PLZ" [(ngModel)]="bestellung.Plz"  name="plz" required>
                           </mat-form-field>
                         </div>
-                        <div class="col-4"> 
+                        <div class="col-4">
                           <mat-form-field class="example-full-width">
-                            <input matInput placeholder="Ort" [(ngModel)]="bestellung.Ort" name="ort">
+                            <input matInput placeholder="Ort" [(ngModel)]="bestellung.Ort" name="ort" required>
                           </mat-form-field>
                         </div>
-                        <div class="col-6"> 
-                          <mat-form-field class="example-full-width">
-                            <input matInput placeholder="Land" [(ngModel)]="bestellung.Land"  name="land">
-                          </mat-form-field>
+                        <div class="col-6">
+                            <mat-form-field class="example-full-width">
+                                <mat-select placeholder="Land" [(ngModel)]="bestellung.Land" name="land" required>
+                                  <mat-option *ngFor="let la of land" [value]="la.Kuerzel" >
+                                    {{ la.Land }}
+                                  </mat-option>
+                                </mat-select>
+                              </mat-form-field>
                         </div>
                       </div>
                   <div class="row">

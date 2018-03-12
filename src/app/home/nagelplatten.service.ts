@@ -2,7 +2,7 @@ import { environment } from './../../environments/environment';
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
-import { Nagelplatten, Rabatt, BestellungKopf, Warenkorb, ID, BestellungKopfDetail } from '../shared/index';
+import { Nagelplatten, Rabatt, BestellungKopf, Warenkorb, ID, BestellungKopfDetail, Laenderliste } from '../shared/index';
 import { databaseProvider } from '../shared/databaseProvider/databaseProvider';
 
 @Injectable()
@@ -30,6 +30,10 @@ export class NagelplattenService {
 
   getRabatt() : Promise<Rabatt[]> {
     return this.httpClient.get<Rabatt[]>('assets/rabatte.json').toPromise();
+  }
+
+  getLaenderliste() : Observable<Laenderliste[]> {
+    return this.httpClient.get<Laenderliste[]>('assets/land.json');
   }
 
   getBestellungKopfID() : Observable<ID>{

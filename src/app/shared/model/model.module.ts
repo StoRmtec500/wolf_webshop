@@ -15,6 +15,11 @@ export class Rabatt {
   fracht: string;
 }
 
+export class Laenderliste {
+  Land;
+  Kuerzel;
+}
+
 export class ID {
   akt_nr: number;
 }
@@ -29,7 +34,7 @@ export class BestellungKopf {
   Strasse = '';
   Plz: number;
   Ort: string  = '';
-  Land: string  = '';
+  Land: string = '';
   Telefon: string = '';
   Bemerkung: string = '';
   Liefertermin: string = '';

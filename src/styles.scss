@@ -23,6 +23,13 @@ $candy-app-theme: mat-light-theme($candy-app-primary, $candy-app-accent, $candy-
 // that you are using.
 @include angular-material-theme($candy-app-theme);
 
+input[type="number"] {
+    -moz-appearance: textfield;
+}
+input[type="number"]:hover,
+input[type="number"]:focus {
+    -moz-appearance: number-input;
+}
 
 .mat-input-element {
     caret-color: #000;
@@ -102,12 +109,6 @@ tr.artikel {
     padding-right: 10px;
 }
 
-input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button {
-    /* display: none; <- Crashes Chrome on hover */
-    -webkit-appearance: none;
-    margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
-}
 
 .artikelheader {
     padding-left: 22px;
@@ -143,7 +144,6 @@ input::-webkit-inner-spin-button {
 input {
     width: 35px;
     height: 25px;
-    padding-top: 0.5em;
     margin-top: 7px;
     margin-left: 5px;
 }

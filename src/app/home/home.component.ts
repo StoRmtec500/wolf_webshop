@@ -1,9 +1,12 @@
 import { NagelplattenBasketComponent } from './nagelplatten-basket/nagelplatten-basket.component';
 import { NagelplattenService } from './nagelplatten.service';
 import { Component,ViewChild, OnInit, Input } from '@angular/core';
-import { Nagelplatten, Warenkorb, Rabatt, BestellungKopf, ID, BestellungKopfDetail } from '../shared/index';
+import { Nagelplatten, Warenkorb, Rabatt, BestellungKopf, ID, BestellungKopfDetail, Laenderliste } from '../shared/index';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { Observable } from 'rxjs/Observable';
+import {startWith} from 'rxjs/operators/startWith';
+import {map} from 'rxjs/operators/map';
 
 @Component({
   selector: 'app-home',
@@ -11,6 +14,8 @@ import { Router } from '@angular/router';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
+  myControl: FormControl = new FormControl();
+  filteredOptions: Observable<any[]>;
   result: any;
   @ViewChild('name') name: HTMLInputElement;
   headertitle = 'Bestellung Nagelplatten';
@@ -19,7 +24,7 @@ export class HomeComponent implements OnInit {
   rabatte: Rabatt[];
   bestellungKopfID: ID[];
   details = '';
-  showBasket = true;  showBasketZwischensumme = false;
+  showBasket = false;  showBasketZwischensumme = false;
   basketSumme; basketGewicht; public basketZwischenSumme; public basketZwischenSummeRabatt;
   basketRabattProzent;  basketRabattAbKG;  basketTransport; Gesamt; basketSummeGesamt;
   bookName: String;
@@ -29,6 +34,7 @@ errorMsg;
 ID;
 bestellID: number;
 
+land: Laenderliste[] = [];
 
   anreden = [
     {value: 'Firma', viewValue: 'Firma'},
@@ -39,25 +45,33 @@ bestellID: number;
   bestellung = new BestellungKopf();
   bestellungDetail = new BestellungKopfDetail();
 
-   constructor(private ns: NagelplattenService, private router: Router) {
-
+   constructor(private ns: NagelplattenService, private router: Router) {     
   }
 
   ngOnInit() {
     this.nagelplatten = null;
     this.ns.getRabatt().then(data => this.rabatte = data);
     console.log("Rabatt JSON wurde geladen !!!");
+    this.loadLaenderliste();
   }
 
-  getNagelplattenWithTyp(typ: number) {
+
+  getNagelplattenWithTyp(typ) {
      // this.nagelplatten = null;
       this.ns.getNagelplatten(typ).subscribe(data => this.nagelplatten = data);
+  }
+
+  loadLaenderliste() {
+    this.ns.getLaenderliste().subscribe((land: Laenderliste[]) => {
+      this.land = land;
+      console.log("Länderliste:" + JSON.stringify(this.land));
+    });
   }
 
   addToCart(stk, index, artnr, typ: string) {
     console.log("bal" + stk);
     this.nagelplatten[index].Stk = stk;
-    this.nagelplatten[index].Typ = typ;
+        this.nagelplatten[index].Typ = typ;
     var sum = (this.nagelplatten[index].Preis * this.nagelplatten[index].Stk);
     this.nagelplatten[index].Gesamt = sum;
    // this.warenkorb.splice(0, 1000);
@@ -83,10 +97,9 @@ bestellID: number;
   }
 
   deleteEntry(index) {
-    if (index == 0) {
-      this.showBasket = false;
-    }
       this.warenkorb.splice(index , 1);
+      this.calcSumme();
+      this.calczwischensumme();
       console.log("Entry Delete: " + JSON.stringify(this.warenkorb));
       }
 
@@ -154,7 +167,7 @@ bestellID: number;
     if(this.basketSumme == null){
       this.bestellung.GesamtSumme = this.basketSummeGesamt;
     } else {
-      this.bestellung.GesamtSumme = (this.basketZwischenSumme - this.basketZwischenSummeRabatt);
+      this.bestellung.GesamtSumme = this.basketSummeGesamt;
       this.bestellung.GesamtGewicht = this.basketGewicht;
     }
     
