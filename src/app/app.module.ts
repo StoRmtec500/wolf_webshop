@@ -15,6 +15,7 @@ import { SidenavComponent } from './sidenav/sidenav/sidenav.component';
 import { NagelplattenComponent } from './webshop/nagelplatten/nagelplatten.component';
 import { NagelplattenService } from './shared/service/nagelplatten.service';
 import { RouterModule, RouterLinkActive } from '@angular/router';
+import { MetalwebsComponent } from './webshop/metalwebs/metalwebs.component';
 registerLocaleData(localeDe)
 
 @NgModule({
@@ -22,7 +23,8 @@ registerLocaleData(localeDe)
     AppComponent,
     NagelplattenBasketComponent,
     SidenavComponent,
-    NagelplattenComponent
+    NagelplattenComponent,
+    MetalwebsComponent
   ],
   imports: [
     AppRoutingModule,
