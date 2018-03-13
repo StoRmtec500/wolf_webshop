@@ -1,19 +1,19 @@
-import { NagelplattenBasketComponent } from './nagelplatten-basket/nagelplatten-basket.component';
-import { NagelplattenService } from './nagelplatten.service';
+
 import { Component,ViewChild, OnInit, Input } from '@angular/core';
-import { Nagelplatten, Warenkorb, Rabatt, BestellungKopf, ID, BestellungKopfDetail, Laenderliste } from '../shared/index';
+import { Nagelplatten, Warenkorb, Rabatt, BestellungKopf, ID, BestellungKopfDetail, Laenderliste } from '../../shared/index';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
 import { Observable } from 'rxjs/Observable';
 import {startWith} from 'rxjs/operators/startWith';
 import {map} from 'rxjs/operators/map';
+import { NagelplattenService } from '../../shared/service/nagelplatten.service';
+import { RouterModule, Router } from '@angular/router';
 
 @Component({
-  selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss']
+  selector: 'app-nagelplatten',
+  templateUrl: './nagelplatten.component.html',
+  styleUrls: ['./nagelplatten.component.scss']
 })
-export class HomeComponent implements OnInit {
+export class NagelplattenComponent implements OnInit {
   myControl: FormControl = new FormControl();
   filteredOptions: Observable<any[]>;
   result: any;
@@ -45,8 +45,7 @@ land: Laenderliste[] = [];
   bestellung = new BestellungKopf();
   bestellungDetail = new BestellungKopfDetail();
 
-   constructor(private ns: NagelplattenService, private router: Router) {     
-  }
+  constructor(private ns: NagelplattenService, private router: Router) { }
 
   ngOnInit() {
     this.nagelplatten = null;
@@ -250,5 +249,4 @@ saveBestellungDetail() {
 
     window.location.reload();
   }
-
 }

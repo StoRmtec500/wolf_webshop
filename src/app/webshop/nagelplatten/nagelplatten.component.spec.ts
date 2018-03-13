@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { HomeComponent } from './home.component';
+import { NagelplattenComponent } from './nagelplatten.component';
 
-describe('HomeComponent', () => {
-  let component: HomeComponent;
-  let fixture: ComponentFixture<HomeComponent>;
+describe('NagelplattenComponent', () => {
+  let component: NagelplattenComponent;
+  let fixture: ComponentFixture<NagelplattenComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ HomeComponent ]
+      declarations: [ NagelplattenComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(HomeComponent);
+    fixture = TestBed.createComponent(NagelplattenComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

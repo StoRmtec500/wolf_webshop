@@ -1,15 +1,19 @@
-import { HomeComponent } from './home/home.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { NagelplattenBasketComponent } from './home/nagelplatten-basket/nagelplatten-basket.component';
+import { NagelplattenComponent } from './webshop/nagelplatten/nagelplatten.component';
 
 const routes: Routes = [
   {
     path: '',
-    component: HomeComponent,
-    children: [
-      { path: 'basket/:id', component: NagelplattenBasketComponent}
-    ]
+    component: NagelplattenComponent
+  },
+  {
+    path: 'nagelplatten',
+    component: NagelplattenComponent
+  },
+  { path: 'basket',
+    component: NagelplattenBasketComponent
   },
   {
     path: 'dashboard',

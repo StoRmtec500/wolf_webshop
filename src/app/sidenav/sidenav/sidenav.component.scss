@@ -34,8 +34,8 @@
     background-color: #ccc;
 }
 
-.vertical-menu a.active {
-    padding-top: 11px;
+.vertical-menu a.active, .active-link {
+    padding-top: 11px !important;
     border-top: 4px solid #ffdd00;
     background-color: #dfdfdf;
 }

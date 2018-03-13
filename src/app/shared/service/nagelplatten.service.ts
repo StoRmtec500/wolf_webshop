@@ -1,9 +1,9 @@
-import { environment } from './../../environments/environment';
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
-import { Nagelplatten, Rabatt, BestellungKopf, Warenkorb, ID, BestellungKopfDetail, Laenderliste } from '../shared/index';
-import { databaseProvider } from '../shared/databaseProvider/databaseProvider';
+import { Nagelplatten, Rabatt, BestellungKopf, Warenkorb, ID, BestellungKopfDetail, Laenderliste } from '../index';
+import { databaseProvider } from '../databaseProvider/databaseProvider';
+import { environment } from '../../../environments/environment';
 
 @Injectable()
 export class NagelplattenService {
