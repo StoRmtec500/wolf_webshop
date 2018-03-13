@@ -32,16 +32,6 @@ span {
     border-bottom: 4px solid #fcdb00;
 }
 
-.version {
-    bottom: 12px;
-    position: fixed;
-    text-align: center;
-    right: 0px;
-    left: 0px;
-    width: 180px;
-    font-size: 12px;
-}
-
 .tab-group {
     border: 1px solid #e8e8e8;
   }
@@ -78,41 +68,6 @@ span {
 
 tr{
     cursor: pointer;
-}
-
-/* Sidebar Style*/
-.main-sidebar {
-    background-color:#e6e6e6; /*747474 grau*/
-    width: 180px;
-    top: 0px;
-    left: 0;
-    min-height: 100% !important;
-    position: fixed;
-    padding-top: 50px;
-    bottom: 0;
-}
-
-.main-sidebar-menu-Items b{
-    text-decoration: none;
-    color: #000;
-    text-transform: uppercase;
-    padding-left: 15px;
-}
-
-.main-sidebar-menu-Items {
-    color: #000;
-    padding-bottom: 20px;
-}
-
-.main-sidebar-menu-underItems {
-    padding-left: 22px;
-    margin-top: -15px;
-    margin-bottom: 15px;
-}
-
-.sidebar ul {
-    list-style: none;
-    margin-left: -25px;
 }
 
 /* Content Style */
