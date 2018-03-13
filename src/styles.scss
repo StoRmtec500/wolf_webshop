@@ -84,11 +84,16 @@ b {
 .mat-expansion-panel-body {
     padding-right: 0px !important;
     padding-left: 5px !important;
+    padding-bottom: 0px !important;
 }
 
 .mat-expansion-panel-header, .mat-expansion-panel-content {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 1.0em;
+}
+
+.mat-tab-nav-bar, .mat-tab-header {
+    border-bottom: 0px solid rgba(0, 0, 0, 0.12);
 }
 
 .textalignright {

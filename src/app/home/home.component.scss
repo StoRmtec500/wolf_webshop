@@ -513,6 +513,7 @@ body {
     margin-right: -8px;
     padding-top: 5px;
     padding-left: 21px;
+    font-weight: bold;
 }
 .showbasketZwischensumme {
     background-color: #cccccc;
@@ -589,8 +590,13 @@ body {
     cursor: auto;
 }
 
+.buttonBasket {
+    display: none;
+}
+
 .artikelheader, .artikelheader1, .artikelheader2 {
     margin-top: 5px;
+    font-weight: bold;
 }
 
 .basketgewicht {
