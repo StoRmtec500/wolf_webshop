@@ -6,7 +6,6 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatExpansionModule} from '@angular/material/expansion';
 import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
-import { NagelplattenBasketComponent } from './home/nagelplatten-basket/nagelplatten-basket.component';
 import { databaseProvider } from './shared/databaseProvider/databaseProvider';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import localeDe from '@angular/common/locales/de';
@@ -21,7 +20,6 @@ registerLocaleData(localeDe)
 @NgModule({
   declarations: [
     AppComponent,
-    NagelplattenBasketComponent,
     SidenavComponent,
     NagelplattenComponent,
     MetalwebsComponent
@@ -47,7 +45,7 @@ registerLocaleData(localeDe)
   ],
   providers: [
     NagelplattenService, 
-    databaseProvider, NagelplattenBasketComponent,
+    databaseProvider,
     {provide: LOCALE_ID, useValue: 'de'},
     {provide: MAT_DATE_LOCALE, useValue: 'de-DE'}
 

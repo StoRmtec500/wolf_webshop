@@ -1,3 +1,713 @@
-<p>
-  metalwebs works!
-</p>
+<!-- MENÜ ENDE-->
+<div class="content-wrapper">
+  <!-- Content Header -->
+  <section class="content-header">
+    <h2>Bestellung Metal Webs</h2>
+    <a href="http://www.wolfnagelplatten.at/Online-Bestellung/AGB-Bestellung">Allgemeine Geschäftsbedingungen</a>
+    <br>
+    <br>
+    <h4 i18n>1. Artikelauswahl</h4>
+    Wählen Sie einen Nagelplattentyp aus, und tragen Sie die Bestellmenge ein. Rabatt nach Bestellmenge pro Auftrag:
+    <div class="line_height"></div>
+    <div class="row_header">
+      <div class="col-md-12 col-sm-12 col-xs-12 col-lg-12 col-xl-10">
+        <div class="auftragsentwicklung">
+          <table class="table">
+            <tbody>
+              <tr>
+                <th scope="row" width="25%" style="text-align: left">
+                  ab 1.000 kg - 3%
+                </th>
+                <td width="33%" style="text-align: left">
+                  <b>ab 1.500 kg - 4%</b>
+                </td>
+                <td width="33%" style="text-align: left">
+                  <b>ab 3.000 kg - 6%</b>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row" width="25%" style="text-align: left">
+                  <b>ab 5.000 kg - 8%</b>
+                </th>
+                <td width="33%" style="text-align: left">
+                  <b>ab 10.000 kg - 10% + Transport frei</b>
+                </td>
+                <td width="33%" style="text-align: left">
+                  <b>ab 15.000 kg - 12% + Transport frei</b>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <br />
+  <br />
+<!-- Accordion für Arikel -->
+  <section>
+    <div id="container">
+      <div class="row">
+        <div class="col-lg-6 col-xl-6">
+          <div class="site_width">
+            <mat-tab-group class="tab-group">
+              <mat-tab label="Verzinkt">
+                <div class="tab-content visible-sm-12">
+                  <mat-accordion>
+                    <mat-expansion-panel [disabled]="true">
+                      <mat-expansion-panel-header>
+                        <div class="row_accordion disabled">
+                          <div class="row">
+                            <div class="col-xs-12 col-sm-5 col-lg-6 col-xl-7">Typ</div>
+                            <div class="col-xs-12 col-sm-4 col-lg-2 col-xl-2">Euro / kg</div>
+                            <div class="col-xs-12 col-sm-2 col-lg-2 col-xl-2 offset-sm-1 offset-lg-1 offset-xl-1">Euro / m²</div>
+                          </div>
+                        </div>
+                      </mat-expansion-panel-header>
+                    </mat-expansion-panel>
+                    <mat-expansion-panel>
+                      <mat-expansion-panel-header (click)="getNagelplattenWithTyp('4949')">
+                        <div class="row_accordion">
+                          <div class="row">
+                            <div class="col-sm-5 col-lg-6 col-xl-7">W101</div>
+                            <div class="col-sm-4 col-lg-2 col-xl-2"> 2,53</div>
+                            <div class="col-sm-2 col-lg-2 col-xl-2 offset-sm-1 offset-lg-1 offset-xl-1">19,86</div>
+                          </div>
+                        </div>
+                      </mat-expansion-panel-header>
+                      <ng-template matExpansionPanelContent>
+                        <div class="row_accordion">
+                          <div class="row">
+                            <div class="col-md-12 col-xs-12 col-lg-12 col-xl-12">
+                                <br>
+                              <div *ngIf="!nagelplatten;then loading else show"></div>
+                              <ng-template #loading>
+                              <mat-progress-bar  mode="indeterminate" color="yellow"></mat-progress-bar>
+                              Daten werden geladen ...
+                              <br>
+                            </ng-template>
+                              <ng-template #show>
+                              <div class="col-sm-12 col-lg-12 col-xl-12">Blechdicke: 1,00 mm</div>
+                              <div class="col-sm-12 col-lg-12 col-xl-12"> Zulassungsnummer: Z-9.1-757</div>
+                              <br>
+                              <div class="buttonBasket" id="myHeader">
+                                  <button type="button" (click)="addToCart()">Übernehmen und Warenkorb berechnen</button>
+                                  <br> </div>
+                                
+                                <div class="row">
+                                <div class="artWidthHeader col-lg-2 col-xl-2">Menge</div>
+                                <div class="artikelheader2 col-lg-1 col-xl-2">Art.Nr.</div>
+                                <div class="artikelheader2 col-lg-3 col-xl-2">Größe</div>
+                                <div class="artikelheader1 col-lg-1 col-xl-2 text-right">kg/ME</div>
+                                <div class="artikelheader1 offset-lg-1 col-lg-1 col-xl-1 text-right">ME</div>
+                                <div class="artikelheader1 offset-lg-1 col-lg-1 offset-xl-1 col-xl-1 text-right">Preis/ME</div>  
+                              </div>
+                              <table class="table">
+                            <tr class="" *ngFor="let n of nagelplatten; let in = index; index as i; odd as isOdd; even as isEven" 
+                            [ngClass]="{ odd: isOdd, even: isEven }" >
+                            <div class="row">
+                              <div class="artWidth col-lg-2 col-xl-2"><span><input type="number" pattern="[0-9]" name='name' value="name.value" (change)="addToCart(name.value, in, n.PKArtikelID, 'W101')" #name><div *ngIf="n.ME > 1;then karton else stueck"></div></span><ng-template #karton> Karton</ng-template>
+                              <ng-template #stueck> Stück</ng-template></div>
+                              <div class="artikel col-lg-2 col-xl-2">{{ n.PKArtikelID }}</div>
+                              <div class="artikel col-lg-1 col-xl-2">{{ n.Groesse }}</div>
+                              <div class="artikel col-lg-2 col-xl-2 text-right">{{ n.Gewicht | number: '1.4-4' }}</div>
+                              <div class="artikel col-lg-2 col-xl-2 text-right">{{ n.ME }}</div>
+                              <div class="artikel col-lg-2 col-xl-2 text-right">{{ n.Preis | number: '1.4-4'}}</div>  
+                            </div>
+                            </tr>
+                          </table>
+                          </ng-template>
+                            </div>
+                          </div>
+                        </div>
+                      </ng-template>
+                    </mat-expansion-panel>
+                    <mat-expansion-panel>
+                      <mat-expansion-panel-header (click)="getNagelplattenWithTyp('4941')">
+                        <div class="row_accordion">
+                          <div class="row">
+                            <div class="col-sm-5 col-lg-6 col-xl-7">12N</div>
+                            <div class="col-sm-4 col-lg-2 col-xl-2"> 2,38</div>
+                            <div class="col-sm-2 col-lg-2 col-xl-2 offset-sm-1 offset-lg-1 offset-xl-1">23,36</div>
+                          </div>
+                        </div>
+                      </mat-expansion-panel-header>
+                      <ng-template matExpansionPanelContent>
+                        <div class="row_accordion">
+                          <div class="row">
+                            <div class="col-md-12 col-xs-12 col-lg-12 col-xl-12">
+                                <br>
+                              <div *ngIf="!nagelplatten;then loading else show"></div>
+                              <ng-template #loading>
+                              <mat-progress-bar  mode="indeterminate" color="yellow"></mat-progress-bar>
+                              Daten werden geladen ...
+                            </ng-template>
+                              <ng-template #show>
+                              <div class="col-sm-12 col-lg-12 col-xl-12">Blechdicke: 1,25 mm</div>
+                              <div class="col-sm-12 col-lg-12 col-xl-12"> Zulassungsnummer: Z-9.1-801</div>
+                              <br>
+                              <div class="buttonBasket" id="myHeader">
+                                  <button type="button" (click)="addToCart()">Übernehmen und Warenkorb berechnen</button>
+                                  <br></div>
+                                
+                              <div class="row">
+                                <div class="artWidthHeader col-lg-2 col-xl-2">Menge</div>
+                                <div class="artikelheader2 col-lg-1 col-xl-2">Art.Nr.</div>
+                                <div class="artikelheader2 col-lg-3 col-xl-2">Größe</div>
+                                <div class="artikelheader1 col-lg-1 col-xl-2 text-right">kg/ME</div>
+                                <div class="artikelheader1 offset-lg-1 col-lg-1 col-xl-1 text-right">ME</div>
+                                <div class="artikelheader1 offset-lg-1 col-lg-1 offset-xl-1 col-xl-1 text-right">Preis/ME</div>  
+                              </div>
+                              <table class="table">
+                            <tr class="" *ngFor="let n of nagelplatten; let in = index; index as i; odd as isOdd; even as isEven" 
+                            [ngClass]="{ odd: isOdd, even: isEven }" >
+                            <div class="row">
+                              <div class="artWidth col-lg-2 col-xl-2"><span><input type="number" pattern="[0-9]" name='name' (change)="addToCart(name.value, in, n.PKArtikelID, '12N')" #name><div *ngIf="n.ME > 1;then karton else stueck"></div></span><ng-template #karton> Karton</ng-template>
+                              <ng-template #stueck> Stück</ng-template></div>
+                              <div class="artikel col-lg-2 col-xl-2">{{ n.PKArtikelID }}</div>
+                              <div class="artikel col-lg-1 col-xl-2">{{ n.Groesse }}</div>
+                              <div class="artikel col-lg-2 col-xl-2 text-right">{{ n.Gewicht | number: '1.4-4' }}</div>
+                              <div class="artikel col-lg-2 col-xl-2 text-right">{{ n.ME }}</div>
+                              <div class="artikel col-lg-2 col-xl-2 text-right">{{ n.Preis | number: '1.4-4'}}</div>  
+                            </div>
+                            </tr>
+                          </table>
+                          </ng-template>
+                            </div>
+                          </div>
+                        </div>
+                      </ng-template>
+                    </mat-expansion-panel>
+                    <mat-expansion-panel>
+                        <mat-expansion-panel-header (click)="getNagelplattenWithTyp('4942')">
+                          <div class="row_accordion">
+                            <div class="row">
+                              <div class="col-sm-5 col-lg-6 col-xl-7">15N</div>
+                              <div class="col-sm-4 col-lg-2 col-xl-2"> 2,24</div>
+                              <div class="col-sm-2 col-lg-2 col-xl-2 offset-sm-1 offset-lg-1 offset-xl-1">26,38</div>
+                            </div>
+                          </div>
+                        </mat-expansion-panel-header>
+                        <ng-template matExpansionPanelContent>
+                          <div class="row_accordion">
+                            <div class="row">
+                              <div class="col-md-12 col-xs-12 col-lg-12 col-xl-12">
+                                  <br>  
+                                <div *ngIf="!nagelplatten;then loading else show"></div>
+                                <ng-template #loading>
+                                <mat-progress-bar  mode="indeterminate" color="yellow"></mat-progress-bar>
+                                Daten werden geladen ...
+                              </ng-template>
+                                <ng-template #show>
+                                <div class="col-sm-12 col-lg-12 col-xl-12">Blechdicke: 1,50 mm</div>
+                                <div class="col-sm-12 col-lg-12 col-xl-12"> Zulassungsnummer: Z-9.1-755 (DIN 1052-2008-12)</div>
+                                <br>
+                                <div class="buttonBasket" id="myHeader">
+                                    <button type="button" (click)="addToCart()">Übernehmen und Warenkorb berechnen</button>
+                                    <br></div>
+                                  
+                                <div class="row">
+                                  <div class="artWidthHeader col-lg-2 col-xl-2">Menge</div>
+                                  <div class="artikelheader2 col-lg-1 col-xl-2">Art.Nr.</div>
+                                  <div class="artikelheader2 col-lg-3 col-xl-2">Größe</div>
+                                  <div class="artikelheader1 col-lg-1 col-xl-2 text-right">kg/ME</div>
+                                  <div class="artikelheader1 offset-lg-1 col-lg-1 col-xl-1 text-right">ME</div>
+                                  <div class="artikelheader1 offset-lg-1 col-lg-1 offset-xl-1 col-xl-1 text-right">Preis/ME</div>  
+                                </div>
+                                <table class="table">
+                              <tr class="" *ngFor="let n of nagelplatten; let in = index; index as i; odd as isOdd; even as isEven" 
+                              [ngClass]="{ odd: isOdd, even: isEven }" >
+                              <div class="row">
+                                <div class="artWidth col-lg-2 col-xl-2"><span><input type="number" pattern="[0-9]" name='name' (change)="addToCart(name.value, in, n.PKArtikelID, '15N')" #name><div *ngIf="n.ME > 1;then karton else stueck"></div></span><ng-template #karton> Karton</ng-template>
+                                <ng-template #stueck> Stück</ng-template></div>
+                                <div class="artikel col-lg-2 col-xl-2">{{ n.PKArtikelID }}</div>
+                                <div class="artikel col-lg-1 col-xl-2">{{ n.Groesse }}</div>
+                                <div class="artikel col-lg-2 col-xl-2 text-right">{{ n.Gewicht | number: '1.4-4' }}</div>
+                                <div class="artikel col-lg-2 col-xl-2 text-right">{{ n.ME }}</div>
+                                <div class="artikel col-lg-2 col-xl-2 text-right">{{ n.Preis | number: '1.4-4'}}</div>  
+                              </div>
+                              </tr>
+                            </table>
+                            </ng-template>
+                              </div>
+                            </div>
+                          </div>
+                        </ng-template>
+                      </mat-expansion-panel>
+                      <mat-expansion-panel>
+                          <mat-expansion-panel-header (click)="getNagelplattenWithTyp('4961')">
+                            <div class="row_accordion">
+                              <div class="row">
+                                <div class="col-sm-5 col-lg-6 col-xl-7">20W</div>
+                                <div class="col-sm-4 col-lg-2 col-xl-2"> 2,58</div>
+                                <div class="col-sm-2 col-lg-2 col-xl-2 offset-sm-1 offset-lg-1 offset-xl-1">40,51</div>
+                              </div>
+                            </div>
+                          </mat-expansion-panel-header>
+                          <ng-template matExpansionPanelContent>
+                            <div class="row_accordion">
+                              <div class="row">
+                                <div class="col-md-12 col-xs-12 col-lg-12 col-xl-12">
+                                    <br>   
+                                  <div *ngIf="!nagelplatten;then loading else show"></div>
+                                  <ng-template #loading>
+                                  <mat-progress-bar  mode="indeterminate" color="yellow"></mat-progress-bar>
+                                  Daten werden geladen ...
+                                </ng-template>
+                              <ng-template #show>
+                                  <div class="col-sm-12 col-lg-12 col-xl-12">Blechdicke: 2,00 mm</div>
+                                  <div class="col-sm-12 col-lg-12 col-xl-12"> Zulassungsnummer: Z-9.1-855</div>
+                                  <br>
+                                  <div class="buttonBasket" id="myHeader">
+                                      <button type="button" (click)="addToCart()">Übernehmen und Warenkorb berechnen</button>
+                                      <br>
+                                    </div>
+                                   
+                                  <div class="row">
+                                    <div class="artWidthHeader col-lg-2 col-xl-2">Menge</div>
+                                    <div class="artikelheader2 col-lg-1 col-xl-2">Art.Nr.</div>
+                                    <div class="artikelheader2 col-lg-3 col-xl-2">Größe</div>
+                                    <div class="artikelheader1 col-lg-1 col-xl-2 text-right">kg/ME</div>
+                                    <div class="artikelheader1 offset-lg-1 col-lg-1 col-xl-1 text-right">ME</div>
+                                    <div class="artikelheader1 offset-lg-1 col-lg-1 offset-xl-1 col-xl-1 text-right">Preis/ME</div>  
+                                  </div>
+                                  <table class="table">
+                                <tr class="" *ngFor="let n of nagelplatten; let in = index; index as i; odd as isOdd; even as isEven" 
+                                [ngClass]="{ odd: isOdd, even: isEven }" >
+                                <div class="row">
+                                  <div class="artWidth col-lg-2 col-xl-2"><span><input type="number" pattern="[0-9]" name='name' (change)="addToCart(name.value, in, n.PKArtikelID, '15N')" #name><div *ngIf="n.ME > 1;then karton else stueck"></div></span><ng-template #karton> Karton</ng-template>
+                                  <ng-template #stueck> Stück</ng-template></div>
+                                  <div class="artikel col-lg-2 col-xl-2">{{ n.PKArtikelID }}</div>
+                                  <div class="artikel col-lg-1 col-xl-2">{{ n.Groesse }}</div>
+                                  <div class="artikel col-lg-2 col-xl-2 text-right">{{ n.Gewicht | number: '1.4-4' }}</div>
+                                  <div class="artikel col-lg-2 col-xl-2 text-right">{{ n.ME }}</div>
+                                  <div class="artikel col-lg-2 col-xl-2 text-right">{{ n.Preis | number: '1.4-4'}}</div>  
+                                </div>
+                                </tr>
+                              </table>
+                              </ng-template>
+                                </div>
+                              </div>
+                            </div>
+                          </ng-template>
+                        </mat-expansion-panel>
+                  </mat-accordion>
+                </div>
+              </mat-tab>
+<!-- ANFANG TAB Edelstahl -->
+              <mat-tab label="Edelstahl">
+                <div class="tab-content visible-sm-12">
+                  <mat-accordion>
+                    <mat-expansion-panel [disabled]="true">
+                      <mat-expansion-panel-header>
+                        <div class="row_accordion disabled">
+                          <div class="row">
+                            <div class="col-xs-12 col-sm-5 col-lg-6 col-xl-7">Typ</div>
+                            <div class="col-xs-12 col-sm-4 col-lg-2 col-xl-2">Euro / kg</div>
+                            <div class="col-xs-12 col-sm-2 col-lg-2 col-xl-2 offset-sm-1 offset-lg-1 offset-xl-1">Euro / m²</div>
+                          </div>
+                        </div>
+                      </mat-expansion-panel-header>
+                    </mat-expansion-panel>
+                    <mat-expansion-panel>
+                      <mat-expansion-panel-header (click)="getNagelplattenWithTyp('4945')">
+                        <div class="row_accordion">
+                          <div class="row">
+                            <div class="col-sm-5 col-lg-6 col-xl-7">12NE</div>
+                            <div class="col-sm-4 col-lg-2 col-xl-2"> 9,10</div>
+                            <div class="col-sm-2 col-lg-2 col-xl-2 offset-sm-1 offset-lg-1 offset-xl-1">89,29</div>
+                          </div>
+                        </div>
+                      </mat-expansion-panel-header>
+                      <ng-template matExpansionPanelContent>
+                        <div class="row_accordion">
+                          <div class="row">
+                            <div class="col-md-12 col-xs-12 col-lg-12 col-xl-12">
+                              <br>
+                              <div *ngIf="!nagelplatten;then loading else show"></div>
+                              <ng-template #loading>
+                              <mat-progress-bar  mode="indeterminate" color="yellow"></mat-progress-bar>
+                              Daten werden geladen ...
+                            </ng-template>
+                              <ng-template #show>
+                              <div class="col-sm-12 col-lg-12 col-xl-12">Blechdicke: 1,25 mm</div>
+                              <div class="col-sm-12 col-lg-12 col-xl-12"> Zulassungsnummer: Z-9.1-801</div>
+                              <br>
+                              <div class="buttonBasket" id="myHeader">
+                                  <button type="button" (click)="addToCart()">Übernehmen und Warenkorb berechnen</button>
+                                  <br>
+                                </div>
+                                <div class="row">
+                                <div class="artWidthHeader col-lg-2 col-xl-2">Menge</div>
+                                <div class="artikelheader2 col-lg-1 col-xl-2">Art.Nr.</div>
+                                <div class="artikelheader2 col-lg-3 col-xl-2">Größe</div>
+                                <div class="artikelheader1 col-lg-1 col-xl-2 text-right">kg/ME</div>
+                                <div class="artikelheader1 offset-lg-1 col-lg-1 col-xl-1 text-right">ME</div>
+                                <div class="artikelheader1 offset-lg-1 col-lg-1 offset-xl-1 col-xl-1 text-right">Preis/ME</div>  
+                              </div>
+                              <table class="table">
+                            <tr class="" *ngFor="let n of nagelplatten; let in = index; index as i; odd as isOdd; even as isEven" 
+                            [ngClass]="{ odd: isOdd, even: isEven }" >
+                            <div class="row">
+                              <div class="artWidth col-lg-2 col-xl-2"><span><input type="number" pattern="[0-9]" name='name' value="name.value" (change)="addToCart(name.value, in, n.PKArtikelID, '12NE')" #name><div *ngIf="n.ME > 1;then karton else stueck"></div></span><ng-template #karton> Karton</ng-template>
+                              <ng-template #stueck> Stück</ng-template></div>
+                              <div class="artikel col-lg-2 col-xl-2">{{ n.PKArtikelID }}</div>
+                              <div class="artikel col-lg-1 col-xl-2">{{ n.Groesse }}</div>
+                              <div class="artikel col-lg-2 col-xl-2 text-right">{{ n.Gewicht | number: '1.4-4' }}</div>
+                              <div class="artikel col-lg-2 col-xl-2 text-right">{{ n.ME }}</div>
+                              <div class="artikel col-lg-2 col-xl-2 text-right">{{ n.Preis | number: '1.4-4'}}</div>  
+                            </div>
+                            </tr>
+                          </table>
+                          </ng-template>
+                            </div>
+                          </div>
+                        </div>
+                      </ng-template>
+                    </mat-expansion-panel>
+                    <mat-expansion-panel>
+                      <mat-expansion-panel-header (click)="getNagelplattenWithTyp('4946')">
+                        <div class="row_accordion">
+                          <div class="row">
+                            <div class="col-sm-5 col-lg-6 col-xl-7">15NE</div>
+                            <div class="col-sm-4 col-lg-2 col-xl-2"> 9,10</div>
+                            <div class="col-sm-2 col-lg-2 col-xl-2 offset-sm-1 offset-lg-1 offset-xl-1">107,15</div>
+                          </div>
+                        </div>
+                      </mat-expansion-panel-header>
+                      <ng-template matExpansionPanelContent>
+                        <div class="row_accordion">
+                          <div class="row">
+                            <div class="col-md-12 col-xs-12 col-lg-12 col-xl-12">
+                              <br>
+                              <div *ngIf="!nagelplatten;then loading else show"></div>
+                              <ng-template #loading>
+                              <mat-progress-bar  mode="indeterminate" color="yellow"></mat-progress-bar>
+                              Daten werden geladen ...
+                            </ng-template>
+                              <ng-template #show>
+                              <div class="col-sm-12 col-lg-12 col-xl-12">Blechdicke: 1,50 mm</div>
+                              <div class="col-sm-12 col-lg-12 col-xl-12"> Zulassungsnummer: Z-9.1-755 (DIN 1052-2008-12)</div>
+                              <br>
+                              <div class="buttonBasket" id="myHeader">
+                                  <button type="button" (click)="addToCart()">Übernehmen und Warenkorb berechnen</button>
+                                </div>
+                                  <br>
+                              <div class="row">
+                                <div class="artWidthHeader col-lg-2 col-xl-2">Menge</div>
+                                <div class="artikelheader2 col-lg-1 col-xl-2">Art.Nr.</div>
+                                <div class="artikelheader2 col-lg-3 col-xl-2">Größe</div>
+                                <div class="artikelheader1 col-lg-1 col-xl-2 text-right">kg/ME</div>
+                                <div class="artikelheader1 offset-lg-1 col-lg-1 col-xl-1 text-right">ME</div>
+                                <div class="artikelheader1 offset-lg-1 col-lg-1 offset-xl-1 col-xl-1 text-right">Preis/ME</div>  
+                              </div>
+                              <table class="table">
+                            <tr class="" *ngFor="let n of nagelplatten; let in = index; index as i; odd as isOdd; even as isEven" 
+                            [ngClass]="{ odd: isOdd, even: isEven }" >
+                            <div class="row">
+                              <div class="artWidth col-lg-2 col-xl-2"><span><input type="number" pattern="[0-9]" name='name' (change)="addToCart(name.value, in, n.PKArtikelID, '15NE')" #name><div *ngIf="n.ME > 1;then karton else stueck"></div></span><ng-template #karton> Karton</ng-template>
+                              <ng-template #stueck> Stück</ng-template></div>
+                              <div class="artikel col-lg-2 col-xl-2">{{ n.PKArtikelID }}</div>
+                              <div class="artikel col-lg-1 col-xl-2">{{ n.Groesse }}</div>
+                              <div class="artikel col-lg-2 col-xl-2 text-right">{{ n.Gewicht | number: '1.4-4' }}</div>
+                              <div class="artikel col-lg-2 col-xl-2 text-right">{{ n.ME }}</div>
+                              <div class="artikel col-lg-2 col-xl-2 text-right">{{ n.Preis | number: '1.4-4'}}</div>  
+                            </div>
+                            </tr>
+                          </table>
+                          </ng-template>
+                            </div>
+                          </div>
+                        </div>
+                      </ng-template>
+                    </mat-expansion-panel>
+                    <mat-expansion-panel>
+                        <mat-expansion-panel-header (click)="getNagelplattenWithTyp('4948')">
+                          <div class="row_accordion">
+                            <div class="row">
+                              <div class="col-sm-5 col-lg-6 col-xl-7">20ZE</div>
+                              <div class="col-sm-4 col-lg-2 col-xl-2"> 9,10</div>
+                              <div class="col-sm-2 col-lg-2 col-xl-2 offset-sm-1 offset-lg-1 offset-xl-1">142,87</div>
+                            </div>
+                          </div>
+                        </mat-expansion-panel-header>
+                        <ng-template matExpansionPanelContent>
+                          <div class="row_accordion">
+                            <div class="row">
+                              <div class="col-md-12 col-xs-12 col-lg-12 col-xl-12">
+                                <br>
+                                <div *ngIf="!nagelplatten;then loading else show"></div>
+                                <ng-template #loading>
+                                <mat-progress-bar  mode="indeterminate" color="yellow"></mat-progress-bar>
+                                Daten werden geladen ...
+                              </ng-template>
+                                <ng-template #show>
+                                <div class="col-sm-12 col-lg-12 col-xl-12">Blechdicke: 2,00 mm</div>
+                                <div class="col-sm-12 col-lg-12 col-xl-12"> Zulassungsnummer: Z-9.1-756</div>
+                                <br>
+                                <div class="buttonBasket" id="myHeader">
+                                    <button type="button" (click)="addToCart()">Übernehmen und Warenkorb berechnen</button>
+                                  <br>
+                                </div>
+                                <div class="row">
+                                  <div class="artWidthHeader col-lg-2 col-xl-2">Menge</div>
+                                  <div class="artikelheader2 col-lg-1 col-xl-2">Art.Nr.</div>
+                                  <div class="artikelheader2 col-lg-3 col-xl-2">Größe</div>
+                                  <div class="artikelheader1 col-lg-1 col-xl-2 text-right">kg/ME</div>
+                                  <div class="artikelheader1 offset-lg-1 col-lg-1 col-xl-1 text-right">ME</div>
+                                  <div class="artikelheader1 offset-lg-1 col-lg-1 offset-xl-1 col-xl-1 text-right">Preis/ME</div>  
+                                </div>
+                                <table class="table">
+                              <tr class="" *ngFor="let n of nagelplatten; let in = index; index as i; odd as isOdd; even as isEven" 
+                              [ngClass]="{ odd: isOdd, even: isEven }" >
+                              <div class="row">
+                                <div class="artWidth col-lg-2 col-xl-2"><span><input type="number" pattern="[0-9]" name='name' (change)="addToCart(name.value, in, n.PKArtikelID, '20ZE')" #name><div *ngIf="n.ME > 1;then karton else stueck"></div></span><ng-template #karton> Karton</ng-template>
+                                <ng-template #stueck> Stück</ng-template></div>
+                                <div class="artikel col-lg-2 col-xl-2">{{ n.PKArtikelID }}</div>
+                                <div class="artikel col-lg-1 col-xl-2">{{ n.Groesse }}</div>
+                                <div class="artikel col-lg-2 col-xl-2 text-right">{{ n.Gewicht | number: '1.4-4' }}</div>
+                                <div class="artikel col-lg-2 col-xl-2 text-right">{{ n.ME }}</div>
+                                <div class="artikel col-lg-2 col-xl-2 text-right">{{ n.Preis | number: '1.4-4'}}</div>  
+                              </div>
+                              </tr>
+                            </table>
+                            </ng-template>
+                              </div>
+                            </div>
+                          </div>
+                        </ng-template>
+                      </mat-expansion-panel>
+                  </mat-accordion>
+                </div>
+              </mat-tab>
+<!-- ENDE TAB Edelstahl-->
+            </mat-tab-group>
+          </div>
+        </div>
+<!-- Accordion ENDE -->
+
+<!-- Warenkorb ANFANG -->    
+        <div class="col-lg-6 col-xl-6">
+          
+          <div *ngIf="showBasket" class="sticky">
+                <div class="basketHeaderLine"></div>
+                    <div class="basketHeader">
+                      Warenkorb Übersicht
+                    </div>
+                    <br>
+                    <div class="basketDetailHeader">
+                      <div class="row" >
+                    
+                    <div class="artikelheader col-lg-2 col-xl-2">Menge</div>
+                    <div class="artikelheader2 col-lg-1 col-xl-1">Art.Nr.</div>
+                    <div class="artikelheader2 col-lg-3 col-xl-1">Typ</div>
+                    <div class="artikelheader2 col-lg-3 col-xl-2">Größe</div>
+                    <div class="artikelheader1 col-lg-1 col-xl-1 text-right">kg/ME</div>
+                    <div class="artikelheader1 col-lg-1 col-xl-1 text-right">ME</div>
+                    <div class="artikelheader1 offset-lg-1 col-lg-1 col-xl-1 text-right">Preis/ME</div>  
+                    <div class="artikelheader1 col-lg-2 col-xl-offset-1 col-xl-2 text-right">Gesamt €</div> 
+                  </div>
+                </div>
+                <div class="basketDetailTable">
+                  <div class="row">
+                <table class="tableBasket">
+                    <tr *ngFor="let n of warenkorb; let in = index; index as i; odd as isOdd; even as isEven" 
+                    [ngClass]="{ odd: isOdd, even: isEven }" >
+                   <div class="row">
+                      <div class="menge col-lg-2 col-xl-2 text-left"><span> <i class="far fa-trash-alt" (click)="deleteEntry(in)"></i><div *ngIf="n.ME > 1;then karton else stueck"></div></span><ng-template #karton>   {{n.Stk }} Karton</ng-template>
+                      <ng-template #stueck>   {{n.Stk }} Stück </ng-template></div>
+                      <div class="artikelbasket  col-lg-1 col-xl-1">{{ n.PKArtikelID }}</div>
+                      <div class="artikelbasket  col-lg-3 col-xl-1">{{ n.Typ }}</div>
+                      <div class="artikelbasket  col-lg-3 col-xl-2">{{ n.Groesse }}</div>
+                      <div class="artikelbasket  col-lg-1 col-xl-1 text-right">{{ n.Gewicht | number: '1.4-4' }}</div>
+                      <div class="artikelbasket  col-lg-1 col-xl-1 text-right">{{ n.ME }}</div>
+                      <div class="artikelbasket offset-lg-1 col-lg-1 col-xl-1 text-right">{{ n.Preis | number: '1.4-4'}}</div> 
+                      <div class="artikelbasket col-lg-1 offset-col-xl-1 col-xl-2 text-right">{{ n.Gesamt | number: '1.2-2'}}</div>  
+                   </div>
+                  </tr>
+                  </table>
+                </div>
+              </div>
+            <br>
+<!-- Warenkorb -->
+
+<!-- Zwischensumme wird eingeblendet wenn das erste gesamt Gewicht über 1000kg liegt -->              
+            <div *ngIf="showBasketZwischensumme" class="basketZwischensumme">
+              <div class="row">
+            <table class="tableBasket">
+              <tr class="even black">
+                  <div class="row">
+                      <div class="zwischensummetext col-sm-5 col-lg-6 col-xl-6">Zwischensumme</div>
+                      <div class="col-sm-4 col-lg-2 col-xl-2"></div>
+                      <div class="zwischensumme col-sm-2 offset-sm-1 offset-lg-1 offset-xl-2 col-lg-2 col-xl-2 text-right">{{basketZwischenSumme| number: '1.2-2'}}</div>
+                    </div>
+              </tr>
+              <tr class="odd">
+                  <div class="row">
+                      <div class="artikelheader col-sm-6 col-lg-8 col-xl-8">- {{basketRabattProzent}}% Mengenrabatt (ab {{basketRabattAbKG | number}} kg) {{basketTransport}}</div>
+                      <div class="artikelheader1 col-sm-4 col-lg-4 col-xl-4 text-right">{{basketZwischenSummeRabatt | number: '1.2-2'}}</div>
+                    </div>
+              </tr>
+              </table>
+            </div>
+          </div>
+<!-- Zwischensumme ENDE-->
+
+<!-- Bestellsumme über die ganze Bestellung wird angezeigt -->  
+               <b> 
+                 <div class="basketDetailHeader">
+                  <div class="row" >
+                <div class="artikelheader col-lg-5 col-xl-4">Bestellsumme in Euro</div>
+                <div class="basketgewicht col-lg-4 col-xl-4">(Gesamtgewicht {{ basketGewicht | number: '1.2-2'}} kg)</div>
+                <div class="summe col-lg-5 col-xl-4 text-right">{{(basketSummeGesamt) | number: '1.2-2'}}</div>
+              </div>
+            </div>
+        </b>
+            <br>
+            <button class="buttonWarenkorb" data-toggle="modal" data-target="#NagelplattenFormular">Kundendaten eingeben & bestellen</button>
+      </div>
+        </div>
+<!-- Bestellsumme ENDE -->
+
+<!-- Warenkorb ENDE -->
+      </div>
+    </div>
+  </section>
+<!-- -->
+
+<!-- Nagelplatten Bestellformular ANFANG -->
+<div class="modal fade" id="NagelplattenFormular" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+    <div class="modal-content" *ngIf="isValid && !error">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Nagelplatten Bestellformular</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="container-fluid" >
+            <form #bookForm="ngForm">
+                <div class="row">
+                    <div class="col-6"> 
+                        <mat-form-field class="example-full-width">
+                            <mat-select placeholder="Anrede" [(ngModel)]="bestellung.Anrede" name="anrede">
+                              <mat-option *ngFor="let anrede of anreden" [value]="anrede.value" >
+                                {{ anrede.viewValue }}
+                              </mat-option>
+                            </mat-select>
+                          </mat-form-field>
+                    </div>
+                    <div class="col-6"> 
+                      <mat-form-field class="example-full-width">
+                        <input matInput type="email" placeholder="eMail" [(ngModel)]="bestellung.eMail" name="email" required>
+                      </mat-form-field>
+                    </div>
+                  </div>
+                <div class="row">
+                  <div class="col-6"> <mat-form-field class="example-full-width">
+                      <input matInput placeholder="Vorname" [(ngModel)]="bestellung.Vorname" name="vorname" required>
+                    </mat-form-field></div>
+                  <div class="col-6"> <mat-form-field class="example-full-width">
+                      <input matInput placeholder="Nachname" [(ngModel)]="bestellung.Name"  name="nachname" required>
+                    </mat-form-field></div>
+                </div>
+                <div class="row">
+                    <div class="col-6"> <mat-form-field class="example-full-width">
+                        <input matInput placeholder="Firma" [(ngModel)]="bestellung.Firma" name="firma" required>
+                      </mat-form-field></div>
+                    <div class="col-6">
+                      <mat-form-field class="example-full-width">
+                        <input matInput placeholder="Straße" [(ngModel)]="bestellung.Strasse" name="strasse">
+                      </mat-form-field></div>
+                  </div>
+                  <div class="row">
+                      <div class="col-2">
+                        <mat-form-field class="example-full-width">
+                          <input matInput type="number" placeholder="PLZ" [(ngModel)]="bestellung.Plz"  name="plz" required>
+                        </mat-form-field>
+                      </div>
+                      <div class="col-4">
+                        <mat-form-field class="example-full-width">
+                          <input matInput placeholder="Ort" [(ngModel)]="bestellung.Ort" name="ort" required>
+                        </mat-form-field>
+                      </div>
+                      <div class="col-6">
+                          <mat-form-field class="example-full-width">
+                              <mat-select placeholder="Land" [(ngModel)]="bestellung.Land" name="land" required>
+                                <mat-option *ngFor="let la of land" [value]="la.Kuerzel" >
+                                  {{ la.Land }}
+                                </mat-option>
+                              </mat-select>
+                            </mat-form-field>
+                      </div>
+                    </div>
+                <div class="row">
+                  <div class="col-6"> <mat-form-field class="example-full-width">
+                    <input matInput placeholder="Telefon" [(ngModel)]="bestellung.Telefon" name="telefon">
+                    </mat-form-field></div>
+                  <div class="col-6"> 
+                      <mat-form-field class="example-full-width">
+                        <input matInput placeholder="gewünschter Liefertermin"  [(ngModel)]="bestellung.Liefertermin" name="liefertermin">
+                      </mat-form-field>
+               </div>
+                </div> 
+                <div class="row">
+
+                    <div class="col-12"> <mat-form-field class="example-full-width">
+                        <textarea matInput placeholder="Bemerkung" matTextareaAutosize matAutosizeMinRows="3"
+                        matAutosizeMaxRows="5" [(ngModel)]="bestellung.Bemerkung" name="bemerkung"></textarea>
+                      </mat-form-field></div>
+                  </div>  
+            </form>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Abbrechen</button>
+        <button type="submit" class="btn btn-default" [disabled]="!bookForm.form.valid" (click)="makeOrder()">Absenden</button>
+      </div>
+    </div>
+      <div class="modal-content" *ngIf="isValid && error">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Herzlichen Dank für Ihre Bestellung</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="container-fluid" style="color: rgb(2, 90, 2); font-size: 14px;">
+                Die Bestellung wurde erfolgreich gespeichert !.<br><br>
+                Sie bekommen in den nächsten Minuten eine Bestätigungsemail.
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="clearAll()">Schließen</button>
+          </div>
+        </div>
+      <div class="modal-content" *ngIf="!isValid && error">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Nagelplatten Bestellformular</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="container-fluid" style="color: red; font-size: 14px;">
+                Beim speichern der Bestellung ist ein Fehler aufgetreten. <br>
+                Bitte versuchen Sie es noch einmal.
+                <br><br>
+                Fehlermeldung:<br>
+                {{ errorMsg }}<br><br> Danke
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Schließen</button>
+          </div>
+        </div>
+ </div> 
+  </div>
+<!-- Nagelplatten Bestellformular ENDE -->
+<router-outlet></router-outlet>
+<!-- ENDE -->
+
