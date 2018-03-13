@@ -57,7 +57,7 @@ land: Laenderliste[] = [];
 
 
   getNagelplattenWithTyp(typ) {
-     // this.nagelplatten = null;
+      this.nagelplatten = null;
       this.ns.getNagelplatten(typ).subscribe(data => this.nagelplatten = data);
   }
 

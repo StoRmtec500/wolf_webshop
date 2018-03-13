@@ -32,6 +32,16 @@ span {
     border-bottom: 4px solid #fcdb00;
 }
 
+.version {
+    bottom: 12px;
+    position: fixed;
+    text-align: center;
+    right: 0px;
+    left: 0px;
+    width: 180px;
+    font-size: 12px;
+}
+
 .tab-group {
     border: 1px solid #e8e8e8;
   }

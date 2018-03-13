@@ -148,6 +148,15 @@ input {
     margin-left: 5px;
 }
 
+
+  .mat-progress-bar-fill::after {
+    background-color: #ffdd00;
+}
+
+  .mat-progress-bar-buffer {
+    background-color:#fff7c1;
+}
+
 tr.even.ng-star-inserted {
     background-color: #f3f3f3;
     height: 40px;

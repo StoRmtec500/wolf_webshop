@@ -8,7 +8,9 @@
     "build": "ng build --prod",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "build_de": "ng build --prod --locale=de --base-href /onlineshopNP/de/",
+    "build_en": "ng build --prod --i18nFile=src/assets/locale/message.en.xlf --i18nFormat=xlf --locale=en --base-href /onlineshopNP/en/"
   },
   "private": true,
   "dependencies": {
