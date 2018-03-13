@@ -28,8 +28,8 @@ export class NagelplattenService {
     return this.httpClient.get<Nagelplatten[]> ( environment.apiUrlRead + 'getNagelplattenDetail/' + id);
   }
 
-  getRabatt() : Promise<Rabatt[]> {
-    return this.httpClient.get<Rabatt[]>('assets/rabatte.json').toPromise();
+  getRabatt() : Observable<Rabatt[]> {
+    return this.httpClient.get<Rabatt[]>('assets/rabatte.json');
   }
 
   getLaenderliste() : Observable<Laenderliste[]> {

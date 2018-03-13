@@ -1,4 +1,3 @@
-
 import { Component,ViewChild, OnInit, Input } from '@angular/core';
 import { Nagelplatten, Warenkorb, Rabatt, BestellungKopf, ID, BestellungKopfDetail, Laenderliste } from '../../shared/index';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
@@ -21,7 +20,7 @@ export class NagelplattenComponent implements OnInit {
   headertitle = 'Bestellung Nagelplatten';
   nagelplatten: Nagelplatten[];
   warenkorb: Warenkorb[] = [];
-  rabatte: Rabatt[];
+  rabatte: Rabatt[] = [];
   bestellungKopfID: ID[];
   details = '';
   showBasket = false;  showBasketZwischensumme = false;
@@ -49,11 +48,17 @@ land: Laenderliste[] = [];
 
   ngOnInit() {
     this.nagelplatten = null;
-    this.ns.getRabatt().then(data => this.rabatte = data);
-    console.log("Rabatt JSON wurde geladen !!!");
+    this.loadRabatte();
     this.loadLaenderliste();
   }
 
+  loadRabatte() {
+    this.ns.getRabatt().subscribe(data => {
+      console.log("Rabatt JSON wurde geladen !!!" + JSON.stringify(data));
+     // this.rabatte[0] = rabatte[0];
+      
+    });
+  }
 
   getNagelplattenWithTyp(typ) {
       this.nagelplatten = null;
@@ -124,7 +129,9 @@ land: Laenderliste[] = [];
     this.basketZwischenSummeRabatt = 0;
     for(let i = 0; i < this.rabatte.length; i++)
   {
+    console.log("Rabatte: " + JSON.stringify(this.rabatte[i].kg));
     if (this.basketGewicht > this.rabatte[i].kg)
+  
     {
       basketRabatt = (this.basketSumme / 100 * this.rabatte[i].rabatt);
       this.basketZwischenSumme = (this.basketSumme);

@@ -1,4 +1,5 @@
 [
+{"nagelplatten": [
     {
         "kg" : "1000",
         "rabatt" : "3",
@@ -29,4 +30,12 @@
         "rabatt" : "12",
         "fracht" : "+ Transport frei" 
     }
+]},
+{"metalwebs": [
+ {
+     "kg": "3",
+     "rabatt": "4",
+     "fracht": ""
+ }
+]}
 ]

@@ -49,7 +49,7 @@ land: Laenderliste[] = [];
 
   ngOnInit() {
     this.nagelplatten = null;
-    this.ns.getRabatt().then(data => this.rabatte = data);
+   // this.ns.getRabatt().then(data => this.rabatte = data);
     console.log("Rabatt JSON wurde geladen !!!");
     this.loadLaenderliste();
   }
