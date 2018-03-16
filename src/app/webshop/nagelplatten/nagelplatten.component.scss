@@ -32,6 +32,21 @@ span {
     border-bottom: 4px solid #fcdb00;
 }
 
+.mat-expansion-panel-header, .mat-expansion-panel-content {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.9em !important;
+}
+
+
+.artikel.resize {
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+.artikel.resize1 {
+    padding-right: 1px;
+}
+
 .tab-group {
     border: 1px solid #e8e8e8;
   }
@@ -145,6 +160,7 @@ tr{
     position: sticky;
     top: 0;
     border: 1px solid #e8e8e8;
+    font-size: 0.9em;
 }
 
 .content {

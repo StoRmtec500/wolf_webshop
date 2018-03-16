@@ -107,10 +107,10 @@
                               <tr class="" *ngFor="let n of nagelplatten; let in = index; index as i; odd as isOdd; even as isEven" 
                               [ngClass]="{ odd: isOdd, even: isEven }" >
                               <div class="row">
-                                <div class="artWidth col-lg-3 col-xl-3"><span><input type="number"  name='name' value="name.value" (change)="addToCart(name.value, in, n.PKArtikelID, 'W101')" #name><div *ngIf="n.ME > 1;then karton else stueck"></div></span><ng-template #karton> Karton</ng-template>
+                                <div class="artWidth col-lg-3 col-xl-3"><span><input type="number" pattern=[0-9] name='name' value="name.value" (change)="addToCart(name.value, in, n.PKArtikelID, 'W101')" #name><div *ngIf="n.ME > 1;then karton else stueck"></div></span><ng-template #karton> Karton</ng-template>
                                 <ng-template #stueck> Stück</ng-template></div>
                                 <div class="artikel col-lg-2 col-xl-2">{{ n.PKArtikelID }}</div>
-                                <div class="artikel col-lg-1 col-xl-2">{{ n.Breite }} x {{ n.Laenge }} mm</div>
+                                <div class="artikel col-lg-1 col-xl-2" style="width: 90px; padding-right: 0px;">{{ n.Breite }} x {{ n.Laenge }} mm</div>
                                 <div class="artikel col-lg-2 col-xl-2 text-right">{{ n.Gewicht | number: '1.4-4' }}</div>
                                 <div class="artikel col-lg-2 col-xl-1 text-right">{{ n.ME }}</div>
                                 <div class="artikel col-lg-2 col-xl-2 text-right">{{ n.Preis | number: '1.4-4'}}</div>  
