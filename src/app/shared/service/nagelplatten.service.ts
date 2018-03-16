@@ -4,6 +4,7 @@ import { Observable } from 'rxjs/Observable';
 import { Nagelplatten, Rabatt, BestellungKopf, Warenkorb, ID, BestellungKopfDetail, Laenderliste } from '../index';
 import { databaseProvider } from '../databaseProvider/databaseProvider';
 import { environment } from '../../../environments/environment';
+import 'rxjs/add/operator/map';
 
 @Injectable()
 export class NagelplattenService {
@@ -24,12 +25,17 @@ export class NagelplattenService {
     return this.httpClient.post<Nagelplatten[]>(environment.apiUrlRead, body);
   }
 
+  getMetalWebs(): Observable<Nagelplatten[]> {
+    const body = this.db.metalWebs();
+    return this.httpClient.post<Nagelplatten[]>(environment.apiUrlRead, body);
+  }
+
   getNagelplattenDetail(id: number): Observable<Nagelplatten[]> {
     return this.httpClient.get<Nagelplatten[]> ( environment.apiUrlRead + 'getNagelplattenDetail/' + id);
   }
 
-  getRabatt() : Observable<Rabatt[]> {
-    return this.httpClient.get<Rabatt[]>('assets/rabatte.json');
+  getRabatt() : Observable<any> {
+    return this.httpClient.get('assets/rabatte.json');
   }
 
   getLaenderliste() : Observable<Laenderliste[]> {

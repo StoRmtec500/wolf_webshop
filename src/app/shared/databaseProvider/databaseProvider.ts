@@ -23,11 +23,26 @@ export class databaseProvider {
     public artikelSelect(artikelGruppeID: number) {
       return {
         Befehl: encodeURIComponent(
-          `SELECT a.PKArtikelID,SUBSTRING(a.Bezeichnung1, 17, 7) AS Groesse,a.Gewicht * ISNULL(aeu.Formel, 1) AS Gewicht,ISNULL(aeu.Formel, 1) AS ME,ROUND(av.Verkaufspreis / av.PreisPro * ISNULL(aeu.Formel, 1), 4) AS Preis
+          `SELECT a.PKArtikelID,a.Laenge, a.Breite ,a.Gewicht * ISNULL(aeu.Formel, 1) AS Gewicht,ISNULL(aeu.Formel, 1) AS ME,ROUND(av.Verkaufspreis / av.PreisPro * ISNULL(aeu.Formel, 1), 4) AS Preis
           FROM dbo.viewArtikel a
           LEFT OUTER JOIN PEKonzern.dbo.artikelEinheitUmrechnung aeu ON aeu.FKArtikelID = a.PKArtikelID AND aeu.FKMandantID = 3 AND aeu.FKMengeneinheit2ID = 7
           LEFT OUTER JOIN PEKonzern.dbo.artikelVerkaufspreis av ON av.FKArtikelID = a.PKArtikelID AND av.FKMandantID = 3 AND av.FKPreislisteID = 1 AND av.GueltigVon <= CONVERT(DATE, GETDATE()) AND av.GueltigBis >= CONVERT(DATE, GETDATE())
           WHERE a.FKArtikelgruppeID = `+ artikelGruppeID +` AND a.GueltigVon <= CONVERT(DATE, GETDATE()) AND a.GueltigBis >= CONVERT(DATE, GETDATE())
+          ORDER BY a.Bezeichnung1`),
+        Datenbank: this.databaseName,
+        Login: this.userName,
+        Passwort: this.userPassword,
+        PKMitarbeiterID: this.pkEmployeeId
+      }
+    }  
+
+    public metalWebs() {
+      return {
+        Befehl: encodeURIComponent(
+          `SELECT a.PKArtikelID,a.Laenge ,SUBSTRING(a.Bezeichnung1,12,16) AS Breite, a.Gewicht AS Gewicht, av.PreisPro AS ME, av.Verkaufspreis AS Preis
+          FROM ATSRV031.PELokal.dbo.viewArtikel a
+          LEFT OUTER JOIN PEKonzern.dbo.artikelVerkaufspreis av ON av.FKArtikelID = a.PKArtikelID AND av.FKMandantID = 3 AND av.FKPreislisteID = 1 AND av.GueltigVon <= CONVERT(DATE, GETDATE()) AND av.GueltigBis >= CONVERT(DATE, GETDATE())
+          WHERE a.FKArtikelgruppeID = 4964 AND a.GueltigVon <= CONVERT(DATE, GETDATE()) AND a.GueltigBis >= CONVERT(DATE, GETDATE())
           ORDER BY a.Bezeichnung1`),
         Datenbank: this.databaseName,
         Login: this.userName,
@@ -74,8 +89,8 @@ export class databaseProvider {
     public makeOrderDetails(bestellungKopfDetail) {
       return {
         Befehl: encodeURIComponent(
-          `INSERT INTO PESchnittstelle.dbo.npBestellungKopfDetail ( FKNpBestellungKopfID ,BestellMenge ,ArtNr ,Typ ,Groesse ,Gewicht , MengenEinheit ,PreisMenge ,PreisGesamt )
-          VALUES (`+bestellungKopfDetail.FKNpBestellungKopfID+` ,`+bestellungKopfDetail.BestellMenge+`, `+bestellungKopfDetail.PKArtikelID+` ,'`+bestellungKopfDetail.Typ+`' ,'`+bestellungKopfDetail.Groesse+`' ,`+bestellungKopfDetail.Gewicht+` ,`+bestellungKopfDetail.MengenEinheit+` ,`+bestellungKopfDetail.PreisMenge+` ,`+bestellungKopfDetail.PreisGesamt+`)`
+          `INSERT INTO PESchnittstelle.dbo.npBestellungKopfDetail ( FKNpBestellungKopfID ,BestellMenge ,ArtNr ,Typ ,Laenge, Breite ,Gewicht , MengenEinheit ,PreisMenge ,PreisGesamt )
+          VALUES (`+bestellungKopfDetail.FKNpBestellungKopfID+` ,`+bestellungKopfDetail.BestellMenge+`, `+bestellungKopfDetail.PKArtikelID+` ,'`+bestellungKopfDetail.Typ+`' ,'`+bestellungKopfDetail.Laenge+`','`+bestellungKopfDetail.Breite+`' ,`+bestellungKopfDetail.Gewicht+` ,`+bestellungKopfDetail.MengenEinheit+` ,`+bestellungKopfDetail.PreisMenge+` ,`+bestellungKopfDetail.PreisGesamt+`)`
         ),
         Datenbank: this.databaseName,
         Login: this.userName,

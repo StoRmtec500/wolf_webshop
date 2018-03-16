@@ -1,3 +1,4 @@
+@import './styles/css/bootstrap.min.css';
 @import '~@angular/material/theming';
 // Plus imports for other components in your app.
 
@@ -23,18 +24,13 @@ $candy-app-theme: mat-light-theme($candy-app-primary, $candy-app-accent, $candy-
 // that you are using.
 @include angular-material-theme($candy-app-theme);
 
-input[type="number"] {
-    -moz-appearance: textfield;
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    margin: 0; 
 }
-input[type="number"]:hover,
-input[type="number"]:focus {
-    -moz-appearance: number-input;
-}
-
-.mat-input-element {
-    caret-color: #000;
-}
-
 .cdk-overlay-container {
     position: fixed;
     z-index: 1400 !important;
@@ -70,7 +66,6 @@ body {
     color:#717274;
     font-size: 13px;
     background-color: #fff;
-    font-family: Arial, Helvetica, sans-serif;
 }
 
 b {
@@ -78,7 +73,8 @@ b {
 }
 
 .row_accordion.disabled {
-    color: #000;
+    color: #717274;
+    font-weight: bold;
 }
 
 .mat-expansion-panel-body {
@@ -147,7 +143,7 @@ tr.artikel {
 }
 
 input {
-    width: 35px;
+    width: 40px;
     height: 25px;
     margin-top: 7px;
     margin-left: 5px;
@@ -213,7 +209,7 @@ mat-ink-bar.mat-ink-bar {
 
 .mat-expansion-panel, .mat-expansion-panel-header-title {
     background: #fff;
-    color: #000;
+    color: #717274;
 }
 
 .mat-expansion-panel-header.mat-expanded:focus, .mat-expansion-panel-header.mat-expanded:hover, .mat-expansion-panel-header.mat-expanded {
@@ -221,7 +217,7 @@ mat-ink-bar.mat-ink-bar {
 }
 
 .mat-expansion-indicator::after, .mat-expansion-panel-header-description {
-     color: #000;
+     color: #717274;
 }
 
 @media (min-width:1025px) {

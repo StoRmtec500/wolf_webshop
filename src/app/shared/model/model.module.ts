@@ -3,10 +3,11 @@ export class Nagelplatten {
   Gewicht: number;
   ME: number;
   Preis: number;
-  Groesse: string;
   Stk: number;
   Gesamt: number;
   Typ: string;
+  Laenge: number;
+  Breite: number;
 }
 
 export class Rabatt {
@@ -52,7 +53,8 @@ export class BestellungKopfDetail {
   BestellEinheit: string;
   PKArtikelID: number;
   Typ: string;
-  Groesse: string;
+  Laenge: number;
+  Breite: number;
   Gewicht: number;
   MengenEinheit: number;
   PreisMenge: number;
@@ -63,9 +65,10 @@ export class Warenkorb {
   Stk: number;
   PKArtikelID: number;
   Typ: string;
-  Groesse: string;
   Preis: number;
   Gewicht: number;
   ME: number;
   Gesamt: number;
+  Laenge: number;
+  Breite: number;
 }

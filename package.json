@@ -9,8 +9,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "build_de": "ng build --prod --locale=de --base-href /onlineshopNP/de/",
-    "build_en": "ng build --prod --i18nFile=src/assets/locale/message.en.xlf --i18nFormat=xlf --locale=en --base-href /onlineshopNP/en/"
+    "build_prod": "ng build --prod -vc=true --locale=de --base-href /onlineshopNP/de/ --op dist/de & ng build --prod -vc=true --i18nFile=src/assets/locale/message.en.xlf --i18nFormat=xlf --locale=en --base-href /onlineshopNP/en/ --op dist/en"
   },
   "private": true,
   "dependencies": {

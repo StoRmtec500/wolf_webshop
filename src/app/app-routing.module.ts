@@ -6,16 +6,18 @@ import { NagelplattenComponent } from './webshop/nagelplatten/nagelplatten.compo
 const routes: Routes = [
   {
     path: '',
-    redirectTo: '/nagelplatten',
+    redirectTo: 'nagelplatten',
     pathMatch: 'full'
   },
   {
     path: 'nagelplatten',
     component: NagelplattenComponent
+    
   },
   { path: 'metalwebs',
     component: MetalwebsComponent
-  }
+  },
+  { path: '**', redirectTo: 'nagelplatten', pathMatch: 'full' }
 ];
 
 @NgModule({

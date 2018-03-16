@@ -47,21 +47,13 @@ land: Laenderliste[] = [];
   constructor(private ns: NagelplattenService, private router: Router) { }
 
   ngOnInit() {
-    this.nagelplatten = null;
-    this.loadRabatte();
+    //this.nagelplatten = null;
+    this.ns.getRabatt().subscribe((res : any) => this.rabatte = res[0].nagelplatten);
     this.loadLaenderliste();
   }
 
-  loadRabatte() {
-    this.ns.getRabatt().subscribe(data => {
-      console.log("Rabatt JSON wurde geladen !!!" + JSON.stringify(data));
-     // this.rabatte[0] = rabatte[0];
-      
-    });
-  }
-
   getNagelplattenWithTyp(typ) {
-      this.nagelplatten = null;
+      //this.nagelplatten = null;
       this.ns.getNagelplatten(typ).subscribe(data => this.nagelplatten = data);
   }
 
@@ -207,14 +199,14 @@ land: Laenderliste[] = [];
 }
 
 saveBestellungDetail() {
-  
   console.log("FKNpBestellungKopfID:" +this.bestellungDetail.FKNpBestellungKopfID)
   for(let i = 0; i < this.warenkorb.length; i++) {
     this.bestellungDetail.Gewicht = this.warenkorb[i].Gewicht;
     this.bestellungDetail.BestellMenge = this.warenkorb[i].Stk;
     this.bestellungDetail.PKArtikelID = this.warenkorb[i].PKArtikelID;
     this.bestellungDetail.Typ = this.warenkorb[i].Typ;
-    this.bestellungDetail.Groesse = this.warenkorb[i].Groesse;
+    this.bestellungDetail.Breite = this.warenkorb[i].Breite;
+    this.bestellungDetail.Laenge = this.warenkorb[i].Laenge;
     this.bestellungDetail.PreisMenge = this.warenkorb[i].Preis;
     this.bestellungDetail.MengenEinheit = this.warenkorb[i].ME;
     this.bestellungDetail.PreisGesamt = this.warenkorb[i].Gesamt;
@@ -253,7 +245,6 @@ saveBestellungDetail() {
 
 
   clearAll() {
-
-    window.location.reload();
+    window.location.href = "/"
   }
 }

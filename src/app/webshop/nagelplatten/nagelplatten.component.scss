@@ -464,8 +464,7 @@ body {
 }
 
 .artWidthHeader {
-    width: 79px;
-    margin-right: -8px;
+
     padding-top: 5px;
     padding-left: 21px;
     font-weight: bold;
@@ -552,6 +551,13 @@ body {
 .artikelheader, .artikelheader1, .artikelheader2 {
     margin-top: 5px;
     font-weight: bold;
+}
+
+
+.artikelheadernormal, .artikelheader1normal {
+    margin-top: 5px;
+    font-weight: normal;
+    padding-right: 24px;
 }
 
 .basketgewicht {

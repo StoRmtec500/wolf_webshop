@@ -5,6 +5,7 @@ import { Observable } from 'rxjs/Observable';
 import { Nagelplatten, Warenkorb, Rabatt, ID, Laenderliste, BestellungKopf, BestellungKopfDetail } from '../../shared';
 import { NagelplattenService } from '../../shared/service/nagelplatten.service';
 import { RouterModule, Router } from '@angular/router';
+import { forkJoin } from "rxjs/observable/forkJoin";
 
 @Component({
   selector: 'app-metalwebs',
@@ -49,15 +50,15 @@ land: Laenderliste[] = [];
 
   ngOnInit() {
     this.nagelplatten = null;
-   // this.ns.getRabatt().then(data => this.rabatte = data);
-    console.log("Rabatt JSON wurde geladen !!!");
+    this.ns.getRabatt().subscribe((res : any) => this.rabatte = res[1].metalwebs);
+    console.log("Rabatt JSON wurde geladen !!!" + this.rabatte);
     this.loadLaenderliste();
   }
 
 
-  getNagelplattenWithTyp(typ) {
+  getMetalWebs() {
       this.nagelplatten = null;
-      this.ns.getNagelplatten(typ).subscribe(data => this.nagelplatten = data);
+      this.ns.getMetalWebs().subscribe(data => this.nagelplatten = data);
   }
 
   loadLaenderliste() {
@@ -120,6 +121,7 @@ land: Laenderliste[] = [];
   }
 
   calczwischensumme() {
+    console.log("Rabatte:" +JSON.stringify(this.rabatte));
     var basketRabatt = 0;
     this.basketZwischenSummeRabatt = 0;
     for(let i = 0; i < this.rabatte.length; i++)
@@ -136,7 +138,7 @@ land: Laenderliste[] = [];
     this.basketSummeGesamt = (this.basketSumme - this.basketZwischenSummeRabatt);
   }
 
-  if (this.basketGewicht > 1000) {
+  if (this.basketGewicht > 3000) {
     this.basketSumme = 0;
     this.showBasketZwischensumme = true;
   } else 
@@ -207,7 +209,8 @@ saveBestellungDetail() {
     this.bestellungDetail.BestellMenge = this.warenkorb[i].Stk;
     this.bestellungDetail.PKArtikelID = this.warenkorb[i].PKArtikelID;
     this.bestellungDetail.Typ = this.warenkorb[i].Typ;
-    this.bestellungDetail.Groesse = this.warenkorb[i].Groesse;
+    this.bestellungDetail.Breite = this.warenkorb[i].Breite;
+   // this.bestellungDetail.Laenge = this.warenkorb[i].Laenge;
     this.bestellungDetail.PreisMenge = this.warenkorb[i].Preis;
     this.bestellungDetail.MengenEinheit = this.warenkorb[i].ME;
     this.bestellungDetail.PreisGesamt = this.warenkorb[i].Gesamt;
