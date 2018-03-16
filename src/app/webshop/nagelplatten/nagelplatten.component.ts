@@ -245,6 +245,6 @@ saveBestellungDetail() {
 
 
   clearAll() {
-    window.location.href = "/"
+    window.location.href = "/onlineshopNP/de"
   }
 }

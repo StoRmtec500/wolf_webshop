@@ -59,9 +59,9 @@
                         <mat-expansion-panel-header>
                           <div class="row_accordion disabled">
                             <div class="row">
-                              <div class="col-lg-6 col-xl-5">Typ</div>
-                              <div class="col-lg-2 col-xl-3 text-right">Euro / kg</div>
-                              <div class="col-lg-2 col-xl-3 offset-lg-1  text-right">Euro / m²</div>
+                              <div class="col-md-3 col-lg-5 col-xl-4">Typ</div>
+                              <div class="col-md-3 col-lg-2 col-xl-4 text-right">Euro / kg</div>
+                              <div class="col-md-5 col-lg-2 col-xl-2 offset-lg-1  text-right">Euro / m²</div>
                             </div>
                           </div>
                         </mat-expansion-panel-header>
@@ -70,9 +70,9 @@
                         <mat-expansion-panel-header (click)="getNagelplattenWithTyp('4949')">
                           <div class="row_accordion">
                             <div class="row">
-                              <div class="col-lg-6 col-xl-7">W101</div>
-                              <div class="col-lg-2 col-xl-2"> 2,53</div>
-                              <div class="col-lg-2 col-xl-2 offset-sm-1 offset-lg-1 offset-xl-1">19,86</div>
+                              <div class="col-md-4 col-lg-6 col-xl-7">W101</div>
+                              <div class="col-md-4 col-lg-2 col-xl-2"> 2,53</div>
+                              <div class="col-md-3 col-lg-2 col-xl-2 offset-sm-1 offset-lg-1 offset-xl-1">19,86</div>
                             </div>
                           </div>
                         </mat-expansion-panel-header>
@@ -499,31 +499,31 @@
                       <div class="basketDetailHeader">
                         <div class="row" >
                       
-                      <div class="artikelheader col-lg-2 col-xl-3">Menge</div>
-                      <div class="artikelheader2 col-lg-1 col-xl-1">Art.Nr.</div>
-                      <div class="artikelheader2 col-lg-3 col-xl-1">Typ</div>
-                      <div class="artikelheader2 col-lg-3 col-xl-2">Größe</div>
-                      <div class="artikelheader1 col-lg-1 col-xl-1 text-right">kg/ME</div>
-                      <div class="artikelheader1 col-lg-1 col-xl-1 text-right">ME</div>
-                      <div class="artikelheader1 col-lg-1 col-xl-1 text-right">Preis/ME</div>  
-                      <div class="artikelheader1 col-lg-2 col-xl-2 text-right">Gesamt €</div> 
+                      <div class="artikelheader col-md-2 col-lg-3 col-xl-3">Menge</div>
+                      <div class="artikelheader2 col-md-1 col-lg-1 col-xl-1">Art.Nr.</div>
+                      <div class="artikelheader2 col-md-1 col-lg-1 col-xl-1">Typ</div>
+                      <div class="artikelheader2 col-md-3 col-lg-2 col-xl-2">Größe</div>
+                      <div class="artikelheader1 col-md-1 col-lg-1 col-xl-1 text-right">kg/ME</div>
+                      <div class="artikelheader1 col-md-1 col-lg-1 col-xl-1 text-right">ME</div>
+                      <div class="artikelheader1 col-md-1 col-lg-1 col-xl-1 text-right">Preis/ME</div>  
+                      <div class="artikelheader1 col-md-2 col-lg-2 col-xl-2 text-right">Gesamt €</div> 
                     </div>
                   </div>
                   <div class="basketDetailTable">
                     <div class="row">
-                  <table class="tableBasket">
+                  <table class="table">
                       <tr *ngFor="let n of warenkorb; let in = index; index as i; odd as isOdd; even as isEven" 
                       [ngClass]="{ odd: isOdd, even: isEven }" >
                      <div class="row">
-                        <div class="menge col-lg-2 col-xl-3 text-left"><span> <i class="far fa-trash-alt" (click)="deleteEntry(in)"></i><div *ngIf="n.ME > 1;then karton else stueck"></div></span><ng-template #karton>   {{n.Stk }} Karton</ng-template>
+                        <div class="menge col-md-2 col-lg-3 col-xl-3 text-left"><span> <i class="far fa-trash-alt" (click)="deleteEntry(in)"></i><div *ngIf="n.ME > 1;then karton else stueck"></div></span><ng-template #karton>   {{n.Stk }} Karton</ng-template>
                         <ng-template #stueck>   {{n.Stk }} Stück </ng-template></div>
-                        <div class="artikelbasket  col-lg-1 col-xl-1">{{ n.PKArtikelID }}</div>
-                        <div class="artikelbasket  col-lg-3 col-xl-1">{{ n.Typ }}</div>
-                        <div class="artikelbasket  col-lg-3 col-xl-2">{{ n.Breite }} x {{ n.Laenge }} mm</div>
-                        <div class="artikelbasket  col-lg-1 col-xl-1 text-right">{{ n.Gewicht | number: '1.4-4' }}</div>
-                        <div class="artikelbasket  col-lg-1 col-xl-1 text-right">{{ n.ME }}</div>
-                        <div class="artikelbasket  col-lg-1 col-xl-1 text-right">{{ n.Preis | number: '1.4-4'}}</div> 
-                        <div class="artikelbasket  col-lg-1 col-xl-2 text-right">{{ n.Gesamt | number: '1.2-2'}}</div>  
+                        <div class="artikelbasket col-md-1 col-lg-1 col-xl-1">{{ n.PKArtikelID }}</div>
+                        <div class="artikelbasket col-md-1 col-lg-1 col-xl-1">{{ n.Typ }}</div>
+                        <div class="artikelbasket col-md-3 col-lg-2 col-xl-2">{{ n.Breite }} x {{ n.Laenge }} mm</div>
+                        <div class="artikelbasket col-md-1 col-lg-1 col-xl-1 text-right">{{ n.Gewicht | number: '1.4-4' }}</div>
+                        <div class="artikelbasket col-md-1 col-lg-1 col-xl-1 text-right">{{ n.ME }}</div>
+                        <div class="artikelbasket col-md-1 col-lg-1 col-xl-1 text-right">{{ n.Preis | number: '1.4-4'}}</div> 
+                        <div class="artikelbasket col-md-2 col-lg-2 col-xl-2 text-right">{{ n.Gesamt | number: '1.2-2'}}</div>  
                      </div>
                     </tr>
                     </table>
@@ -538,9 +538,9 @@
               <table class="tableBasket">
                 <tr class="even black">
                     <div class="row">
-                        <div class="zwischensummetext col-sm-5 col-lg-6 col-xl-6">Zwischensumme</div>
-                        <div class="col-sm-4 col-lg-2 col-xl-2"></div>
-                        <div class="zwischensumme col-lg-2 col-xl-4 text-right">{{basketZwischenSumme| number: '1.2-2'}}</div>
+                        <div class="zwischensummetext col-md-5 col-lg-6 col-xl-6">Zwischensumme</div>
+                        <div class="col-md-3 col-lg-2 col-xl-2"></div>
+                        <div class="zwischensumme com-md-4 col-lg-4 col-xl-4 text-right">{{basketZwischenSumme| number: '1.2-2'}}</div>
                       </div>
                 </tr>
                 <tr class="odd">
