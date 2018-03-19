@@ -24,7 +24,7 @@ export class NagelplattenComponent implements OnInit {
   rabatte: Rabatt[] = [];
   bestellungKopfID: ID[];
   details = '';
-  showBasket = false;  showBasketZwischensumme = false;
+  showBasket = true;  showBasketZwischensumme = false;
   basketSumme; basketGewicht; public basketZwischenSumme; public basketZwischenSummeRabatt;
   basketRabattProzent;  basketRabattAbKG;  basketTransport; Gesamt; basketSummeGesamt;
   bookName: String;
