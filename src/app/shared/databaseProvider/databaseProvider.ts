@@ -43,7 +43,7 @@ export class databaseProvider {
         FROM    PELokal.dbo.viewArtikel a
             LEFT OUTER JOIN PEKonzern.dbo.artikelEinheitUmrechnung aeu ON aeu.FKArtikelID = a.PKArtikelID AND aeu.FKMandantID = 3 AND aeu.FKMengeneinheit2ID = 7
             LEFT OUTER JOIN PEKonzern.dbo.artikelVerkaufspreis av ON av.FKArtikelID = a.PKArtikelID AND av.FKMandantID = 3 AND av.FKPreislisteID = 1 AND av.GueltigVon <= CONVERT(DATE, GETDATE()) AND av.GueltigBis >= CONVERT(DATE, GETDATE())
-        WHERE   a.FKArtikelgruppeID IN (4941,4942,4949,4961) AND a.GueltigVon <= CONVERT(DATE, GETDATE()) AND a.GueltigBis >= CONVERT(DATE, GETDATE())
+        WHERE   a.FKArtikelgruppeID IN (4941,4942,4949,4961,4945,4946,4948) AND a.GueltigVon <= CONVERT(DATE, GETDATE()) AND a.GueltigBis >= CONVERT(DATE, GETDATE())
         ORDER BY a.Breite, a.Laenge`),
       Datenbank: this.databaseName,
       Login: this.userName,

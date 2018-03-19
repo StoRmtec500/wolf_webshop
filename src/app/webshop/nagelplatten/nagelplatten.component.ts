@@ -34,6 +34,7 @@ open = false;
 errorMsg;
 ID;
 bestellID: number;
+panelOpenState: boolean = false;
 
 land: Laenderliste[] = [];
 
@@ -64,15 +65,7 @@ land: Laenderliste[] = [];
   }
 
   getArticelTyp(typ: number) {
-    //this.nagelplattenTyp.splice(0, 500);
-   /* for (let i in this.nagelplatten) {
-      if(this.nagelplatten[i].FKArtikelgruppeID === typ)
-      {
-        this.nagelplattenTyp.push(this.nagelplatten[i]);
-      }
-  }*/
- // this.ns.getAllArticel().subscribe(data => this.nagelplattenTyp = data);
-  if(this.open == true) {
+    if(this.open == true) {
     console.log("Daten schon vorhanden");
     this.nagelplatten = this.nagelplattenTyp;
   } else {
@@ -82,6 +75,17 @@ land: Laenderliste[] = [];
   }
   this.nagelplatten = this.nagelplatten.filter(t=>t.FKArtikelgruppeID == typ);
   console.log("Artikel nach Typ gefiltert; " + JSON.stringify(this.nagelplatten));
+}
+
+tabSelectionChanged(event){
+
+  // Get the selected tab
+  let selectedTab = event.tab;
+  console.log(selectedTab);
+  console.log('event => ', event);
+  console.log('index => ', event.index);
+  console.log('tab => ', event.tab);
+  this.getArticelTyp(0);
 }
 
   loadLaenderliste() {
