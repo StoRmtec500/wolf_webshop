@@ -2,7 +2,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { FormControl } from '@angular/forms';
 import { Observable } from 'rxjs/Observable';
-import { Nagelplatten, Warenkorb, Rabatt, ID, Laenderliste, BestellungKopf, BestellungKopfDetail } from '../../shared';
+import { Nagelplatten, Rabatt, ID, Laenderliste, BestellungKopf, BestellungKopfDetail } from '../../shared';
 import { NagelplattenService } from '../../shared/service/nagelplatten.service';
 import { RouterModule, Router } from '@angular/router';
 import { forkJoin } from "rxjs/observable/forkJoin";
@@ -20,7 +20,7 @@ export class MetalwebsComponent implements OnInit {
   @ViewChild('name') name: HTMLInputElement;
   headertitle = 'Bestellung Nagelplatten';
   nagelplatten: Nagelplatten[];
-  warenkorb: Warenkorb[] = [];
+  warenkorb: Nagelplatten[] = [];
   rabatte: Rabatt[];
   bestellungKopfID: ID[];
   details = '';

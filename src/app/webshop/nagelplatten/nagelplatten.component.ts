@@ -1,5 +1,5 @@
 import { Component,ViewChild, OnInit, Input } from '@angular/core';
-import { Nagelplatten, Warenkorb, Rabatt, BestellungKopf, ID, BestellungKopfDetail, Laenderliste } from '../../shared/index';
+import { Nagelplatten, Rabatt, BestellungKopf, ID, BestellungKopfDetail, Laenderliste } from '../../shared/index';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Observable } from 'rxjs/Observable';
 import {startWith} from 'rxjs/operators/startWith';
@@ -18,8 +18,9 @@ export class NagelplattenComponent implements OnInit {
   result: any;
   @ViewChild('name') name: HTMLInputElement;
   headertitle = 'Bestellung Nagelplatten';
-  nagelplatten: Nagelplatten[];
-  warenkorb: Warenkorb[] = [];
+  nagelplatten: Nagelplatten[] = [];
+  nagelplattenTyp: Nagelplatten[] = [];
+  warenkorb: Nagelplatten[] = [];
   rabatte: Rabatt[] = [];
   bestellungKopfID: ID[];
   details = '';
@@ -29,6 +30,7 @@ export class NagelplattenComponent implements OnInit {
   bookName: String;
 isValid = true;
 error = false;
+open = false;
 errorMsg;
 ID;
 bestellID: number;
@@ -44,7 +46,11 @@ land: Laenderliste[] = [];
   bestellung = new BestellungKopf();
   bestellungDetail = new BestellungKopfDetail();
 
-  constructor(private ns: NagelplattenService, private router: Router) { }
+  constructor(private ns: NagelplattenService, private router: Router) { 
+    this.ns.getAllArticel().subscribe(data => this.nagelplattenTyp = data);
+    this.nagelplatten = this.nagelplattenTyp;
+    this.getArticelTyp(0);
+  }
 
   ngOnInit() {
     //this.nagelplatten = null;
@@ -56,6 +62,27 @@ land: Laenderliste[] = [];
       //this.nagelplatten = null;
       this.ns.getNagelplatten(typ).subscribe(data => this.nagelplatten = data);
   }
+
+  getArticelTyp(typ: number) {
+    //this.nagelplattenTyp.splice(0, 500);
+   /* for (let i in this.nagelplatten) {
+      if(this.nagelplatten[i].FKArtikelgruppeID === typ)
+      {
+        this.nagelplattenTyp.push(this.nagelplatten[i]);
+      }
+  }*/
+ // this.ns.getAllArticel().subscribe(data => this.nagelplattenTyp = data);
+  if(this.open == true) {
+    console.log("Daten schon vorhanden");
+    this.nagelplatten = this.nagelplattenTyp;
+  } else {
+  this.ns.getAllArticel().subscribe(data => this.nagelplattenTyp = data);
+  this.open = true;
+  console.log("Daten werden geladen");
+  }
+  this.nagelplatten = this.nagelplatten.filter(t=>t.FKArtikelgruppeID == typ);
+  console.log("Artikel nach Typ gefiltert; " + JSON.stringify(this.nagelplatten));
+}
 
   loadLaenderliste() {
     this.ns.getLaenderliste().subscribe((land: Laenderliste[]) => {
@@ -79,7 +106,7 @@ land: Laenderliste[] = [];
             }
            
           }
-           this.warenkorb.push(this.nagelplatten[index]);
+           this.warenkorb.push(this.nagelplatten[i]);
            
            console.log("ArtNrcheck" + JSON.stringify(this.warenkorb));
           } 

@@ -575,16 +575,25 @@ body {
 }
 
 @media (min-width: 992px) {
+        .artikel.padding {
+            margin-left: -15px;
+        }
+    
+        .artikelheader3.col-12.col-sm-1.col-lg-2.col-xl-2.text-right {
+            margin-left: -15px;
+        }
+        }
+    
+    @media (max-width: 991px) {
     .artikel.padding {
-        margin-left: -15px;
+        margin-left: 0px;
+    }
+    
+    .artikelheader3.col-12.col-sm-1.col-lg-2.col-xl-2.text-right {
+        margin-left: 0px;
     }
     }
-
-@media (max-width: 991px) {
-.artikel.padding {
-    margin-left: 0px;
-}
-}
+    
 
 
 .artikelheadernormal, .artikelheader1normal {

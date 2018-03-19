@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
-import { Nagelplatten, Rabatt, BestellungKopf, Warenkorb, ID, BestellungKopfDetail, Laenderliste } from '../index';
+import { Nagelplatten, Rabatt, BestellungKopf, ID, BestellungKopfDetail, Laenderliste } from '../index';
 import { databaseProvider } from '../databaseProvider/databaseProvider';
 import { environment } from '../../../environments/environment';
 import 'rxjs/add/operator/map';
@@ -22,6 +22,11 @@ export class NagelplattenService {
   getNagelplatten(typ:number): Observable<Nagelplatten[]> {
 
     const body = this.db.artikelSelect(typ);
+    return this.httpClient.post<Nagelplatten[]>(environment.apiUrlRead, body);
+  }
+
+  getAllArticel(): Observable<Nagelplatten[]> {
+    const body = this.db.allArtikelSelect();
     return this.httpClient.post<Nagelplatten[]>(environment.apiUrlRead, body);
   }
 
