@@ -53,6 +53,7 @@
             <div class="site_width">
               <mat-tab-group class="tab-group" (selectChange)="tabSelectionChanged($event)">
                 <mat-tab label="Verzinkt">
+                    <ng-template matTabContent>
                   <div class="tab-content visible-sm-12">
                     <mat-accordion>
                       <mat-expansion-panel [disabled]="true">
@@ -309,9 +310,11 @@
                           </mat-expansion-panel>
                     </mat-accordion>
                   </div>
+                  </ng-template>
                 </mat-tab>
 <!-- ANFANG TAB Edelstahl -->
                 <mat-tab label="Edelstahl">
+                    <ng-template matTabContent>
                   <div class="tab-content visible-sm-12">
                     <mat-accordion>
                       <mat-expansion-panel [disabled]="true">
@@ -507,6 +510,7 @@
                         </mat-expansion-panel>
                     </mat-accordion>
                   </div>
+                  </ng-template>
                 </mat-tab>
 <!-- ENDE TAB Edelstahl-->
               </mat-tab-group>
