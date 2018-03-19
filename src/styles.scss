@@ -1,5 +1,4 @@
 @import './styles/css/bootstrap.min.css';
-@import './styles/css/fontawesome-all.css';
 @import '~@angular/material/theming';
 // Plus imports for other components in your app.
 
@@ -222,6 +221,7 @@ mat-ink-bar.mat-ink-bar {
 .mat-expansion-indicator::after, .mat-expansion-panel-header-description {
      color: #717274;
 }
+
 
 @media (min-width:1025px) {
     .table {

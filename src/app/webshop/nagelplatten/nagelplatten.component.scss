@@ -277,6 +277,7 @@ tr{
 .auftragsentwicklung {
     background-color: #fff;
     border-top-right-radius: 10px;
+    font-size: 0.9em;
 }
 /* MODALSTYLE*/
 
@@ -574,6 +575,25 @@ body {
     padding-right: 0px;
 }
 
+
+
+@media only screen and (min-width: 1366px) {
+    .warenkorb {
+        padding-top: 0px;
+    }
+}
+
+@media only screen and (max-width: 1365px) {
+    .warenkorb {
+        padding-top: 20px;
+        padding-left: 29px;
+    }
+
+    .buttonBasket {
+        display: inherit;
+    }
+}
+
 @media (min-width: 992px) {
         .artikel.padding {
             margin-left: -15px;
@@ -728,7 +748,7 @@ body {
     }
 
     .site_width {
-        width: 98%;
+       // width: 98%;
         padding-left: 15px;
     }
 

@@ -278,4 +278,8 @@ saveBestellungDetail() {
   clearAll() {
     window.location.href = "/onlineshopNP/de"
   }
+
+  scroll(el) {
+    el.scrollIntoView();
+}
 }
