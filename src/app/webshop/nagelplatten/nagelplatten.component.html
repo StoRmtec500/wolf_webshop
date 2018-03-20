@@ -2,12 +2,12 @@
 <div class="content-wrapper">
     <!-- Content Header -->
     <section class="content-header">
-      <h2>Bestellung Nagelplatten</h2>
+      <h2 i18n>Bestellung Nagelplatten</h2>
       <a href="http://www.wolfnagelplatten.at/Online-Bestellung/AGB-Bestellung" i18n>Allgemeine Geschäftsbedingungen</a>
       <br>
       <br>
       <h4 i18n>1. Artikelauswahl</h4>
-      Wählen Sie einen Nagelplattentyp aus, und tragen Sie die Bestellmenge ein. Rabatt nach Bestellmenge pro Auftrag:
+      <ng-container i18n>Wählen Sie einen Nagelplattentyp aus, und tragen Sie die Bestellmenge ein. Rabatt nach Bestellmenge pro Auftrag:</ng-container>
       <div class="line_height"></div>
       <div class="row_header">
         <div class="col-md-12 col-sm-12 col-xs-12 col-lg-12 col-xl-10">
@@ -16,24 +16,24 @@
               <tbody>
                 <tr>
                   <th scope="row" width="25%" style="text-align: left">
-                    ab 1.000 kg - 3%
+                    <b i18n>ab 1.000 kg - 3%</b>
                   </th>
                   <td width="33%" style="text-align: left">
-                    <b>ab 1.500 kg - 4%</b>
+                    <b i18n>ab 1.500 kg - 4%</b>
                   </td>
                   <td width="33%" style="text-align: left">
-                    <b>ab 3.000 kg - 6%</b>
+                    <b i18n>ab 3.000 kg - 6%</b>
                   </td>
                 </tr>
                 <tr>
                   <th scope="row" width="25%" style="text-align: left">
-                    <b>ab 5.000 kg - 8%</b>
+                    <b i18n>ab 5.000 kg - 8%</b>
                   </th>
                   <td width="33%" style="text-align: left">
-                    <b>ab 10.000 kg - 10% + Transport frei</b>
+                    <b i18n>ab 10.000 kg - 10% + Transport frei</b>
                   </td>
                   <td width="33%" style="text-align: left">
-                    <b>ab 15.000 kg - 12% + Transport frei</b>
+                    <b i18n>ab 15.000 kg - 12% + Transport frei</b>
                   </td>
                 </tr>
               </tbody>
@@ -51,7 +51,7 @@
         <div class="row">
           <div class="col-lg-12 col-xl-6">
             <div class="site_width">
-              <mat-tab-group class="tab-group" (selectChange)="tabSelectionChanged($event)">
+              <mat-tab-group class="tab-group">
                 <mat-tab label="Verzinkt">
                     <ng-template matTabContent>
                   <div class="tab-content visible-sm-12">
@@ -89,26 +89,26 @@
                                 <br>
                               </ng-template>
                                 <ng-template #show>
-                                <div class="col-lg-12 col-xl-12">Blechdicke: 1,00 mm</div>
-                                <div class="col-lg-12 col-xl-12"> Zulassungsnummer: Z-9.1-757</div>
+                                <div class="col-lg-12 col-xl-12" i18n>Blechdicke: 1,00 mm</div>
+                                <div class="col-lg-12 col-xl-12" i18n> Zulassungsnummer: Z-9.1-757</div>
                                 <br>
                                 <div class="buttonBasket" id="myHeader">
-                                    <button type="button" class="buttonWarenkorb" (click)="scroll(target)">Übernehmen und Warenkorb berechnen</button>
+                                    <button type="button" class="buttonWarenkorb" (click)="scroll(target)" i18n>Übernehmen und Warenkorb berechnen</button>
                                     <br> </div>
                                   <div class="row">
-                                  <div class="artWidthHeader col-12 col-sm-3 col-lg-3 col-xl-3">Menge</div>
-                                  <div class="artikelheader2 col-12 col-sm-2 col-lg-2 col-xl-2">Art.Nr.</div>
-                                  <div class="artikelheader2 col-12 col-sm-3 col-lg-2 col-xl-2">Größe</div>
-                                  <div class="artikelheader1 col-12 col-sm-2 col-lg-2 col-xl-2 text-right">kg/ME</div>
-                                  <div class="artikelheader2 col-12 col-sm-1 col-lg-1 col-xl-1 text-right">ME</div>
-                                  <div class="artikelheader1 col-12 col-sm-1 col-lg-2 col-xl-2 text-right">Preis/ME</div>  
+                                  <div class="artWidthHeader col-12 col-sm-3 col-lg-3 col-xl-3" i18n>Menge</div>
+                                  <div class="artikelheader2 col-12 col-sm-2 col-lg-2 col-xl-2" i18n>Art.Nr.</div>
+                                  <div class="artikelheader2 col-12 col-sm-3 col-lg-2 col-xl-2" i18n>Größe</div>
+                                  <div class="artikelheader1 col-12 col-sm-2 col-lg-2 col-xl-2 text-right" i18n>kg/ME</div>
+                                  <div class="artikelheader2 col-12 col-sm-1 col-lg-1 col-xl-1 text-right" i18n>ME</div>
+                                  <div class="artikelheader1 col-12 col-sm-1 col-lg-2 col-xl-2 text-right" i18n>Preis/ME</div>  
                                 </div>
                                 <table class="table">
                               <tr class="" *ngFor="let n of nagelplatten; let in = index; index as i; odd as isOdd; even as isEven" 
                               [ngClass]="{ odd: isOdd, even: isEven }" >
                               <div class="row">
-                                <div class="artWidth col-sm-3 col-lg-3 col-xl-3"><span><input type="number" pattern=[0-9] name='name' [(ngModel)]="n.Stk" (change)="addToCart(name.value, in, n.PKArtikelID, 'W101')" #name><div *ngIf="n.ME > 1;then karton else stueck"></div></span><ng-template #karton> Karton</ng-template>
-                                <ng-template #stueck> Stück</ng-template></div>
+                                <div class="artWidth col-sm-3 col-lg-3 col-xl-3"><span><input type="number" pattern=[0-9] name='name' [(ngModel)]="n.Stk" (change)="addToCart(name.value, in, n.PKArtikelID, 'W101')" #name><div *ngIf="n.ME > 1;then karton else stueck"></div></span><ng-template #karton i18n> Karton</ng-template>
+                                <ng-template #stueck i18n> Stück</ng-template></div>
                                 <div class="artikel col col-sm-2 col-lg-2 col-xl-2">{{ n.PKArtikelID }}</div>
                                 <div class="artikel col col-sm-3 col-lg-2 col-xl-2">{{ n.Breite }} x {{ n.Laenge }} mm</div>
                                 <div class="artikel col col-sm-2 col-lg-2 col-xl-2 text-right">{{ n.Gewicht | number: '1.4-4' }}</div>
@@ -119,7 +119,7 @@
                             </table>
                             <br/>
                             <div class="buttonBasket" id="myHeader">
-                                <button type="button" class="buttonWarenkorb" (click)="scroll(target)">Übernehmen und Warenkorb berechnen</button>
+                                <button type="button" class="buttonWarenkorb" (click)="scroll(target)" i18n>Übernehmen und Warenkorb berechnen</button>
                                 <br/><br/> </div>
                             </ng-template>
                               </div>
@@ -148,27 +148,27 @@
                                 Daten werden geladen ...
                               </ng-template>
                                 <ng-template #show>
-                                <div class="col-lg-12 col-xl-12">Blechdicke: 1,25 mm</div>
-                                <div class="col-lg-12 col-xl-12"> Zulassungsnummer: Z-9.1-801</div>
+                                <div class="col-lg-12 col-xl-12" i18n>Blechdicke: 1,25 mm</div>
+                                <div class="col-lg-12 col-xl-12" i18n> Zulassungsnummer: Z-9.1-801</div>
                                 <br>
                                 <div class="buttonBasket" id="myHeader">
-                                    <button type="button" class="buttonWarenkorb" (click)="scroll(target)">Übernehmen und Warenkorb berechnen</button>
+                                    <button type="button" class="buttonWarenkorb" (click)="scroll(target)" i18n>Übernehmen und Warenkorb berechnen</button>
                                     <br></div>
                                   
                                     <div class="row">
-                                      <div class="artWidthHeader col-12 col-sm-3 col-lg-3 col-xl-3">Menge</div>
-                                      <div class="artikelheader2 col-12 col-sm-2 col-lg-2 col-xl-2">Art.Nr.</div>
-                                      <div class="artikelheader2 col-12 col-sm-3 col-lg-2 col-xl-2">Größe</div>
-                                      <div class="artikelheader1 col-12 col-sm-2 col-lg-2 col-xl-2 text-right">kg/ME</div>
-                                      <div class="artikelheader2 col-12 col-sm-1 col-lg-1 col-xl-1 text-right">ME</div>
-                                      <div class="artikelheader1 col-12 col-sm-1 col-lg-2 col-xl-2 text-right">Preis/ME</div>  
+                                      <div class="artWidthHeader col-12 col-sm-3 col-lg-3 col-xl-3" i18n>Menge</div>
+                                      <div class="artikelheader2 col-12 col-sm-2 col-lg-2 col-xl-2" i18n>Art.Nr.</div>
+                                      <div class="artikelheader2 col-12 col-sm-3 col-lg-2 col-xl-2" i18n>Größe</div>
+                                      <div class="artikelheader1 col-12 col-sm-2 col-lg-2 col-xl-2 text-right" i18n>kg/ME</div>
+                                      <div class="artikelheader2 col-12 col-sm-1 col-lg-1 col-xl-1 text-right" i18n>ME</div>
+                                      <div class="artikelheader1 col-12 col-sm-1 col-lg-2 col-xl-2 text-right" i18n>Preis/ME</div>  
                                     </div>
                                 <table class="table">
                               <tr class="" *ngFor="let n of nagelplatten; let in = index; index as i; odd as isOdd; even as isEven" 
                               [ngClass]="{ odd: isOdd, even: isEven }" >
                               <div class="row">
-                                <div class="artWidth col-sm-3 col-lg-3 col-xl-3"><span><input type="number" pattern="[0-9]" name='name' [(ngModel)]="n.Stk" (change)="addToCart(name.value, in, n.PKArtikelID, '12N')" #name><div *ngIf="n.ME > 1;then karton else stueck"></div></span><ng-template #karton> Karton</ng-template>
-                                <ng-template #stueck> Stück</ng-template></div>
+                                <div class="artWidth col-sm-3 col-lg-3 col-xl-3"><span><input type="number" pattern="[0-9]" name='name' [(ngModel)]="n.Stk" (change)="addToCart(name.value, in, n.PKArtikelID, '12N')" #name><div *ngIf="n.ME > 1;then karton else stueck"></div></span><ng-template #karton i18n> Karton</ng-template>
+                                <ng-template #stueck i18n> Stück</ng-template></div>
                                 <div class="artikel col col-sm-2 col-lg-2 col-xl-2">{{ n.PKArtikelID }}</div>
                                 <div class="artikel col col-sm-3 col-lg-2 col-xl-2">{{ n.Breite }} x {{ n.Laenge }} mm</div>
                                 <div class="artikel col col-sm-2 col-lg-2 col-xl-2 text-right">{{ n.Gewicht | number: '1.4-4' }}</div>
@@ -179,7 +179,7 @@
                             </table>
                             <br/>
                             <div class="buttonBasket" id="myHeader">
-                                <button type="button" class="buttonWarenkorb" (click)="scroll(target)">Übernehmen und Warenkorb berechnen</button>
+                                <button type="button" class="buttonWarenkorb" (click)="scroll(target)" i18n>Übernehmen und Warenkorb berechnen</button>
                                 <br/><br/> </div>
                             </ng-template>
                               </div>
@@ -208,27 +208,27 @@
                                   Daten werden geladen ...
                                 </ng-template>
                                   <ng-template #show>
-                                  <div class="col-lg-12 col-xl-12">Blechdicke: 1,50 mm</div>
-                                  <div class="col-lg-12 col-xl-12"> Zulassungsnummer: Z-9.1-755 (DIN 1052-2008-12)</div>
+                                  <div class="col-lg-12 col-xl-12" i18n>Blechdicke: 1,50 mm</div>
+                                  <div class="col-lg-12 col-xl-12" i18n> Zulassungsnummer: Z-9.1-755 (DIN 1052-2008-12)</div>
                                   <br>
                                   <div class="buttonBasket" id="myHeader">
-                                      <button type="button" class="buttonWarenkorb" (click)="scroll(target)">Übernehmen und Warenkorb berechnen</button>
+                                      <button type="button" class="buttonWarenkorb" (click)="scroll(target)" i18n>Übernehmen und Warenkorb berechnen</button>
                                       <br></div>
                                     
                                       <div class="row">
-                                        <div class="artWidthHeader col-12 col-sm-3 col-lg-3 col-xl-3">Menge</div>
-                                        <div class="artikelheader2 col-12 col-sm-2 col-lg-2 col-xl-2">Art.Nr.</div>
-                                        <div class="artikelheader2 col-12 col-sm-3 col-lg-2 col-xl-2">Größe</div>
-                                        <div class="artikelheader1 col-12 col-sm-2 col-lg-2 col-xl-2 text-right">kg/ME</div>
-                                        <div class="artikelheader2 col-12 col-sm-1 col-lg-1 col-xl-1 text-right">ME</div>
-                                        <div class="artikelheader1 col-12 col-sm-1 col-lg-2 col-xl-2 text-right">Preis/ME</div>  
+                                        <div class="artWidthHeader col-12 col-sm-3 col-lg-3 col-xl-3" i18n>Menge</div>
+                                        <div class="artikelheader2 col-12 col-sm-2 col-lg-2 col-xl-2" i18n>Art.Nr.</div>
+                                        <div class="artikelheader2 col-12 col-sm-3 col-lg-2 col-xl-2" i18n>Größe</div>
+                                        <div class="artikelheader1 col-12 col-sm-2 col-lg-2 col-xl-2 text-right" i18n>kg/ME</div>
+                                        <div class="artikelheader2 col-12 col-sm-1 col-lg-1 col-xl-1 text-right" i18n>ME</div>
+                                        <div class="artikelheader1 col-12 col-sm-1 col-lg-2 col-xl-2 text-right" i18n>Preis/ME</div>  
                                       </div>
                                   <table class="table">
                                 <tr class="" *ngFor="let n of nagelplatten; let in = index; index as i; odd as isOdd; even as isEven" 
                                 [ngClass]="{ odd: isOdd, even: isEven }" >
                                 <div class="row">
-                                  <div class="artWidth col-sm-3 col-lg-3 col-xl-3"><span><input type="number" pattern="[0-9]" name='name' [(ngModel)]="n.Stk" (change)="addToCart(name.value, in, n.PKArtikelID, '15N')" #name><div *ngIf="n.ME > 1;then karton else stueck"></div></span><ng-template #karton> Karton</ng-template>
-                                  <ng-template #stueck> Stück</ng-template></div>
+                                  <div class="artWidth col-sm-3 col-lg-3 col-xl-3"><span><input type="number" pattern="[0-9]" name='name' [(ngModel)]="n.Stk" (change)="addToCart(name.value, in, n.PKArtikelID, '15N')" #name><div *ngIf="n.ME > 1;then karton else stueck"></div></span><ng-template #karton i18n> Karton</ng-template>
+                                  <ng-template #stueck i18n> Stück</ng-template></div>
                                   <div class="artikel col col-sm-2 col-lg-2 col-xl-2">{{ n.PKArtikelID }}</div>
                                   <div class="artikel col col-sm-3 col-lg-2 col-xl-2">{{ n.Breite }} x {{ n.Laenge }} mm</div>
                                   <div class="artikel col col-sm-2 col-lg-2 col-xl-2 text-right">{{ n.Gewicht | number: '1.4-4' }}</div>
@@ -239,7 +239,7 @@
                               </table>
                               <br/>
                             <div class="buttonBasket" id="myHeader">
-                                <button type="button" class="buttonWarenkorb" (click)="scroll(target)">Übernehmen und Warenkorb berechnen</button>
+                                <button type="button" class="buttonWarenkorb" (click)="scroll(target)" i18n>Übernehmen und Warenkorb berechnen</button>
                                 <br/><br/> </div>
                               </ng-template>
                                 </div>
@@ -268,28 +268,28 @@
                                     Daten werden geladen ...
                                   </ng-template>
                                 <ng-template #show>
-                                    <div class="col-lg-12 col-xl-12">Blechdicke: 2,00 mm</div>
-                                    <div class="col-lg-12 col-xl-12"> Zulassungsnummer: Z-9.1-855</div>
+                                    <div class="col-lg-12 col-xl-12" i18n>Blechdicke: 2,00 mm</div>
+                                    <div class="col-lg-12 col-xl-12" i18n> Zulassungsnummer: Z-9.1-855</div>
                                     <br>
                                     <div class="buttonBasket" id="myHeader">
-                                        <button type="button" class="buttonWarenkorb" (click)="scroll(target)">Übernehmen und Warenkorb berechnen</button>
+                                        <button type="button" class="buttonWarenkorb" (click)="scroll(target)" i18n>Übernehmen und Warenkorb berechnen</button>
                                         <br>
                                       </div>
                                      
                                       <div class="row">
-                                        <div class="artWidthHeader col-12 col-sm-3 col-lg-3 col-xl-3">Menge</div>
-                                        <div class="artikelheader2 col-12 col-sm-2 col-lg-2 col-xl-2">Art.Nr.</div>
-                                        <div class="artikelheader2 col-12 col-sm-3 col-lg-2 col-xl-2">Größe</div>
-                                        <div class="artikelheader1 col-12 col-sm-2 col-lg-2 col-xl-2 text-right">kg/ME</div>
-                                        <div class="artikelheader2 col-12 col-sm-1 col-lg-1 col-xl-1 text-right">ME</div>
-                                        <div class="artikelheader1 col-12 col-sm-1 col-lg-2 col-xl-2 text-right">Preis/ME</div>  
+                                        <div class="artWidthHeader col-12 col-sm-3 col-lg-3 col-xl-3" i18n>Menge</div>
+                                        <div class="artikelheader2 col-12 col-sm-2 col-lg-2 col-xl-2" i18n>Art.Nr.</div>
+                                        <div class="artikelheader2 col-12 col-sm-3 col-lg-2 col-xl-2" i18n>Größe</div>
+                                        <div class="artikelheader1 col-12 col-sm-2 col-lg-2 col-xl-2 text-right" i18n>kg/ME</div>
+                                        <div class="artikelheader2 col-12 col-sm-1 col-lg-1 col-xl-1 text-right" i18n>ME</div>
+                                        <div class="artikelheader1 col-12 col-sm-1 col-lg-2 col-xl-2 text-right" i18n>Preis/ME</div>  
                                       </div>
                                     <table class="table">
                                   <tr class="" *ngFor="let n of nagelplatten; let in = index; index as i; odd as isOdd; even as isEven" 
                                   [ngClass]="{ odd: isOdd, even: isEven }" >
                                   <div class="row">
-                                    <div class="artWidth col-sm-3 col-lg-3 col-xl-3"><span><input type="number" pattern="[0-9]" name='name' [(ngModel)]="n.Stk" (change)="addToCart(name.value, in, n.PKArtikelID, '20W')" #name><div *ngIf="n.ME > 1;then karton else stueck"></div></span><ng-template #karton> Karton</ng-template>
-                                    <ng-template #stueck> Stück</ng-template></div>
+                                    <div class="artWidth col-sm-3 col-lg-3 col-xl-3"><span><input type="number" pattern="[0-9]" name='name' [(ngModel)]="n.Stk" (change)="addToCart(name.value, in, n.PKArtikelID, '20W')" #name><div *ngIf="n.ME > 1;then karton else stueck"></div></span><ng-template #karton i18n> Karton</ng-template>
+                                    <ng-template #stueck i18n> Stück</ng-template></div>
                                     <div class="artikel col col-sm-2 col-lg-2 col-xl-2">{{ n.PKArtikelID }}</div>
                                 <div class="artikel col col-sm-3 col-lg-2 col-xl-2">{{ n.Breite }} x {{ n.Laenge }} mm</div>
                                 <div class="artikel col col-sm-2 col-lg-2 col-xl-2 text-right">{{ n.Gewicht | number: '1.4-4' }}</div>
@@ -300,7 +300,7 @@
                                 </table>
                                 <br/>
                             <div class="buttonBasket" id="myHeader">
-                                <button type="button" class="buttonWarenkorb" (click)="scroll(target)">Übernehmen und Warenkorb berechnen</button>
+                                <button type="button" class="buttonWarenkorb" (click)="scroll(target)" i18n>Übernehmen und Warenkorb berechnen</button>
                                 <br/><br/> </div>
                                 </ng-template>
                                   </div>
@@ -349,27 +349,27 @@
                                 Daten werden geladen ...
                               </ng-template>
                                 <ng-template #show>
-                                <div class="col-sm-12 col-lg-12 col-xl-12">Blechdicke: 1,25 mm</div>
-                                <div class="col-sm-12 col-lg-12 col-xl-12"> Zulassungsnummer: Z-9.1-801</div>
+                                <div class="col-sm-12 col-lg-12 col-xl-12" i18n>Blechdicke: 1,25 mm</div>
+                                <div class="col-sm-12 col-lg-12 col-xl-12" i18n> Zulassungsnummer: Z-9.1-801</div>
                                 <br>
                                 <div class="buttonBasket" id="myHeader">
-                                    <button type="button" class="buttonWarenkorb" (click)="scroll(target)">Übernehmen und Warenkorb berechnen</button>
+                                    <button type="button" class="buttonWarenkorb" (click)="scroll(target)" i18n>Übernehmen und Warenkorb berechnen</button>
                                     <br>
                                   </div>
                                   <div class="row">
-                                    <div class="artWidthHeader col-12 col-sm-3 col-lg-3 col-xl-3">Menge</div>
-                                    <div class="artikelheader2 col-12 col-sm-2 col-lg-2 col-xl-2">Art.Nr.</div>
-                                    <div class="artikelheader2 col-12 col-sm-3 col-lg-2 col-xl-2">Größe</div>
-                                    <div class="artikelheader1 col-12 col-sm-2 col-lg-2 col-xl-2 text-right">kg/ME</div>
-                                    <div class="artikelheader2 col-12 col-sm-1 col-lg-1 col-xl-1 text-right">ME</div>
-                                    <div class="artikelheader1 col-12 col-sm-1 col-lg-2 col-xl-2 text-right">Preis/ME</div>  
+                                    <div class="artWidthHeader col-12 col-sm-3 col-lg-3 col-xl-3" i18n>Menge</div>
+                                    <div class="artikelheader2 col-12 col-sm-2 col-lg-2 col-xl-2" i18n>Art.Nr.</div>
+                                    <div class="artikelheader2 col-12 col-sm-3 col-lg-2 col-xl-2" i18n>Größe</div>
+                                    <div class="artikelheader1 col-12 col-sm-2 col-lg-2 col-xl-2 text-right" i18n>kg/ME</div>
+                                    <div class="artikelheader2 col-12 col-sm-1 col-lg-1 col-xl-1 text-right" i18n>ME</div>
+                                    <div class="artikelheader1 col-12 col-sm-1 col-lg-2 col-xl-2 text-right" i18n>Preis/ME</div>  
                                   </div>
                                 <table class="table">
                               <tr class="" *ngFor="let n of nagelplatten; let in = index; index as i; odd as isOdd; even as isEven" 
                               [ngClass]="{ odd: isOdd, even: isEven }" >
                               <div class="row">
-                                <div class="artWidth col-sm-3 col-lg-3 col-xl-3"><span><input type="number" pattern="[0-9]" name='name' [(ngModel)]="n.Stk" (change)="addToCart(name.value, in, n.PKArtikelID, '12NE')" #name><div *ngIf="n.ME > 1;then karton else stueck"></div></span><ng-template #karton> Karton</ng-template>
-                                <ng-template #stueck> Stück</ng-template></div>
+                                <div class="artWidth col-sm-3 col-lg-3 col-xl-3"><span><input type="number" pattern="[0-9]" name='name' [(ngModel)]="n.Stk" (change)="addToCart(name.value, in, n.PKArtikelID, '12NE')" #name><div *ngIf="n.ME > 1;then karton else stueck"></div></span><ng-template #karton i18n> Karton</ng-template>
+                                <ng-template #stueck i18n> Stück</ng-template></div>
                                 <div class="artikel col col-sm-2 col-lg-2 col-xl-2">{{ n.PKArtikelID }}</div>
                                 <div class="artikel col col-sm-3 col-lg-2 col-xl-2">{{ n.Breite }} x {{ n.Laenge }} mm</div>
                                 <div class="artikel col col-sm-2 col-lg-2 col-xl-2 text-right">{{ n.Gewicht | number: '1.4-4' }}</div>
@@ -380,7 +380,7 @@
                             </table>
                             <br/>
                             <div class="buttonBasket" id="myHeader">
-                                <button type="button" class="buttonWarenkorb" (click)="scroll(target)">Übernehmen und Warenkorb berechnen</button>
+                                <button type="button" class="buttonWarenkorb" (click)="scroll(target)" i18n>Übernehmen und Warenkorb berechnen</button>
                                 <br/><br/> </div>
                             </ng-template>
                               </div>
@@ -409,27 +409,27 @@
                                 Daten werden geladen ...
                               </ng-template>
                                 <ng-template #show>
-                                <div class="col-sm-12 col-lg-12 col-xl-12">Blechdicke: 1,50 mm</div>
-                                <div class="col-sm-12 col-lg-12 col-xl-12"> Zulassungsnummer: Z-9.1-755 (DIN 1052-2008-12)</div>
+                                <div class="col-sm-12 col-lg-12 col-xl-12" i18n>Blechdicke: 1,50 mm</div>
+                                <div class="col-sm-12 col-lg-12 col-xl-12" i18n> Zulassungsnummer: Z-9.1-755 (DIN 1052-2008-12)</div>
                                 <br>
                                 <div class="buttonBasket" id="myHeader">
-                                    <button type="button" class="buttonWarenkorb" (click)="scroll(target)">Übernehmen und Warenkorb berechnen</button>
+                                    <button type="button" class="buttonWarenkorb" (click)="scroll(target)" i18n>Übernehmen und Warenkorb berechnen</button>
                                   </div>
                                     <br>
                                     <div class="row">
-                                      <div class="artWidthHeader col-12 col-sm-3 col-lg-3 col-xl-3">Menge</div>
-                                      <div class="artikelheader2 col-12 col-sm-2 col-lg-2 col-xl-2">Art.Nr.</div>
-                                      <div class="artikelheader2 col-12 col-sm-3 col-lg-2 col-xl-2">Größe</div>
-                                      <div class="artikelheader1 col-12 col-sm-2 col-lg-2 col-xl-2 text-right">kg/ME</div>
-                                      <div class="artikelheader2 col-12 col-sm-1 col-lg-1 col-xl-1 text-right">ME</div>
-                                      <div class="artikelheader1 col-12 col-sm-1 col-lg-2 col-xl-2 text-right">Preis/ME</div>  
+                                      <div class="artWidthHeader col-12 col-sm-3 col-lg-3 col-xl-3" i18n>Menge</div>
+                                      <div class="artikelheader2 col-12 col-sm-2 col-lg-2 col-xl-2" i18n>Art.Nr.</div>
+                                      <div class="artikelheader2 col-12 col-sm-3 col-lg-2 col-xl-2" i18n>Größe</div>
+                                      <div class="artikelheader1 col-12 col-sm-2 col-lg-2 col-xl-2 text-right" i18n>kg/ME</div>
+                                      <div class="artikelheader2 col-12 col-sm-1 col-lg-1 col-xl-1 text-right" i18n>ME</div>
+                                      <div class="artikelheader1 col-12 col-sm-1 col-lg-2 col-xl-2 text-right" i18n>Preis/ME</div>  
                                     </div>
                                 <table class="table">
                               <tr class="" *ngFor="let n of nagelplatten; let in = index; index as i; odd as isOdd; even as isEven" 
                               [ngClass]="{ odd: isOdd, even: isEven }" >
                               <div class="row">
-                                <div class="artWidth col-sm-3 col-lg-3 col-xl-3"><span><input type="number" pattern="[0-9]" name='name' [(ngModel)]="n.Stk" (change)="addToCart(name.value, in, n.PKArtikelID, '15NE')" #name><div *ngIf="n.ME > 1;then karton else stueck"></div></span><ng-template #karton> Karton</ng-template>
-                                <ng-template #stueck> Stück</ng-template></div>
+                                <div class="artWidth col-sm-3 col-lg-3 col-xl-3"><span><input type="number" pattern="[0-9]" name='name' [(ngModel)]="n.Stk" (change)="addToCart(name.value, in, n.PKArtikelID, '15NE')" #name><div *ngIf="n.ME > 1;then karton else stueck"></div></span><ng-template #karton i18n> Karton</ng-template>
+                                <ng-template #stueck i18n> Stück</ng-template></div>
                                 <div class="artikel col col-sm-2 col-lg-2 col-xl-2">{{ n.PKArtikelID }}</div>
                                 <div class="artikel col col-sm-3 col-lg-2 col-xl-2">{{ n.Breite }} x {{ n.Laenge }} mm</div>
                                 <div class="artikel col col-sm-2 col-lg-2 col-xl-2 text-right">{{ n.Gewicht | number: '1.4-4' }}</div>
@@ -440,7 +440,7 @@
                             </table>
                             <br/>
                             <div class="buttonBasket" id="myHeader">
-                                <button type="button" class="buttonWarenkorb" (click)="scroll(target)">Übernehmen und Warenkorb berechnen</button>
+                                <button type="button" class="buttonWarenkorb" (click)="scroll(target)" i18n>Übernehmen und Warenkorb berechnen</button>
                                 <br/><br/> </div>
                             </ng-template>
                               </div>
@@ -469,27 +469,27 @@
                                   Daten werden geladen ...
                                 </ng-template>
                                   <ng-template #show>
-                                  <div class="col-lg-12 col-xl-12">Blechdicke: 2,00 mm</div>
-                                  <div class="col-lg-12 col-xl-12"> Zulassungsnummer: Z-9.1-756</div>
+                                  <div class="col-lg-12 col-xl-12" i18n>Blechdicke: 2,00 mm</div>
+                                  <div class="col-lg-12 col-xl-12" i18n> Zulassungsnummer: Z-9.1-756</div>
                                   <br>
                                   <div class="buttonBasket" id="myHeader">
-                                      <button type="button" class="buttonWarenkorb" (click)="scroll(target)">Übernehmen und Warenkorb berechnen</button>
+                                      <button type="button" class="buttonWarenkorb" (click)="scroll(target)" i18n>Übernehmen und Warenkorb berechnen</button>
                                     <br>
                                   </div>
                                   <div class="row">
-                                    <div class="artWidthHeader col-12 col-sm-3 col-lg-3 col-xl-3">Menge</div>
-                                    <div class="artikelheader2 col-12 col-sm-2 col-lg-2 col-xl-2">Art.Nr.</div>
-                                    <div class="artikelheader2 col-12 col-sm-3 col-lg-2 col-xl-2">Größe</div>
-                                    <div class="artikelheader1 col-12 col-sm-2 col-lg-2 col-xl-2 text-right">kg/ME</div>
-                                    <div class="artikelheader2 col-12 col-sm-1 col-lg-1 col-xl-1 text-right">ME</div>
-                                    <div class="artikelheader1 col-12 col-sm-1 col-lg-2 col-xl-2 text-right">Preis/ME</div>  
+                                    <div class="artWidthHeader col-12 col-sm-3 col-lg-3 col-xl-3" i18n>Menge</div>
+                                    <div class="artikelheader2 col-12 col-sm-2 col-lg-2 col-xl-2" i18n>Art.Nr.</div>
+                                    <div class="artikelheader2 col-12 col-sm-3 col-lg-2 col-xl-2" i18n>Größe</div>
+                                    <div class="artikelheader1 col-12 col-sm-2 col-lg-2 col-xl-2 text-right" i18n>kg/ME</div>
+                                    <div class="artikelheader2 col-12 col-sm-1 col-lg-1 col-xl-1 text-right" i18n>ME</div>
+                                    <div class="artikelheader1 col-12 col-sm-1 col-lg-2 col-xl-2 text-right" i18n>Preis/ME</div>  
                                   </div>
                                   <table class="table">
                                 <tr class="" *ngFor="let n of nagelplatten; let in = index; index as i; odd as isOdd; even as isEven" 
                                 [ngClass]="{ odd: isOdd, even: isEven }" >
                                 <div class="row">
-                                  <div class="artWidth col-sm-3 col-lg-3 col-xl-3"><span><input type="number" pattern="[0-9]" name='name' [(ngModel)]="n.Stk" (change)="addToCart(name.value, in, n.PKArtikelID, '20ZE')" #name><div *ngIf="n.ME > 1;then karton else stueck"></div></span><ng-template #karton> Karton</ng-template>
-                                  <ng-template #stueck> Stück</ng-template></div>
+                                  <div class="artWidth col-sm-3 col-lg-3 col-xl-3"><span><input type="number" pattern="[0-9]" name='name' [(ngModel)]="n.Stk" (change)="addToCart(name.value, in, n.PKArtikelID, '20ZE')" #name><div *ngIf="n.ME > 1;then karton else stueck"></div></span><ng-template #karton i18n> Karton</ng-template>
+                                  <ng-template #stueck i18n> Stück</ng-template></div>
                                   <div class="artikel col col-sm-2 col-lg-2 col-xl-2">{{ n.PKArtikelID }}</div>
                                 <div class="artikel col col-sm-3 col-lg-2 col-xl-2">{{ n.Breite }} x {{ n.Laenge }} mm</div>
                                 <div class="artikel col col-sm-2 col-lg-2 col-xl-2 text-right">{{ n.Gewicht | number: '1.4-4' }}</div>
@@ -500,7 +500,7 @@
                               </table>
                               <br/>
                               <div class="buttonBasket" id="myHeader">
-                                  <button type="button" class="buttonWarenkorb" (click)="scroll(target)">Übernehmen und Warenkorb berechnen</button>
+                                  <button type="button" class="buttonWarenkorb" (click)="scroll(target)" i18n>Übernehmen und Warenkorb berechnen</button>
                                   <br/><br/> </div>
                               </ng-template>
                                 </div>
@@ -550,10 +550,10 @@
                         <div class="artikelbasket col-md-1 col-lg-1 col-xl-1">{{ n.PKArtikelID }}</div>
                         <div class="artikelbasket col-md-1 col-lg-1 col-xl-1">{{ n.Typ }}</div>
                         <div class="artikelbasket col-md-3 col-lg-2 col-xl-3">{{ n.Breite }} x {{ n.Laenge }} mm</div>
-                        <div class="artikelbasket col-md-1 col-lg-1 col-xl-1 text-right">{{ n.Gewicht | number: '1.4-4' }}</div>
+                        <div class="artikelbasket col-md-1 col-lg-1 col-xl-1 text-right">{{ n.Gewicht | number: '1.2-2' }}</div>
                         <div class="artikelbasket col-md-1 col-lg-1 col-xl-1 text-right">{{ n.ME }}</div>
-                        <div class="artikelbasket col-md-1 col-lg-1 col-xl-1 text-right">{{ n.Preis | number: '1.4-4'}}</div> 
-                        <div class="artikelbasket col-md-2 col-lg-2 col-xl-2 text-right">{{ n.Gesamt | number: '1.2-2'}}</div>  
+                        <div class="artikelbasket col-md-1 col-lg-1 col-xl-1 text-right">{{ n.Preis | number: '1.2-2'}}</div> 
+                        <div class="artikelbasket col-md-2 col-lg-2 col-xl-2 text-right">{{ n.Gesamt | number:2 }}</div>  
                      </div>
                     </tr>
                     </table>
@@ -570,7 +570,7 @@
                     <div class="row">
                         <div class="zwischensummetext col-md-5 col-lg-6 col-xl-6">Zwischensumme</div>
                         <div class="col-md-3 col-lg-2 col-xl-2"></div>
-                        <div class="zwischensumme com-md-4 col-lg-4 col-xl-4 text-right">{{basketZwischenSumme| number: '1.2-2'}}</div>
+                        <div class="zwischensumme com-md-4 col-lg-4 col-xl-4 text-right">{{basketZwischenSumme| number: '1.2-4'}}</div>
                       </div>
                 </tr>
                 <tr class="odd">
@@ -707,7 +707,7 @@
             </div>
             <div class="modal-body">
               <div class="container-fluid" style="color: rgb(2, 90, 2); font-size: 14px;">
-                  Die Bestellung wurde erfolgreich gespeichert !.<br><br>
+                  Die Bestellung wurde erfolgreich gespeichert !<br><br>
                   Sie bekommen in den nächsten Minuten eine Bestätigungsemail.
               </div>
             </div>

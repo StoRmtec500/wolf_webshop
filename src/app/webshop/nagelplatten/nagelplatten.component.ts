@@ -130,6 +130,7 @@ tabSelectionChanged(event){
       console.log("Entry Delete: " + JSON.stringify(this.warenkorb));
       }
 
+
   calcSumme() {
     var basketSumme = 0;
     var basketGewicht = 0;
@@ -156,7 +157,7 @@ tabSelectionChanged(event){
     if (this.basketGewicht > this.rabatte[i].kg)
   
     {
-      basketRabatt = (this.basketSumme / 100 * this.rabatte[i].rabatt);
+      basketRabatt = (this.basketSumme * 100) / 100 * this.rabatte[i].rabatt;
       this.basketZwischenSumme = (this.basketSumme);
       this.basketRabattProzent = this.rabatte[i].rabatt;
       this.basketRabattAbKG = this.rabatte[i].kg;

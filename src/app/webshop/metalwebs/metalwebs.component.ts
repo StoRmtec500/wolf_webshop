@@ -71,7 +71,7 @@ land: Laenderliste[] = [];
   addToCart(stk, index, artnr, typ: string) {
     console.log("bal" + stk);
     this.nagelplatten[index].Stk = stk;
-        this.nagelplatten[index].Typ = typ;
+    this.nagelplatten[index].Typ = typ;
     var sum = (this.nagelplatten[index].Preis * this.nagelplatten[index].Stk);
     this.nagelplatten[index].Gesamt = sum;
    // this.warenkorb.splice(0, 1000);
@@ -210,7 +210,7 @@ saveBestellungDetail() {
     this.bestellungDetail.PKArtikelID = this.warenkorb[i].PKArtikelID;
     this.bestellungDetail.Typ = this.warenkorb[i].Typ;
     this.bestellungDetail.Breite = this.warenkorb[i].Breite;
-   // this.bestellungDetail.Laenge = this.warenkorb[i].Laenge;
+    this.bestellungDetail.Laenge = this.warenkorb[i].Laenge;
     this.bestellungDetail.PreisMenge = this.warenkorb[i].Preis;
     this.bestellungDetail.MengenEinheit = this.warenkorb[i].ME;
     this.bestellungDetail.PreisGesamt = this.warenkorb[i].Gesamt;
@@ -253,5 +253,7 @@ saveBestellungDetail() {
     window.location.reload();
   }
 
-
+  scroll(el) {
+    el.scrollIntoView();
+}
 }

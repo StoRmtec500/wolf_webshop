@@ -38,7 +38,7 @@
   <section>
     <div id="container">
       <div class="row">
-        <div class="col-lg-6 col-xl-6">
+        <div class="col-lg-12 col-xl-6">
           <div class="site_width">
             <div class="tab-content visible-sm-12">
               <mat-accordion>
@@ -46,7 +46,7 @@
                   <mat-expansion-panel-header>
                     <div class="row_accordion disabled">
                       <div class="row">
-                        <div class="col-xs-12 col-sm-12 col-lg-12 col-xl-12">Typ</div>
+                        <div class="col-4 col-sm-3 col-md-3 col-lg-5 col-xl-4">Typ</div>
                       </div>
                     </div>
                   </mat-expansion-panel-header>
@@ -74,28 +74,27 @@
                           <div class="col-sm-12 col-lg-12 col-xl-12">Zulassungsnummer: ETA 07/0032</div>
                           <br>
                           <div class="buttonBasket" id="myHeader">
-                              <button type="button" (click)="addToCart()">Übernehmen und Warenkorb berechnen</button>
-                              <br> </div>
-                            
+                            <button type="button" class="buttonWarenkorb" (click)="scroll(target)">Übernehmen und Warenkorb berechnen</button>
+                            <br> </div>
                             <div class="row">
-                            <div class="artWidthHeader col-lg-2 col-xl-2">Menge</div>
-                            <div class="artikelheader2 col-lg-1 col-xl-2">Art.Nr.</div>
-                            <div class="artikelheader2 col-lg-3 col-xl-2">Bezeichnung - Größe</div>
-                            <div class="artikelheader1 col-lg-1 col-xl-2 text-right">kg/ME</div>
-                            <div class="artikelheader1 offset-lg-1 col-lg-1 col-xl-1 text-right">ME</div>
-                            <div class="artikelheader1 offset-lg-1 col-lg-1 offset-xl-1 col-xl-1 text-right">Preis/ME</div>  
-                          </div>
+                              <div class="artWidthHeader col-12 col-sm-3 col-lg-3 col-xl-3">Menge</div>
+                              <div class="artikelheader2 col-12 col-sm-2 col-lg-2 col-xl-2">Art.Nr.</div>
+                              <div class="artikelheader2 col-12 col-sm-3 col-lg-2 col-xl-2">Größe</div>
+                              <div class="artikelheader1 col-12 col-sm-2 col-lg-2 col-xl-2 text-right">kg/ME</div>
+                              <div class="artikelheader2 col-12 col-sm-1 col-lg-1 col-xl-1 text-right">ME</div>
+                              <div class="artikelheader1 col-12 col-sm-1 col-lg-2 col-xl-2 text-right">Preis/ME</div>  
+                            </div>
                           <table class="table">
                         <tr class="" *ngFor="let n of nagelplatten; let in = index; index as i; odd as isOdd; even as isEven" 
                         [ngClass]="{ odd: isOdd, even: isEven }" >
                         <div class="row">
-                          <div class="artWidth col-lg-2 col-xl-2"><span><input type="number" pattern="[0-9]" name='name' value="name.value" (change)="addToCart(name.value, in, n.PKArtikelID, 'W101')" #name><div *ngIf="n.ME > 1;then karton else stueck"></div></span><ng-template #karton> Karton</ng-template>
+                          <div class="artWidth col-sm-3 col-lg-3 col-xl-3"><span><input type="number" pattern="[0-9]" name='name' [(ngModel)]="n.Stk" (change)="addToCart(name.value, in, n.PKArtikelID, n.Typ)" #name><div *ngIf="n.ME > 1;then karton else stueck"></div></span><ng-template #karton> Karton</ng-template>
                           <ng-template #stueck> Stück</ng-template></div>
-                          <div class="artikel col-lg-2 col-xl-2">{{ n.PKArtikelID }}</div>
-                          <div class="artikel col-lg-1 col-xl-2">{{ n.Breite }} </div>
-                          <div class="artikel col-lg-2 col-xl-2 text-right">{{ n.Gewicht | number: '1.4-4' }}</div>
-                          <div class="artikel col-lg-2 col-xl-2 text-right">{{ n.ME }}</div>
-                          <div class="artikel col-lg-2 col-xl-2 text-right">{{ n.Preis | number: '1.4-4'}}</div>  
+                          <div class="artikel col col-sm-2 col-lg-2 col-xl-2">{{ n.PKArtikelID }}</div>
+                          <div class="artikel col col-sm-3 col-lg-2 col-xl-2">{{ n.Breite }} x {{ n.Laenge }} mm</div>
+                          <div class="artikel col col-sm-2 col-lg-2 col-xl-2 text-right">{{ n.Gewicht | number: '1.4-4' }}</div>
+                          <div class="artikel col col-sm-1 col-lg-1 col-xl-1 text-right">{{ n.ME }}</div>
+                          <div class="artikel padding col col-sm-1 col-lg-2 col-xl-2 text-right">{{ n.Preis | number: '1.4-4'}}</div>    
                         </div>
                         </tr>
                       </table>
@@ -115,86 +114,85 @@
 <!-- Accordion ENDE -->
 
 <!-- Warenkorb ANFANG -->    
-        <div class="col-lg-6 col-xl-6">
-          
-          <div *ngIf="showBasket" class="sticky">
-                <div class="basketHeaderLine"></div>
-                    <div class="basketHeader">
-                      Warenkorb Übersicht
-                    </div>
-                    <br>
-                    <div class="basketDetailHeader">
-                      <div class="row" >
-                    
-                    <div class="artikelheader col-lg-2 col-xl-2">Menge</div>
-                    <div class="artikelheader2 col-lg-1 col-xl-1">Art.Nr.</div>
-                    <div class="artikelheader2 col-lg-3 col-xl-1">Typ</div>
-                    <div class="artikelheader2 col-lg-3 col-xl-2">Größe</div>
-                    <div class="artikelheader1 col-lg-1 col-xl-1 text-right">kg/ME</div>
-                    <div class="artikelheader1 col-lg-1 col-xl-1 text-right">ME</div>
-                    <div class="artikelheader1 offset-lg-1 col-lg-1 col-xl-1 text-right">Preis/ME</div>  
-                    <div class="artikelheader1 col-lg-2 col-xl-offset-1 col-xl-2 text-right">Gesamt €</div> 
-                  </div>
-                </div>
-                <div class="basketDetailTable">
-                  <div class="row">
-                <table class="tableBasket">
-                    <tr *ngFor="let n of warenkorb; let in = index; index as i; odd as isOdd; even as isEven" 
-                    [ngClass]="{ odd: isOdd, even: isEven }" >
-                   <div class="row">
-                      <div class="menge col-lg-2 col-xl-2 text-left"><span> <i class="far fa-trash-alt" (click)="deleteEntry(in)"></i><div *ngIf="n.ME > 1;then karton else stueck"></div></span><ng-template #karton>   {{n.Stk }} Karton</ng-template>
-                      <ng-template #stueck>   {{n.Stk }} Stück </ng-template></div>
-                      <div class="artikelbasket  col-lg-1 col-xl-1">{{ n.PKArtikelID }}</div>
-                      <div class="artikelbasket  col-lg-3 col-xl-1">{{ n.Typ }}</div>
-                      <div class="artikelbasket  col-lg-3 col-xl-2">{{ n.Breite }} x {{ n.Laenge }} mm</div>
-                      <div class="artikelbasket  col-lg-1 col-xl-1 text-right">{{ n.Gewicht | number: '1.4-4' }}</div>
-                      <div class="artikelbasket  col-lg-1 col-xl-1 text-right">{{ n.ME }}</div>
-                      <div class="artikelbasket offset-lg-1 col-lg-1 col-xl-1 text-right">{{ n.Preis | number: '1.4-4'}}</div> 
-                      <div class="artikelbasket col-lg-1 offset-col-xl-1 col-xl-2 text-right">{{ n.Gesamt | number: '1.2-2'}}</div>  
-                   </div>
-                  </tr>
-                  </table>
-                </div>
-              </div>
+<div class="col-lg-12 col-xl-6 warenkorb" #target>
+  <div *ngIf="showBasket" class="sticky">
+        <div class="basketHeaderLine"></div>
+            <div class="basketHeader">
+              Warenkorb Übersicht
+            </div>
             <br>
+            <div class="basketDetailHeader">
+              <div class="row" >
+            
+            <div class="artikelheader col-md-2 col-lg-3 col-xl-2">Menge</div>
+            <div class="artikelheader2 col-md-1 col-lg-1 col-xl-1">Art.Nr.</div>
+            <div class="artikelheader2 col-md-1 col-lg-1 col-xl-1">Typ</div>
+            <div class="artikelheader2 col-md-3 col-lg-2 col-xl-3">Größe</div>
+            <div class="artikelheader1 col-md-1 col-lg-1 col-xl-1 text-right">kg/ME</div>
+            <div class="artikelheader1 col-md-1 col-lg-1 col-xl-1 text-right">ME</div>
+            <div class="artikelheader1 col-md-1 col-lg-1 col-xl-1 text-right">Preis/ME</div>  
+            <div class="artikelheader1 col-md-2 col-lg-2 col-xl-2 text-right">Gesamt €</div> 
+          </div>
+        </div>
+        <div class="basketDetailTable">
+          <div class="row">
+        <table class="table">
+            <tr *ngFor="let n of warenkorb; let in = index; index as i; odd as isOdd; even as isEven" 
+            [ngClass]="{ odd: isOdd, even: isEven }" >
+           <div class="row">
+              <div class="menge col-md-2 col-lg-3 col-xl-2 text-left"><span> <i class="far fa-trash-alt" (click)="deleteEntry(in)"></i><div *ngIf="n.ME > 1;then karton else stueck"></div></span><ng-template #karton>   {{n.Stk }} Karton</ng-template>
+              <ng-template #stueck>   {{n.Stk }} Stück </ng-template></div>
+              <div class="artikelbasket col-md-1 col-lg-1 col-xl-1">{{ n.PKArtikelID }}</div>
+              <div class="artikelbasket col-md-1 col-lg-1 col-xl-1">{{ n.Typ }}</div>
+              <div class="artikelbasket col-md-3 col-lg-2 col-xl-3">{{ n.Breite }} x {{ n.Laenge }} mm</div>
+              <div class="artikelbasket col-md-1 col-lg-1 col-xl-1 text-right">{{ n.Gewicht | number: '1.4-4' }}</div>
+              <div class="artikelbasket col-md-1 col-lg-1 col-xl-1 text-right">{{ n.ME }}</div>
+              <div class="artikelbasket col-md-1 col-lg-1 col-xl-1 text-right">{{ n.Preis | number: '1.4-4'}}</div> 
+              <div class="artikelbasket col-md-2 col-lg-2 col-xl-2 text-right">{{ n.Gesamt | number: '1.2-2'}}</div>  
+           </div>
+          </tr>
+          </table>
+        </div>
+      </div>
+    <br>
 <!-- Warenkorb -->
 
 <!-- Zwischensumme wird eingeblendet wenn das erste gesamt Gewicht über 1000kg liegt -->              
-            <div *ngIf="showBasketZwischensumme" class="basketZwischensumme">
-              <div class="row">
-            <table class="tableBasket">
-              <tr class="even black">
-                  <div class="row">
-                      <div class="zwischensummetext col-sm-5 col-lg-6 col-xl-6">Zwischensumme</div>
-                      <div class="col-sm-4 col-lg-2 col-xl-2"></div>
-                      <div class="zwischensumme col-sm-2 offset-sm-1 offset-lg-1 offset-xl-2 col-lg-2 col-xl-2 text-right">{{basketZwischenSumme| number: '1.2-2'}}</div>
-                    </div>
-              </tr>
-              <tr class="odd">
-                  <div class="row">
-                      <div class="artikelheadernormal col-sm-6 col-lg-8 col-xl-8">- {{basketRabattProzent}}% Mengenrabatt (ab {{basketRabattAbKG | number}} kg) {{basketTransport}}</div>
-                      <div class="artikelheader1normal col-sm-4 col-lg-4 col-xl-4 text-right">{{basketZwischenSummeRabatt | number: '1.2-2'}}</div>
-                    </div>
-              </tr>
-              </table>
+    <div *ngIf="showBasketZwischensumme" class="basketZwischensumme">
+      <div class="row">
+    <table class="tableBasket">
+      <tr class="even black">
+          <div class="row">
+              <div class="zwischensummetext col-md-5 col-lg-6 col-xl-6">Zwischensumme</div>
+              <div class="col-md-3 col-lg-2 col-xl-2"></div>
+              <div class="zwischensumme com-md-4 col-lg-4 col-xl-4 text-right">{{basketZwischenSumme| number: '1.2-2'}}</div>
             </div>
-          </div>
+      </tr>
+      <tr class="odd">
+          <div class="row">
+              <div class="artikelheadernormal  col-lg-8 col-xl-8">- {{basketRabattProzent}}% Mengenrabatt (ab {{basketRabattAbKG | number}} kg) {{basketTransport}}</div>
+              <div class="artikelheader1normal  col-lg-4 col-xl-4 text-right">{{basketZwischenSummeRabatt | number: '1.2-2'}}</div>
+            </div>
+      </tr>
+      </table>
+    </div>
+  </div>
 <!-- Zwischensumme ENDE-->
 
 <!-- Bestellsumme über die ganze Bestellung wird angezeigt -->  
-               <b> 
-                 <div class="basketDetailHeader">
-                  <div class="row" >
-                <div class="artikelheader col-lg-5 col-xl-4">Bestellsumme in Euro</div>
-                <div class="basketgewicht col-lg-4 col-xl-4">(Gesamtgewicht {{ basketGewicht | number: '1.2-2'}} kg)</div>
-                <div class="summe col-lg-5 col-xl-4 text-right">{{(basketSummeGesamt) | number: '1.2-2'}}</div>
-              </div>
-            </div>
-        </b>
-            <br>
-            <button class="buttonWarenkorb" data-toggle="modal" data-target="#NagelplattenFormular">Kundendaten eingeben & bestellen</button>
+       <b> 
+         <div class="basketDetailHeader">
+          <div class="row" >
+        <div class="artikelheader col-sm-5 col-lg-5 col-xl-4">Bestellsumme in Euro</div>
+        <div class="basketgewicht col-sm-4 col-lg-4 col-xl-5">(Gesamtgewicht {{ basketGewicht | number: '1.2-2'}} kg)</div>
+        <div class="summe col-sm-3 col-lg-3 col-xl-3 text-right">{{(basketSummeGesamt) | number: '1.2-2'}}</div>
       </div>
-        </div>
+    </div>
+</b>
+    <br>
+    <button class="buttonWarenkorb" data-toggle="modal" data-target="#NagelplattenFormular">Kundendaten eingeben & bestellen</button>
+</div>
+</div>
 <!-- Bestellsumme ENDE -->
 
 <!-- Warenkorb ENDE -->
@@ -304,7 +302,7 @@
           </div>
           <div class="modal-body">
             <div class="container-fluid" style="color: rgb(2, 90, 2); font-size: 14px;">
-                Die Bestellung wurde erfolgreich gespeichert !.<br><br>
+                Die Bestellung wurde erfolgreich gespeichert !<br><br>
                 Sie bekommen in den nächsten Minuten eine Bestätigungsemail.
             </div>
           </div>

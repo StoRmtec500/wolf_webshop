@@ -9,6 +9,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { databaseProvider } from './shared/databaseProvider/databaseProvider';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import localeDe from '@angular/common/locales/de';
+import localeEn from '@angular/common/locales/en';
 import { registerLocaleData } from '@angular/common';
 import { SidenavComponent } from './sidenav/sidenav/sidenav.component';
 import { NagelplattenComponent } from './webshop/nagelplatten/nagelplatten.component';

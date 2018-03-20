@@ -55,7 +55,7 @@ export class databaseProvider {
     public metalWebs() {
       return {
         Befehl: encodeURIComponent(
-          `SELECT a.PKArtikelID,a.Laenge ,SUBSTRING(a.Bezeichnung1,12,16) AS Breite, a.Gewicht AS Gewicht, av.PreisPro AS ME, av.Verkaufspreis AS Preis
+          `SELECT a.PKArtikelID,a.Laenge, a.Breite ,SUBSTRING(a.Bezeichnung1,12,6) AS Typ, a.Gewicht AS Gewicht, av.PreisPro AS ME, av.Verkaufspreis AS Preis
           FROM ATSRV031.PELokal.dbo.viewArtikel a
           LEFT OUTER JOIN PEKonzern.dbo.artikelVerkaufspreis av ON av.FKArtikelID = a.PKArtikelID AND av.FKMandantID = 3 AND av.FKPreislisteID = 1 AND av.GueltigVon <= CONVERT(DATE, GETDATE()) AND av.GueltigBis >= CONVERT(DATE, GETDATE())
           WHERE a.FKArtikelgruppeID = 4964 AND a.GueltigVon <= CONVERT(DATE, GETDATE()) AND a.GueltigBis >= CONVERT(DATE, GETDATE())
