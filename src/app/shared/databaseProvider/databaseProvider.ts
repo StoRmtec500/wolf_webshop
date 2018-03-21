@@ -39,7 +39,7 @@ export class databaseProvider {
     public allArtikelSelect() {
       return {
       Befehl: encodeURIComponent(
-        `SELECT  a.PKArtikelID, a.Laenge, a.Breite, a.FKArtikelgruppeID, a.Gewicht * ISNULL(aeu.Formel, 1) AS Gewicht,ISNULL(aeu.Formel, 1) AS ME,ROUND(av.Verkaufspreis / av.PreisPro * ISNULL(aeu.Formel, 1), 4) AS Preis
+        `SELECT  a.PKArtikelID, a.Laenge, a.Breite, a.FKArtikelgruppeID, a.Gewicht * ISNULL(aeu.Formel, 1) AS Gewicht,ISNULL(aeu.Formel, 1) AS ME,ROUND(av.Verkaufspreis / av.PreisPro , 6) * ISNULL(aeu.Formel, 1) AS Preis
         FROM    PELokal.dbo.viewArtikel a
             LEFT OUTER JOIN PEKonzern.dbo.artikelEinheitUmrechnung aeu ON aeu.FKArtikelID = a.PKArtikelID AND aeu.FKMandantID = 3 AND aeu.FKMengeneinheit2ID = 7
             LEFT OUTER JOIN PEKonzern.dbo.artikelVerkaufspreis av ON av.FKArtikelID = a.PKArtikelID AND av.FKMandantID = 3 AND av.FKPreislisteID = 1 AND av.GueltigVon <= CONVERT(DATE, GETDATE()) AND av.GueltigBis >= CONVERT(DATE, GETDATE())

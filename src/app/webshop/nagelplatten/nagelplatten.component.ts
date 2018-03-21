@@ -100,7 +100,8 @@ tabSelectionChanged(event){
     this.nagelplatten[index].Stk = stk;
         this.nagelplatten[index].Typ = typ;
     var sum = (this.nagelplatten[index].Preis * this.nagelplatten[index].Stk);
-    this.nagelplatten[index].Gesamt = sum;
+    var factor = Math.pow(10, 6);
+    this.nagelplatten[index].Gesamt = Math.round(sum * factor) / factor;
    // this.warenkorb.splice(0, 1000);
     for (let i = 0; i < this.nagelplatten.length; i++) {
          if(this.nagelplatten[i].PKArtikelID == artnr) {
@@ -142,10 +143,10 @@ tabSelectionChanged(event){
     if(basketSumme == 0) {
       this.showBasket = false;
     }
-    
     this.basketGewicht = basketGewicht;
-    this.basketSumme = basketSumme;
-    //console.log("calcGewicht:" + this.basketGewicht);
+    var factor = Math.pow(10, 6);
+    this.basketSumme = Math.round(basketSumme * factor) / factor;
+    console.log("Gesamtsumme: " + this.basketSummeGesamt);
   }
 
   calczwischensumme() {
@@ -157,14 +158,16 @@ tabSelectionChanged(event){
     if (this.basketGewicht > this.rabatte[i].kg)
   
     {
-      basketRabatt = (this.basketSumme * 100) / 100 * this.rabatte[i].rabatt;
+      basketRabatt = 
       this.basketZwischenSumme = (this.basketSumme);
       this.basketRabattProzent = this.rabatte[i].rabatt;
       this.basketRabattAbKG = this.rabatte[i].kg;
       this.basketTransport = this.rabatte[i].fracht;
-      this.basketZwischenSummeRabatt = (basketRabatt);
+      this.basketZwischenSummeRabatt = (this.basketSumme / 100 * this.rabatte[i].rabatt);
     }
-    this.basketSummeGesamt = (this.basketSumme - this.basketZwischenSummeRabatt);
+    var factor = Math.pow(10, 6);
+    this.basketSummeGesamt = Math.round((this.basketSumme - this.basketZwischenSummeRabatt) * factor) / factor;
+    console.log("Gesamtsumme Zwischensumme: " + this.basketSummeGesamt);
   }
 
   if (this.basketGewicht > 1000) {

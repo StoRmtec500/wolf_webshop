@@ -553,7 +553,7 @@
                         <div class="artikelbasket col-md-1 col-lg-1 col-xl-1 text-right">{{ n.Gewicht | number: '1.2-2' }}</div>
                         <div class="artikelbasket col-md-1 col-lg-1 col-xl-1 text-right">{{ n.ME }}</div>
                         <div class="artikelbasket col-md-1 col-lg-1 col-xl-1 text-right">{{ n.Preis | number: '1.2-2'}}</div> 
-                        <div class="artikelbasket col-md-2 col-lg-2 col-xl-2 text-right">{{ n.Gesamt | number:2 }}</div>  
+                        <div class="artikelbasket col-md-2 col-lg-2 col-xl-2 text-right">{{ n.Gesamt | number: '1.2-3'}}</div>  
                      </div>
                     </tr>
                     </table>
@@ -570,13 +570,13 @@
                     <div class="row">
                         <div class="zwischensummetext col-md-5 col-lg-6 col-xl-6">Zwischensumme</div>
                         <div class="col-md-3 col-lg-2 col-xl-2"></div>
-                        <div class="zwischensumme com-md-4 col-lg-4 col-xl-4 text-right">{{basketZwischenSumme| number: '1.2-4'}}</div>
+                        <div class="zwischensumme com-md-4 col-lg-4 col-xl-4 text-right">{{basketZwischenSumme| number: '1.2-3'}}</div>
                       </div>
                 </tr>
                 <tr class="odd">
                     <div class="row">
                         <div class="artikelheadernormal  col-lg-8 col-xl-8">- {{basketRabattProzent}}% Mengenrabatt (ab {{basketRabattAbKG | number}} kg) {{basketTransport}}</div>
-                        <div class="artikelheader1normal  col-lg-4 col-xl-4 text-right">{{basketZwischenSummeRabatt | number: '1.2-2'}}</div>
+                        <div class="artikelheader1normal  col-lg-4 col-xl-4 text-right">{{basketZwischenSummeRabatt | number: '1.2-3'}}</div>
                       </div>
                 </tr>
                 </table>
@@ -590,7 +590,7 @@
                     <div class="row" >
                   <div class="artikelheader col-sm-5 col-lg-5 col-xl-4">Bestellsumme in Euro</div>
                   <div class="basketgewicht col-sm-4 col-lg-4 col-xl-5">(Gesamtgewicht {{ basketGewicht | number: '1.2-2'}} kg)</div>
-                  <div class="summe col-sm-3 col-lg-3 col-xl-3 text-right">{{(basketSummeGesamt) | number: '1.2-2'}}</div>
+                  <div class="summe col-sm-3 col-lg-3 col-xl-3 text-right">{{(basketSummeGesamt) | number: '1.2-3'}}</div>
                 </div>
               </div>
           </b>
