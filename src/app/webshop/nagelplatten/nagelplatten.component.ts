@@ -35,6 +35,8 @@ errorMsg;
 ID;
 bestellID: number;
 panelOpenState: boolean = false;
+sum1: number;
+Math: any;
 
 land: Laenderliste[] = [];
 
@@ -51,7 +53,11 @@ land: Laenderliste[] = [];
     this.ns.getAllArticel().subscribe(data => this.nagelplattenTyp = data);
     this.nagelplatten = this.nagelplattenTyp;
     this.getArticelTyp(0);
+
+    this.Math = Math;
   }
+
+ 
 
   ngOnInit() {
     //this.nagelplatten = null;
@@ -64,17 +70,16 @@ land: Laenderliste[] = [];
       this.ns.getNagelplatten(typ).subscribe(data => this.nagelplatten = data);
   }
 
+
+
   getArticelTyp(typ: number) {
     if(this.open == true) {
-    console.log("Daten schon vorhanden");
     this.nagelplatten = this.nagelplattenTyp;
   } else {
   this.ns.getAllArticel().subscribe(data => this.nagelplattenTyp = data);
   this.open = true;
-  console.log("Daten werden geladen");
   }
   this.nagelplatten = this.nagelplatten.filter(t=>t.FKArtikelgruppeID == typ);
-  console.log("Artikel nach Typ gefiltert; " + JSON.stringify(this.nagelplatten));
 }
 
 tabSelectionChanged(event){
@@ -96,13 +101,11 @@ tabSelectionChanged(event){
   }
 
   addToCart(stk, index, artnr, typ: string) {
-    console.log("bal" + stk);
     this.nagelplatten[index].Stk = stk;
         this.nagelplatten[index].Typ = typ;
-    var sum = (this.nagelplatten[index].Preis * this.nagelplatten[index].Stk);
-    var factor = Math.pow(10, 6);
-    this.nagelplatten[index].Gesamt = Math.round(sum * factor) / factor;
-   // this.warenkorb.splice(0, 1000);
+        var preis = this.nagelplatten[index].Preis * this.nagelplatten[index].Stk;
+
+    this.nagelplatten[index].Gesamt = preis
     for (let i = 0; i < this.nagelplatten.length; i++) {
          if(this.nagelplatten[i].PKArtikelID == artnr) {
           for (let i = 0; i < this.warenkorb.length; i++) {
@@ -112,23 +115,20 @@ tabSelectionChanged(event){
            
           }
            this.warenkorb.push(this.nagelplatten[i]);
-           
-           console.log("ArtNrcheck" + JSON.stringify(this.warenkorb));
           } 
-          this.Gesamt = this.nagelplatten[i].Gesamt;
+          //this.Gesamt = this.nagelplatten[i].Gesamt;
+
       }
       
           this.showBasket = true;
           this.calcSumme();
           this.calczwischensumme();
-          console.log("Add to Warenkorb: " + JSON.stringify(this.warenkorb));   
   }
 
   deleteEntry(index) {
       this.warenkorb.splice(index , 1);
       this.calcSumme();
       this.calczwischensumme();
-      console.log("Entry Delete: " + JSON.stringify(this.warenkorb));
       }
 
 
@@ -144,19 +144,19 @@ tabSelectionChanged(event){
       this.showBasket = false;
     }
     this.basketGewicht = basketGewicht;
-    var factor = Math.pow(10, 6);
-    this.basketSumme = Math.round(basketSumme * factor) / factor;
-    console.log("Gesamtsumme: " + this.basketSummeGesamt);
+    this.basketSumme = Math.round(basketSumme*1000)/1000;
+    console.log("basketSumme Calcsumme: " + this.basketSumme);
+    var result=Math.round(basketSumme*1000)/1000  //returns 8.111
+    console.log("round: " + result);
   }
+
 
   calczwischensumme() {
     var basketRabatt = 0;
     this.basketZwischenSummeRabatt = 0;
     for(let i = 0; i < this.rabatte.length; i++)
   {
-    console.log("Rabatte: " + JSON.stringify(this.rabatte[i].kg));
     if (this.basketGewicht > this.rabatte[i].kg)
-  
     {
       basketRabatt = 
       this.basketZwischenSumme = (this.basketSumme);
@@ -165,9 +165,8 @@ tabSelectionChanged(event){
       this.basketTransport = this.rabatte[i].fracht;
       this.basketZwischenSummeRabatt = (this.basketSumme / 100 * this.rabatte[i].rabatt);
     }
-    var factor = Math.pow(10, 6);
-    this.basketSummeGesamt = Math.round((this.basketSumme - this.basketZwischenSummeRabatt) * factor) / factor;
-    console.log("Gesamtsumme Zwischensumme: " + this.basketSummeGesamt);
+    this.basketSummeGesamt = (this.basketSumme - this.basketZwischenSummeRabatt);
+    console.log("Gesamtsumme : " + this.basketSummeGesamt);
   }
 
   if (this.basketGewicht > 1000) {
