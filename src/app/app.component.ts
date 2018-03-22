@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Injector, LOCALE_ID } from '@angular/core';
 import { RouterModule, RouterLinkActive } from '@angular/router';
 import { AppModule } from './app.module';
 
@@ -9,4 +9,5 @@ import { AppModule } from './app.module';
 })
 export class AppComponent {
   title = 'app';
+
 }

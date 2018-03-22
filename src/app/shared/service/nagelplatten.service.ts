@@ -39,12 +39,16 @@ export class NagelplattenService {
     return this.httpClient.get<Nagelplatten[]> ( environment.apiUrlRead + 'getNagelplattenDetail/' + id);
   }
 
-  getRabatt() : Observable<any> {
-    return this.httpClient.get('assets/rabatte.json');
+  getRabatt(sprache) : Observable<any> {
+    return this.httpClient.get('assets/rabatte_'+sprache+'.json');
   }
 
-  getLaenderliste() : Observable<Laenderliste[]> {
-    return this.httpClient.get<Laenderliste[]>('assets/land.json');
+  getAnrede(sprache) : Observable<any> {
+    return this.httpClient.get('assets/anrede_'+sprache+'.json');
+  }
+
+  getLaenderliste(sprache) : Observable<Laenderliste[]> {
+    return this.httpClient.get<Laenderliste[]>('assets/land_'+sprache+'.json');
   }
 
   getBestellungKopfID() : Observable<ID>{

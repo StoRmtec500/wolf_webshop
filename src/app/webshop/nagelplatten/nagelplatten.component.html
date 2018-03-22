@@ -52,7 +52,7 @@
           <div class="col-lg-12 col-xl-6">
             <div class="site_width">
               <mat-tab-group class="tab-group">
-                <mat-tab label="Verzinkt">
+                <mat-tab i18n-label label="Verzinkt">
                     <ng-template matTabContent>
                   <div class="tab-content visible-sm-12">
                     <mat-accordion>
@@ -209,7 +209,7 @@
                                 </ng-template>
                                   <ng-template #show>
                                   <div class="col-lg-12 col-xl-12" i18n>Blechdicke: 1,50 mm</div>
-                                  <div class="col-lg-12 col-xl-12" i18n> Zulassungsnummer: Z-9.1-755 (DIN 1052-2008-12)</div>
+                                  <div class="col-lg-12 col-xl-12" i18n>Zulassungsnummer: Z-9.1-755 (DIN 1052-2008-12)</div>
                                   <br>
                                   <div class="buttonBasket" id="myHeader">
                                       <button type="button" class="buttonWarenkorb" (click)="scroll(target)" i18n>Übernehmen und Warenkorb berechnen</button>
@@ -269,7 +269,7 @@
                                   </ng-template>
                                 <ng-template #show>
                                     <div class="col-lg-12 col-xl-12" i18n>Blechdicke: 2,00 mm</div>
-                                    <div class="col-lg-12 col-xl-12" i18n> Zulassungsnummer: Z-9.1-855</div>
+                                    <div class="col-lg-12 col-xl-12" i18n>Zulassungsnummer: Z-9.1-855</div>
                                     <br>
                                     <div class="buttonBasket" id="myHeader">
                                         <button type="button" class="buttonWarenkorb" (click)="scroll(target)" i18n>Übernehmen und Warenkorb berechnen</button>
@@ -313,7 +313,7 @@
                   </ng-template>
                 </mat-tab>
 <!-- ANFANG TAB Edelstahl -->
-                <mat-tab label="Edelstahl">
+                <mat-tab i18n-label label="Edelstahl">
                     <ng-template matTabContent>
                   <div class="tab-content visible-sm-12">
                     <mat-accordion>
@@ -350,7 +350,7 @@
                               </ng-template>
                                 <ng-template #show>
                                 <div class="col-sm-12 col-lg-12 col-xl-12" i18n>Blechdicke: 1,25 mm</div>
-                                <div class="col-sm-12 col-lg-12 col-xl-12" i18n> Zulassungsnummer: Z-9.1-801</div>
+                                <div class="col-sm-12 col-lg-12 col-xl-12" i18n>Zulassungsnummer: Z-9.1-801</div>
                                 <br>
                                 <div class="buttonBasket" id="myHeader">
                                     <button type="button" class="buttonWarenkorb" (click)="scroll(target)" i18n>Übernehmen und Warenkorb berechnen</button>
@@ -410,7 +410,7 @@
                               </ng-template>
                                 <ng-template #show>
                                 <div class="col-sm-12 col-lg-12 col-xl-12" i18n>Blechdicke: 1,50 mm</div>
-                                <div class="col-sm-12 col-lg-12 col-xl-12" i18n> Zulassungsnummer: Z-9.1-755 (DIN 1052-2008-12)</div>
+                                <div class="col-sm-12 col-lg-12 col-xl-12" i18n>Zulassungsnummer: Z-9.1-755 (DIN 1052-2008-12)</div>
                                 <br>
                                 <div class="buttonBasket" id="myHeader">
                                     <button type="button" class="buttonWarenkorb" (click)="scroll(target)" i18n>Übernehmen und Warenkorb berechnen</button>
@@ -470,7 +470,7 @@
                                 </ng-template>
                                   <ng-template #show>
                                   <div class="col-lg-12 col-xl-12" i18n>Blechdicke: 2,00 mm</div>
-                                  <div class="col-lg-12 col-xl-12" i18n> Zulassungsnummer: Z-9.1-756</div>
+                                  <div class="col-lg-12 col-xl-12" i18n>Zulassungsnummer: Z-9.1-756</div>
                                   <br>
                                   <div class="buttonBasket" id="myHeader">
                                       <button type="button" class="buttonWarenkorb" (click)="scroll(target)" i18n>Übernehmen und Warenkorb berechnen</button>
@@ -522,7 +522,7 @@
           <div class="col-lg-12 col-xl-6 warenkorb" #target>
             <div *ngIf="showBasket" class="sticky">
                   <div class="basketHeaderLine"></div>
-                      <div class="basketHeader">
+                      <div class="basketHeader" i18n>
                         Warenkorb Übersicht
                       </div>
                       <br>
@@ -545,8 +545,8 @@
                       <tr *ngFor="let n of warenkorb; let in = index; index as i; odd as isOdd; even as isEven" 
                       [ngClass]="{ odd: isOdd, even: isEven }" >
                      <div class="row">
-                        <div class="menge col-md-2 col-lg-3 col-xl-2 text-left"><span> <i class="far fa-trash-alt" (click)="deleteEntry(in)"></i><div *ngIf="n.ME > 1;then karton else stueck"></div></span><ng-template #karton i18n>   {{n.Stk }} Karton</ng-template>
-                        <ng-template #stueck i18n>   {{n.Stk }} Stück </ng-template></div>
+                        <div class="menge col-md-2 col-lg-3 col-xl-2 text-left"><span> <i class="far fa-trash-alt" (click)="deleteEntry(in)"></i><div *ngIf="n.ME > 1;then karton else stueck"></div></span><ng-template #karton>   {{n.Stk }} <ng-container i18n>Karton</ng-container></ng-template>
+                        <ng-template #stueck>   {{n.Stk }} <ng-container i18n>Stück</ng-container></ng-template></div>
                         <div class="artikelbasket col-md-1 col-lg-1 col-xl-1">{{ n.PKArtikelID }}</div>
                         <div class="artikelbasket col-md-1 col-lg-1 col-xl-1">{{ n.Typ }}</div>
                         <div class="artikelbasket col-md-3 col-lg-2 col-xl-3">{{ n.Breite }} x {{ n.Laenge }} mm</div>
@@ -575,7 +575,7 @@
                 </tr>
                 <tr class="odd">
                     <div class="row">
-                        <div class="artikelheadernormal  col-lg-8 col-xl-8">- {{basketRabattProzent}}<ng-container i18n>% Mengenrabatt (ab</ng-container> {{basketRabattAbKG | number}} <ng-container i18n>kg</ng-container>) {{basketTransport}}</div>
+                        <div class="artikelheadernormal  col-lg-8 col-xl-8">- {{basketRabattProzent}}<ng-container i18n>% Mengenrabatt (ab</ng-container> {{basketRabattAbKG | number}} kg) {{basketTransport}}</div>
                         <div class="artikelheader1normal  col-lg-4 col-xl-4 text-right">{{basketZwischenSummeRabatt |number: '1.2-2' }}</div>
                       </div>
                 </tr>
@@ -589,7 +589,7 @@
                    <div class="basketDetailHeader">
                     <div class="row" >
                   <div class="artikelheader col-sm-5 col-lg-5 col-xl-4" i18n>Bestellsumme in Euro</div>
-                  <div class="basketgewicht col-sm-4 col-lg-4 col-xl-5" i18n>(Gesamtgewicht {{ basketGewicht | number: '1.2-2'}} kg)</div>
+                  <div class="basketgewicht col-sm-4 col-lg-4 col-xl-5"><ng-container i18n>(Gesamtgewicht</ng-container> {{ basketGewicht | number: '1.2-2'}} kg)</div>
                   <div class="summe col-sm-3 col-lg-3 col-xl-3 text-right">{{(basketSummeGesamt | number: '1.2-2')}}</div>
                 </div>
               </div>
@@ -622,7 +622,7 @@
                   <div class="row">
                       <div class="col-6"> 
                           <mat-form-field class="example-full-width">
-                              <mat-select placeholder="Anrede" [(ngModel)]="bestellung.Anrede" name="anrede" i18n>
+                              <mat-select i18n-placeholder placeholder=Anrede [(ngModel)]="bestellung.Anrede" name="anrede">
                                 <mat-option *ngFor="let anrede of anreden" [value]="anrede.value" >
                                   {{ anrede.viewValue }}
                                 </mat-option>
@@ -631,41 +631,41 @@
                       </div>
                       <div class="col-6"> 
                         <mat-form-field class="example-full-width">
-                          <input matInput type="email" placeholder="eMail" [(ngModel)]="bestellung.eMail" name="email" required>
+                          <input matInput type="email" i18n-placeholder placeholder=eMail [(ngModel)]="bestellung.eMail" name="email" required>
                         </mat-form-field>
                       </div>
                     </div>
                   <div class="row">
                     <div class="col-6"> <mat-form-field class="example-full-width">
-                        <input matInput placeholder="Vorname" [(ngModel)]="bestellung.Vorname" name="vorname" required>
+                        <input matInput i18n-placeholder placeholder="Vorname" [(ngModel)]="bestellung.Vorname" name="vorname" required>
                       </mat-form-field></div>
                     <div class="col-6"> <mat-form-field class="example-full-width">
-                        <input matInput placeholder="Nachname" [(ngModel)]="bestellung.Name"  name="nachname" required>
+                        <input matInput i18n-placeholder placeholder="Nachname" [(ngModel)]="bestellung.Name"  name="nachname" required>
                       </mat-form-field></div>
                   </div>
                   <div class="row">
                       <div class="col-6"> <mat-form-field class="example-full-width">
-                          <input matInput placeholder="Firma" [(ngModel)]="bestellung.Firma" name="firma" required>
+                          <input matInput  i18n-placeholder placeholder="Firma" [(ngModel)]="bestellung.Firma" name="firma" required>
                         </mat-form-field></div>
                       <div class="col-6">
                         <mat-form-field class="example-full-width">
-                          <input matInput placeholder="Straße" [(ngModel)]="bestellung.Strasse" name="strasse">
+                          <input matInput i18n-placeholder placeholder="Straße" [(ngModel)]="bestellung.Strasse" name="strasse">
                         </mat-form-field></div>
                     </div>
                     <div class="row">
-                        <div class="col-2">
+                        <div class="col-3">
                           <mat-form-field class="example-full-width">
-                            <input matInput placeholder="PLZ" [(ngModel)]="bestellung.Plz"  name="plz" required>
+                            <input matInput i18n-placeholder placeholder="PLZ" [(ngModel)]="bestellung.Plz"  name="plz" required>
                           </mat-form-field>
                         </div>
-                        <div class="col-4">
+                        <div class="col-3">
                           <mat-form-field class="example-full-width">
-                            <input matInput placeholder="Ort" [(ngModel)]="bestellung.Ort" name="ort" required>
+                            <input matInput i18n-placeholder placeholder="Ort" [(ngModel)]="bestellung.Ort" name="ort" required>
                           </mat-form-field>
                         </div>
                         <div class="col-6">
                             <mat-form-field class="example-full-width">
-                                <mat-select placeholder="Land" [(ngModel)]="bestellung.Land" name="land" required>
+                                <mat-select i18n-placeholder placeholder="Land" [(ngModel)]="bestellung.Land" name="land" required>
                                   <mat-option *ngFor="let la of land" [value]="la.Kuerzel" >
                                     {{ la.Land }}
                                   </mat-option>
@@ -675,64 +675,64 @@
                       </div>
                   <div class="row">
                     <div class="col-6"> <mat-form-field class="example-full-width">
-                      <input matInput placeholder="Telefon" [(ngModel)]="bestellung.Telefon" name="telefon">
+                      <input matInput i18n-placeholder placeholder="Telefon" [(ngModel)]="bestellung.Telefon" name="telefon">
                       </mat-form-field></div>
                     <div class="col-6"> 
                         <mat-form-field class="example-full-width">
-                          <input matInput placeholder="gewünschter Liefertermin"  [(ngModel)]="bestellung.Liefertermin" name="liefertermin">
+                          <input matInput i18n-placeholder placeholder="gewünschter Liefertermin"  [(ngModel)]="bestellung.Liefertermin" name="liefertermin">
                         </mat-form-field>
                  </div>
                   </div> 
                   <div class="row">
 
                       <div class="col-12"> <mat-form-field class="example-full-width">
-                          <textarea matInput placeholder="Bemerkung" matTextareaAutosize matAutosizeMinRows="3"
+                          <textarea matInput i18n-placeholder placeholder="Bemerkung" matTextareaAutosize matAutosizeMinRows="3"
                           matAutosizeMaxRows="5" [(ngModel)]="bestellung.Bemerkung" name="bemerkung"></textarea>
                         </mat-form-field></div>
                     </div>  
               </form>
           </div>
         </div>
-        <div class="modal-footer" i18n>
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Abbrechen</button>
-          <button type="submit" class="btn btn-default" [disabled]="!bookForm.form.valid" (click)="makeOrder()">Absenden</button>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal"><ng-container i18n>Abbrechen</ng-container></button>
+          <button type="submit" class="btn btn-default" [disabled]="!bookForm.form.valid" (click)="makeOrder()"><ng-container i18n>Absenden</ng-container></button>
         </div>
       </div>
         <div class="modal-content" *ngIf="isValid && error">
             <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLabel">Herzlichen Dank für Ihre Bestellung</h5>
+              <h5 class="modal-title" id="exampleModalLabel" i18n>Herzlichen Dank für Ihre Bestellung</h5>
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
               </button>
             </div>
             <div class="modal-body">
               <div class="container-fluid" style="color: rgb(2, 90, 2); font-size: 14px;">
-                  Die Bestellung wurde erfolgreich gespeichert !<br><br>
-                  Sie bekommen in den nächsten Minuten eine Bestätigungsemail.
+                <ng-container i18n>Die Bestellung wurde erfolgreich gespeichert !</ng-container><br><br>
+                  <ng-container i18n>Sie bekommen in den nächsten Minuten eine Bestätigungsmail.</ng-container>
               </div>
             </div>
             <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="clearAll()">Schließen</button>
+              <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="clearAll()"><ng-container i18n>Schließen</ng-container></button>
             </div>
           </div>
         <div class="modal-content" *ngIf="!isValid && error">
             <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLabel">Nagelplatten Bestellformular</h5>
+              <h5 class="modal-title" id="exampleModalLabel" i18n>Nagelplatten Bestellformular</h5>
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
               </button>
             </div>
             <div class="modal-body">
               <div class="container-fluid" style="color: red; font-size: 14px;">
-                  Beim speichern der Bestellung ist ein Fehler aufgetreten. <br>
+                <ng-container i18n>Beim speichern der Bestellung ist ein Fehler aufgetreten. <br>
                   Bitte versuchen Sie es noch einmal.
                   <br><br>
-                  Fehlermeldung:<br>
-                  {{ errorMsg }}<br><br> Danke
+                  Fehlermeldung:</ng-container><br>
+                  {{ errorMsg }}<br><br> <ng-container i18n>Danke</ng-container>
               </div>
             </div>
             <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-dismiss="modal">Schließen</button>
+              <button type="button" class="btn btn-secondary" data-dismiss="modal"><ng-container i18n>Schließen</ng-container></button>
             </div>
           </div>
    </div> 

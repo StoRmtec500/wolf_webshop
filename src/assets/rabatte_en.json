@@ -23,12 +23,12 @@
     {
         "kg" : "10000",
         "rabatt" : "10", 
-        "fracht" : "+ Transport frei"
+        "fracht" : "+ free transport"
     },
     {
         "kg" : "15000",
         "rabatt" : "12",
-        "fracht" : "+ Transport frei" 
+        "fracht" : "+ free transport" 
     }
 ]},
 {"metalwebs": [
@@ -45,7 +45,7 @@
  {
      "kg": "10000",
      "rabatt": "8",
-     "fracht": "+ Transport frei"
+     "fracht": "+ free transport"
  }
 ]}
 ]

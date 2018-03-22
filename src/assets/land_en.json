@@ -1,0 +1,78 @@
+[
+    {
+        "Land": "Austria",
+        "Kuerzel": "A"
+    },
+    {
+    "Land": "Belgium",
+    "Kuerzel": "B"
+    },
+    {
+    "Land": "Bosnia and Herzegovina",
+    "Kuerzel": "BIH"
+    },
+    {
+    "Land": "Croatia",
+    "Kuerzel": "HR"
+    },
+    {
+    "Land": "France",
+    "Kuerzel": "F"
+    },
+    {
+    "Land": "Germany",
+    "Kuerzel": "D"
+    },
+    {
+    "Land": "Greece",
+    "Kuerzel": "GR"
+    },
+    {
+    "Land": "Hungary",
+    "Kuerzel": "H"
+    },
+    {
+    "Land": "Italy",
+    "Kuerzel": "I"
+    },
+    {
+    "Land": "Latvia",
+    "Kuerzel": "LV"
+    },
+    {
+    "Land": "Luxembourg",
+    "Kuerzel": "L"
+    },
+    {
+    "Land": "Netherland",
+    "Kuerzel": "NL"
+    },
+    {
+    "Land": "Poland",
+    "Kuerzel": "PL"
+    },
+    {
+    "Land": "Romania",
+    "Kuerzel": "RO"
+    },
+    {
+    "Land": "Serbia",
+    "Kuerzel": "SRB"
+    },
+    {
+    "Land": "Slovakia",
+    "Kuerzel": "SK"
+    },
+    {
+    "Land": "Slovenia",
+    "Kuerzel": "SLO"
+    },
+    {
+    "Land": "Switzerland",
+    "Kuerzel": "CH"
+    },
+    {
+    "Land": "United Kingdom",
+    "Kuerzel": "GB"
+    }
+]

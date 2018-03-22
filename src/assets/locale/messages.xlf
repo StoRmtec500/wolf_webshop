@@ -19,6 +19,10 @@
           <context context-type="sourcefile">app/webshop/nagelplatten/nagelplatten.component.ts</context>
           <context context-type="linenumber">5</context>
         </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/sidenav/sidenav/sidenav.component.ts</context>
+          <context context-type="linenumber">4</context>
+        </context-group>
       </trans-unit>
       <trans-unit id="7959880d868b5aae5f6876b42c1b772e7f95c170" datatype="html">
         <source>Allgemeine Geschäftsbedingungen</source>
@@ -438,10 +442,6 @@
           <context context-type="sourcefile">app/webshop/nagelplatten/nagelplatten.component.ts</context>
           <context context-type="linenumber">152</context>
         </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/webshop/nagelplatten/nagelplatten.component.ts</context>
-          <context context-type="linenumber">353</context>
-        </context-group>
       </trans-unit>
       <trans-unit id="92754b0190e7c32e34994de3a14b60321adba1ba" datatype="html">
         <source>Blechdicke: 1,50 mm</source>
@@ -454,8 +454,8 @@
           <context context-type="linenumber">412</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="8f96e5904fd7e2c49c5e950d52c975f31b920ddb" datatype="html">
-        <source> Zulassungsnummer: Z-9.1-755 (DIN 1052-2008-12)</source>
+      <trans-unit id="822e940f5a6773fc366bcef92252c041d5782453" datatype="html">
+        <source>Zulassungsnummer: Z-9.1-755 (DIN 1052-2008-12)</source>
         <context-group purpose="location">
           <context context-type="sourcefile">app/webshop/nagelplatten/nagelplatten.component.ts</context>
           <context context-type="linenumber">212</context>
@@ -476,18 +476,48 @@
           <context context-type="linenumber">472</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="98b3bc85572f0b98398acf35bee1ea8f53a71618" datatype="html">
-        <source> Zulassungsnummer: Z-9.1-855</source>
+      <trans-unit id="2deacb97f7d06b6dcebdb34565d4dca8ca9763eb" datatype="html">
+        <source>Zulassungsnummer: Z-9.1-855</source>
         <context-group purpose="location">
           <context context-type="sourcefile">app/webshop/nagelplatten/nagelplatten.component.ts</context>
           <context context-type="linenumber">272</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="e74f2ec0ab821209210ba4ea4e4a722a4a89cdc2" datatype="html">
-        <source> Zulassungsnummer: Z-9.1-756</source>
+      <trans-unit id="af0f91f01e2487d8400eb1483c12f61ed09c2658" datatype="html">
+        <source>Verzinkt</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/webshop/nagelplatten/nagelplatten.component.ts</context>
+          <context context-type="linenumber">55</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="c21b8b4c90355d91337d26e4dcd88d4229e4b0c7" datatype="html">
+        <source>Zulassungsnummer: Z-9.1-801</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/webshop/nagelplatten/nagelplatten.component.ts</context>
+          <context context-type="linenumber">353</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4a4d7cfa5327bb82eb2a7dbc3fc9d6afe432ab42" datatype="html">
+        <source>Zulassungsnummer: Z-9.1-756</source>
         <context-group purpose="location">
           <context context-type="sourcefile">app/webshop/nagelplatten/nagelplatten.component.ts</context>
           <context context-type="linenumber">473</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="e6eebbd3d61c716e4b363cc25869a5f1b0f29646" datatype="html">
+        <source>Edelstahl</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/webshop/nagelplatten/nagelplatten.component.ts</context>
+          <context context-type="linenumber">316</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="c91a6f28ac3dae3f0ae8ffe1e4e6d3c67cc4c00f" datatype="html">
+        <source>
+                        Warenkorb Übersicht
+                      </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/webshop/nagelplatten/nagelplatten.component.ts</context>
+          <context context-type="linenumber">525</context>
         </context-group>
       </trans-unit>
       <trans-unit id="a583219a4758b0b56503cde5770e26ab3c704930" datatype="html">
@@ -504,15 +534,15 @@
           <context context-type="linenumber">539</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="0fa27dc63b61357d06be72e7e893d4514e8328b2" datatype="html">
-        <source>   <x id="INTERPOLATION" equiv-text="{{n.Stk }}"/> Karton</source>
+      <trans-unit id="a00a77cd042108ba88e80f3f425103a6be33a45b" datatype="html">
+        <source>Karton</source>
         <context-group purpose="location">
           <context context-type="sourcefile">app/webshop/nagelplatten/nagelplatten.component.ts</context>
           <context context-type="linenumber">548</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="f52eb82ed38321c870609252176de2816d7ea738" datatype="html">
-        <source>   <x id="INTERPOLATION" equiv-text="{{n.Stk }}"/> Stück </source>
+      <trans-unit id="b3b1c71e0e99f9d63efa9016b434fdd9dfa6ad78" datatype="html">
+        <source>Stück</source>
         <context-group purpose="location">
           <context context-type="sourcefile">app/webshop/nagelplatten/nagelplatten.component.ts</context>
           <context context-type="linenumber">549</context>
@@ -532,13 +562,6 @@
           <context context-type="linenumber">578</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="fcf969047ab677413509884ac54ab6780d7ffeb2" datatype="html">
-        <source>kg</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/webshop/nagelplatten/nagelplatten.component.ts</context>
-          <context context-type="linenumber">578</context>
-        </context-group>
-      </trans-unit>
       <trans-unit id="4e95a3e8fa70c2c094dae01d1de83d859f03fbca" datatype="html">
         <source>Bestellsumme in Euro</source>
         <context-group purpose="location">
@@ -546,8 +569,8 @@
           <context context-type="linenumber">591</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="3756cf7b96142f1c339d393a6ce35a459db982bd" datatype="html">
-        <source>(Gesamtgewicht <x id="INTERPOLATION" equiv-text="{{ basketGewicht | number: &apos;1.2-2&apos;}}"/> kg)</source>
+      <trans-unit id="2fbb9000f95c8ee7f86039f2b0ac2d4b77c77ead" datatype="html">
+        <source>(Gesamtgewicht</source>
         <context-group purpose="location">
           <context context-type="sourcefile">app/webshop/nagelplatten/nagelplatten.component.ts</context>
           <context context-type="linenumber">592</context>
@@ -566,26 +589,184 @@
           <context context-type="sourcefile">app/webshop/nagelplatten/nagelplatten.component.ts</context>
           <context context-type="linenumber">614</context>
         </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/webshop/nagelplatten/nagelplatten.component.ts</context>
+          <context context-type="linenumber">720</context>
+        </context-group>
       </trans-unit>
-      <trans-unit id="2166debe12de0a3d6b676758b7c8278aea45a926" datatype="html">
-        <source>
-                                <x id="START_TAG_MAT-OPTION" ctype="x-mat-option" equiv-text="&lt;mat-option&gt;"/>
-                                  <x id="INTERPOLATION" equiv-text="{{ anrede.viewValue }}"/>
-                                <x id="CLOSE_TAG_MAT-OPTION" ctype="x-mat-option" equiv-text="&lt;/mat-option&gt;"/>
-                              </source>
+      <trans-unit id="349958690466fa73690f410243efcdbf4cbb55fb" datatype="html">
+        <source>Anrede</source>
         <context-group purpose="location">
           <context context-type="sourcefile">app/webshop/nagelplatten/nagelplatten.component.ts</context>
           <context context-type="linenumber">625</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="5e13d756266ba4250b46ebb63c8b40c09943f94e" datatype="html">
-        <source>
-          <x id="START_TAG_BUTTON" ctype="x-button" equiv-text="&lt;button&gt;"/>Abbrechen<x id="CLOSE_TAG_BUTTON" ctype="x-button" equiv-text="&lt;/button&gt;"/>
-          <x id="START_TAG_BUTTON_1" ctype="x-button" equiv-text="&lt;button&gt;"/>Absenden<x id="CLOSE_TAG_BUTTON" ctype="x-button" equiv-text="&lt;/button&gt;"/>
-        </source>
+      <trans-unit id="a236401305fa334e3256b469befc454313201296" datatype="html">
+        <source>eMail</source>
         <context-group purpose="location">
           <context context-type="sourcefile">app/webshop/nagelplatten/nagelplatten.component.ts</context>
-          <context context-type="linenumber">696</context>
+          <context context-type="linenumber">634</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="d6507e7b5ae51f1734f3e169ef4cf6ef56f0001f" datatype="html">
+        <source>Vorname</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/webshop/nagelplatten/nagelplatten.component.ts</context>
+          <context context-type="linenumber">640</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="074a550816cde9894e6c6d3bafcbc7be199f059b" datatype="html">
+        <source>Nachname</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/webshop/nagelplatten/nagelplatten.component.ts</context>
+          <context context-type="linenumber">643</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2d585ceb745c52cf8f2e9e4192b5c97a685c24fe" datatype="html">
+        <source>Firma</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/webshop/nagelplatten/nagelplatten.component.ts</context>
+          <context context-type="linenumber">648</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5de99bb0cc963bbbd0e375f53b640a2bedf9b681" datatype="html">
+        <source>Straße</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/webshop/nagelplatten/nagelplatten.component.ts</context>
+          <context context-type="linenumber">652</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ed37dcd55787de115dbd112d42f48aee50527f28" datatype="html">
+        <source>PLZ</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/webshop/nagelplatten/nagelplatten.component.ts</context>
+          <context context-type="linenumber">658</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="21c7f50a98ed6ee10bbea74803213979b9c6cb66" datatype="html">
+        <source>Ort</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/webshop/nagelplatten/nagelplatten.component.ts</context>
+          <context context-type="linenumber">663</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7584280252b97acbb03011f8ad00bf1546c1509f" datatype="html">
+        <source>Land</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/webshop/nagelplatten/nagelplatten.component.ts</context>
+          <context context-type="linenumber">668</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="cbbc5fc52b2dbad2f6313f78cd491475b7df01a9" datatype="html">
+        <source>Telefon</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/webshop/nagelplatten/nagelplatten.component.ts</context>
+          <context context-type="linenumber">678</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="84ba8a255b59415785f39ecd60bb66769f800a97" datatype="html">
+        <source>gewünschter Liefertermin</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/webshop/nagelplatten/nagelplatten.component.ts</context>
+          <context context-type="linenumber">682</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="548f9212c76c87feda3601349622b8a40a55fe8e" datatype="html">
+        <source>Bemerkung</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/webshop/nagelplatten/nagelplatten.component.ts</context>
+          <context context-type="linenumber">689</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1b24932d0f2269e4b41d0f936fdb5de1b94da401" datatype="html">
+        <source>Abbrechen</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/webshop/nagelplatten/nagelplatten.component.ts</context>
+          <context context-type="linenumber">697</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="f504721f06d60b5f234278f84ffeb23086f292ba" datatype="html">
+        <source>Absenden</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/webshop/nagelplatten/nagelplatten.component.ts</context>
+          <context context-type="linenumber">698</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="e7a616084cd471d01c82dc63c30cce9ea673226a" datatype="html">
+        <source>Herzlichen Dank für Ihre Bestellung</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/webshop/nagelplatten/nagelplatten.component.ts</context>
+          <context context-type="linenumber">703</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="124920d01e98dd5a1c98d50f8c61c9f2da67cb32" datatype="html">
+        <source>Die Bestellung wurde erfolgreich gespeichert !</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/webshop/nagelplatten/nagelplatten.component.ts</context>
+          <context context-type="linenumber">710</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="90f333c776b6fe06dab05f9d25aefbb0a98de2af" datatype="html">
+        <source>Sie bekommen in den nächsten Minuten eine Bestätigungsmail.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/webshop/nagelplatten/nagelplatten.component.ts</context>
+          <context context-type="linenumber">711</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1ead0ad1063d0c9e005fe56c9529aef4c1ef9d21" datatype="html">
+        <source>Schließen</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/webshop/nagelplatten/nagelplatten.component.ts</context>
+          <context context-type="linenumber">715</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/webshop/nagelplatten/nagelplatten.component.ts</context>
+          <context context-type="linenumber">735</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="a3c7f9bfefc425159dcce2107fa2b51e5882b0d0" datatype="html">
+        <source>Beim speichern der Bestellung ist ein Fehler aufgetreten. <x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/&gt;"/>
+                  Bitte versuchen Sie es noch einmal.
+                  <x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/&gt;"/><x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/&gt;"/>
+                  Fehlermeldung:</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/webshop/nagelplatten/nagelplatten.component.ts</context>
+          <context context-type="linenumber">727</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="e06cc3c31a2cddd8f456ba6c46af4389b0ae8e6a" datatype="html">
+        <source>Danke</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/webshop/nagelplatten/nagelplatten.component.ts</context>
+          <context context-type="linenumber">731</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4e648145a1d62641409186288c19f687cdfb86f4" datatype="html">
+        <source>Bestellung Metal Webs</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/sidenav/sidenav/sidenav.component.ts</context>
+          <context context-type="linenumber">6</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="614bb7fd7651205797a926e8ae13d52af87c213c" datatype="html">
+        <source>Bestellung Binderwinkel</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/sidenav/sidenav/sidenav.component.ts</context>
+          <context context-type="linenumber">7</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8b63584d95aae7fd431025181df5378eca53db47" datatype="html">
+        <source>AGB Bestellung</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/sidenav/sidenav/sidenav.component.ts</context>
+          <context context-type="linenumber">8</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8fe73a4787b8068b2ba61f54ab7e0f9af2ea1fc9" datatype="html">
+        <source>Version</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/sidenav/sidenav/sidenav.component.ts</context>
+          <context context-type="linenumber">11</context>
         </context-group>
       </trans-unit>
     </body>

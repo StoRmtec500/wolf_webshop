@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild, Injector, LOCALE_ID } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { FormControl } from '@angular/forms';
 import { Observable } from 'rxjs/Observable';
@@ -6,6 +6,7 @@ import { Nagelplatten, Rabatt, ID, Laenderliste, BestellungKopf, BestellungKopfD
 import { NagelplattenService } from '../../shared/service/nagelplatten.service';
 import { RouterModule, Router } from '@angular/router';
 import { forkJoin } from "rxjs/observable/forkJoin";
+import { AppComponent } from '../../app.component';
 
 @Component({
   selector: 'app-metalwebs',
@@ -33,7 +34,7 @@ error = false;
 errorMsg;
 ID;
 bestellID: number;
-
+sprache;
 land: Laenderliste[] = [];
 
   anreden = [
@@ -46,11 +47,13 @@ land: Laenderliste[] = [];
   bestellungDetail = new BestellungKopfDetail();
 
 
-  constructor(private ns: NagelplattenService, private router: Router) { }
+  constructor(private ns: NagelplattenService, private router: Router, private injector: Injector) {
+    this.sprache = this.injector.get(LOCALE_ID);
+   }
 
   ngOnInit() {
     this.nagelplatten = null;
-    this.ns.getRabatt().subscribe((res : any) => this.rabatte = res[1].metalwebs);
+    this.ns.getRabatt(this).subscribe((res : any) => this.rabatte = res[1].metalwebs);
     console.log("Rabatt JSON wurde geladen !!!" + this.rabatte);
     this.loadLaenderliste();
   }
@@ -62,7 +65,7 @@ land: Laenderliste[] = [];
   }
 
   loadLaenderliste() {
-    this.ns.getLaenderliste().subscribe((land: Laenderliste[]) => {
+    this.ns.getLaenderliste(this.sprache).subscribe((land: Laenderliste[]) => {
       this.land = land;
       console.log("Länderliste:" + JSON.stringify(this.land));
     });
@@ -249,8 +252,7 @@ saveBestellungDetail() {
 
 
   clearAll() {
-
-    window.location.reload();
+    window.location.href = "/onlineshopNP/" + this.sprache;
   }
 
   scroll(el) {

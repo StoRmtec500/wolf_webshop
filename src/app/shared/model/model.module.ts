@@ -17,6 +17,11 @@ export class Rabatt {
   fracht: string;
 }
 
+export class Anrede {
+  value;
+  viewValue;
+}
+
 export class Laenderliste {
   Land;
   Kuerzel;

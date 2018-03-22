@@ -1,5 +1,5 @@
 import { Component, ViewChild, OnInit, Input, Injector, LOCALE_ID } from '@angular/core';
-import { Nagelplatten, Rabatt, BestellungKopf, ID, BestellungKopfDetail, Laenderliste } from '../../shared/index';
+import { Nagelplatten, Rabatt, BestellungKopf, ID, BestellungKopfDetail, Laenderliste, Anrede } from '../../shared/index';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Observable } from 'rxjs/Observable';
 import { startWith } from 'rxjs/operators/startWith';
@@ -23,6 +23,7 @@ export class NagelplattenComponent implements OnInit {
   nagelplattenTyp: Nagelplatten[] = [];
   warenkorb: Nagelplatten[] = [];
   rabatte: Rabatt[] = [];
+  anreden: Anrede[] = [];
   bestellungKopfID: ID[];
   details = '';
   showBasket = true; showBasketZwischensumme = false;
@@ -39,14 +40,12 @@ export class NagelplattenComponent implements OnInit {
   sum1: number;
   Math: any;
   sprache: string;
+  spracheID;
+
 
   land: Laenderliste[] = [];
 
-  anreden = [
-    { value: 'Firma', viewValue: 'Firma' },
-    { value: 'Herr', viewValue: 'Herr' },
-    { value: 'Frau', viewValue: 'Frau' }
-  ];
+
 
   bestellung = new BestellungKopf();
   bestellungDetail = new BestellungKopfDetail();
@@ -57,12 +56,18 @@ export class NagelplattenComponent implements OnInit {
     this.getArticelTyp(0);
     this.Math = Math;
     this.sprache = this.injector.get(LOCALE_ID);
+    if(this.sprache == 'de') {
+      this.spracheID = '0'
+    } else {
+      this.spracheID = '1'
+    }
   }
 
 
 
   ngOnInit() {
-    this.ns.getRabatt().subscribe((res: any) => this.rabatte = res[0].nagelplatten);
+    this.ns.getRabatt(this.sprache).subscribe((res: any) => this.rabatte = res[0].nagelplatten);
+    this.getAnrede(this.sprache);
     this.loadLaenderliste();
   }
 
@@ -70,7 +75,10 @@ export class NagelplattenComponent implements OnInit {
     this.ns.getNagelplatten(typ).subscribe(data => this.nagelplatten = data);
   }
 
-
+getAnrede(sprache) {
+  this.ns.getAnrede(sprache).subscribe(data => this.anreden = data);
+  console.log("Anrede: "+ JSON.stringify(this.anreden));
+}
 
   getArticelTyp(typ: number) {
     if (this.open == true) {
@@ -83,13 +91,8 @@ export class NagelplattenComponent implements OnInit {
     
   }
 
-  //tabSelectionChanged(event) {
-  //  let selectedTab = event.tab;
-    //this.getArticelTyp(0);
-  //}
-
   loadLaenderliste() {
-    this.ns.getLaenderliste().subscribe((land: Laenderliste[]) => {
+    this.ns.getLaenderliste(this.sprache).subscribe((land: Laenderliste[]) => {
       this.land = land;
     });
   }
