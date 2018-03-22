@@ -1,20 +1,23 @@
-import { HomeComponent } from './home/home.component';
+import { MetalwebsComponent } from './webshop/metalwebs/metalwebs.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { NagelplattenBasketComponent } from './home/nagelplatten-basket/nagelplatten-basket.component';
+import { NagelplattenComponent } from './webshop/nagelplatten/nagelplatten.component';
 
 const routes: Routes = [
   {
     path: '',
-    component: HomeComponent,
-    children: [
-      { path: 'basket/:id', component: NagelplattenBasketComponent}
-    ]
+    redirectTo: 'nagelplatten',
+    pathMatch: 'full'
   },
   {
-    path: 'dashboard',
-    loadChildren: '../app/dashboard/dashboard.module#DashboardModule'
-  }
+    path: 'nagelplatten',
+    component: NagelplattenComponent
+    
+  },
+  { path: 'metalwebs',
+    component: MetalwebsComponent
+  },
+  { path: '**', redirectTo: 'nagelplatten', pathMatch: 'full' }
 ];
 
 @NgModule({

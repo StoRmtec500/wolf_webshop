@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { NagelplattenBasketComponent } from './nagelplatten-basket.component';
+import { NagelplattenComponent } from './nagelplatten.component';
 
-describe('NagelplattenBasketComponent', () => {
-  let component: NagelplattenBasketComponent;
-  let fixture: ComponentFixture<NagelplattenBasketComponent>;
+describe('NagelplattenComponent', () => {
+  let component: NagelplattenComponent;
+  let fixture: ComponentFixture<NagelplattenComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ NagelplattenBasketComponent ]
+      declarations: [ NagelplattenComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(NagelplattenBasketComponent);
+    fixture = TestBed.createComponent(NagelplattenComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

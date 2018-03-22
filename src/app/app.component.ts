@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, Injector, LOCALE_ID } from '@angular/core';
+import { RouterModule, RouterLinkActive } from '@angular/router';
+import { AppModule } from './app.module';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +9,5 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'app';
+
 }
