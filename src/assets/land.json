@@ -1,9 +1,5 @@
 [
     {
-    "Land": "Österreich",
-    "Kuerzel": "AT"
-    },
-    {
     "Land": "Belgien",
     "Kuerzel": "B"
     },
@@ -54,6 +50,10 @@
     {
     "Land": "Niederlande",
     "Kuerzel": "NL"
+    },
+    {
+        "Land": "Österreich",
+        "Kuerzel": "A"
     },
     {
     "Land": "Polen",

@@ -27,7 +27,7 @@ export class ID {
 }
 
 export class BestellungKopf {
-  PKNpBestellungKopfID: number;
+  npBestellungKopfID: number;
   Anrede:string = '';
   Name: string = '';
   Vorname: string  = '';
@@ -45,6 +45,7 @@ export class BestellungKopf {
   RabattSumme = 0;
   GesamtSumme  = 0;
   GesamtGewicht = 0;
+  sprache: string = '';
 }
 
 

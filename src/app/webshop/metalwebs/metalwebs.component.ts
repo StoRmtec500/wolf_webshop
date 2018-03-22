@@ -149,7 +149,7 @@ land: Laenderliste[] = [];
   }
 
   saveBestellung(){
-    this.bestellung.PKNpBestellungKopfID = this.bestellID;
+    this.bestellung.npBestellungKopfID = this.bestellID;
     this.bestellungDetail.FKNpBestellungKopfID = this.bestellID;
 
     if(this.basketZwischenSumme == null) 

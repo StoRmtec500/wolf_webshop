@@ -88,9 +88,9 @@ export class databaseProvider {
     public makeOrderKopf(bestellungKopf) {
       return {
         Befehl: encodeURIComponent(
-        `INSERT INTO PESchnittstelle.dbo.npBestellungKopf ( PKNpBestellungKopfID ,Anrede ,Name ,Vorname ,Firma ,Strasse ,Plz ,Ort , Land ,eMail ,Telefon ,Bemerkung ,Liefertermin ,ZwischenSumme ,Rabatt ,RabattSumme ,GesamtSumme ,GesamtGewicht ,erfdatum )
-        VALUES ( `+bestellungKopf.PKNpBestellungKopfID+` ,'`+bestellungKopf.Anrede+`','`+bestellungKopf.Name+`' ,'`+bestellungKopf.Vorname+`' , '`+bestellungKopf.Firma+`' ,'`+bestellungKopf.Strasse+`' , `+bestellungKopf.Plz+` ,'`+bestellungKopf.Ort+`' ,'`+bestellungKopf.Land+`',
-        '`+bestellungKopf.eMail+`' ,'`+bestellungKopf.Telefon+`' ,'`+bestellungKopf.Bemerkung+`' ,'`+bestellungKopf.Liefertermin+`','`+bestellungKopf.ZwischenSumme+`' ,`+bestellungKopf.Rabatt+` ,`+bestellungKopf.RabattSumme+`, `+bestellungKopf.GesamtSumme+`, `+bestellungKopf.GesamtGewicht+` ,GETDATE())`
+        `INSERT INTO PESchnittstelle.dbo.npBestellungKopf ( npBestellungKopfID ,Anrede ,Name ,Vorname ,Firma ,Strasse ,Plz ,Ort , Land ,eMail ,Telefon ,Bemerkung ,Liefertermin ,ZwischenSumme ,Rabatt ,RabattSumme ,GesamtSumme ,GesamtGewicht ,erfdatum, sprache )
+        VALUES ( `+bestellungKopf.npBestellungKopfID+` ,'`+bestellungKopf.Anrede+`','`+bestellungKopf.Name+`' ,'`+bestellungKopf.Vorname+`' , '`+bestellungKopf.Firma+`' ,'`+bestellungKopf.Strasse+`' , `+bestellungKopf.Plz+` ,'`+bestellungKopf.Ort+`' ,'`+bestellungKopf.Land+`',
+        '`+bestellungKopf.eMail+`' ,'`+bestellungKopf.Telefon+`' ,'`+bestellungKopf.Bemerkung+`' ,'`+bestellungKopf.Liefertermin+`','`+bestellungKopf.ZwischenSumme+`' ,`+bestellungKopf.Rabatt+` ,`+bestellungKopf.RabattSumme+`, `+bestellungKopf.GesamtSumme+`, `+bestellungKopf.GesamtGewicht+` ,GETDATE(),'`+bestellungKopf.sprache+`')`
         ),
         Datenbank: this.databaseName,
         Login: this.userName,
@@ -105,7 +105,7 @@ export class databaseProvider {
     public makeOrderDetails(bestellungKopfDetail) {
       return {
         Befehl: encodeURIComponent(
-          `INSERT INTO PESchnittstelle.dbo.npBestellungKopfDetail ( FKNpBestellungKopfID ,BestellMenge ,ArtNr ,Typ ,Laenge, Breite ,Gewicht , MengenEinheit ,PreisMenge ,PreisGesamt )
+          `INSERT INTO PESchnittstelle.dbo.npBestellungKopfDetail ( npBestellungKopfID ,BestellMenge ,ArtNr ,Typ ,Laenge, Breite ,Gewicht , MengenEinheit ,PreisMenge ,PreisGesamt )
           VALUES (`+bestellungKopfDetail.FKNpBestellungKopfID+` ,`+bestellungKopfDetail.BestellMenge+`, `+bestellungKopfDetail.PKArtikelID+` ,'`+bestellungKopfDetail.Typ+`' ,'`+bestellungKopfDetail.Laenge+`','`+bestellungKopfDetail.Breite+`' ,`+bestellungKopfDetail.Gewicht+` ,`+bestellungKopfDetail.MengenEinheit+` ,`+bestellungKopfDetail.PreisMenge+` ,`+bestellungKopfDetail.PreisGesamt+`)`
         ),
         Datenbank: this.databaseName,

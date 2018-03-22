@@ -68,7 +68,7 @@
                         </mat-expansion-panel-header>
                       </mat-expansion-panel>
                       <mat-expansion-panel>
-                        <mat-expansion-panel-header (click)="getArticelTyp(4949)">
+                        <mat-expansion-panel-header (click)="getArticelTyp(4949)" >
                           <div class="row_accordion">
                             <div class="row">
                               <div class="col-4 col-sm-3 col-md-3 col-lg-5 col-xl-4">W101</div>
@@ -110,7 +110,7 @@
                                 <div class="artWidth col-sm-3 col-lg-3 col-xl-3"><span><input type="number" pattern=[0-9] name='name' [(ngModel)]="n.Stk" (change)="addToCart(name.value, in, n.PKArtikelID, 'W101')" #name><div *ngIf="n.ME > 1;then karton else stueck"></div></span><ng-template #karton i18n> Karton</ng-template>
                                 <ng-template #stueck i18n> Stück</ng-template></div>
                                 <div class="artikel col col-sm-2 col-lg-2 col-xl-2">{{ n.PKArtikelID }}</div>
-                                <div class="artikel col col-sm-3 col-lg-2 col-xl-2">{{ n.Breite | number: '3.0' }} x {{ n.Laenge | number: '3.0'   }} mm </div>
+                                <div class="artikel col col-sm-3 col-lg-2 col-xl-2">{{ n.Breite }} x {{ n.Laenge }} mm </div>
                                 <div class="artikel col col-sm-2 col-lg-2 col-xl-2 text-right">{{ n.Gewicht | number: '1.4-4' }}</div>
                                 <div class="artikel col col-sm-1 col-lg-1 col-xl-1 text-right">{{ n.ME }}</div>
                                 <div class="artikel padding col col-sm-1 col-lg-2 col-xl-2 text-right">{{ n.Preis | number: '1.4-4'}}</div>  
@@ -127,7 +127,7 @@
                           </div>
                         </ng-template>
                       </mat-expansion-panel>
-                      <mat-expansion-panel>
+                      <mat-expansion-panel >
                         <mat-expansion-panel-header (click)="getArticelTyp(4941)">
                           <div class="row_accordion">
                             <div class="row">
@@ -147,7 +147,7 @@
                                 <mat-progress-bar  mode="indeterminate" color="yellow"></mat-progress-bar>
                                 Daten werden geladen ...
                               </ng-template>
-                                <ng-template #show>
+                                <ng-template #show  >
                                 <div class="col-lg-12 col-xl-12" i18n>Blechdicke: 1,25 mm</div>
                                 <div class="col-lg-12 col-xl-12" i18n> Zulassungsnummer: Z-9.1-801</div>
                                 <br>
@@ -529,14 +529,14 @@
                       <div class="basketDetailHeader">
                         <div class="row" >
                       
-                      <div class="artikelheader col-md-2 col-lg-3 col-xl-2">Menge</div>
-                      <div class="artikelheader2 col-md-1 col-lg-1 col-xl-1">Art.Nr.</div>
-                      <div class="artikelheader2 col-md-1 col-lg-1 col-xl-1">Typ</div>
-                      <div class="artikelheader2 col-md-3 col-lg-2 col-xl-3">Größe</div>
-                      <div class="artikelheader1 col-md-1 col-lg-1 col-xl-1 text-right">kg/ME</div>
-                      <div class="artikelheader1 col-md-1 col-lg-1 col-xl-1 text-right">ME</div>
-                      <div class="artikelheader1 col-md-1 col-lg-1 col-xl-1 text-right">Preis/ME</div>  
-                      <div class="artikelheader1 col-md-2 col-lg-2 col-xl-2 text-right">Gesamt €</div> 
+                      <div class="artikelheader col-md-2 col-lg-3 col-xl-2" i18n>Menge</div>
+                      <div class="artikelheader2 col-md-1 col-lg-1 col-xl-1" i18n>Art.Nr.</div>
+                      <div class="artikelheader2 col-md-1 col-lg-1 col-xl-1" i18n>Typ</div>
+                      <div class="artikelheader2 col-md-3 col-lg-2 col-xl-3" i18n>Größe</div>
+                      <div class="artikelheader1 col-md-1 col-lg-1 col-xl-1 text-right" i18n>kg/ME</div>
+                      <div class="artikelheader1 col-md-1 col-lg-1 col-xl-1 text-right" i18n>ME</div>
+                      <div class="artikelheader1 col-md-1 col-lg-1 col-xl-1 text-right" i18n>Preis/ME</div>  
+                      <div class="artikelheader1 col-md-2 col-lg-2 col-xl-2 text-right" i18n>Gesamt €</div> 
                     </div>
                   </div>
                   <div class="basketDetailTable">
@@ -545,8 +545,8 @@
                       <tr *ngFor="let n of warenkorb; let in = index; index as i; odd as isOdd; even as isEven" 
                       [ngClass]="{ odd: isOdd, even: isEven }" >
                      <div class="row">
-                        <div class="menge col-md-2 col-lg-3 col-xl-2 text-left"><span> <i class="far fa-trash-alt" (click)="deleteEntry(in)"></i><div *ngIf="n.ME > 1;then karton else stueck"></div></span><ng-template #karton>   {{n.Stk }} Karton</ng-template>
-                        <ng-template #stueck>   {{n.Stk }} Stück </ng-template></div>
+                        <div class="menge col-md-2 col-lg-3 col-xl-2 text-left"><span> <i class="far fa-trash-alt" (click)="deleteEntry(in)"></i><div *ngIf="n.ME > 1;then karton else stueck"></div></span><ng-template #karton i18n>   {{n.Stk }} Karton</ng-template>
+                        <ng-template #stueck i18n>   {{n.Stk }} Stück </ng-template></div>
                         <div class="artikelbasket col-md-1 col-lg-1 col-xl-1">{{ n.PKArtikelID }}</div>
                         <div class="artikelbasket col-md-1 col-lg-1 col-xl-1">{{ n.Typ }}</div>
                         <div class="artikelbasket col-md-3 col-lg-2 col-xl-3">{{ n.Breite }} x {{ n.Laenge }} mm</div>
@@ -568,15 +568,15 @@
               <table class="tableBasket">
                 <tr class="even black">
                     <div class="row">
-                        <div class="zwischensummetext col-md-5 col-lg-6 col-xl-6">Zwischensumme</div>
+                        <div class="zwischensummetext col-md-5 col-lg-6 col-xl-6" i18n>Zwischensumme</div>
                         <div class="col-md-3 col-lg-2 col-xl-2"></div>
                         <div class="zwischensumme com-md-4 col-lg-4 col-xl-4 text-right">{{basketZwischenSumme| number: '1.2-2'}}</div>
                       </div>
                 </tr>
                 <tr class="odd">
                     <div class="row">
-                        <div class="artikelheadernormal  col-lg-8 col-xl-8">- {{basketRabattProzent}}% Mengenrabatt (ab {{basketRabattAbKG | number}} kg) {{basketTransport}}</div>
-                        <div class="artikelheader1normal  col-lg-4 col-xl-4 text-right">{{this.Math.round(basketZwischenSummeRabatt) }}</div>
+                        <div class="artikelheadernormal  col-lg-8 col-xl-8">- {{basketRabattProzent}}<ng-container i18n>% Mengenrabatt (ab</ng-container> {{basketRabattAbKG | number}} <ng-container i18n>kg</ng-container>) {{basketTransport}}</div>
+                        <div class="artikelheader1normal  col-lg-4 col-xl-4 text-right">{{basketZwischenSummeRabatt |number: '1.2-2' }}</div>
                       </div>
                 </tr>
                 </table>
@@ -588,14 +588,14 @@
                  <b> 
                    <div class="basketDetailHeader">
                     <div class="row" >
-                  <div class="artikelheader col-sm-5 col-lg-5 col-xl-4">Bestellsumme in Euro</div>
-                  <div class="basketgewicht col-sm-4 col-lg-4 col-xl-5">(Gesamtgewicht {{ basketGewicht | number: '1.2-2'}} kg)</div>
-                  <div class="summe col-sm-3 col-lg-3 col-xl-3 text-right">{{(basketSummeGesamt)}}</div>
+                  <div class="artikelheader col-sm-5 col-lg-5 col-xl-4" i18n>Bestellsumme in Euro</div>
+                  <div class="basketgewicht col-sm-4 col-lg-4 col-xl-5" i18n>(Gesamtgewicht {{ basketGewicht | number: '1.2-2'}} kg)</div>
+                  <div class="summe col-sm-3 col-lg-3 col-xl-3 text-right">{{(basketSummeGesamt | number: '1.2-2')}}</div>
                 </div>
               </div>
           </b>
               <br>
-              <button class="buttonWarenkorb" data-toggle="modal" data-target="#NagelplattenFormular">Kundendaten eingeben & bestellen</button>
+              <button class="buttonWarenkorb" data-toggle="modal" data-target="#NagelplattenFormular" i18n>Kundendaten eingeben & bestellen</button>
         </div>
           </div>
 <!-- Bestellsumme ENDE -->
@@ -611,7 +611,7 @@
     <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
       <div class="modal-content" *ngIf="isValid && !error">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Nagelplatten Bestellformular</h5>
+          <h5 class="modal-title" id="exampleModalLabel" i18n>Nagelplatten Bestellformular</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
@@ -622,7 +622,7 @@
                   <div class="row">
                       <div class="col-6"> 
                           <mat-form-field class="example-full-width">
-                              <mat-select placeholder="Anrede" [(ngModel)]="bestellung.Anrede" name="anrede">
+                              <mat-select placeholder="Anrede" [(ngModel)]="bestellung.Anrede" name="anrede" i18n>
                                 <mat-option *ngFor="let anrede of anreden" [value]="anrede.value" >
                                   {{ anrede.viewValue }}
                                 </mat-option>
@@ -655,7 +655,7 @@
                     <div class="row">
                         <div class="col-2">
                           <mat-form-field class="example-full-width">
-                            <input matInput type="number" placeholder="PLZ" [(ngModel)]="bestellung.Plz"  name="plz" required>
+                            <input matInput placeholder="PLZ" [(ngModel)]="bestellung.Plz"  name="plz" required>
                           </mat-form-field>
                         </div>
                         <div class="col-4">
@@ -693,7 +693,7 @@
               </form>
           </div>
         </div>
-        <div class="modal-footer">
+        <div class="modal-footer" i18n>
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Abbrechen</button>
           <button type="submit" class="btn btn-default" [disabled]="!bookForm.form.valid" (click)="makeOrder()">Absenden</button>
         </div>
