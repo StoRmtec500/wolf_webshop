@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { NagelplattenComponent } from './webshop/nagelplatten/nagelplatten.component';
 import { BinderwinkelComponent } from './webshop/binderwinkel/binderwinkel.component';
+import { AgbComponent } from './webshop/agb/agb.component';
 
 const routes: Routes = [
   {
@@ -20,6 +21,9 @@ const routes: Routes = [
   },
   { path: 'binderwinkel',
     component: BinderwinkelComponent
+  },
+  { path: 'agb',
+    component: AgbComponent
   },
   { path: '**', redirectTo: 'nagelplatten', pathMatch: 'full' }
 ];
