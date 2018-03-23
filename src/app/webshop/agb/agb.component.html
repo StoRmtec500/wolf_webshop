@@ -1,11 +1,34 @@
 <!-- MENÜ ENDE-->
 <div class="content-wrapper">
     <!-- Content Header -->
-    <section class="content-header">
-      <h2>AGB BESTELLUNG</h2>
-      <a href="http://www.wolfnagelplatten.at/Online-Bestellung/AGB-Bestellung">AGB Bestellung Nagelplatten</a>
-      <br>
-      <br>
-      <div class="line_height"></div>
-    </section>
+  
+   
+
+<div class="container-fluid">
+    <div class="row">
+      <div class="col-lg-4 col-xl-3">
+          <section class="content-header">
+              <div class="agb">
+                <h2>AGB BESTELLUNG</h2>
+                <br>
+                
+                <a routerLink='abg_nagelplatten' routerLinkActive="active-link" [routerLinkActiveOptions]="{exact:
+                  true}" i18n><i class="far fa-file-alt"></i>&nbsp;&nbsp;AGB Bestellung Nagelplatten</a>
+                <br>
+               
+                <a routerLink='abg_metalwebs' routerLinkActive="active-link" [routerLinkActiveOptions]="{exact:
+                  true}" i18n> <i class="far fa-file-alt"></i>&nbsp;&nbsp;AGB Bestellung Metal Webs</a>
+                <br>
+              
+                <a routerLink='abg_binderwinkel' routerLinkActive="active-link" [routerLinkActiveOptions]="{exact:
+                  true}" i18n> <i class="far fa-file-alt"></i>&nbsp;&nbsp;AGB Bestellung Binderwinkel</a>
+                <div class="line_height"></div>
+              </div>
+            </section>
+      </div>
+      <div class="col-lg-8 col-xl-9">
+          <router-outlet></router-outlet>
+      </div>
+    </div>
   </div>
+</div>

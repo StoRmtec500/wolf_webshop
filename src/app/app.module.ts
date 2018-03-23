@@ -18,6 +18,9 @@ import { RouterModule, RouterLinkActive } from '@angular/router';
 import { MetalwebsComponent } from './webshop/metalwebs/metalwebs.component';
 import { BinderwinkelComponent } from './webshop/binderwinkel/binderwinkel.component';
 import { AgbComponent } from './webshop/agb/agb.component';
+import { AgbNagelplattenComponent } from './webshop/agb/agb-nagelplatten/agb-nagelplatten.component';
+import { AgbMetalwebsComponent } from './webshop/agb/agb-metalwebs/agb-metalwebs.component';
+import { AgbBinderwinkelComponent } from './webshop/agb/agb-binderwinkel/agb-binderwinkel.component';
 registerLocaleData(localeDe)
 
 @NgModule({
@@ -27,7 +30,10 @@ registerLocaleData(localeDe)
     NagelplattenComponent,
     MetalwebsComponent,
     BinderwinkelComponent,
-    AgbComponent
+    AgbComponent,
+    AgbNagelplattenComponent,
+    AgbMetalwebsComponent,
+    AgbBinderwinkelComponent
   ],
   imports: [
     AppRoutingModule,

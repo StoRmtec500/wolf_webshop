@@ -1,3 +1,4 @@
+import { AgbNagelplattenComponent } from './webshop/agb/agb-nagelplatten/agb-nagelplatten.component';
 import { MetalwebsComponent } from './webshop/metalwebs/metalwebs.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
@@ -23,7 +24,10 @@ const routes: Routes = [
     component: BinderwinkelComponent
   },
   { path: 'agb',
-    component: AgbComponent
+    component: AgbComponent,
+    children: [
+        { path: 'abg_nagelplatten', component: AgbNagelplattenComponent}
+    ]
   },
   { path: '**', redirectTo: 'nagelplatten', pathMatch: 'full' }
 ];
