@@ -71,13 +71,9 @@ export class NagelplattenComponent implements OnInit {
     this.loadLaenderliste();
   }
 
-  getNagelplattenWithTyp(typ) {
-    this.ns.getNagelplatten(typ).subscribe(data => this.nagelplatten = data);
-  }
 
 getAnrede(sprache) {
   this.ns.getAnrede(sprache).subscribe(data => this.anreden = data);
-  console.log("Anrede: "+ JSON.stringify(this.anreden));
 }
 
   getArticelTyp(typ: number) {
@@ -138,8 +134,6 @@ getAnrede(sprache) {
     }
     this.basketGewicht = basketGewicht;
     this.basketSumme = basketSumme;
-
-    console.log("sprache: " + this.sprache);
   }
 
 
@@ -148,14 +142,12 @@ getAnrede(sprache) {
     this.basketZwischenSummeRabatt = 0;
     for (let i = 0; i < this.rabatte.length; i++) {
       if (this.basketGewicht > this.rabatte[i].kg) {
-        basketRabatt =
-          this.basketZwischenSumme = (this.basketSumme);
+        basketRabatt = this.basketZwischenSumme = (this.basketSumme);
         this.basketRabattProzent = this.rabatte[i].rabatt;
         this.basketRabattAbKG = this.rabatte[i].kg;
         this.basketTransport = this.rabatte[i].fracht;
         var zw = (this.basketSumme / 100 * this.rabatte[i].rabatt);
         this.basketZwischenSummeRabatt = Math.round(zw * 100) / 100;
-        console.log("Rabatt: " + this.basketZwischenSummeRabatt);
       }
       this.basketSummeGesamt = (this.basketSumme - this.basketZwischenSummeRabatt);
     }

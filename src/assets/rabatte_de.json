@@ -51,5 +51,24 @@
                 "fracht": "+ Transport frei"
             }
         ]
+    },
+    {
+        "binderwinkel": [
+            {
+                "kg": "1000",
+                "rabatt": "4",
+                "fracht": ""
+            },
+            {
+                "kg": "3000",
+                "rabatt": "6",
+                "fracht": ""
+            },
+            {
+                "kg": "5000",
+                "rabatt": "8",
+                "fracht": ""
+            }
+        ]
     }
 ]

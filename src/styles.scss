@@ -106,10 +106,7 @@ tr.artikel {
     height: 40px;
 }
 
-.table {
-    max-width: 104% !important;
-    width: 103%;
-}
+
 .artikel {
     padding-top: 0.86em;
 }
@@ -208,6 +205,14 @@ mat-ink-bar.mat-ink-bar {
 @media (min-width:667px){
 .mat-expansion-panel-header {
     height: 40px !important;
+}
+.artikelbasket {
+    padding-top: 0.86em;
+    cursor: auto;
+}
+.menge {
+    padding-top: 0.86em;
+    padding-left: 21px;
 }
 }
 

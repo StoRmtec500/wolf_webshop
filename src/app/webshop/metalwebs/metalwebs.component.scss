@@ -242,6 +242,10 @@ tr{
     font-weight: bold;
 }
 
+.hidden {
+    display: none;
+}
+
 .menu {
     height: 30px;
     display: block;   
@@ -557,7 +561,7 @@ body {
 
 .basketDetailTable {
     margin-left: 25px;
-    margin-right: 8px;
+    margin-right: 12px;
     cursor: auto;
 }
 
@@ -743,10 +747,6 @@ body {
         margin-left: 0px;
     }
 
-    .row {
-        width: 100%;
-    }
-
     .site_width {
        // width: 98%;
         padding-left: 15px;
@@ -757,6 +757,10 @@ body {
         width: 45%;
         border-style: solid;
         border-width: 1px;
+    }
+
+    .artikel {
+        padding-top: 0.9em;
     }
     
 }

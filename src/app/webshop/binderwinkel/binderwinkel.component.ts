@@ -1,19 +1,16 @@
 import { Component, OnInit, ViewChild, Injector, LOCALE_ID } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { Laenderliste, Nagelplatten, Rabatt, Anrede, BestellungKopf, BestellungKopfDetail, ID } from '../../shared';
 import { FormControl } from '@angular/forms';
 import { Observable } from 'rxjs/Observable';
-import { Nagelplatten, Rabatt, ID, Laenderliste, BestellungKopf, BestellungKopfDetail, Anrede } from '../../shared';
 import { NagelplattenService } from '../../shared/service/nagelplatten.service';
-import { RouterModule, Router } from '@angular/router';
-import { forkJoin } from "rxjs/observable/forkJoin";
-import { AppComponent } from '../../app.component';
+import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-metalwebs',
-  templateUrl: './metalwebs.component.html',
-  styleUrls: ['./metalwebs.component.scss']
+  selector: 'app-binderwinkel',
+  templateUrl: './binderwinkel.component.html',
+  styleUrls: ['./binderwinkel.component.scss']
 })
-export class MetalwebsComponent implements OnInit {
+export class BinderwinkelComponent implements OnInit {
 
   myControl: FormControl = new FormControl();
   filteredOptions: Observable<any[]>;
@@ -48,9 +45,9 @@ land: Laenderliste[] = [];
 
 
   constructor(private ns: NagelplattenService, private router: Router, private injector: Injector) {
-    this.ns.getMetalWebs().subscribe(data => this.nagelplattenTyp = data);
+    this.ns.getBinderwinkel().subscribe(data => this.nagelplattenTyp = data);
     this.nagelplatten = this.nagelplattenTyp;
-    this.getMetalWebs();
+    this.getBinderwinkel();
     this.Math = Math;
     this.sprache = this.injector.get(LOCALE_ID);
     if(this.sprache == 'de') {
@@ -61,7 +58,7 @@ land: Laenderliste[] = [];
    }
 
   ngOnInit() {
-    this.ns.getRabatt(this.sprache).subscribe((res : any) => this.rabatte = res[1].metalwebs);
+    this.ns.getRabatt(this.sprache).subscribe((res : any) => this.rabatte = res[2].binderwinkel);
     this.getAnrede(this.sprache);
     this.loadLaenderliste();
     
@@ -71,12 +68,12 @@ land: Laenderliste[] = [];
     this.ns.getAnrede(sprache).subscribe(data => this.anreden = data);
   }
 
-  getMetalWebs() {
+  getBinderwinkel() {
     console.log("NagelplattenTyp: " +JSON.stringify(this.nagelplattenTyp));
     if (this.open == true) {
       this.nagelplatten = this.nagelplattenTyp;
     } else {
-      this.ns.getMetalWebs().subscribe(data => this.nagelplattenTyp = data);
+      this.ns.getBinderwinkel().subscribe(data => this.nagelplattenTyp = data);
       this.open = true;
     }
     this.nagelplatten = this.nagelplattenTyp;
@@ -153,7 +150,7 @@ land: Laenderliste[] = [];
     this.basketSummeGesamt = (this.basketSumme - this.basketZwischenSummeRabatt);
   }
 
-  if (this.basketGewicht > 3000) {
+  if (this.basketGewicht > 1000) {
     this.basketSumme = 0;
     this.showBasketZwischensumme = true;
   } else 
@@ -261,7 +258,7 @@ saveBestellungDetail() {
 
 
   clearAll() {
-    window.location.href = "/onlineshopNP/" + this.sprache + "/metalwebs";
+    window.location.href = "/onlineshopNP/" + this.sprache + "/binderwinkel";
   }
 
   scroll(el) {

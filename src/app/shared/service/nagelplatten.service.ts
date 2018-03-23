@@ -19,12 +19,6 @@ export class NagelplattenService {
       })
     };
 
-  getNagelplatten(typ:number): Observable<Nagelplatten[]> {
-
-    const body = this.db.artikelSelect(typ);
-    return this.httpClient.post<Nagelplatten[]>(environment.apiUrlRead, body);
-  }
-
   getAllArticel(): Observable<Nagelplatten[]> {
     const body = this.db.allArtikelSelect();
     return this.httpClient.post<Nagelplatten[]>(environment.apiUrlRead, body);
@@ -32,6 +26,11 @@ export class NagelplattenService {
 
   getMetalWebs(): Observable<Nagelplatten[]> {
     const body = this.db.metalWebs();
+    return this.httpClient.post<Nagelplatten[]>(environment.apiUrlRead, body);
+  }
+
+  getBinderwinkel(): Observable<Nagelplatten[]> {
+    const body = this.db.binderwinkel();
     return this.httpClient.post<Nagelplatten[]>(environment.apiUrlRead, body);
   }
 

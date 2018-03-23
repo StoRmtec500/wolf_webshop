@@ -1,51 +1,74 @@
 [
-{"nagelplatten": [
     {
-        "kg" : "1000",
-        "rabatt" : "3",
-        "fracht" : ""  
+        "nagelplatten": [
+            {
+                "kg": "1000",
+                "rabatt": "3",
+                "fracht": ""
+            },
+            {
+                "kg": "1500",
+                "rabatt": "4",
+                "fracht": ""
+            },
+            {
+                "kg": "3000",
+                "rabatt": "6",
+                "fracht": ""
+            },
+            {
+                "kg": "5000",
+                "rabatt": "8",
+                "fracht": ""
+            },
+            {
+                "kg": "10000",
+                "rabatt": "10",
+                "fracht": "+ free transport"
+            },
+            {
+                "kg": "15000",
+                "rabatt": "12",
+                "fracht": "+ free transport"
+            }
+        ]
     },
     {
-        "kg" : "1500",
-        "rabatt" : "4",
-        "fracht" : ""  
+        "metalwebs": [
+            {
+                "kg": "3000",
+                "rabatt": "4",
+                "fracht": ""
+            },
+            {
+                "kg": "5000",
+                "rabatt": "6",
+                "fracht": ""
+            },
+            {
+                "kg": "10000",
+                "rabatt": "8",
+                "fracht": "+ free transport"
+            }
+        ]
     },
     {
-        "kg" : "3000",
-        "rabatt" : "6",
-        "fracht" : ""  
-    }, 
-    {
-        "kg" : "5000",
-        "rabatt" : "8",
-        "fracht" : "" 
-    },
-    {
-        "kg" : "10000",
-        "rabatt" : "10", 
-        "fracht" : "+ free transport"
-    },
-    {
-        "kg" : "15000",
-        "rabatt" : "12",
-        "fracht" : "+ free transport" 
+        "binderwinkel": [
+            {
+                "kg": "1000",
+                "rabatt": "4",
+                "fracht": ""
+            },
+            {
+                "kg": "3000",
+                "rabatt": "6",
+                "fracht": ""
+            },
+            {
+                "kg": "5000",
+                "rabatt": "8",
+                "fracht": ""
+            }
+        ]
     }
-]},
-{"metalwebs": [
- {
-     "kg": "3000",
-     "rabatt": "4",
-     "fracht": ""
- },
- {
-     "kg": "5000",
-     "rabatt": "6",
-     "fracht": ""
- },
- {
-     "kg": "10000",
-     "rabatt": "8",
-     "fracht": "+ free transport"
- }
-]}
 ]

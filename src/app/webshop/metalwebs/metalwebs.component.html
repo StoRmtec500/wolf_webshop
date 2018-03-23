@@ -2,12 +2,12 @@
 <div class="content-wrapper">
   <!-- Content Header -->
   <section class="content-header">
-    <h2>Bestellung Metal Webs</h2>
-    <a href="http://www.wolfnagelplatten.at/Online-Bestellung/AGB-Bestellung">Allgemeine Geschäftsbedingungen</a>
+    <h2 i18n>Bestellung Metal Webs</h2>
+    <a href="http://www.wolfnagelplatten.at/Online-Bestellung/AGB-Bestellung" i18n>Allgemeine Geschäftsbedingungen</a>
     <br>
     <br>
     <h4 i18n>1. Artikelauswahl</h4>
-    Wählen Sie einen Typ aus, und tragen Sie die Bestellmenge ein. Rabatt nach Bestellmenge pro Auftrag:
+    <ng-container i18n>Wählen Sie einen Typ aus, und tragen Sie die Bestellmenge ein. Rabatt nach Bestellmenge pro Auftrag:</ng-container>
     <div class="line_height"></div>
     <div class="row_header">
       <div class="col-md-12 col-sm-12 col-xs-12 col-lg-12 col-xl-10">
@@ -16,13 +16,13 @@
             <tbody>
               <tr>
                 <th scope="row" width="25%" style="text-align: left">
-                  ab 3 Tonnen - 4 %
+                    <b i18n>ab 3 Tonnen - 4 %</b>
                 </th>
                 <td width="33%" style="text-align: left">
-                  <b>ab 5 Tonnen - 6 %</b>
+                  <b i18n>ab 5 Tonnen - 6 %</b>
                 </td>
                 <td width="33%" style="text-align: left">
-                  <b>ab 10 Tonnen - 8 % + Transport frei</b>
+                  <b i18n>ab 10 Tonnen - 8 % + Transport frei</b>
                 </td>
               </tr>
             </tbody>
@@ -40,13 +40,16 @@
       <div class="row">
         <div class="col-lg-12 col-xl-6">
           <div class="site_width">
+              <mat-tab-group class="tab-group">
+                  <mat-tab i18n-label label="Metal Webs">
+                    <ng-template matTabContent>
             <div class="tab-content visible-sm-12">
               <mat-accordion>
                 <mat-expansion-panel [disabled]="true">
                   <mat-expansion-panel-header>
                     <div class="row_accordion disabled">
                       <div class="row">
-                        <div class="col-4 col-sm-3 col-md-3 col-lg-5 col-xl-4">Typ</div>
+                        <div class="col-4 col-sm-3 col-md-3 col-lg-5 col-xl-4" i18n>Typ</div>
                       </div>
                     </div>
                   </mat-expansion-panel-header>
@@ -71,28 +74,30 @@
                           <br>
                         </ng-template>
                           <ng-template #show>
-                          <div class="col-sm-12 col-lg-12 col-xl-12">Zulassungsnummer: ETA 07/0032</div>
+                          <div class="col-sm-12 col-lg-12 col-xl-12" i18n>Zulassungsnummer: ETA 07/0032</div>
                           <br>
                           <div class="buttonBasket" id="myHeader">
-                            <button type="button" class="buttonWarenkorb" (click)="scroll(target)">Übernehmen und Warenkorb berechnen</button>
+                            <button type="button" class="buttonWarenkorb" (click)="scroll(target)" i18n>Übernehmen und Warenkorb berechnen</button>
                             <br> </div>
                             <div class="row">
-                              <div class="artWidthHeader col-12 col-sm-3 col-lg-3 col-xl-3">Menge</div>
-                              <div class="artikelheader2 col-12 col-sm-2 col-lg-2 col-xl-2">Art.Nr.</div>
-                              <div class="artikelheader2 col-12 col-sm-3 col-lg-2 col-xl-2">Größe</div>
-                              <div class="artikelheader1 col-12 col-sm-2 col-lg-2 col-xl-2 text-right">kg/ME</div>
-                              <div class="artikelheader2 col-12 col-sm-1 col-lg-1 col-xl-1 text-right">ME</div>
-                              <div class="artikelheader1 col-12 col-sm-1 col-lg-2 col-xl-2 text-right">Preis/ME</div>  
+                              <div class="artWidthHeader col-12 col-sm-2 col-lg-2 col-xl-3" i18n>Menge</div>
+                              <div class="artikelheader2 col-12 col-sm-1 col-lg-1 col-xl-1" i18n>Art.Nr.</div>
+                              <div class="artikelheader2 col-12 col-sm-2 col-lg-2 col-xl-2" i18n>Bezeichnung</div>
+                              <div class="artikelheader2 col-12 col-sm-3 col-lg-2 col-xl-2" i18n>Größe</div>
+                              <div class="artikelheader1 col-12 col-sm-1 col-lg-2 col-xl-1 text-right" i18n>kg/ME</div>
+                              <div class="artikelheader2 col-12 col-sm-1 col-lg-1 col-xl-1 text-right" i18n>ME</div>
+                              <div class="artikelheader1 col-12 col-sm-1 col-lg-2 col-xl-2 text-right" i18n>Preis/ME</div>  
                             </div>
                           <table class="table">
                         <tr class="" *ngFor="let n of nagelplatten; let in = index; index as i; odd as isOdd; even as isEven" 
                         [ngClass]="{ odd: isOdd, even: isEven }" >
                         <div class="row">
-                          <div class="artWidth col-sm-3 col-lg-3 col-xl-3"><span><input type="number" pattern="[0-9]" name='name' [(ngModel)]="n.Stk" (change)="addToCart(name.value, in, n.PKArtikelID, n.Typ)" #name><div *ngIf="n.ME > 1;then karton else stueck"></div></span><ng-template #karton> Karton</ng-template>
-                          <ng-template #stueck> Stück</ng-template></div>
-                          <div class="artikel col col-sm-2 col-lg-2 col-xl-2">{{ n.PKArtikelID }}</div>
+                          <div class="artWidth col-sm-2 col-lg-2 col-xl-3"><span><input type="number" pattern="[0-9]" name='name' [(ngModel)]="n.Stk" (change)="addToCart(name.value, in, n.PKArtikelID, n.Typ)" #name><div *ngIf="n.ME > 1;then karton else stueck"></div></span><ng-template #karton i18n> Karton</ng-template>
+                          <ng-template #stueck i18n> Stück</ng-template></div>
+                          <div class="artikel col col-sm-1 col-lg-1 col-xl-1">{{ n.PKArtikelID }}</div>
+                          <div class="artikel col col-sm-2 col-lg-2 col-xl-2">{{ n.Typ }}</div>
                           <div class="artikel col col-sm-3 col-lg-2 col-xl-2">{{ n.Breite }} x {{ n.Laenge }} mm</div>
-                          <div class="artikel col col-sm-2 col-lg-2 col-xl-2 text-right">{{ n.Gewicht | number: '1.4-4' }}</div>
+                          <div class="artikel col col-sm-1 col-lg-2 col-xl-1 text-right">{{ n.Gewicht | number: '1.4-4' }}</div>
                           <div class="artikel col col-sm-1 col-lg-1 col-xl-1 text-right">{{ n.ME }}</div>
                           <div class="artikel padding col col-sm-1 col-lg-2 col-xl-2 text-right">{{ n.Preis | number: '1.4-4'}}</div>    
                         </div>
@@ -106,6 +111,10 @@
                 </mat-expansion-panel>
               </mat-accordion>
             </div>
+        </ng-template>
+      </mat-tab>
+      </mat-tab-group>
+    
 
 <!-- ENDE TAB Edelstahl-->
             
@@ -117,21 +126,21 @@
 <div class="col-lg-12 col-xl-6 warenkorb" #target>
   <div *ngIf="showBasket" class="sticky">
         <div class="basketHeaderLine"></div>
-            <div class="basketHeader">
+            <div class="basketHeader" i18n>
               Warenkorb Übersicht
             </div>
             <br>
             <div class="basketDetailHeader">
               <div class="row" >
             
-            <div class="artikelheader col-md-2 col-lg-3 col-xl-2">Menge</div>
-            <div class="artikelheader2 col-md-1 col-lg-1 col-xl-1">Art.Nr.</div>
-            <div class="artikelheader2 col-md-1 col-lg-1 col-xl-1">Typ</div>
-            <div class="artikelheader2 col-md-3 col-lg-2 col-xl-3">Größe</div>
-            <div class="artikelheader1 col-md-1 col-lg-1 col-xl-1 text-right">kg/ME</div>
-            <div class="artikelheader1 col-md-1 col-lg-1 col-xl-1 text-right">ME</div>
-            <div class="artikelheader1 col-md-1 col-lg-1 col-xl-1 text-right">Preis/ME</div>  
-            <div class="artikelheader1 col-md-2 col-lg-2 col-xl-2 text-right">Gesamt €</div> 
+            <div class="artikelheader col-md-2 col-lg-3 col-xl-2" i18n>Menge</div>
+            <div class="artikelheader2 col-md-1 col-lg-1 col-xl-1" i18n>Art.Nr.</div>
+            <div class="artikelheader2 col-md-1 col-lg-1 col-xl-1" i18n>Typ</div>
+            <div class="artikelheader2 col-md-3 col-lg-2 col-xl-3" i18n>Größe</div>
+            <div class="artikelheader1 col-md-1 col-lg-1 col-xl-1 text-right" i18n>kg/ME</div>
+            <div class="artikelheader1 col-md-1 col-lg-1 col-xl-1 text-right" i18n>ME</div>
+            <div class="artikelheader1 col-md-1 col-lg-1 col-xl-1 text-right" i18n>Preis/ME</div>  
+            <div class="artikelheader1 col-md-2 col-lg-2 col-xl-2 text-right" i18n>Gesamt €</div> 
           </div>
         </div>
         <div class="basketDetailTable">
@@ -140,8 +149,8 @@
             <tr *ngFor="let n of warenkorb; let in = index; index as i; odd as isOdd; even as isEven" 
             [ngClass]="{ odd: isOdd, even: isEven }" >
            <div class="row">
-              <div class="menge col-md-2 col-lg-3 col-xl-2 text-left"><span> <i class="far fa-trash-alt" (click)="deleteEntry(in)"></i><div *ngIf="n.ME > 1;then karton else stueck"></div></span><ng-template #karton>   {{n.Stk }} Karton</ng-template>
-              <ng-template #stueck>   {{n.Stk }} Stück </ng-template></div>
+              <div class="menge col-md-2 col-lg-3 col-xl-2 text-left"><span> <i class="far fa-trash-alt" (click)="deleteEntry(in)"></i><div *ngIf="n.ME > 1;then karton else stueck"></div></span><ng-template #karton>   {{n.Stk }} <ng-container i18n>Karton</ng-container></ng-template>
+              <ng-template #stueck>   {{n.Stk }} <ng-container i18n>Stück </ng-container></ng-template></div>
               <div class="artikelbasket col-md-1 col-lg-1 col-xl-1">{{ n.PKArtikelID }}</div>
               <div class="artikelbasket col-md-1 col-lg-1 col-xl-1">{{ n.Typ }}</div>
               <div class="artikelbasket col-md-3 col-lg-2 col-xl-3">{{ n.Breite }} x {{ n.Laenge }} mm</div>
@@ -155,47 +164,46 @@
         </div>
       </div>
     <br>
-<!-- Warenkorb -->
+ <!-- Warenkorb -->
 
-<!-- Zwischensumme wird eingeblendet wenn das erste gesamt Gewicht über 1000kg liegt -->              
-    <div *ngIf="showBasketZwischensumme" class="basketZwischensumme">
-      <div class="row">
-    <table class="tableBasket">
-      <tr class="even black">
-          <div class="row">
-              <div class="zwischensummetext col-md-5 col-lg-6 col-xl-6">Zwischensumme</div>
-              <div class="col-md-3 col-lg-2 col-xl-2"></div>
-              <div class="zwischensumme com-md-4 col-lg-4 col-xl-4 text-right">{{basketZwischenSumme| number: '1.2-2'}}</div>
+            <!-- Zwischensumme wird eingeblendet wenn das erste gesamt Gewicht über 1000kg liegt -->
+            <div *ngIf="showBasketZwischensumme">
+                <div class="basketDetailHeader" style="background-color:#cccccc">
+                  <div class="row">
+  
+                    <div class="zwischensummetext col-md-4 col-lg-6 col-xl-6" i18n>Zwischensumme</div>
+                    <div class="col-md-4 col-lg-2 col-xl-2"></div>
+                    <div class="zwischensumme col-md-4 col-lg-4 col-xl-4 text-right">{{basketZwischenSumme| number: '1.2-2'}}</div>
+                  </div>
+                </div>
+                <div class="basketDetailHeader" style="background-color:#fff; color: #717274">
+                  <div class="row">
+                    <div class="artikelheadernormal col-md-8 col-lg-8 col-xl-8"> &nbsp;- {{basketRabattProzent}}
+                      <ng-container i18n>% Mengenrabatt (ab</ng-container> {{basketRabattAbKG | number}} kg) {{basketTransport}}</div>
+                    <div class="artikelheader1normal col-md-4 col-lg-4 col-xl-4 text-right">{{basketZwischenSummeRabatt |number: '1.2-2' }}</div>
+                  </div>
+                </div>
+              </div>
+              <!-- Zwischensumme ENDE-->
+  
+              <!-- Bestellsumme über die ganze Bestellung wird angezeigt -->
+              <b>
+                <div class="basketDetailHeader">
+                  <div class="row">
+                    <div class="artikelheader col-sm-5 col-lg-5 col-xl-4" i18n>Bestellsumme in Euro</div>
+                    <div class="basketgewicht col-sm-4 col-lg-4 col-xl-5">
+                      <ng-container i18n>(Gesamtgewicht</ng-container> {{ basketGewicht | number: '1.2-2'}} kg)</div>
+                    <div class="summe col-sm-3 col-lg-3 col-xl-3 text-right">{{(basketSummeGesamt | number: '1.2-2')}}</div>
+                  </div>
+                </div>
+              </b>
+              <br>
+              <button class="buttonWarenkorb" data-toggle="modal" data-target="#NagelplattenFormular" i18n>Kundendaten eingeben & bestellen</button>
             </div>
-      </tr>
-      <tr class="odd">
-          <div class="row">
-              <div class="artikelheadernormal  col-lg-8 col-xl-8">- {{basketRabattProzent}}% Mengenrabatt (ab {{basketRabattAbKG | number}} kg) {{basketTransport}}</div>
-              <div class="artikelheader1normal  col-lg-4 col-xl-4 text-right">{{basketZwischenSummeRabatt | number: '1.2-2'}}</div>
-            </div>
-      </tr>
-      </table>
-    </div>
-  </div>
-<!-- Zwischensumme ENDE-->
-
-<!-- Bestellsumme über die ganze Bestellung wird angezeigt -->  
-       <b> 
-         <div class="basketDetailHeader">
-          <div class="row" >
-        <div class="artikelheader col-sm-5 col-lg-5 col-xl-4">Bestellsumme in Euro</div>
-        <div class="basketgewicht col-sm-4 col-lg-4 col-xl-5">(Gesamtgewicht {{ basketGewicht | number: '1.2-2'}} kg)</div>
-        <div class="summe col-sm-3 col-lg-3 col-xl-3 text-right">{{(basketSummeGesamt) | number: '1.2-2'}}</div>
-      </div>
-    </div>
-</b>
-    <br>
-    <button class="buttonWarenkorb" data-toggle="modal" data-target="#NagelplattenFormular">Kundendaten eingeben & bestellen</button>
-</div>
-</div>
-<!-- Bestellsumme ENDE -->
-
-<!-- Warenkorb ENDE -->
+          </div>
+          <!-- Bestellsumme ENDE -->
+  
+          <!-- Warenkorb ENDE -->
       </div>
     </div>
   </section>
@@ -203,136 +211,161 @@
 
 <!-- Nagelplatten Bestellformular ANFANG -->
 <div class="modal fade" id="NagelplattenFormular" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
-    <div class="modal-content" *ngIf="isValid && !error">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Nagelplatten Bestellformular</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <div class="container-fluid" >
+    <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+      <div class="modal-content" *ngIf="isValid && !error">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel" i18n>Nagelplatten Bestellformular</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="container-fluid">
             <form #bookForm="ngForm">
-                <div class="row">
-                    <div class="col-6"> 
-                        <mat-form-field class="example-full-width">
-                            <mat-select placeholder="Anrede" [(ngModel)]="bestellung.Anrede" name="anrede">
-                              <mat-option *ngFor="let anrede of anreden" [value]="anrede.value" >
-                                {{ anrede.viewValue }}
-                              </mat-option>
-                            </mat-select>
-                          </mat-form-field>
-                    </div>
-                    <div class="col-6"> 
-                      <mat-form-field class="example-full-width">
-                        <input matInput type="email" placeholder="eMail" [(ngModel)]="bestellung.eMail" name="email" required>
-                      </mat-form-field>
-                    </div>
-                  </div>
-                <div class="row">
-                  <div class="col-6"> <mat-form-field class="example-full-width">
-                      <input matInput placeholder="Vorname" [(ngModel)]="bestellung.Vorname" name="vorname" required>
-                    </mat-form-field></div>
-                  <div class="col-6"> <mat-form-field class="example-full-width">
-                      <input matInput placeholder="Nachname" [(ngModel)]="bestellung.Name"  name="nachname" required>
-                    </mat-form-field></div>
+              <div class="row">
+                <div class="col-6">
+                  <mat-form-field class="example-full-width">
+                    <mat-select i18n-placeholder placeholder=Anrede [(ngModel)]="bestellung.Anrede" name="anrede">
+                      <mat-option *ngFor="let anrede of anreden" [value]="anrede.value">
+                        {{ anrede.viewValue }}
+                      </mat-option>
+                    </mat-select>
+                  </mat-form-field>
                 </div>
-                <div class="row">
-                    <div class="col-6"> <mat-form-field class="example-full-width">
-                        <input matInput placeholder="Firma" [(ngModel)]="bestellung.Firma" name="firma" required>
-                      </mat-form-field></div>
-                    <div class="col-6">
-                      <mat-form-field class="example-full-width">
-                        <input matInput placeholder="Straße" [(ngModel)]="bestellung.Strasse" name="strasse">
-                      </mat-form-field></div>
-                  </div>
-                  <div class="row">
-                      <div class="col-2">
-                        <mat-form-field class="example-full-width">
-                          <input matInput type="number" placeholder="PLZ" [(ngModel)]="bestellung.Plz"  name="plz" required>
-                        </mat-form-field>
-                      </div>
-                      <div class="col-4">
-                        <mat-form-field class="example-full-width">
-                          <input matInput placeholder="Ort" [(ngModel)]="bestellung.Ort" name="ort" required>
-                        </mat-form-field>
-                      </div>
-                      <div class="col-6">
-                          <mat-form-field class="example-full-width">
-                              <mat-select placeholder="Land" [(ngModel)]="bestellung.Land" name="land" required>
-                                <mat-option *ngFor="let la of land" [value]="la.Kuerzel" >
-                                  {{ la.Land }}
-                                </mat-option>
-                              </mat-select>
-                            </mat-form-field>
-                      </div>
-                    </div>
-                <div class="row">
-                  <div class="col-6"> <mat-form-field class="example-full-width">
-                    <input matInput placeholder="Telefon" [(ngModel)]="bestellung.Telefon" name="telefon">
-                    </mat-form-field></div>
-                  <div class="col-6"> 
-                      <mat-form-field class="example-full-width">
-                        <input matInput placeholder="gewünschter Liefertermin"  [(ngModel)]="bestellung.Liefertermin" name="liefertermin">
-                      </mat-form-field>
-               </div>
-                </div> 
-                <div class="row">
+                <div class="col-6">
+                  <mat-form-field class="example-full-width">
+                    <input matInput type="email" i18n-placeholder placeholder=eMail [(ngModel)]="bestellung.eMail" name="email" required>
+                  </mat-form-field>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-6">
+                  <mat-form-field class="example-full-width">
+                    <input matInput i18n-placeholder placeholder="Vorname" [(ngModel)]="bestellung.Vorname" name="vorname" required>
+                  </mat-form-field>
+                </div>
+                <div class="col-6">
+                  <mat-form-field class="example-full-width">
+                    <input matInput i18n-placeholder placeholder="Nachname" [(ngModel)]="bestellung.Name" name="nachname" required>
+                  </mat-form-field>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-6">
+                  <mat-form-field class="example-full-width">
+                    <input matInput i18n-placeholder placeholder="Firma" [(ngModel)]="bestellung.Firma" name="firma" required>
+                  </mat-form-field>
+                </div>
+                <div class="col-6">
+                  <mat-form-field class="example-full-width">
+                    <input matInput i18n-placeholder placeholder="Straße" [(ngModel)]="bestellung.Strasse" name="strasse">
+                  </mat-form-field>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-3">
+                  <mat-form-field class="example-full-width">
+                    <input matInput i18n-placeholder placeholder="PLZ" [(ngModel)]="bestellung.Plz" name="plz" required>
+                  </mat-form-field>
+                </div>
+                <div class="col-3">
+                  <mat-form-field class="example-full-width">
+                    <input matInput i18n-placeholder placeholder="Ort" [(ngModel)]="bestellung.Ort" name="ort" required>
+                  </mat-form-field>
+                </div>
+                <div class="col-6">
+                  <mat-form-field class="example-full-width">
+                    <mat-select i18n-placeholder placeholder="Land" [(ngModel)]="bestellung.Land" name="land" required>
+                      <mat-option *ngFor="let la of land" [value]="la.Kuerzel">
+                        {{ la.Land }}
+                      </mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-6">
+                  <mat-form-field class="example-full-width">
+                    <input matInput i18n-placeholder placeholder="Telefon" [(ngModel)]="bestellung.Telefon" name="telefon">
+                  </mat-form-field>
+                </div>
+                <div class="col-6">
+                  <mat-form-field class="example-full-width">
+                    <input matInput i18n-placeholder placeholder="gewünschter Liefertermin" [(ngModel)]="bestellung.Liefertermin" name="liefertermin">
+                  </mat-form-field>
+                </div>
+              </div>
+              <div class="row">
 
-                    <div class="col-12"> <mat-form-field class="example-full-width">
-                        <textarea matInput placeholder="Bemerkung" matTextareaAutosize matAutosizeMinRows="3"
-                        matAutosizeMaxRows="5" [(ngModel)]="bestellung.Bemerkung" name="bemerkung"></textarea>
-                      </mat-form-field></div>
-                  </div>  
+                <div class="col-12">
+                  <mat-form-field class="example-full-width">
+                    <textarea matInput i18n-placeholder placeholder="Bemerkung" matTextareaAutosize matAutosizeMinRows="3" matAutosizeMaxRows="5"
+                      [(ngModel)]="bestellung.Bemerkung" name="bemerkung"></textarea>
+                  </mat-form-field>
+                </div>
+              </div>
             </form>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">
+            <ng-container i18n>Abbrechen</ng-container>
+          </button>
+          <button type="submit" class="btn btn-default" [disabled]="!bookForm.form.valid" (click)="makeOrder()">
+            <ng-container i18n>Absenden</ng-container>
+          </button>
         </div>
       </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Abbrechen</button>
-        <button type="submit" class="btn btn-default" [disabled]="!bookForm.form.valid" (click)="makeOrder()">Absenden</button>
+      <div class="modal-content" *ngIf="isValid && error">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel" i18n>Herzlichen Dank für Ihre Bestellung</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="container-fluid" style="color: rgb(2, 90, 2); font-size: 14px;">
+            <ng-container i18n>Die Bestellung wurde erfolgreich gespeichert !</ng-container>
+            <br>
+            <br>
+            <ng-container i18n>Sie bekommen in den nächsten Minuten eine Bestätigungsmail.</ng-container>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="clearAll()">
+            <ng-container i18n>Schließen</ng-container>
+          </button>
+        </div>
+      </div>
+      <div class="modal-content" *ngIf="!isValid && error">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel" i18n>Nagelplatten Bestellformular</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="container-fluid" style="color: red; font-size: 14px;">
+            <ng-container i18n>Beim speichern der Bestellung ist ein Fehler aufgetreten.
+              <br> Bitte versuchen Sie es noch einmal.
+              <br>
+              <br> Fehlermeldung:
+            </ng-container>
+            <br> {{ errorMsg }}
+            <br>
+            <br>
+            <ng-container i18n>Danke</ng-container>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">
+            <ng-container i18n>Schließen</ng-container>
+          </button>
+        </div>
       </div>
     </div>
-      <div class="modal-content" *ngIf="isValid && error">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Herzlichen Dank für Ihre Bestellung</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body">
-            <div class="container-fluid" style="color: rgb(2, 90, 2); font-size: 14px;">
-                Die Bestellung wurde erfolgreich gespeichert !<br><br>
-                Sie bekommen in den nächsten Minuten eine Bestätigungsemail.
-            </div>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="clearAll()">Schließen</button>
-          </div>
-        </div>
-      <div class="modal-content" *ngIf="!isValid && error">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Nagelplatten Bestellformular</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body">
-            <div class="container-fluid" style="color: red; font-size: 14px;">
-                Beim speichern der Bestellung ist ein Fehler aufgetreten. <br>
-                Bitte versuchen Sie es noch einmal.
-                <br><br>
-                Fehlermeldung:<br>
-                {{ errorMsg }}<br><br> Danke
-            </div>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Schließen</button>
-          </div>
-        </div>
- </div> 
   </div>
-<!-- Nagelplatten Bestellformular ENDE -->
+  <!-- Nagelplatten Bestellformular ENDE -->
 <router-outlet></router-outlet>
 <!-- ENDE -->
 
