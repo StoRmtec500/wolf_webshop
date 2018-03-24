@@ -84,7 +84,6 @@ getAnrede(sprache) {
       this.open = true;
     }
     this.nagelplatten = this.nagelplatten.filter(t => t.FKArtikelgruppeID == typ);
-    
   }
 
   loadLaenderliste() {
@@ -258,7 +257,7 @@ getAnrede(sprache) {
     window.location.href = "/onlineshopNP/" + this.sprache;
   }
 
-  scroll(el) {
+  toAncher(el) {
     el.scrollIntoView();
   }
 }
