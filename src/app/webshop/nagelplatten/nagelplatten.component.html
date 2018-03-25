@@ -49,7 +49,7 @@
   <section>
     <div id="container">
       <div class="row">
-        <div class="col-lg-12 col-xl-6" #top>
+        <div class="col-lg-12 col-xl-6" #ancher>
           <div class="site_width">
             <mat-tab-group class="tab-group">
               <mat-tab i18n-label label="Verzinkt">
@@ -136,7 +136,7 @@
                       </mat-expansion-panel>
                       <mat-expansion-panel>
                         <mat-expansion-panel-header (click)="getArticelTyp(4941)">
-                          <div class="row_accordion">
+                          <div class="row_accordion" (click)="toAncher(ancher)">
                             <div class="row">
                               <div class="col-4 col-sm-3 col-md-3 col-lg-5 col-xl-4">12N</div>
                               <div class="col-4 col-sm-3 col-md-3 col-lg-2 col-xl-4 text-right"> 2,38</div>
@@ -204,7 +204,7 @@
                       </mat-expansion-panel>
                       <mat-expansion-panel>
                         <mat-expansion-panel-header (click)="getArticelTyp(4942)">
-                          <div class="row_accordion">
+                          <div class="row_accordion"(click)="toAncher(ancher)">
                             <div class="row">
                               <div class="col-4 col-sm-3 col-lg-5 col-xl-4">15N</div>
                               <div class="col-4 col-sm-3 col-lg-2 col-xl-4 text-right"> 2,24</div>
@@ -272,7 +272,7 @@
                       </mat-expansion-panel>
                       <mat-expansion-panel>
                         <mat-expansion-panel-header (click)="getArticelTyp(4961)">
-                          <div class="row_accordion">
+                          <div class="row_accordion"(click)="toAncher(ancher)">
                             <div class="row">
                               <div class="col-4 col-sm-3 col-lg-5 col-xl-4">20W</div>
                               <div class="col-4 col-sm-3 col-lg-2 col-xl-4 text-right"> 2,58</div>
@@ -427,7 +427,7 @@
                       </mat-expansion-panel>
                       <mat-expansion-panel>
                         <mat-expansion-panel-header (click)="getArticelTyp(4946)">
-                          <div class="row_accordion">
+                          <div class="row_accordion" (click)="toAncher(ancher)">
                             <div class="row">
                               <div class="col-4 col-sm-3 col-md-3 col-lg-5 col-xl-4">15NE</div>
                               <div class="col-4 col-sm-3 col-md-3 col-lg-2 col-xl-4 text-right"> 9,10</div>
@@ -494,7 +494,7 @@
                       </mat-expansion-panel>
                       <mat-expansion-panel>
                         <mat-expansion-panel-header (click)="getArticelTyp('4948')">
-                          <div class="row_accordion">
+                          <div class="row_accordion" (click)="toAncher(ancher)">
                             <div class="row">
                               <div class="col-4 col-sm-3 col-md-3 col-lg-5 col-xl-4">20ZE</div>
                               <div class="col-4 col-sm-3 col-md-3 col-lg-2 col-xl-4 text-right"> 9,10</div>
