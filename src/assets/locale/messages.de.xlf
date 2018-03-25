@@ -284,10 +284,10 @@
       <target state="final">Bestellung Binderwinkel</target><context-group purpose="location"><context context-type="sourcefile">app/webshop/binderwinkel/binderwinkel.component.ts</context><context context-type="linenumber">5</context></context-group><context-group purpose="location"><context context-type="sourcefile">app/sidenav/sidenav/sidenav.component.ts</context><context context-type="linenumber">8</context></context-group></trans-unit><trans-unit id="8b63584d95aae7fd431025181df5378eca53db47" datatype="html">
         <source>AGB Bestellung</source>
         
-      <target state="final">AGB Bestellung</target><context-group purpose="location"><context context-type="sourcefile">app/sidenav/sidenav/sidenav.component.ts</context><context context-type="linenumber">9</context></context-group></trans-unit><trans-unit id="8fe73a4787b8068b2ba61f54ab7e0f9af2ea1fc9" datatype="html">
+      <target state="final">AGB Bestellung</target><context-group purpose="location"><context context-type="sourcefile">app/sidenav/sidenav/sidenav.component.ts</context><context context-type="linenumber">10</context></context-group></trans-unit><trans-unit id="8fe73a4787b8068b2ba61f54ab7e0f9af2ea1fc9" datatype="html">
         <source>Version</source>
         
-      <target state="final">Version</target><context-group purpose="location"><context context-type="sourcefile">app/sidenav/sidenav/sidenav.component.ts</context><context context-type="linenumber">12</context></context-group></trans-unit><trans-unit id="2d585ceb745c52cf8f2e9e4192b5c97a685c24fe" datatype="html">
+      <target state="final">Version</target><context-group purpose="location"><context context-type="sourcefile">app/sidenav/sidenav/sidenav.component.ts</context><context context-type="linenumber">13</context></context-group></trans-unit><trans-unit id="2d585ceb745c52cf8f2e9e4192b5c97a685c24fe" datatype="html">
         <source>Firma</source>
         
       <target state="final">Firma</target><context-group purpose="location"><context context-type="sourcefile">app/webshop/metalwebs/metalwebs.component.ts</context><context context-type="linenumber">256</context></context-group><context-group purpose="location"><context context-type="sourcefile">app/webshop/nagelplatten/nagelplatten.component.ts</context><context context-type="linenumber">711</context></context-group><context-group purpose="location"><context context-type="sourcefile">app/webshop/binderwinkel/binderwinkel.component.ts</context><context context-type="linenumber">252</context></context-group></trans-unit><trans-unit id="074a550816cde9894e6c6d3bafcbc7be199f059b" datatype="html">
@@ -449,6 +449,24 @@
                 <x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/>"/> Bitte versuchen Sie es noch einmal.
                 <x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/>"/>
                 <x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/>"/> Fehlermeldung:
-              </target></trans-unit></body>
+              </target></trans-unit><trans-unit id="6f1162b9c2b44a68ac5712ddd5f15d0fda5432ed" datatype="html">
+        <source><x id="START_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;i>"/><x id="CLOSE_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;/i>"/>  AGB Bestellung Nagelplatten</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/webshop/agb/agb.component.ts</context>
+          <context context-type="linenumber">16</context>
+        </context-group>
+      <target state="final"><x id="START_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;i>"/><x id="CLOSE_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;/i>"/>  AGB Bestellung Nagelplatten</target></trans-unit><trans-unit id="c09821b333f8865b9ef9b9f29235c2c91d1db609" datatype="html">
+        <source> <x id="START_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;i>"/><x id="CLOSE_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;/i>"/>  AGB Bestellung Metal Webs</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/webshop/agb/agb.component.ts</context>
+          <context context-type="linenumber">20</context>
+        </context-group>
+      <target state="final"> <x id="START_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;i>"/><x id="CLOSE_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;/i>"/>  AGB Bestellung Metal Webs</target></trans-unit><trans-unit id="091d0823ff9fe1e6bd50ce7b08b8f4da46d33c07" datatype="html">
+        <source> <x id="START_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;i>"/><x id="CLOSE_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;/i>"/>  AGB Bestellung Binderwinkel</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/webshop/agb/agb.component.ts</context>
+          <context context-type="linenumber">24</context>
+        </context-group>
+      <target state="final"> <x id="START_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;i>"/><x id="CLOSE_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;/i>"/>  AGB Bestellung Binderwinkel</target></trans-unit></body>
   </file>
 </xliff>
