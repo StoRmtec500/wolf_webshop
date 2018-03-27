@@ -7,3 +7,19 @@ a {
     color: #717274;
     text-decoration: none !important;
 }
+
+table {
+    border: 1px solid #717274;
+}
+
+tr.even {
+    height: 40px;
+}
+
+td {
+    padding-left: 10px;
+}
+
+a:link {
+    text-decoration: underline !important;
+}

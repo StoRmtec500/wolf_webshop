@@ -467,6 +467,415 @@
           <context context-type="sourcefile">app/webshop/agb/agb.component.ts</context>
           <context context-type="linenumber">24</context>
         </context-group>
-      <target state="final"> <x id="START_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;i>"/><x id="CLOSE_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;/i>"/>  AGB Bestellung Binderwinkel</target></trans-unit></body>
+      <target state="final"> <x id="START_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;i>"/><x id="CLOSE_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;/i>"/>  AGB Bestellung Binderwinkel</target></trans-unit><trans-unit id="c044a3339daf7167896b2d14bc5171c0f8e8fef2" datatype="html">
+        <source>
+    <x id="START_HEADING_LEVEL2" ctype="x-h2" equiv-text="&lt;h2>"/>AGB Nagelplatten-Bestellung<x id="CLOSE_HEADING_LEVEL2" ctype="x-h2" equiv-text="&lt;/h2>"/>
+    <x id="START_PARAGRAPH" ctype="x-p" equiv-text="&lt;p>"/>
+
+      <x id="START_BOLD_TEXT" ctype="x-b" equiv-text="&lt;b>"/>Preisstellung<x id="CLOSE_BOLD_TEXT" ctype="x-b" equiv-text="&lt;/b>"/>
+      <x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/>"/>ab Werk Scharnstein, bzw. ab dt. Grenze (Mindestmenge 500kg), inkl. Verpackung (ohne Einwegsonderpalette 2100/800 mm)
+    <x id="CLOSE_PARAGRAPH" ctype="x-p" equiv-text="&lt;/p>"/>
+    <x id="START_PARAGRAPH" ctype="x-p" equiv-text="&lt;p>"/>
+
+      <x id="START_BOLD_TEXT" ctype="x-b" equiv-text="&lt;b>"/>Preislistengültigkeit<x id="CLOSE_BOLD_TEXT" ctype="x-b" equiv-text="&lt;/b>"/>
+      <x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/>"/>in der gesamten EU, ausgenommen UK, Frankreich, Belgien, Spanien und Portugal
+    <x id="CLOSE_PARAGRAPH" ctype="x-p" equiv-text="&lt;/p>"/>
+    <x id="START_PARAGRAPH" ctype="x-p" equiv-text="&lt;p>"/>
+
+      <x id="START_BOLD_TEXT" ctype="x-b" equiv-text="&lt;b>"/>Rabatt<x id="CLOSE_BOLD_TEXT" ctype="x-b" equiv-text="&lt;/b>"/>
+      <x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/>"/> Nach Bestellmenge pro Auftrag
+      <x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/>"/> ab 1.000 kg - 3 %
+      <x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/>"/> ab 1.500 kg - 4 %
+      <x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/>"/> ab 3.000 kg - 6 %
+      <x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/>"/> ab 5.000 kg - 8 %
+      <x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/>"/> ab 10.000 kg - 10 % + Transport frei
+      <x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/>"/>ab 15.000 kg - 12 % + Transport frei
+    <x id="CLOSE_PARAGRAPH" ctype="x-p" equiv-text="&lt;/p>"/>
+    <x id="START_PARAGRAPH" ctype="x-p" equiv-text="&lt;p>"/>
+
+      <x id="START_BOLD_TEXT" ctype="x-b" equiv-text="&lt;b>"/>Abnahmemenge<x id="CLOSE_BOLD_TEXT" ctype="x-b" equiv-text="&lt;/b>"/>
+      <x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/>"/> Laut den Bestellisten nur in ganzen Kartons
+      <x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/>"/>Bei Plattengrößen ohne Angabe von Platten/Karton ist die Plattenstückzahl frei wählbar. Edelstahl-Nagelplatten 12NE,
+      15NE, 20ZE sind in Stück zu bestellen.
+    <x id="CLOSE_PARAGRAPH" ctype="x-p" equiv-text="&lt;/p>"/>
+    <x id="START_PARAGRAPH" ctype="x-p" equiv-text="&lt;p>"/>
+
+      <x id="START_BOLD_TEXT" ctype="x-b" equiv-text="&lt;b>"/>Verpackung<x id="CLOSE_BOLD_TEXT" ctype="x-b" equiv-text="&lt;/b>"/>
+      <x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/>"/> Standardverpackung: 24 Kartons pro Palette
+      <x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/>"/>Verpackungsinhalt laut Nagelplattenbestelliste
+    <x id="CLOSE_PARAGRAPH" ctype="x-p" equiv-text="&lt;/p>"/>
+  </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/webshop/agb/agb-nagelplatten/agb-nagelplatten.component.ts</context>
+          <context context-type="linenumber">3</context>
+        </context-group>
+      <target state="final">
+    <x id="START_HEADING_LEVEL2" ctype="x-h2" equiv-text="&lt;h2>"/>AGB Nagelplatten-Bestellung<x id="CLOSE_HEADING_LEVEL2" ctype="x-h2" equiv-text="&lt;/h2>"/>
+    <x id="START_PARAGRAPH" ctype="x-p" equiv-text="&lt;p>"/>
+
+      <x id="START_BOLD_TEXT" ctype="x-b" equiv-text="&lt;b>"/>Preisstellung<x id="CLOSE_BOLD_TEXT" ctype="x-b" equiv-text="&lt;/b>"/>
+      <x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/>"/>ab Werk Scharnstein, bzw. ab dt. Grenze (Mindestmenge 500kg), inkl. Verpackung (ohne Einwegsonderpalette 2100/800 mm)
+    <x id="CLOSE_PARAGRAPH" ctype="x-p" equiv-text="&lt;/p>"/>
+    <x id="START_PARAGRAPH" ctype="x-p" equiv-text="&lt;p>"/>
+
+      <x id="START_BOLD_TEXT" ctype="x-b" equiv-text="&lt;b>"/>Preislistengültigkeit<x id="CLOSE_BOLD_TEXT" ctype="x-b" equiv-text="&lt;/b>"/>
+      <x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/>"/>in der gesamten EU, ausgenommen UK, Frankreich, Belgien, Spanien und Portugal
+    <x id="CLOSE_PARAGRAPH" ctype="x-p" equiv-text="&lt;/p>"/>
+    <x id="START_PARAGRAPH" ctype="x-p" equiv-text="&lt;p>"/>
+
+      <x id="START_BOLD_TEXT" ctype="x-b" equiv-text="&lt;b>"/>Rabatt<x id="CLOSE_BOLD_TEXT" ctype="x-b" equiv-text="&lt;/b>"/>
+      <x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/>"/> Nach Bestellmenge pro Auftrag
+      <x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/>"/> ab 1.000 kg - 3 %
+      <x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/>"/> ab 1.500 kg - 4 %
+      <x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/>"/> ab 3.000 kg - 6 %
+      <x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/>"/> ab 5.000 kg - 8 %
+      <x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/>"/> ab 10.000 kg - 10 % + Transport frei
+      <x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/>"/>ab 15.000 kg - 12 % + Transport frei
+    <x id="CLOSE_PARAGRAPH" ctype="x-p" equiv-text="&lt;/p>"/>
+    <x id="START_PARAGRAPH" ctype="x-p" equiv-text="&lt;p>"/>
+
+      <x id="START_BOLD_TEXT" ctype="x-b" equiv-text="&lt;b>"/>Abnahmemenge<x id="CLOSE_BOLD_TEXT" ctype="x-b" equiv-text="&lt;/b>"/>
+      <x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/>"/> Laut den Bestellisten nur in ganzen Kartons
+      <x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/>"/>Bei Plattengrößen ohne Angabe von Platten/Karton ist die Plattenstückzahl frei wählbar. Edelstahl-Nagelplatten 12NE,
+      15NE, 20ZE sind in Stück zu bestellen.
+    <x id="CLOSE_PARAGRAPH" ctype="x-p" equiv-text="&lt;/p>"/>
+    <x id="START_PARAGRAPH" ctype="x-p" equiv-text="&lt;p>"/>
+
+      <x id="START_BOLD_TEXT" ctype="x-b" equiv-text="&lt;b>"/>Verpackung<x id="CLOSE_BOLD_TEXT" ctype="x-b" equiv-text="&lt;/b>"/>
+      <x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/>"/> Standardverpackung: 24 Kartons pro Palette
+      <x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/>"/>Verpackungsinhalt laut Nagelplattenbestelliste
+    <x id="CLOSE_PARAGRAPH" ctype="x-p" equiv-text="&lt;/p>"/>
+  </target></trans-unit><trans-unit id="08f3150e273d169bdb85f7a4baf1d1137d3e557e" datatype="html">
+        <source>
+          1200/800 - Europalette
+        </source>
+        
+        
+        
+      <target state="final">
+          1200/800 - Europalette
+        </target><context-group purpose="location"><context context-type="sourcefile">app/webshop/agb/agb-nagelplatten/agb-nagelplatten.component.ts</context><context context-type="linenumber">77</context></context-group><context-group purpose="location"><context context-type="sourcefile">app/webshop/agb/agb-nagelplatten/agb-nagelplatten.component.ts</context><context context-type="linenumber">105</context></context-group><context-group purpose="location"><context context-type="sourcefile">app/webshop/agb/agb-nagelplatten/agb-nagelplatten.component.ts</context><context context-type="linenumber">133</context></context-group></trans-unit><trans-unit id="95625e7c85369edc987e6f6c62bd3c321b9c3eaf" datatype="html">
+        <source>
+          Großkarton
+        </source>
+        
+        
+      <target state="final">
+          Großkarton
+        </target><context-group purpose="location"><context context-type="sourcefile">app/webshop/agb/agb-nagelplatten/agb-nagelplatten.component.ts</context><context context-type="linenumber">121</context></context-group><context-group purpose="location"><context context-type="sourcefile">app/webshop/agb/agb-nagelplatten/agb-nagelplatten.component.ts</context><context context-type="linenumber">149</context></context-group></trans-unit><trans-unit id="4048e8972cdc1317f4e0442d6e2331602eb10ecb" datatype="html">
+        <source>
+          2100/800 - Einweg-Sonderpalette
+        </source>
+        
+      <target state="final">
+          2100/800 - Einweg-Sonderpalette
+        </target><context-group purpose="location"><context context-type="sourcefile">app/webshop/agb/agb-nagelplatten/agb-nagelplatten.component.ts</context><context context-type="linenumber">161</context></context-group></trans-unit><trans-unit id="02731c6cfca7fbbdd270729f0169f73cdae2ed89" datatype="html">
+        <source>
+  <x id="START_PARAGRAPH" ctype="x-p" equiv-text="&lt;p>"/>
+    
+      <x id="START_SUBSTRIPT" ctype="x-sub" equiv-text="&lt;sub>"/>** Europaletten werden bei der Anlieferung gleich ausgetauscht, ansonsten sind 12,00 Euro pro Palette zu verrechnen.<x id="CLOSE_SUBSTRIPT" ctype="x-sub" equiv-text="&lt;/sub>"/>
+  <x id="CLOSE_PARAGRAPH" ctype="x-p" equiv-text="&lt;/p>"/>
+  <x id="START_PARAGRAPH" ctype="x-p" equiv-text="&lt;p>"/>
+
+    <x id="START_BOLD_TEXT" ctype="x-b" equiv-text="&lt;b>"/>Lieferung<x id="CLOSE_BOLD_TEXT" ctype="x-b" equiv-text="&lt;/b>"/>
+    <x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/>"/>Die Lieferung der Ware erfolgt durch unseren Hausspediteur, sofern nichts anderes vereinbart ist. Die Transportkosten
+    werden dem Empfänger getrennt in Rechnung gestellt. Ab 10 Tonnen ist die Lieferung frei Haus, gültig im Raum der EU (ausgenommen
+    UK, Frankreich, Belgien, Spanien, Portugal und Skandinavien)
+  <x id="CLOSE_PARAGRAPH" ctype="x-p" equiv-text="&lt;/p>"/>
+  <x id="START_PARAGRAPH" ctype="x-p" equiv-text="&lt;p>"/>
+
+    <x id="START_BOLD_TEXT" ctype="x-b" equiv-text="&lt;b>"/>Zahlung<x id="CLOSE_BOLD_TEXT" ctype="x-b" equiv-text="&lt;/b>"/>
+    <x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/>"/> Innerhalb von 8 Tagen mit 2 % Skonto oder 30 Tage netto ab Rechnungsdatum.
+    <x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/>"/> Generell gelten die gültigen Lieferbedingungen der Wolf Systembau Gesellschaft m.b.H. Scharnstein.
+    <x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/>"/>Die Ware bleibt bis zur vollständigen Bezahlung unser Eigentum.
+  <x id="CLOSE_PARAGRAPH" ctype="x-p" equiv-text="&lt;/p>"/>
+  <x id="START_PARAGRAPH" ctype="x-p" equiv-text="&lt;p>"/>
+
+    <x id="START_BOLD_TEXT" ctype="x-b" equiv-text="&lt;b>"/>Zulassungen<x id="CLOSE_BOLD_TEXT" ctype="x-b" equiv-text="&lt;/b>"/>
+    <x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/>"/>Die Nagelplatten dürfen nur
+    <x id="START_LINK" ctype="x-a" equiv-text="&lt;a>"/>lt. gültiger Zulassung<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a>"/>
+    verwendet werden.
+  <x id="CLOSE_PARAGRAPH" ctype="x-p" equiv-text="&lt;/p>"/>
+  </source>
+        
+      <target state="final">
+  <x id="START_PARAGRAPH" ctype="x-p" equiv-text="&lt;p>"/>
+    
+      <x id="START_SUBSTRIPT" ctype="x-sub" equiv-text="&lt;sub>"/>** Europaletten werden bei der Anlieferung gleich ausgetauscht, ansonsten sind 12,00 Euro pro Palette zu verrechnen.<x id="CLOSE_SUBSTRIPT" ctype="x-sub" equiv-text="&lt;/sub>"/>
+  <x id="CLOSE_PARAGRAPH" ctype="x-p" equiv-text="&lt;/p>"/>
+  <x id="START_PARAGRAPH" ctype="x-p" equiv-text="&lt;p>"/>
+
+    <x id="START_BOLD_TEXT" ctype="x-b" equiv-text="&lt;b>"/>Lieferung<x id="CLOSE_BOLD_TEXT" ctype="x-b" equiv-text="&lt;/b>"/>
+    <x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/>"/>Die Lieferung der Ware erfolgt durch unseren Hausspediteur, sofern nichts anderes vereinbart ist. Die Transportkosten
+    werden dem Empfänger getrennt in Rechnung gestellt. Ab 10 Tonnen ist die Lieferung frei Haus, gültig im Raum der EU (ausgenommen
+    UK, Frankreich, Belgien, Spanien, Portugal und Skandinavien)
+  <x id="CLOSE_PARAGRAPH" ctype="x-p" equiv-text="&lt;/p>"/>
+  <x id="START_PARAGRAPH" ctype="x-p" equiv-text="&lt;p>"/>
+
+    <x id="START_BOLD_TEXT" ctype="x-b" equiv-text="&lt;b>"/>Zahlung<x id="CLOSE_BOLD_TEXT" ctype="x-b" equiv-text="&lt;/b>"/>
+    <x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/>"/> Innerhalb von 8 Tagen mit 2 % Skonto oder 30 Tage netto ab Rechnungsdatum.
+    <x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/>"/> Generell gelten die gültigen Lieferbedingungen der Wolf Systembau Gesellschaft m.b.H. Scharnstein.
+    <x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/>"/>Die Ware bleibt bis zur vollständigen Bezahlung unser Eigentum.
+  <x id="CLOSE_PARAGRAPH" ctype="x-p" equiv-text="&lt;/p>"/>
+  <x id="START_PARAGRAPH" ctype="x-p" equiv-text="&lt;p>"/>
+
+    <x id="START_BOLD_TEXT" ctype="x-b" equiv-text="&lt;b>"/>Zulassungen<x id="CLOSE_BOLD_TEXT" ctype="x-b" equiv-text="&lt;/b>"/>
+    <x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/>"/>Die Nagelplatten dürfen nur
+    <x id="START_LINK" ctype="x-a" equiv-text="&lt;a>"/>lt. gültiger Zulassung<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a>"/>
+    verwendet werden.
+  <x id="CLOSE_PARAGRAPH" ctype="x-p" equiv-text="&lt;/p>"/>
+  </target><context-group purpose="location"><context context-type="sourcefile">app/webshop/agb/agb-nagelplatten/agb-nagelplatten.component.ts</context><context context-type="linenumber">176</context></context-group></trans-unit><trans-unit id="8fdf00fc0ae160560fa4b7e148d4872b569d3a3f" datatype="html">
+        <source>AGB BESTELLUNG</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/webshop/agb/agb.component.ts</context>
+          <context context-type="linenumber">12</context>
+        </context-group>
+      <target state="final">AGB BESTELLUNG</target></trans-unit><trans-unit id="45512d1f943dfaf8627932e4616aadbc4895256a" datatype="html">
+        <source>
+          <x id="START_BOLD_TEXT" ctype="x-b" equiv-text="&lt;b>"/>Karton<x id="CLOSE_BOLD_TEXT" ctype="x-b" equiv-text="&lt;/b>"/>
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/webshop/agb/agb-nagelplatten/agb-nagelplatten.component.ts</context>
+          <context context-type="linenumber">43</context>
+        </context-group>
+      <target state="final">
+          <x id="START_BOLD_TEXT" ctype="x-b" equiv-text="&lt;b>"/>Karton<x id="CLOSE_BOLD_TEXT" ctype="x-b" equiv-text="&lt;/b>"/>
+        </target></trans-unit><trans-unit id="691ce2b715a9d74a15cc92e91dc09ae2c86158be" datatype="html">
+        <source>
+          <x id="START_BOLD_TEXT" ctype="x-b" equiv-text="&lt;b>"/>Größe mm<x id="CLOSE_BOLD_TEXT" ctype="x-b" equiv-text="&lt;/b>"/>
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/webshop/agb/agb-nagelplatten/agb-nagelplatten.component.ts</context>
+          <context context-type="linenumber">49</context>
+        </context-group>
+      <target state="final">
+          <x id="START_BOLD_TEXT" ctype="x-b" equiv-text="&lt;b>"/>Größe mm<x id="CLOSE_BOLD_TEXT" ctype="x-b" equiv-text="&lt;/b>"/>
+        </target></trans-unit><trans-unit id="2b5fc083f00524603e804057d1dd4cfbd02c6e40" datatype="html">
+        <source>
+          <x id="START_BOLD_TEXT" ctype="x-b" equiv-text="&lt;b>"/>Palette<x id="CLOSE_BOLD_TEXT" ctype="x-b" equiv-text="&lt;/b>"/>
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/webshop/agb/agb-nagelplatten/agb-nagelplatten.component.ts</context>
+          <context context-type="linenumber">55</context>
+        </context-group>
+      <target state="final">
+          <x id="START_BOLD_TEXT" ctype="x-b" equiv-text="&lt;b>"/>Palette<x id="CLOSE_BOLD_TEXT" ctype="x-b" equiv-text="&lt;/b>"/>
+        </target></trans-unit><trans-unit id="4bb7b2dd62158e6ac998941e6267612f1ef76e18" datatype="html">
+        <source>
+  <x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/>"/>
+  <x id="START_HEADING_LEVEL2" ctype="x-h2" equiv-text="&lt;h2>"/>AGB Metal Webs-Bestellung<x id="CLOSE_HEADING_LEVEL2" ctype="x-h2" equiv-text="&lt;/h2>"/>
+  <x id="START_PARAGRAPH" ctype="x-p" equiv-text="&lt;p>"/>
+
+    <x id="START_BOLD_TEXT" ctype="x-b" equiv-text="&lt;b>"/>PREISSTELLUNG<x id="CLOSE_BOLD_TEXT" ctype="x-b" equiv-text="&lt;/b>"/>
+    <x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/>"/>ab Werk Scharnstein, bzw. ab dt. Grenze (Mindestmenge 500 kg), inkl. Verpackung
+  <x id="CLOSE_PARAGRAPH" ctype="x-p" equiv-text="&lt;/p>"/>
+  <x id="START_PARAGRAPH" ctype="x-p" equiv-text="&lt;p>"/>
+
+    <x id="START_BOLD_TEXT" ctype="x-b" equiv-text="&lt;b>"/>PREISLISTENGÜLTIGKEIT<x id="CLOSE_BOLD_TEXT" ctype="x-b" equiv-text="&lt;/b>"/>
+    <x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/>"/>in der gesamten EU, ausgenommen UK, Frankreich, Belgien, Spanien, Portugal und Skandinavien
+  <x id="CLOSE_PARAGRAPH" ctype="x-p" equiv-text="&lt;/p>"/>
+  <x id="START_PARAGRAPH" ctype="x-p" equiv-text="&lt;p>"/>
+
+    <x id="START_BOLD_TEXT" ctype="x-b" equiv-text="&lt;b>"/>RABATTE<x id="CLOSE_BOLD_TEXT" ctype="x-b" equiv-text="&lt;/b>"/>
+    <x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/>"/> Nach Bestellmenge pro Auftrag:
+    <x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/>"/> ab 3 Tonnen - 4 %
+    <x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/>"/> ab 5 Tonnen - 6 %
+    <x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/>"/>ab 10 Tonnen - 8 % + Transport frei
+  <x id="CLOSE_PARAGRAPH" ctype="x-p" equiv-text="&lt;/p>"/>
+  <x id="START_PARAGRAPH" ctype="x-p" equiv-text="&lt;p>"/>
+
+    <x id="START_BOLD_TEXT" ctype="x-b" equiv-text="&lt;b>"/>ABNAHMEMENGE<x id="CLOSE_BOLD_TEXT" ctype="x-b" equiv-text="&lt;/b>"/>
+    <x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/>"/>In Stück
+  <x id="CLOSE_PARAGRAPH" ctype="x-p" equiv-text="&lt;/p>"/>
+  <x id="START_PARAGRAPH" ctype="x-p" equiv-text="&lt;p>"/>
+
+    <x id="START_BOLD_TEXT" ctype="x-b" equiv-text="&lt;b>"/>VERPACKUNG<x id="CLOSE_BOLD_TEXT" ctype="x-b" equiv-text="&lt;/b>"/>
+    <x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/>"/>in Paletten: Palettengrösse: 1140x1140 mm
+  <x id="CLOSE_PARAGRAPH" ctype="x-p" equiv-text="&lt;/p>"/>
+  <x id="START_PARAGRAPH" ctype="x-p" equiv-text="&lt;p>"/>
+
+    <x id="START_BOLD_TEXT" ctype="x-b" equiv-text="&lt;b>"/>LIEFERUNG<x id="CLOSE_BOLD_TEXT" ctype="x-b" equiv-text="&lt;/b>"/>
+    <x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/>"/> Die Lieferung der Ware erfolgt durch unseren Hausspediteur, sofern nichts anderes vereinbart ist.
+    <x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/>"/>Die Transportkosten werden dem Empfänger getrennt in Rechnung gestellt.
+  <x id="CLOSE_PARAGRAPH" ctype="x-p" equiv-text="&lt;/p>"/>
+  <x id="START_PARAGRAPH" ctype="x-p" equiv-text="&lt;p>"/>
+
+    <x id="START_BOLD_TEXT" ctype="x-b" equiv-text="&lt;b>"/>ZAHLUNG<x id="CLOSE_BOLD_TEXT" ctype="x-b" equiv-text="&lt;/b>"/>
+    <x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/>"/> Innerhalb von 8 Tagen mit 2 % Skonto oder 30 Tage netto ab Rechnungsdatum.
+    <x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/>"/> Generell gelten die Liefer- und Zahlungsbedingungen der Wolf Systembau Gesellschaft m.b.H.
+    <x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/>"/>Die Ware bleibt bis zur vollständigen Bezahlung unser Eigentum.
+  <x id="CLOSE_PARAGRAPH" ctype="x-p" equiv-text="&lt;/p>"/>
+  <x id="START_PARAGRAPH" ctype="x-p" equiv-text="&lt;p>"/>
+
+    <x id="START_BOLD_TEXT" ctype="x-b" equiv-text="&lt;b>"/>ZULASSUNG<x id="CLOSE_BOLD_TEXT" ctype="x-b" equiv-text="&lt;/b>"/>
+    <x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/>"/>Die Metal Webs dürfen nur mit
+    <x id="START_LINK" ctype="x-a" equiv-text="&lt;a>"/>gültiger Zulassung<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a>"/>
+    verwendet werden.
+  <x id="CLOSE_PARAGRAPH" ctype="x-p" equiv-text="&lt;/p>"/>
+</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/webshop/agb/agb-metalwebs/agb-metalwebs.component.ts</context>
+          <context context-type="linenumber">1</context>
+        </context-group>
+      <target state="final">
+  <x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/>"/>
+  <x id="START_HEADING_LEVEL2" ctype="x-h2" equiv-text="&lt;h2>"/>AGB Metal Webs-Bestellung<x id="CLOSE_HEADING_LEVEL2" ctype="x-h2" equiv-text="&lt;/h2>"/>
+  <x id="START_PARAGRAPH" ctype="x-p" equiv-text="&lt;p>"/>
+
+    <x id="START_BOLD_TEXT" ctype="x-b" equiv-text="&lt;b>"/>PREISSTELLUNG<x id="CLOSE_BOLD_TEXT" ctype="x-b" equiv-text="&lt;/b>"/>
+    <x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/>"/>ab Werk Scharnstein, bzw. ab dt. Grenze (Mindestmenge 500 kg), inkl. Verpackung
+  <x id="CLOSE_PARAGRAPH" ctype="x-p" equiv-text="&lt;/p>"/>
+  <x id="START_PARAGRAPH" ctype="x-p" equiv-text="&lt;p>"/>
+
+    <x id="START_BOLD_TEXT" ctype="x-b" equiv-text="&lt;b>"/>PREISLISTENGÜLTIGKEIT<x id="CLOSE_BOLD_TEXT" ctype="x-b" equiv-text="&lt;/b>"/>
+    <x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/>"/>in der gesamten EU, ausgenommen UK, Frankreich, Belgien, Spanien, Portugal und Skandinavien
+  <x id="CLOSE_PARAGRAPH" ctype="x-p" equiv-text="&lt;/p>"/>
+  <x id="START_PARAGRAPH" ctype="x-p" equiv-text="&lt;p>"/>
+
+    <x id="START_BOLD_TEXT" ctype="x-b" equiv-text="&lt;b>"/>RABATTE<x id="CLOSE_BOLD_TEXT" ctype="x-b" equiv-text="&lt;/b>"/>
+    <x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/>"/> Nach Bestellmenge pro Auftrag:
+    <x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/>"/> ab 3 Tonnen - 4 %
+    <x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/>"/> ab 5 Tonnen - 6 %
+    <x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/>"/>ab 10 Tonnen - 8 % + Transport frei
+  <x id="CLOSE_PARAGRAPH" ctype="x-p" equiv-text="&lt;/p>"/>
+  <x id="START_PARAGRAPH" ctype="x-p" equiv-text="&lt;p>"/>
+
+    <x id="START_BOLD_TEXT" ctype="x-b" equiv-text="&lt;b>"/>ABNAHMEMENGE<x id="CLOSE_BOLD_TEXT" ctype="x-b" equiv-text="&lt;/b>"/>
+    <x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/>"/>In Stück
+  <x id="CLOSE_PARAGRAPH" ctype="x-p" equiv-text="&lt;/p>"/>
+  <x id="START_PARAGRAPH" ctype="x-p" equiv-text="&lt;p>"/>
+
+    <x id="START_BOLD_TEXT" ctype="x-b" equiv-text="&lt;b>"/>VERPACKUNG<x id="CLOSE_BOLD_TEXT" ctype="x-b" equiv-text="&lt;/b>"/>
+    <x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/>"/>in Paletten: Palettengrösse: 1140x1140 mm
+  <x id="CLOSE_PARAGRAPH" ctype="x-p" equiv-text="&lt;/p>"/>
+  <x id="START_PARAGRAPH" ctype="x-p" equiv-text="&lt;p>"/>
+
+    <x id="START_BOLD_TEXT" ctype="x-b" equiv-text="&lt;b>"/>LIEFERUNG<x id="CLOSE_BOLD_TEXT" ctype="x-b" equiv-text="&lt;/b>"/>
+    <x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/>"/> Die Lieferung der Ware erfolgt durch unseren Hausspediteur, sofern nichts anderes vereinbart ist.
+    <x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/>"/>Die Transportkosten werden dem Empfänger getrennt in Rechnung gestellt.
+  <x id="CLOSE_PARAGRAPH" ctype="x-p" equiv-text="&lt;/p>"/>
+  <x id="START_PARAGRAPH" ctype="x-p" equiv-text="&lt;p>"/>
+
+    <x id="START_BOLD_TEXT" ctype="x-b" equiv-text="&lt;b>"/>ZAHLUNG<x id="CLOSE_BOLD_TEXT" ctype="x-b" equiv-text="&lt;/b>"/>
+    <x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/>"/> Innerhalb von 8 Tagen mit 2 % Skonto oder 30 Tage netto ab Rechnungsdatum.
+    <x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/>"/> Generell gelten die Liefer- und Zahlungsbedingungen der Wolf Systembau Gesellschaft m.b.H.
+    <x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/>"/>Die Ware bleibt bis zur vollständigen Bezahlung unser Eigentum.
+  <x id="CLOSE_PARAGRAPH" ctype="x-p" equiv-text="&lt;/p>"/>
+  <x id="START_PARAGRAPH" ctype="x-p" equiv-text="&lt;p>"/>
+
+    <x id="START_BOLD_TEXT" ctype="x-b" equiv-text="&lt;b>"/>ZULASSUNG<x id="CLOSE_BOLD_TEXT" ctype="x-b" equiv-text="&lt;/b>"/>
+    <x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/>"/>Die Metal Webs dürfen nur mit
+    <x id="START_LINK" ctype="x-a" equiv-text="&lt;a>"/>gültiger Zulassung<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a>"/>
+    verwendet werden.
+  <x id="CLOSE_PARAGRAPH" ctype="x-p" equiv-text="&lt;/p>"/>
+</target></trans-unit><trans-unit id="b3ec91da5ed3161756ebf89ff59534682f8928ef" datatype="html">
+        <source>
+	<x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/>"/>
+	<x id="START_HEADING_LEVEL2" ctype="x-h2" equiv-text="&lt;h2>"/>AGB Binderwinkel-Bestellung<x id="CLOSE_HEADING_LEVEL2" ctype="x-h2" equiv-text="&lt;/h2>"/>
+	<x id="START_PARAGRAPH" ctype="x-p" equiv-text="&lt;p>"/>
+
+		<x id="START_BOLD_TEXT" ctype="x-b" equiv-text="&lt;b>"/>PREISSTELLUNG<x id="CLOSE_BOLD_TEXT" ctype="x-b" equiv-text="&lt;/b>"/>
+		<x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/>"/>ab Werk Scharnstein, bzw. ab dt. Grenze (Mindestmenge 100 kg), inkl. Verpackung
+	<x id="CLOSE_PARAGRAPH" ctype="x-p" equiv-text="&lt;/p>"/>
+	<x id="START_PARAGRAPH" ctype="x-p" equiv-text="&lt;p>"/>
+
+		<x id="START_BOLD_TEXT" ctype="x-b" equiv-text="&lt;b>"/>PREISLISTENGÜLTIGKEIT<x id="CLOSE_BOLD_TEXT" ctype="x-b" equiv-text="&lt;/b>"/>
+		<x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/>"/>in der gesamten EU, ausgenommen UK, Frankreich, Belgien, Spanien, Portugal und Skandinavien
+	<x id="CLOSE_PARAGRAPH" ctype="x-p" equiv-text="&lt;/p>"/>
+	<x id="START_PARAGRAPH" ctype="x-p" equiv-text="&lt;p>"/>
+
+		<x id="START_BOLD_TEXT" ctype="x-b" equiv-text="&lt;b>"/>RABATTE<x id="CLOSE_BOLD_TEXT" ctype="x-b" equiv-text="&lt;/b>"/>
+		<x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/>"/> Nach Bestellmenge pro Auftrag:
+		<x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/>"/> ab 1 Tonnen - 4 %
+		<x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/>"/> ab 3 Tonnen - 6 %
+		<x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/>"/>ab 5 Tonnen - 8 %
+	<x id="CLOSE_PARAGRAPH" ctype="x-p" equiv-text="&lt;/p>"/>
+	<x id="START_PARAGRAPH" ctype="x-p" equiv-text="&lt;p>"/>
+
+		<x id="START_BOLD_TEXT" ctype="x-b" equiv-text="&lt;b>"/>ABNAHMEMENGE<x id="CLOSE_BOLD_TEXT" ctype="x-b" equiv-text="&lt;/b>"/>
+		<x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/>"/>In ganzen Kartons
+	<x id="CLOSE_PARAGRAPH" ctype="x-p" equiv-text="&lt;/p>"/>
+	<x id="START_PARAGRAPH" ctype="x-p" equiv-text="&lt;p>"/>
+
+		<x id="START_BOLD_TEXT" ctype="x-b" equiv-text="&lt;b>"/>VERPACKUNG<x id="CLOSE_BOLD_TEXT" ctype="x-b" equiv-text="&lt;/b>"/>
+		<x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/>"/>in EURO-Paletten
+	<x id="CLOSE_PARAGRAPH" ctype="x-p" equiv-text="&lt;/p>"/>
+	<x id="START_PARAGRAPH" ctype="x-p" equiv-text="&lt;p>"/>
+
+		<x id="START_BOLD_TEXT" ctype="x-b" equiv-text="&lt;b>"/>LIEFERUNG<x id="CLOSE_BOLD_TEXT" ctype="x-b" equiv-text="&lt;/b>"/>
+		<x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/>"/> Die Lieferung der Ware erfolgt durch unseren Hausspediteur, sofern nichts anderes vereinbart ist.
+		<x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/>"/>Die Transportkosten werden dem Empfänger getrennt in Rechnung gestellt.
+	<x id="CLOSE_PARAGRAPH" ctype="x-p" equiv-text="&lt;/p>"/>
+	<x id="START_PARAGRAPH" ctype="x-p" equiv-text="&lt;p>"/>
+
+		<x id="START_BOLD_TEXT" ctype="x-b" equiv-text="&lt;b>"/>ZAHLUNG<x id="CLOSE_BOLD_TEXT" ctype="x-b" equiv-text="&lt;/b>"/>
+		<x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/>"/> Innerhalb von 8 Tagen mit 2 % Skonto oder 30 Tage netto ab Rechnungsdatum.
+		<x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/>"/> Generell gelten die Liefer- und Zahlungsbedingungen der Wolf Systembau Gesellschaft m.b.H.
+		<x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/>"/>Die Ware bleibt bis zur vollständigen Bezahlung unser Eigentum.
+	<x id="CLOSE_PARAGRAPH" ctype="x-p" equiv-text="&lt;/p>"/>
+	<x id="START_PARAGRAPH" ctype="x-p" equiv-text="&lt;p>"/>
+
+		<x id="START_BOLD_TEXT" ctype="x-b" equiv-text="&lt;b>"/>ZULASSUNG<x id="CLOSE_BOLD_TEXT" ctype="x-b" equiv-text="&lt;/b>"/>
+		<x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/>"/>Die Binderwinkel dürfen nur mit
+		<x id="START_LINK" ctype="x-a" equiv-text="&lt;a>"/>gültiger Zulassung<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a>"/>
+		verwendet werden.
+	<x id="CLOSE_PARAGRAPH" ctype="x-p" equiv-text="&lt;/p>"/>
+</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/webshop/agb/agb-binderwinkel/agb-binderwinkel.component.ts</context>
+          <context context-type="linenumber">1</context>
+        </context-group>
+      <target state="final">
+	<x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/>"/>
+	<x id="START_HEADING_LEVEL2" ctype="x-h2" equiv-text="&lt;h2>"/>AGB Binderwinkel-Bestellung<x id="CLOSE_HEADING_LEVEL2" ctype="x-h2" equiv-text="&lt;/h2>"/>
+	<x id="START_PARAGRAPH" ctype="x-p" equiv-text="&lt;p>"/>
+
+		<x id="START_BOLD_TEXT" ctype="x-b" equiv-text="&lt;b>"/>PREISSTELLUNG<x id="CLOSE_BOLD_TEXT" ctype="x-b" equiv-text="&lt;/b>"/>
+		<x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/>"/>ab Werk Scharnstein, bzw. ab dt. Grenze (Mindestmenge 100 kg), inkl. Verpackung
+	<x id="CLOSE_PARAGRAPH" ctype="x-p" equiv-text="&lt;/p>"/>
+	<x id="START_PARAGRAPH" ctype="x-p" equiv-text="&lt;p>"/>
+
+		<x id="START_BOLD_TEXT" ctype="x-b" equiv-text="&lt;b>"/>PREISLISTENGÜLTIGKEIT<x id="CLOSE_BOLD_TEXT" ctype="x-b" equiv-text="&lt;/b>"/>
+		<x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/>"/>in der gesamten EU, ausgenommen UK, Frankreich, Belgien, Spanien, Portugal und Skandinavien
+	<x id="CLOSE_PARAGRAPH" ctype="x-p" equiv-text="&lt;/p>"/>
+	<x id="START_PARAGRAPH" ctype="x-p" equiv-text="&lt;p>"/>
+
+		<x id="START_BOLD_TEXT" ctype="x-b" equiv-text="&lt;b>"/>RABATTE<x id="CLOSE_BOLD_TEXT" ctype="x-b" equiv-text="&lt;/b>"/>
+		<x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/>"/> Nach Bestellmenge pro Auftrag:
+		<x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/>"/> ab 1 Tonnen - 4 %
+		<x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/>"/> ab 3 Tonnen - 6 %
+		<x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/>"/>ab 5 Tonnen - 8 %
+	<x id="CLOSE_PARAGRAPH" ctype="x-p" equiv-text="&lt;/p>"/>
+	<x id="START_PARAGRAPH" ctype="x-p" equiv-text="&lt;p>"/>
+
+		<x id="START_BOLD_TEXT" ctype="x-b" equiv-text="&lt;b>"/>ABNAHMEMENGE<x id="CLOSE_BOLD_TEXT" ctype="x-b" equiv-text="&lt;/b>"/>
+		<x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/>"/>In ganzen Kartons
+	<x id="CLOSE_PARAGRAPH" ctype="x-p" equiv-text="&lt;/p>"/>
+	<x id="START_PARAGRAPH" ctype="x-p" equiv-text="&lt;p>"/>
+
+		<x id="START_BOLD_TEXT" ctype="x-b" equiv-text="&lt;b>"/>VERPACKUNG<x id="CLOSE_BOLD_TEXT" ctype="x-b" equiv-text="&lt;/b>"/>
+		<x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/>"/>in EURO-Paletten
+	<x id="CLOSE_PARAGRAPH" ctype="x-p" equiv-text="&lt;/p>"/>
+	<x id="START_PARAGRAPH" ctype="x-p" equiv-text="&lt;p>"/>
+
+		<x id="START_BOLD_TEXT" ctype="x-b" equiv-text="&lt;b>"/>LIEFERUNG<x id="CLOSE_BOLD_TEXT" ctype="x-b" equiv-text="&lt;/b>"/>
+		<x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/>"/> Die Lieferung der Ware erfolgt durch unseren Hausspediteur, sofern nichts anderes vereinbart ist.
+		<x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/>"/>Die Transportkosten werden dem Empfänger getrennt in Rechnung gestellt.
+	<x id="CLOSE_PARAGRAPH" ctype="x-p" equiv-text="&lt;/p>"/>
+	<x id="START_PARAGRAPH" ctype="x-p" equiv-text="&lt;p>"/>
+
+		<x id="START_BOLD_TEXT" ctype="x-b" equiv-text="&lt;b>"/>ZAHLUNG<x id="CLOSE_BOLD_TEXT" ctype="x-b" equiv-text="&lt;/b>"/>
+		<x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/>"/> Innerhalb von 8 Tagen mit 2 % Skonto oder 30 Tage netto ab Rechnungsdatum.
+		<x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/>"/> Generell gelten die Liefer- und Zahlungsbedingungen der Wolf Systembau Gesellschaft m.b.H.
+		<x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/>"/>Die Ware bleibt bis zur vollständigen Bezahlung unser Eigentum.
+	<x id="CLOSE_PARAGRAPH" ctype="x-p" equiv-text="&lt;/p>"/>
+	<x id="START_PARAGRAPH" ctype="x-p" equiv-text="&lt;p>"/>
+
+		<x id="START_BOLD_TEXT" ctype="x-b" equiv-text="&lt;b>"/>ZULASSUNG<x id="CLOSE_BOLD_TEXT" ctype="x-b" equiv-text="&lt;/b>"/>
+		<x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/>"/>Die Binderwinkel dürfen nur mit
+		<x id="START_LINK" ctype="x-a" equiv-text="&lt;a>"/>gültiger Zulassung<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a>"/>
+		verwendet werden.
+	<x id="CLOSE_PARAGRAPH" ctype="x-p" equiv-text="&lt;/p>"/>
+</target></trans-unit></body>
   </file>
 </xliff>

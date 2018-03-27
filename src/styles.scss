@@ -196,6 +196,14 @@ mat-ink-bar.mat-ink-bar {
     transition: .5s cubic-bezier(.35,0,.25,1);
 }
 
+.mat-form-field.mat-focused .mat-form-field-label {
+    color: #717274;    
+}
+
+.mat-form-field.mat-focused .mat-form-field-ripple {
+    background-color: #717274;
+}
+
 @media (min-width:375px){
     .mat-expansion-panel-header {
         height: 64px !important;

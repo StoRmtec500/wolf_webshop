@@ -10,7 +10,7 @@ import { databaseProvider } from './shared/databaseProvider/databaseProvider';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import localeDe from '@angular/common/locales/de';
 import localeEn from '@angular/common/locales/en';
-import { registerLocaleData } from '@angular/common';
+import { registerLocaleData, LocationStrategy, HashLocationStrategy } from '@angular/common';
 import { SidenavComponent } from './sidenav/sidenav/sidenav.component';
 import { NagelplattenComponent } from './webshop/nagelplatten/nagelplatten.component';
 import { NagelplattenService } from './shared/service/nagelplatten.service';
@@ -58,8 +58,8 @@ registerLocaleData(localeDe)
     NagelplattenService, 
     databaseProvider,
     {provide: LOCALE_ID, useValue: 'de'},
-    {provide: MAT_DATE_LOCALE, useValue: 'de-DE'}
-
+    {provide: MAT_DATE_LOCALE, useValue: 'de-DE'},
+    {provide: LocationStrategy, useClass:HashLocationStrategy}
 
 
   ],

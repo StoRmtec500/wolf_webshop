@@ -42,12 +42,12 @@ export class BestellungKopf {
   Plz: number;
   Ort: string  = '';
   Land: string = '';
-  Telefon: string = '';
-  Bemerkung: string = '';
-  Liefertermin: string = '';
-  ZwischenSumme = 0;
-  Rabatt = 0;
-  RabattSumme = 0;
+  Telefon = '';
+  Bemerkung = '';
+  Liefertermin = '';
+  ZwischenSumme;
+  Rabatt;
+  RabattSumme;
   GesamtSumme  = 0;
   GesamtGewicht = 0;
   sprache: string = '';

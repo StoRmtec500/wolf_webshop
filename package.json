@@ -10,7 +10,7 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "start-en": "ng serve --aot --i18n-file=src/assets/locale/messages.en.xlf --locale=en --i18n-format=xlf --missingTranslation=error",
-    "build_prod": "ng build --prod -vc=true --locale=de --base-href /onlineshopNP/de/ --op dist/de & ng build --prod -vc=true --i18nFile=src/assets/locale/messages.en.xlf --i18nFormat=xlf --locale=en --base-href /onlineshopNP/en/ --op dist/en",
+    "build_prod": "ng build --prod -vc=true --locale=de --base-href /onlineshopNP/de/ --op dist/de --build-optimizer & ng build --prod --build-optimizer -vc=true --aot --i18nFile=src/assets/locale/messages.en.xlf --i18nFormat=xlf --locale=en --base-href /onlineshopNP/en/ --op dist/en",
     "build_test": "ng build -vc=true --locale=de --base-href /onlineshopNP/de/ --op dist/de & ng build --aot --i18nFile=src/assets/locale/messages.en.xlf --i18nFormat=xlf --locale=en --base-href /onlineshopNP/en/ --op dist/en",
     "extract-i18n": "ng xi18n --output-path src/assets/locale --locale de && xliffmerge --profile xliffmerge.json de en"
   },

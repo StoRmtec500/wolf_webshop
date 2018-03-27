@@ -6,8 +6,8 @@
     <a href="http://www.wolfnagelplatten.at/Online-Bestellung/AGB-Bestellung" i18n>Allgemeine Geschäftsbedingungen</a>
     <br>
     <br>
-    <h4 i18n>1. Artikelauswahl</h4>
-    <ng-container i18n>Wählen Sie einen Nagelplattentyp aus, und tragen Sie die Bestellmenge ein. Rabatt nach Bestellmenge pro Auftrag:</ng-container>
+    <!--<h4 i18n>Artikelauswahl</h4>
+    <ng-container i18n>Wählen Sie einen Nagelplattentyp aus, und tragen Sie die Bestellmenge ein. Rabatt nach Bestellmenge pro Auftrag:</ng-container>-->
     <div class="line_height"></div>
     <div class="row_header">
       <div class="col-md-12 col-sm-12 col-xs-12 col-lg-12 col-xl-10">
@@ -69,7 +69,7 @@
                       </mat-expansion-panel>
                       <mat-expansion-panel>
                         <mat-expansion-panel-header (click)="getArticelTyp(4949)">
-                          <div class="row_accordion">
+                          <div class="row_accordion"  (click)="toAncher(ancher)">
                             <div class="row">
                               <div class="col-4 col-sm-3 col-md-3 col-lg-5 col-xl-4">W101</div>
                               <div class="col-4 col-sm-3 col-md-3 col-lg-2 col-xl-4 text-right"> 2,53</div>

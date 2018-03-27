@@ -137,8 +137,9 @@ getAnrede(sprache) {
 
 
   calczwischensumme() {
-    var basketRabatt = 0;
-    this.basketZwischenSummeRabatt = 0;
+    var basketRabatt = null;
+    this.basketZwischenSumme = null;
+    this.basketZwischenSummeRabatt = null;
     for (let i = 0; i < this.rabatte.length; i++) {
       if (this.basketGewicht > this.rabatte[i].kg) {
         basketRabatt = this.basketZwischenSumme = (this.basketSumme);
@@ -156,7 +157,7 @@ getAnrede(sprache) {
       this.showBasketZwischensumme = true;
     } else {
       this.showBasketZwischensumme = false;
-      this.basketZwischenSummeRabatt = 0;
+      this.basketZwischenSummeRabatt = null;
     }
   }
 
@@ -164,11 +165,26 @@ getAnrede(sprache) {
     this.bestellung.npBestellungKopfID = this.bestellID;
     this.bestellungDetail.FKNpBestellungKopfID = this.bestellID;
     this.bestellung.sprache = this.sprache;
+    if(this.bestellung.Bemerkung == "") {
+      this.bestellung.Bemerkung = null;
+    } else {
+      this.bestellung.Bemerkung = "'"+ this.bestellung.Bemerkung +"'";
+    }
+    if(this.bestellung.Liefertermin == "") {
+      this.bestellung.Liefertermin = null;
+    } else {
+      this.bestellung.Liefertermin = "'"+ this.bestellung.Liefertermin +"'";
+    }
+    if(this.bestellung.Anrede == "") {
+      this.bestellung.Anrede = null;
+    } else {
+      this.bestellung.Anrede = "'"+ this.bestellung.Anrede +"'";
+    }
 
     if (this.basketZwischenSumme == null) {
-      this.bestellung.ZwischenSumme = 0;
-      this.bestellung.Rabatt = 0;
-      this.bestellung.RabattSumme = 0;
+      this.bestellung.ZwischenSumme = null;
+      this.bestellung.Rabatt = null;
+      this.bestellung.RabattSumme = null;
       this.bestellung.GesamtSumme = this.basketSummeGesamt;
     } else {
       this.bestellung.ZwischenSumme = this.basketZwischenSumme;
@@ -182,6 +198,8 @@ getAnrede(sprache) {
       this.bestellung.GesamtSumme = this.basketSummeGesamt;
       this.bestellung.GesamtGewicht = this.basketGewicht;
     }
+
+    console.log(this.bestellung);
 
     this.ns.makeBestellung(this.bestellung)
       .subscribe((response) => {
