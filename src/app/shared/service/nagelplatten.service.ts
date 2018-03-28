@@ -46,6 +46,10 @@ export class NagelplattenService {
     return this.httpClient.get('assets/anrede_'+sprache+'.json');
   }
 
+  getPreis() : Observable<any> {
+    return this.httpClient.get('assets/preise.json');
+  }
+
   getLaenderliste(sprache) : Observable<Laenderliste[]> {
     return this.httpClient.get<Laenderliste[]>('assets/land_'+sprache+'.json');
   }

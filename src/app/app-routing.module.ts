@@ -27,9 +27,9 @@ const routes: Routes = [
   { path: 'agb',
     component: AgbComponent,
     children: [
-        { path: 'abg_nagelplatten', component: AgbNagelplattenComponent},
-        { path: 'abg_metalwebs', component: AgbMetalwebsComponent},
-        { path: 'abg_binderwinkel', component: AgbBinderwinkelComponent}
+        { path: 'agb_nagelplatten', component: AgbNagelplattenComponent},
+        { path: 'agb_metalwebs', component: AgbMetalwebsComponent},
+        { path: 'agb_binderwinkel', component: AgbBinderwinkelComponent}
     ]
   },
   { path: '**', redirectTo: 'nagelplatten'}

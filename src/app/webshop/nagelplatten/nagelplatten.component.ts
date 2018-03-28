@@ -26,7 +26,7 @@ export class NagelplattenComponent implements OnInit {
   anreden: Anrede[] = [];
   bestellungKopfID: ID[];
   details = '';
-  showBasket = true; showBasketZwischensumme = false;
+  showBasket = true; showBasketZwischensumme = false;showBasketSumme = false;
   basketSumme; basketGewicht; public basketZwischenSumme; public basketZwischenSummeRabatt;
   basketRabattProzent; basketRabattAbKG; basketTransport; Gesamt; basketSummeGesamt;
   bookName: String;
@@ -100,21 +100,41 @@ getAnrede(sprache) {
     this.nagelplatten[index].Gesamt = Math.round(preis * 100) / 100;
     for (let i = 0; i < this.nagelplatten.length; i++) {
       if (this.nagelplatten[i].PKArtikelID == artnr) {
-        for (let i = 0; i < this.warenkorb.length; i++) {
-          if (this.warenkorb[i].Stk == stk && this.warenkorb[i].PKArtikelID == artnr) {
-            this.warenkorb.splice(i, 1);
+        for (let a = 0; a < this.warenkorb.length; a++) {
+          if (this.warenkorb[a].Stk == stk && this.warenkorb[a].PKArtikelID == artnr) {
+            this.warenkorb.splice(a, 1);
           }
-
         }
         this.warenkorb.push(this.nagelplatten[i]);
+        this.checkBasket();
       }
     }
-    this.showBasket = true;
+
+
+
     this.calcSumme();
     this.calczwischensumme();
   }
 
-  deleteEntry(index) {
+  checkBasket() {
+    for(let i = 0; i < this.warenkorb.length; i++) {
+      if(this.warenkorb[i].Gesamt == 0) {
+        this.warenkorb.splice(i, 1);
+      }
+    }
+  }
+
+  deleteEntry(index, artnr) {
+    for (let i = 0; i < this.warenkorb.length; i++) {
+      if (this.warenkorb[i].PKArtikelID == artnr) {
+        for (let a = 0; a < this.nagelplattenTyp.length; a++) {
+          if (this.nagelplattenTyp[a].PKArtikelID == artnr) {
+           this.nagelplattenTyp[a].Stk = null;
+          }
+        }
+
+      }
+    }
     this.warenkorb.splice(index, 1);
     this.calcSumme();
     this.calczwischensumme();
@@ -127,9 +147,6 @@ getAnrede(sprache) {
     for (let s of this.warenkorb) {
       basketSumme = basketSumme + s.Gesamt;
       basketGewicht = basketGewicht + s.Gewicht * s.Stk
-    }
-    if (basketSumme == 0) {
-      this.showBasket = false;
     }
     this.basketGewicht = basketGewicht;
     this.basketSumme = basketSumme;
@@ -150,6 +167,12 @@ getAnrede(sprache) {
         this.basketZwischenSummeRabatt = Math.round(zw * 100) / 100;
       }
       this.basketSummeGesamt = (this.basketSumme - this.basketZwischenSummeRabatt);
+      if(this.basketSummeGesamt > 0) {
+        this.showBasketSumme = true;
+      } else {
+        this.showBasketSumme = false;
+      }
+      
     }
 
     if (this.basketGewicht > 1000) {
@@ -180,6 +203,16 @@ getAnrede(sprache) {
     } else {
       this.bestellung.Anrede = "'"+ this.bestellung.Anrede +"'";
     }
+    if(this.bestellung.Telefon == "") {
+      this.bestellung.Telefon = null;
+    } else {
+      this.bestellung.Telefon = "'"+ this.bestellung.Telefon +"'";
+    }
+    if(this.bestellung.Strasse == "") {
+      this.bestellung.Strasse = null;
+    } else {
+      this.bestellung.Strasse = "'"+ this.bestellung.Anrede +"'";
+    }
 
     if (this.basketZwischenSumme == null) {
       this.bestellung.ZwischenSumme = null;
@@ -198,8 +231,6 @@ getAnrede(sprache) {
       this.bestellung.GesamtSumme = this.basketSummeGesamt;
       this.bestellung.GesamtGewicht = this.basketGewicht;
     }
-
-    console.log(this.bestellung);
 
     this.ns.makeBestellung(this.bestellung)
       .subscribe((response) => {
@@ -236,6 +267,9 @@ getAnrede(sprache) {
       this.bestellungDetail.PreisMenge = this.warenkorb[i].Preis;
       this.bestellungDetail.MengenEinheit = this.warenkorb[i].ME;
       this.bestellungDetail.PreisGesamt = this.warenkorb[i].Gesamt;
+  
+
+    
       this.ns.makeBestellungDetails(this.bestellungDetail).subscribe((response) => {
         console.log("Value Received: " + this.bestellung);
       },
@@ -254,7 +288,7 @@ getAnrede(sprache) {
         () => {
           console.log("COMPLETE");
         })
-    }
+      }
   }
 
   makeOrder() {

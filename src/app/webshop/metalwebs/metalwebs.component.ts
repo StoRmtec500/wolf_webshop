@@ -27,7 +27,7 @@ export class MetalwebsComponent implements OnInit {
   anreden: Anrede[] = [];
   bestellungKopfID: ID[];
   details = '';
-  showBasket = true;  showBasketZwischensumme = false;
+  showBasket = true;  showBasketZwischensumme = false; showBasketSumme = false;
   basketSumme; basketGewicht; public basketZwischenSumme; public basketZwischenSummeRabatt;
   basketRabattProzent;  basketRabattAbKG;  basketTransport; Gesamt; basketSummeGesamt;
   bookName: String;
@@ -151,6 +151,12 @@ land: Laenderliste[] = [];
         this.basketZwischenSummeRabatt = Math.round(zw * 100) / 100;
     }
     this.basketSummeGesamt = (this.basketSumme - this.basketZwischenSummeRabatt);
+  }
+
+  if(this.basketSummeGesamt > 0) {
+    this.showBasketSumme = true;
+  } else {
+    this.showBasketSumme = false;
   }
 
   if (this.basketGewicht > 3000) {

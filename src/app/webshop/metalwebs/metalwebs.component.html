@@ -3,7 +3,8 @@
   <!-- Content Header -->
   <section class="content-header">
     <h2 i18n>Bestellung Metal Webs</h2>
-    <a href="http://www.wolfnagelplatten.at/Online-Bestellung/AGB-Bestellung" i18n>Allgemeine Geschäftsbedingungen</a>
+    <a href='#/agb/agb_metalwebs' routerLinkActive="active-link" [routerLinkActiveOptions]="{exact:
+      true}" i18n>Allgemeine Geschäftsbedingungen </a>
     <br>
     <br>
     <!--<h4 i18n>Artikelauswahl</h4>
@@ -188,7 +189,7 @@
   
               <!-- Bestellsumme über die ganze Bestellung wird angezeigt -->
               <b>
-                <div class="basketDetailHeader">
+                <div class="basketDetailHeader" *ngIf="showBasketSumme">
                   <div class="row">
                     <div class="artikelheader col-sm-5 col-lg-5 col-xl-4" i18n>Bestellsumme in Euro</div>
                     <div class="basketgewicht col-sm-4 col-lg-4 col-xl-5">
@@ -198,7 +199,7 @@
                 </div>
               </b>
               <br>
-              <button class="buttonWarenkorb" data-toggle="modal" data-target="#NagelplattenFormular" i18n>Kundendaten eingeben & bestellen</button>
+              <button *ngIf="showBasketSumme" class="buttonWarenkorb" data-toggle="modal" data-target="#NagelplattenFormular" i18n>Kundendaten eingeben & bestellen</button>
             </div>
           </div>
           <!-- Bestellsumme ENDE -->

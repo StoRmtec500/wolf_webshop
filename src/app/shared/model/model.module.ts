@@ -22,6 +22,12 @@ export class Anrede {
   viewValue;
 }
 
+export class Preis {
+  typ: string;
+  eurkg: number;
+  eurm: number;
+}
+
 export class Laenderliste {
   Land;
   Kuerzel;
