@@ -5,10 +5,10 @@
 
 export const environment = {
   production: false,
-  apiUrlRead:  'https://middleware.wolfsystem.at/ProjektExplorerMWTest/service/read',
-  apiUrlWrite:  'https://middleware.wolfsystem.at/ProjektExplorerMWTest/service/write',
-  dataBase: 'DBScharnsteinTest',
-  dbUsername: 'martin.kuenz',
-  dbPassword: 'xqojUKt9>',
-  dbMitarbeiterID: '2640'
+  apiUrlRead:  'https://middleware.wolfsystem.at/ProjektExplorerMW/service/read',
+  apiUrlWrite:  'https://middleware.wolfsystem.at/ProjektExplorerMW/service/write',
+  dataBase: 'DBScharnsteinWEB',
+  dbUsername: 'web.service',
+  dbPassword: 'Xqoj(879A',
+  dbMitarbeiterID: '99967'
 };

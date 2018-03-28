@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
-import { Nagelplatten, Rabatt, BestellungKopf, ID, BestellungKopfDetail, Laenderliste } from '../index';
+import { Nagelplatten, Rabatt, BestellungKopf, ID, BestellungKopfDetail, Laenderliste, Typen } from '../index';
 import { databaseProvider } from '../databaseProvider/databaseProvider';
 import { environment } from '../../../environments/environment';
 import 'rxjs/add/operator/map';
@@ -34,6 +34,11 @@ export class NagelplattenService {
     return this.httpClient.post<Nagelplatten[]>(environment.apiUrlRead, body);
   }
 
+  getTypenSelect(): Observable<Typen[]> {
+    const body = this.db.typenSelect();
+    return this.httpClient.post<Typen[]>(environment.apiUrlRead, body);
+  }
+
   getNagelplattenDetail(id: number): Observable<Nagelplatten[]> {
     return this.httpClient.get<Nagelplatten[]> ( environment.apiUrlRead + 'getNagelplattenDetail/' + id);
   }
@@ -44,10 +49,6 @@ export class NagelplattenService {
 
   getAnrede(sprache) : Observable<any> {
     return this.httpClient.get('assets/anrede_'+sprache+'.json');
-  }
-
-  getPreis() : Observable<any> {
-    return this.httpClient.get('assets/preise.json');
   }
 
   getLaenderliste(sprache) : Observable<Laenderliste[]> {

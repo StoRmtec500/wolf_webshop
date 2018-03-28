@@ -26,6 +26,19 @@ export class Preis {
   typ: string;
   eurkg: number;
   eurm: number;
+  artgruppe: number;
+  blechdicke: number;
+  zulassungsnummer: string;
+}
+
+export class Typen {
+  npShopTypID: string;
+  art: string;
+  blechdicke: number;
+  zulassungsnummer: string;
+  artikelgruppeID: number;
+  preisKg: number;
+  preisM2: number;
 }
 
 export class Laenderliste {

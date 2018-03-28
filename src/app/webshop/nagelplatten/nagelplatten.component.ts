@@ -1,5 +1,5 @@
-import { Component, ViewChild, OnInit, Input, Injector, LOCALE_ID } from '@angular/core';
-import { Nagelplatten, Rabatt, BestellungKopf, ID, BestellungKopfDetail, Laenderliste, Anrede } from '../../shared/index';
+import { Component, ViewChild, OnInit, Input, Injector, LOCALE_ID, Type } from '@angular/core';
+import { Nagelplatten, Rabatt, BestellungKopf, ID, BestellungKopfDetail, Laenderliste, Anrede, Typen } from '../../shared/index';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Observable } from 'rxjs/Observable';
 import { startWith } from 'rxjs/operators/startWith';
@@ -24,6 +24,7 @@ export class NagelplattenComponent implements OnInit {
   warenkorb: Nagelplatten[] = [];
   rabatte: Rabatt[] = [];
   anreden: Anrede[] = [];
+  typen: Typen[] = [];
   bestellungKopfID: ID[];
   details = '';
   showBasket = true; showBasketZwischensumme = false;showBasketSumme = false;
@@ -34,6 +35,8 @@ export class NagelplattenComponent implements OnInit {
   error = false;
   open = false;
   errorMsg;
+  verzinkt: string = 'Verzinkt';
+  edelstahl: string = 'Edelstahl';
   ID;
   bestellID: number;
   panelOpenState: boolean = false;
@@ -51,11 +54,14 @@ export class NagelplattenComponent implements OnInit {
   bestellungDetail = new BestellungKopfDetail();
 
   constructor(private ns: NagelplattenService, private router: Router, private injector: Injector) {
-    this.ns.getAllArticel().subscribe(data => this.nagelplattenTyp = data);
-    this.nagelplatten = this.nagelplattenTyp;
-    this.getArticelTyp(0);
+  //  this.ns.getAllArticel().subscribe(data => this.nagelplattenTyp = data);
+  this.ns.getTypenSelect().subscribe(data => this.typen = data);
+  this.getArticelTyp(0);
     this.Math = Math;
     this.sprache = this.injector.get(LOCALE_ID);
+    this.typen = null;
+    this.nagelplatten = null;
+    this.nagelplattenTyp = null;
     if(this.sprache == 'de') {
       this.spracheID = '0'
     } else {
@@ -74,6 +80,7 @@ export class NagelplattenComponent implements OnInit {
 
 getAnrede(sprache) {
   this.ns.getAnrede(sprache).subscribe(data => this.anreden = data);
+  //this.getArticelTyp(0);
 }
 
   getArticelTyp(typ: number) {
@@ -84,6 +91,7 @@ getAnrede(sprache) {
       this.open = true;
     }
     this.nagelplatten = this.nagelplatten.filter(t => t.FKArtikelgruppeID == typ);
+    
   }
 
   loadLaenderliste() {
@@ -109,9 +117,6 @@ getAnrede(sprache) {
         this.checkBasket();
       }
     }
-
-
-
     this.calcSumme();
     this.calczwischensumme();
   }
@@ -211,7 +216,7 @@ getAnrede(sprache) {
     if(this.bestellung.Strasse == "") {
       this.bestellung.Strasse = null;
     } else {
-      this.bestellung.Strasse = "'"+ this.bestellung.Anrede +"'";
+      this.bestellung.Strasse = "'"+ this.bestellung.Strasse +"'";
     }
 
     if (this.basketZwischenSumme == null) {

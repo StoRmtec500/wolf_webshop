@@ -66,6 +66,27 @@ export class databaseProvider {
         PKMitarbeiterID: this.pkEmployeeId
       }
     }  
+
+    public typenSelect() {
+      return {
+        Befehl: encodeURIComponent(
+          `SELECT  nst.npShopTypID,
+          nst.art,
+          nst.blechdicke,
+          nst.zulassungsnummer,
+          nst.artikelgruppeID,
+          nstp.preisKg,
+          nstp.preisM2
+  FROM    PESchnittstelle.dbo.npShopTyp nst
+          LEFT OUTER JOIN PESchnittstelle.dbo.npShopTypPreis nstp ON nstp.npShopTypID = nst.npShopTypID AND nstp.GueltigVon <= CONVERT(DATE, GETDATE()) AND nstp.GueltigBis >= CONVERT(DATE, GETDATE())
+  WHERE   nst.gueltigVon <= CONVERT(DATE, GETDATE()) AND  nst.gueltigBis >= CONVERT(DATE, GETDATE())
+  ORDER BY nst.sortierung`),
+        Datenbank: this.databaseName,
+        Login: this.userName,
+        Passwort: this.userPassword,
+        PKMitarbeiterID: this.pkEmployeeId
+      }
+    }  
 /* */
 
 /* BestellungKopfID auslesen */

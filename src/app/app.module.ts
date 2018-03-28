@@ -21,6 +21,7 @@ import { AgbComponent } from './webshop/agb/agb.component';
 import { AgbNagelplattenComponent } from './webshop/agb/agb-nagelplatten/agb-nagelplatten.component';
 import { AgbMetalwebsComponent } from './webshop/agb/agb-metalwebs/agb-metalwebs.component';
 import { AgbBinderwinkelComponent } from './webshop/agb/agb-binderwinkel/agb-binderwinkel.component';
+import { TypSelectPipe } from './shared/service/typ-select.pipe';
 registerLocaleData(localeDe)
 
 @NgModule({
@@ -33,7 +34,8 @@ registerLocaleData(localeDe)
     AgbComponent,
     AgbNagelplattenComponent,
     AgbMetalwebsComponent,
-    AgbBinderwinkelComponent
+    AgbBinderwinkelComponent,
+    TypSelectPipe
   ],
   imports: [
     AppRoutingModule,

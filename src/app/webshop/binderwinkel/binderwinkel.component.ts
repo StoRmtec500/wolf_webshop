@@ -45,9 +45,6 @@ land: Laenderliste[] = [];
 
 
   constructor(private ns: NagelplattenService, private router: Router, private injector: Injector) {
-    this.ns.getBinderwinkel().subscribe(data => this.nagelplattenTyp = data);
-    this.nagelplatten = this.nagelplattenTyp;
-    this.getBinderwinkel();
     this.Math = Math;
     this.sprache = this.injector.get(LOCALE_ID);
     if(this.sprache == 'de') {
@@ -55,29 +52,22 @@ land: Laenderliste[] = [];
     } else {
       this.spracheID = '1'
     }
+    this.nagelplatten = null;
    }
 
   ngOnInit() {
     this.ns.getRabatt(this.sprache).subscribe((res : any) => this.rabatte = res[2].binderwinkel);
     this.getAnrede(this.sprache);
     this.loadLaenderliste();
-    
   }
 
   getAnrede(sprache) {
     this.ns.getAnrede(sprache).subscribe(data => this.anreden = data);
+    this.getBinderwinkel();
   }
 
   getBinderwinkel() {
-    console.log("NagelplattenTyp: " +JSON.stringify(this.nagelplattenTyp));
-    if (this.open == true) {
-      this.nagelplatten = this.nagelplattenTyp;
-    } else {
-      this.ns.getBinderwinkel().subscribe(data => this.nagelplattenTyp = data);
-      this.open = true;
-    }
-    this.nagelplatten = this.nagelplattenTyp;
-    console.log("Nagelplatten: " +JSON.stringify(this.nagelplatten));
+      this.ns.getBinderwinkel().subscribe(data => this.nagelplatten = data);
   }
 
   loadLaenderliste() {
@@ -167,88 +157,112 @@ land: Laenderliste[] = [];
   }
   }
 
-  saveBestellung(){
+  saveBestellung() {
     this.bestellung.npBestellungKopfID = this.bestellID;
     this.bestellungDetail.FKNpBestellungKopfID = this.bestellID;
     this.bestellung.sprache = this.sprache;
+    if(this.bestellung.Bemerkung == "") {
+      this.bestellung.Bemerkung = null;
+    } else {
+      this.bestellung.Bemerkung = "'"+ this.bestellung.Bemerkung +"'";
+    }
+    if(this.bestellung.Liefertermin == "") {
+      this.bestellung.Liefertermin = null;
+    } else {
+      this.bestellung.Liefertermin = "'"+ this.bestellung.Liefertermin +"'";
+    }
+    if(this.bestellung.Anrede == "") {
+      this.bestellung.Anrede = null;
+    } else {
+      this.bestellung.Anrede = "'"+ this.bestellung.Anrede +"'";
+    }
+    if(this.bestellung.Telefon == "") {
+      this.bestellung.Telefon = null;
+    } else {
+      this.bestellung.Telefon = "'"+ this.bestellung.Telefon +"'";
+    }
+    if(this.bestellung.Strasse == "") {
+      this.bestellung.Strasse = null;
+    } else {
+      this.bestellung.Strasse = "'"+ this.bestellung.Strasse +"'";
+    }
 
-    if(this.basketZwischenSumme == null) 
-    {
-      this.bestellung.ZwischenSumme = 0;
-      this.bestellung.Rabatt = 0;
-      this.bestellung.RabattSumme = 0;
+    if (this.basketZwischenSumme == null) {
+      this.bestellung.ZwischenSumme = null;
+      this.bestellung.Rabatt = null;
+      this.bestellung.RabattSumme = null;
       this.bestellung.GesamtSumme = this.basketSummeGesamt;
-    } else
-    {
+    } else {
       this.bestellung.ZwischenSumme = this.basketZwischenSumme;
       this.bestellung.Rabatt = this.basketRabattProzent;
       this.bestellung.RabattSumme = this.basketZwischenSummeRabatt;
     }
-    
-    if(this.basketSumme == null){
+
+    if (this.basketSumme == null) {
       this.bestellung.GesamtSumme = this.basketSummeGesamt;
     } else {
       this.bestellung.GesamtSumme = this.basketSummeGesamt;
       this.bestellung.GesamtGewicht = this.basketGewicht;
     }
-    
 
     this.ns.makeBestellung(this.bestellung)
       .subscribe((response) => {
         console.log("Value Received: " + this.bestellung);
       },
-    (err) => {
-      if (err.error.text == "1;;") {
-        console.log("ERFOLGREICH:" + JSON.stringify(err));
-        this.saveBestellungDetail();
+        (err) => {
+          if (err.error.text == "1;;") {
+            console.log("ERFOLGREICH:" + JSON.stringify(err));
+            this.saveBestellungDetail();
 
-        this.isValid = true;
-        this.error = true;
-      } else {
-        console.log("ERROR: " + JSON.stringify(err));
-        this.isValid = false;
-        this.error = true;
-        this.errorMsg = JSON.stringify(err.error.text);
-      }
-    },
-    () => {
-    console.log("COMPLETE");
-  })
- 
-}
+            this.isValid = true;
+            this.error = true;
+          } else {
+            console.log("ERROR: " + JSON.stringify(err));
+            this.isValid = false;
+            this.error = true;
+            this.errorMsg = JSON.stringify(err.error.text);
+          }
+        },
+        () => {
+          console.log("COMPLETE");
+        })
 
-saveBestellungDetail() {
-  
-  for(let i = 0; i < this.warenkorb.length; i++) {
-    this.bestellungDetail.Gewicht = this.warenkorb[i].Gewicht;
-    this.bestellungDetail.BestellMenge = this.warenkorb[i].Stk;
-    this.bestellungDetail.PKArtikelID = this.warenkorb[i].PKArtikelID;
-    this.bestellungDetail.Typ = this.warenkorb[i].Typ;
-    this.bestellungDetail.Breite = this.warenkorb[i].Breite;
-    this.bestellungDetail.Laenge = this.warenkorb[i].Laenge;
-    this.bestellungDetail.PreisMenge = this.warenkorb[i].Preis;
-    this.bestellungDetail.MengenEinheit = this.warenkorb[i].ME;
-    this.bestellungDetail.PreisGesamt = this.warenkorb[i].Gesamt;
-    this.ns.makeBestellungDetails(this.bestellungDetail).subscribe((response) => {
-      console.log("Value Received: " + this.bestellung);
-    },
-  (err) => {
-    if (err.error.text == "1;;") {
-      console.log("ERFOLGREICH:" + JSON.stringify(err));
-      this.isValid = true;
-      this.error = true;
-    } else {
-      console.log("ERROR: " + JSON.stringify(err));
-      this.isValid = false;
-      this.error = true;
-      this.errorMsg = JSON.stringify(err.error.text);
-    }
-  },
-  () => {
-  console.log("COMPLETE");
-})
   }
-}
+
+  saveBestellungDetail() {
+    for (let i = 0; i < this.warenkorb.length; i++) {
+      this.bestellungDetail.Gewicht = this.warenkorb[i].Gewicht;
+      this.bestellungDetail.BestellMenge = this.warenkorb[i].Stk;
+      this.bestellungDetail.PKArtikelID = this.warenkorb[i].PKArtikelID;
+      this.bestellungDetail.Typ = this.warenkorb[i].Typ;
+      this.bestellungDetail.Breite = this.warenkorb[i].Breite;
+      this.bestellungDetail.Laenge = this.warenkorb[i].Laenge;
+      this.bestellungDetail.PreisMenge = this.warenkorb[i].Preis;
+      this.bestellungDetail.MengenEinheit = this.warenkorb[i].ME;
+      this.bestellungDetail.PreisGesamt = this.warenkorb[i].Gesamt;
+  
+
+    
+      this.ns.makeBestellungDetails(this.bestellungDetail).subscribe((response) => {
+        console.log("Value Received: " + this.bestellung);
+      },
+        (err) => {
+          if (err.error.text == "1;;") {
+            console.log("ERFOLGREICH:" + JSON.stringify(err));
+            this.isValid = true;
+            this.error = true;
+          } else {
+            console.log("ERROR: " + JSON.stringify(err));
+            this.isValid = false;
+            this.error = true;
+            this.errorMsg = JSON.stringify(err.error.text);
+          }
+        },
+        () => {
+          console.log("COMPLETE");
+        })
+      }
+  }
 
   makeOrder() {
     this.ID = this.ns.getBestellungKopfID().subscribe(data => {

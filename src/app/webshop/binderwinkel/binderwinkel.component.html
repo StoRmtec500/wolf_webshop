@@ -46,17 +46,8 @@
                       <ng-template matTabContent>
               <div class="tab-content visible-sm-12">
                 <mat-accordion>
-                  <mat-expansion-panel [disabled]="true">
-                    <mat-expansion-panel-header>
-                      <div class="row_accordion disabled">
-                        <div class="row">
-                          <div class="col-4 col-sm-3 col-md-3 col-lg-5 col-xl-4" i18n>Typ</div>
-                        </div>
-                      </div>
-                    </mat-expansion-panel-header>
-                  </mat-expansion-panel>
-                  <mat-expansion-panel>
-                    <mat-expansion-panel-header (click)="getBinderwinkel()">
+                  <mat-expansion-panel [expanded]="true" (opened)="getBinderwinkel()" hideToggle="true">
+                    <mat-expansion-panel-header >
                       <div class="row_accordion">
                         <div class="row">
                           <div class="col-sm-12 col-lg-12 col-xl-12" i18n>Binderwinkel</div>
@@ -211,7 +202,7 @@
       <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
         <div class="modal-content" *ngIf="isValid && !error">
           <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel" i18n>Nagelplatten Bestellformular</h5>
+            <h5 class="modal-title" id="exampleModalLabel" i18n>Binderwinkel Bestellformular</h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
