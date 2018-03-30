@@ -137,12 +137,7 @@ tr.artikel {
     padding-left: 22px;
 }
 
-.Site {
-    display: flex;
-    min-height: 100vh;
-    height: 100%;
-    flex-direction: column;
-  }
+
 
 .artikelheader2 {
     padding-left: 20px;
@@ -270,13 +265,6 @@ mat-ink-bar.mat-ink-bar {
 .mat-expansion-indicator::after, .mat-expansion-panel-header-description {
      color: #717274;
 }
-
-@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) 
- {                                                                                                                     
-             .warenkorb {
-                 position: fixed;
-             }
- }
 
 @media (min-width:1025px) {
     .table {
