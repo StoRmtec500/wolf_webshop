@@ -2,10 +2,16 @@
 <div class="content-wrapper">
   <!-- Content Header -->
   <section class="content-header">
-    <h2 i18n>Bestellung Metal Webs</h2>
-    <a href='#/agb/agb_metalwebs' routerLinkActive="active-link" [routerLinkActiveOptions]="{exact:
-      true}" i18n>Allgemeine Geschäftsbedingungen </a>
-    <br>
+      <div class="row">
+          <div class="col">
+              <h2 i18n>Bestellung Metal Webs</h2>
+              <a href='#/agb/agb_metalwebs' routerLinkActive="active-link" [routerLinkActiveOptions]="{exact:
+                true}" i18n>Allgemeine Geschäftsbedingungen </a>
+          </div>
+          <div class="col col-lg-2 col-xl-2">
+              <img src="https://bilder.wolfsystem.at/wolflogo.png" width="160" alt="Wolf_Logo">
+          </div>
+        </div>
     <br>
     <!--<h4 i18n>Artikelauswahl</h4>
     <ng-container i18n>Wählen Sie einen Typ aus, und tragen Sie die Bestellmenge ein. Rabatt nach Bestellmenge pro Auftrag:</ng-container>-->
@@ -141,7 +147,7 @@
             <tr *ngFor="let n of warenkorb; let in = index; index as i; odd as isOdd; even as isEven" 
             [ngClass]="{ odd: isOdd, even: isEven }" >
            <div class="row">
-              <div class="menge col-md-2 col-lg-3 col-xl-2 text-left"><span> <i class="far fa-trash-alt" (click)="deleteEntry(in)"></i><div *ngIf="n.ME > 1;then karton else stueck"></div></span><ng-template #karton>   {{n.Stk }} <ng-container i18n>Karton</ng-container></ng-template>
+              <div class="menge col-md-2 col-lg-3 col-xl-2 text-left"><span> <i class="far fa-trash-alt" (click)="deleteEntry(in, n.PKArtikelID)"></i><div *ngIf="n.ME > 1;then karton else stueck"></div></span><ng-template #karton>   {{n.Stk }} <ng-container i18n>Karton</ng-container></ng-template>
               <ng-template #stueck>   {{n.Stk }} <ng-container i18n>Stück </ng-container></ng-template></div>
               <div class="artikelbasket col-md-1 col-lg-1 col-xl-1">{{ n.PKArtikelID }}</div>
               <div class="artikelbasket col-md-1 col-lg-1 col-xl-1">{{ n.Typ }}</div>
@@ -300,6 +306,7 @@
           </div>
         </div>
         <div class="modal-footer">
+            <span i18n>* Pflichtfelder</span>
           <button type="button" class="btn btn-secondary" data-dismiss="modal">
             <ng-container i18n>Abbrechen</ng-container>
           </button>

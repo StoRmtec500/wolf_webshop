@@ -2,12 +2,18 @@
 <div class="content-wrapper">
   <!-- Content Header -->
   <section class="content-header">
-    <h2 i18n>Bestellung Nagelplatten</h2>
-    <a href='#/agb/agb_nagelplatten' routerLinkActive="active-link" [routerLinkActiveOptions]="{exact:
-      true}" i18>Allgemeine Geschäftsbedingungen </a>
+  <div class="row">
+      <div class="col">
+          <h2 i18n>Bestellung Nagelplatten</h2>
+          <a href='#/agb/agb_nagelplatten' routerLinkActive="active-link" [routerLinkActiveOptions]="{exact:
+            true}" i18n>Allgemeine Geschäftsbedingungen </a>
+      </div>
+      <div class="col col-lg-2 col-xl-2">
+          <img src="https://bilder.wolfsystem.at/wolflogo.png" width="160" alt="Wolf_Logo">
+      </div>
+    </div>
     <br>
-    <br>
-    <!--<h4 i18n>Artikelauswahl</h4>
+     <!--<h4 i18n>Artikelauswahl</h4>
     <ng-container i18n>Wählen Sie einen Nagelplattentyp aus, und tragen Sie die Bestellmenge ein. Rabatt nach Bestellmenge pro Auftrag:</ng-container>-->
     <div class="line_height"></div>
     <div class="row_header">
@@ -112,7 +118,7 @@
                                       <div class="row">
                                         <div class="artWidth col-sm-3 col-lg-3 col-xl-3">
                                           <span>
-                                            <input type="number" class="no-spin" pattern=[0-9] name='name' [(ngModel)]="n.Stk" (change)="addToCart(name.value, in, n.PKArtikelID, t.npShopTypID)"
+                                            <input type="number" class="input-no-spinner input-fix-mousewheel1" pattern=[0-9] name='name' [(ngModel)]="n.Stk" (change)="addToCart(name.value, in, n.PKArtikelID, t.npShopTypID)"
                                               #name>
                                             <div *ngIf="n.ME > 1;then karton else stueck"></div>
                                           </span>
@@ -194,7 +200,7 @@
                                     <div class="row">
                                       <div class="artWidth col-sm-3 col-lg-3 col-xl-3">
                                         <span>
-                                          <input type="number" class="no-spin" pattern=[0-9] name='name' [(ngModel)]="n.Stk" (change)="addToCart(name.value, in, n.PKArtikelID, t.npShopTypID)"
+                                          <input type="number" step="0" min="0" class="no-spin" pattern=[0-9] name='name' [(ngModel)]="n.Stk" (change)="addToCart(name.value, in, n.PKArtikelID, t.npShopTypID)"
                                             #name>
                                           <div *ngIf="n.ME > 1;then karton else stueck"></div>
                                         </span>
@@ -424,6 +430,7 @@
           </div>
         </div>
         <div class="modal-footer">
+            <span i18n>* Pflichtfelder</span>
           <button type="button" class="btn btn-secondary" data-dismiss="modal">
             <ng-container i18n>Abbrechen</ng-container>
           </button>
@@ -481,6 +488,34 @@
       </div>
     </div>
   </div>
+  <script>
+  $('.input-fix-mousewheel1').on('focus', function (e) {
+  $(this).on('mousewheel.disableScroll', function (e) {
+    e.preventDefault();
+  })
+}).on('blur', function (e) {
+  $(this).off('mousewheel.disableScroll')
+});</script>
+<script>
+    jQuery(function($) {
+    function fixDiv() {
+      var $cache = $('#getFixed');
+      if ($(window).scrollTop() > 100)
+        $cache.css({
+          'position': 'fixed',
+          'top': '10px'
+        });
+      else
+        $cache.css({
+          'position': 'relative',
+          'top': 'auto'
+        });
+    }
+    $(window).scroll(fixDiv);
+    fixDiv();
+  });
+    </script>
   <!-- Nagelplatten Bestellformular ENDE -->
   <router-outlet></router-outlet>
   <!-- ENDE -->
+  

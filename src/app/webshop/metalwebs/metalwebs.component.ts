@@ -89,7 +89,11 @@ land: Laenderliste[] = [];
          if(this.nagelplatten[i].PKArtikelID == artnr) {
           for (let i = 0; i < this.warenkorb.length; i++) {
             if(this.warenkorb[i].Stk == stk && this.warenkorb[i].PKArtikelID == artnr) {
-              this.warenkorb.splice(i, 1);
+              // this.warenkorb.splice(a, 1);
+           this.calcSumme();
+           this.calczwischensumme();
+           this.checkBasket();
+           return;
             }
            
           }
@@ -104,11 +108,29 @@ land: Laenderliste[] = [];
           this.calczwischensumme();
   }
 
-  deleteEntry(index) {
-      this.warenkorb.splice(index , 1);
-      this.calcSumme();
-      this.calczwischensumme();
+   checkBasket() {
+    for(let i = 0; i < this.warenkorb.length; i++) {
+      if(this.warenkorb[i].Gesamt == 0) {
+        this.warenkorb.splice(i, 1);
       }
+    }
+  }
+
+  deleteEntry(index, artnr) {
+    for (let i = 0; i < this.warenkorb.length; i++) {
+      if (this.warenkorb[i].PKArtikelID == artnr) {
+        for (let a = 0; a < this.nagelplatten.length; a++) {
+          if (this.nagelplatten[a].PKArtikelID == artnr) {
+           this.nagelplatten[a].Stk = null;
+          }
+        }
+
+      }
+    }
+    this.warenkorb.splice(index, 1);
+    this.calcSumme();
+    this.calczwischensumme();
+  }
 
   calcSumme() {
     var basketSumme = 0;
@@ -281,7 +303,7 @@ land: Laenderliste[] = [];
 
 
   clearAll() {
-    window.location.href = "/onlineshopNP/" + this.sprache + "/metalwebs";
+    window.location.href = "/" + this.sprache + "/#/metalwebs";
   }
 
   scroll(el) {

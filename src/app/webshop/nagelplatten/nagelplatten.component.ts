@@ -110,7 +110,11 @@ getAnrede(sprache) {
       if (this.nagelplatten[i].PKArtikelID == artnr) {
         for (let a = 0; a < this.warenkorb.length; a++) {
           if (this.warenkorb[a].Stk == stk && this.warenkorb[a].PKArtikelID == artnr) {
-            this.warenkorb.splice(a, 1);
+           // this.warenkorb.splice(a, 1);
+           this.calcSumme();
+           this.calczwischensumme();
+           this.checkBasket();
+           return;
           }
         }
         this.warenkorb.push(this.nagelplatten[i]);
@@ -311,7 +315,7 @@ getAnrede(sprache) {
 
 
   clearAll() {
-    window.location.href = "/onlineshopNP/" + this.sprache;
+    window.location.href = "/" + this.sprache;
   }
 
   toAncher(el) {

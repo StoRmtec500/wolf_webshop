@@ -187,57 +187,261 @@
           <context context-type="linenumber">26</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="a583219a4758b0b56503cde5770e26ab3c704930" datatype="html">
-        <source>Typ</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/webshop/metalwebs/metalwebs.component.ts</context>
-          <context context-type="linenumber">53</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/webshop/metalwebs/metalwebs.component.ts</context>
-          <context context-type="linenumber">139</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/webshop/nagelplatten/nagelplatten.component.ts</context>
-          <context context-type="linenumber">64</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/webshop/nagelplatten/nagelplatten.component.ts</context>
-          <context context-type="linenumber">144</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/webshop/nagelplatten/nagelplatten.component.ts</context>
-          <context context-type="linenumber">233</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/webshop/binderwinkel/binderwinkel.component.ts</context>
-          <context context-type="linenumber">53</context>
-        </context-group>
-      </trans-unit>
       <trans-unit id="3fb7b4231f4d6650044e3cf728c6a43455f029eb" datatype="html">
         <source>Zulassungsnummer: ETA 07/0032</source>
         <context-group purpose="location">
           <context context-type="sourcefile">app/webshop/metalwebs/metalwebs.component.ts</context>
-          <context context-type="linenumber">78</context>
+          <context context-type="linenumber">69</context>
         </context-group>
       </trans-unit>
       <trans-unit id="41ce20d49a5e84d66a6bd5bc81e79ee6f46d14eb" datatype="html">
         <source>Übernehmen und Warenkorb berechnen</source>
         <context-group purpose="location">
           <context context-type="sourcefile">app/webshop/metalwebs/metalwebs.component.ts</context>
+          <context context-type="linenumber">72</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/webshop/nagelplatten/nagelplatten.component.ts</context>
+          <context context-type="linenumber">100</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/webshop/nagelplatten/nagelplatten.component.ts</context>
+          <context context-type="linenumber">132</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/webshop/nagelplatten/nagelplatten.component.ts</context>
+          <context context-type="linenumber">182</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/webshop/nagelplatten/nagelplatten.component.ts</context>
+          <context context-type="linenumber">214</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/webshop/binderwinkel/binderwinkel.component.ts</context>
+          <context context-type="linenumber">72</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="77134c293828bbe6d663d26f75252663f46c7ca4" datatype="html">
+        <source>Menge</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/webshop/metalwebs/metalwebs.component.ts</context>
+          <context context-type="linenumber">75</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/webshop/metalwebs/metalwebs.component.ts</context>
+          <context context-type="linenumber">128</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/webshop/nagelplatten/nagelplatten.component.ts</context>
+          <context context-type="linenumber">103</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/webshop/nagelplatten/nagelplatten.component.ts</context>
+          <context context-type="linenumber">185</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/webshop/nagelplatten/nagelplatten.component.ts</context>
+          <context context-type="linenumber">243</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/webshop/binderwinkel/binderwinkel.component.ts</context>
+          <context context-type="linenumber">75</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/webshop/binderwinkel/binderwinkel.component.ts</context>
+          <context context-type="linenumber">126</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="140b9e88b1c30ec4584cc101780176673afa8830" datatype="html">
+        <source>Art.Nr.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/webshop/metalwebs/metalwebs.component.ts</context>
+          <context context-type="linenumber">76</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/webshop/metalwebs/metalwebs.component.ts</context>
+          <context context-type="linenumber">129</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/webshop/nagelplatten/nagelplatten.component.ts</context>
+          <context context-type="linenumber">104</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/webshop/nagelplatten/nagelplatten.component.ts</context>
+          <context context-type="linenumber">186</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/webshop/nagelplatten/nagelplatten.component.ts</context>
+          <context context-type="linenumber">244</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/webshop/binderwinkel/binderwinkel.component.ts</context>
+          <context context-type="linenumber">76</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/webshop/binderwinkel/binderwinkel.component.ts</context>
+          <context context-type="linenumber">127</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ef623008673bd2f0a928de8947d89e195d4bb081" datatype="html">
+        <source>Bezeichnung</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/webshop/metalwebs/metalwebs.component.ts</context>
+          <context context-type="linenumber">77</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/webshop/binderwinkel/binderwinkel.component.ts</context>
+          <context context-type="linenumber">77</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/webshop/binderwinkel/binderwinkel.component.ts</context>
+          <context context-type="linenumber">128</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="dcb6087f2bc7be153fb6d23139c60b2c5f096ba4" datatype="html">
+        <source>Größe</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/webshop/metalwebs/metalwebs.component.ts</context>
+          <context context-type="linenumber">78</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/webshop/metalwebs/metalwebs.component.ts</context>
+          <context context-type="linenumber">131</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/webshop/nagelplatten/nagelplatten.component.ts</context>
+          <context context-type="linenumber">105</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/webshop/nagelplatten/nagelplatten.component.ts</context>
+          <context context-type="linenumber">187</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/webshop/nagelplatten/nagelplatten.component.ts</context>
+          <context context-type="linenumber">246</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ce19b9051f3826ac10ca15fecd0832d13cdaec6e" datatype="html">
+        <source>kg/ME</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/webshop/metalwebs/metalwebs.component.ts</context>
+          <context context-type="linenumber">79</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/webshop/metalwebs/metalwebs.component.ts</context>
+          <context context-type="linenumber">132</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/webshop/nagelplatten/nagelplatten.component.ts</context>
+          <context context-type="linenumber">106</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/webshop/nagelplatten/nagelplatten.component.ts</context>
+          <context context-type="linenumber">188</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/webshop/nagelplatten/nagelplatten.component.ts</context>
+          <context context-type="linenumber">247</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/webshop/binderwinkel/binderwinkel.component.ts</context>
+          <context context-type="linenumber">78</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/webshop/binderwinkel/binderwinkel.component.ts</context>
+          <context context-type="linenumber">129</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="0f0df8dc3a93e93b749dd1a4ae2d1df303ac3044" datatype="html">
+        <source>ME</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/webshop/metalwebs/metalwebs.component.ts</context>
+          <context context-type="linenumber">80</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/webshop/metalwebs/metalwebs.component.ts</context>
+          <context context-type="linenumber">133</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/webshop/nagelplatten/nagelplatten.component.ts</context>
+          <context context-type="linenumber">107</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/webshop/nagelplatten/nagelplatten.component.ts</context>
+          <context context-type="linenumber">189</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/webshop/nagelplatten/nagelplatten.component.ts</context>
+          <context context-type="linenumber">248</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/webshop/binderwinkel/binderwinkel.component.ts</context>
+          <context context-type="linenumber">79</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/webshop/binderwinkel/binderwinkel.component.ts</context>
+          <context context-type="linenumber">130</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="c6c595c9e340e9b069eaa62b4f8255d103f5dd18" datatype="html">
+        <source>Preis/ME</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/webshop/metalwebs/metalwebs.component.ts</context>
           <context context-type="linenumber">81</context>
         </context-group>
         <context-group purpose="location">
-          <context context-type="sourcefile">app/webshop/nagelplatten/nagelplatten.component.ts</context>
-          <context context-type="linenumber">90</context>
+          <context context-type="sourcefile">app/webshop/metalwebs/metalwebs.component.ts</context>
+          <context context-type="linenumber">134</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">app/webshop/nagelplatten/nagelplatten.component.ts</context>
-          <context context-type="linenumber">122</context>
+          <context context-type="linenumber">108</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">app/webshop/nagelplatten/nagelplatten.component.ts</context>
-          <context context-type="linenumber">170</context>
+          <context context-type="linenumber">190</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/webshop/nagelplatten/nagelplatten.component.ts</context>
+          <context context-type="linenumber">249</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/webshop/binderwinkel/binderwinkel.component.ts</context>
+          <context context-type="linenumber">80</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/webshop/binderwinkel/binderwinkel.component.ts</context>
+          <context context-type="linenumber">131</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="0bc1c442b67308a839045f0a16f98c0df27a7e4f" datatype="html">
+        <source> Karton</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/webshop/metalwebs/metalwebs.component.ts</context>
+          <context context-type="linenumber">87</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/webshop/nagelplatten/nagelplatten.component.ts</context>
+          <context context-type="linenumber">119</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/webshop/nagelplatten/nagelplatten.component.ts</context>
+          <context context-type="linenumber">201</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/webshop/binderwinkel/binderwinkel.component.ts</context>
+          <context context-type="linenumber">86</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="01e4917d92a1a685dc2d655d0f8eba9ea850ca8d" datatype="html">
+        <source> Stück</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/webshop/metalwebs/metalwebs.component.ts</context>
+          <context context-type="linenumber">88</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/webshop/nagelplatten/nagelplatten.component.ts</context>
+          <context context-type="linenumber">120</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">app/webshop/nagelplatten/nagelplatten.component.ts</context>
@@ -245,238 +449,7 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">app/webshop/binderwinkel/binderwinkel.component.ts</context>
-          <context context-type="linenumber">81</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="77134c293828bbe6d663d26f75252663f46c7ca4" datatype="html">
-        <source>Menge</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/webshop/metalwebs/metalwebs.component.ts</context>
-          <context context-type="linenumber">84</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/webshop/metalwebs/metalwebs.component.ts</context>
-          <context context-type="linenumber">137</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/webshop/nagelplatten/nagelplatten.component.ts</context>
-          <context context-type="linenumber">93</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/webshop/nagelplatten/nagelplatten.component.ts</context>
-          <context context-type="linenumber">173</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/webshop/nagelplatten/nagelplatten.component.ts</context>
-          <context context-type="linenumber">231</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/webshop/binderwinkel/binderwinkel.component.ts</context>
-          <context context-type="linenumber">84</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/webshop/binderwinkel/binderwinkel.component.ts</context>
-          <context context-type="linenumber">135</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="140b9e88b1c30ec4584cc101780176673afa8830" datatype="html">
-        <source>Art.Nr.</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/webshop/metalwebs/metalwebs.component.ts</context>
-          <context context-type="linenumber">85</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/webshop/metalwebs/metalwebs.component.ts</context>
-          <context context-type="linenumber">138</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/webshop/nagelplatten/nagelplatten.component.ts</context>
-          <context context-type="linenumber">94</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/webshop/nagelplatten/nagelplatten.component.ts</context>
-          <context context-type="linenumber">174</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/webshop/nagelplatten/nagelplatten.component.ts</context>
-          <context context-type="linenumber">232</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/webshop/binderwinkel/binderwinkel.component.ts</context>
-          <context context-type="linenumber">85</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/webshop/binderwinkel/binderwinkel.component.ts</context>
-          <context context-type="linenumber">136</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="ef623008673bd2f0a928de8947d89e195d4bb081" datatype="html">
-        <source>Bezeichnung</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/webshop/metalwebs/metalwebs.component.ts</context>
-          <context context-type="linenumber">86</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/webshop/binderwinkel/binderwinkel.component.ts</context>
-          <context context-type="linenumber">86</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/webshop/binderwinkel/binderwinkel.component.ts</context>
-          <context context-type="linenumber">137</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="dcb6087f2bc7be153fb6d23139c60b2c5f096ba4" datatype="html">
-        <source>Größe</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/webshop/metalwebs/metalwebs.component.ts</context>
           <context context-type="linenumber">87</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/webshop/metalwebs/metalwebs.component.ts</context>
-          <context context-type="linenumber">140</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/webshop/nagelplatten/nagelplatten.component.ts</context>
-          <context context-type="linenumber">95</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/webshop/nagelplatten/nagelplatten.component.ts</context>
-          <context context-type="linenumber">175</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/webshop/nagelplatten/nagelplatten.component.ts</context>
-          <context context-type="linenumber">234</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="ce19b9051f3826ac10ca15fecd0832d13cdaec6e" datatype="html">
-        <source>kg/ME</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/webshop/metalwebs/metalwebs.component.ts</context>
-          <context context-type="linenumber">88</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/webshop/metalwebs/metalwebs.component.ts</context>
-          <context context-type="linenumber">141</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/webshop/nagelplatten/nagelplatten.component.ts</context>
-          <context context-type="linenumber">96</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/webshop/nagelplatten/nagelplatten.component.ts</context>
-          <context context-type="linenumber">176</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/webshop/nagelplatten/nagelplatten.component.ts</context>
-          <context context-type="linenumber">235</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/webshop/binderwinkel/binderwinkel.component.ts</context>
-          <context context-type="linenumber">87</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/webshop/binderwinkel/binderwinkel.component.ts</context>
-          <context context-type="linenumber">138</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="0f0df8dc3a93e93b749dd1a4ae2d1df303ac3044" datatype="html">
-        <source>ME</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/webshop/metalwebs/metalwebs.component.ts</context>
-          <context context-type="linenumber">89</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/webshop/metalwebs/metalwebs.component.ts</context>
-          <context context-type="linenumber">142</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/webshop/nagelplatten/nagelplatten.component.ts</context>
-          <context context-type="linenumber">97</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/webshop/nagelplatten/nagelplatten.component.ts</context>
-          <context context-type="linenumber">177</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/webshop/nagelplatten/nagelplatten.component.ts</context>
-          <context context-type="linenumber">236</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/webshop/binderwinkel/binderwinkel.component.ts</context>
-          <context context-type="linenumber">88</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/webshop/binderwinkel/binderwinkel.component.ts</context>
-          <context context-type="linenumber">139</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="c6c595c9e340e9b069eaa62b4f8255d103f5dd18" datatype="html">
-        <source>Preis/ME</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/webshop/metalwebs/metalwebs.component.ts</context>
-          <context context-type="linenumber">90</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/webshop/metalwebs/metalwebs.component.ts</context>
-          <context context-type="linenumber">143</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/webshop/nagelplatten/nagelplatten.component.ts</context>
-          <context context-type="linenumber">98</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/webshop/nagelplatten/nagelplatten.component.ts</context>
-          <context context-type="linenumber">178</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/webshop/nagelplatten/nagelplatten.component.ts</context>
-          <context context-type="linenumber">237</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/webshop/binderwinkel/binderwinkel.component.ts</context>
-          <context context-type="linenumber">89</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/webshop/binderwinkel/binderwinkel.component.ts</context>
-          <context context-type="linenumber">140</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="0bc1c442b67308a839045f0a16f98c0df27a7e4f" datatype="html">
-        <source> Karton</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/webshop/metalwebs/metalwebs.component.ts</context>
-          <context context-type="linenumber">96</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/webshop/nagelplatten/nagelplatten.component.ts</context>
-          <context context-type="linenumber">109</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/webshop/nagelplatten/nagelplatten.component.ts</context>
-          <context context-type="linenumber">189</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/webshop/binderwinkel/binderwinkel.component.ts</context>
-          <context context-type="linenumber">95</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="01e4917d92a1a685dc2d655d0f8eba9ea850ca8d" datatype="html">
-        <source> Stück</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/webshop/metalwebs/metalwebs.component.ts</context>
-          <context context-type="linenumber">97</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/webshop/nagelplatten/nagelplatten.component.ts</context>
-          <context context-type="linenumber">110</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/webshop/nagelplatten/nagelplatten.component.ts</context>
-          <context context-type="linenumber">190</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/webshop/binderwinkel/binderwinkel.component.ts</context>
-          <context context-type="linenumber">96</context>
         </context-group>
       </trans-unit>
       <trans-unit id="4f94c6ea0f9125b2a23ce5846ee31578fda7df5f" datatype="html">
@@ -492,206 +465,175 @@
             </source>
         <context-group purpose="location">
           <context context-type="sourcefile">app/webshop/metalwebs/metalwebs.component.ts</context>
+          <context context-type="linenumber">121</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/webshop/nagelplatten/nagelplatten.component.ts</context>
+          <context context-type="linenumber">237</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="a583219a4758b0b56503cde5770e26ab3c704930" datatype="html">
+        <source>Typ</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/webshop/metalwebs/metalwebs.component.ts</context>
           <context context-type="linenumber">130</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">app/webshop/nagelplatten/nagelplatten.component.ts</context>
-          <context context-type="linenumber">225</context>
+          <context context-type="linenumber">64</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/webshop/nagelplatten/nagelplatten.component.ts</context>
+          <context context-type="linenumber">154</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/webshop/nagelplatten/nagelplatten.component.ts</context>
+          <context context-type="linenumber">245</context>
         </context-group>
       </trans-unit>
       <trans-unit id="0c14672fc3c6df0127dcbf5ec7bc8ad2979c63e4" datatype="html">
         <source>Gesamt €</source>
         <context-group purpose="location">
           <context context-type="sourcefile">app/webshop/metalwebs/metalwebs.component.ts</context>
-          <context context-type="linenumber">144</context>
+          <context context-type="linenumber">135</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">app/webshop/nagelplatten/nagelplatten.component.ts</context>
-          <context context-type="linenumber">238</context>
+          <context context-type="linenumber">250</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">app/webshop/binderwinkel/binderwinkel.component.ts</context>
-          <context context-type="linenumber">141</context>
+          <context context-type="linenumber">132</context>
         </context-group>
       </trans-unit>
       <trans-unit id="a00a77cd042108ba88e80f3f425103a6be33a45b" datatype="html">
         <source>Karton</source>
         <context-group purpose="location">
           <context context-type="sourcefile">app/webshop/metalwebs/metalwebs.component.ts</context>
-          <context context-type="linenumber">153</context>
+          <context context-type="linenumber">144</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">app/webshop/nagelplatten/nagelplatten.component.ts</context>
-          <context context-type="linenumber">252</context>
+          <context context-type="linenumber">264</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">app/webshop/binderwinkel/binderwinkel.component.ts</context>
-          <context context-type="linenumber">150</context>
+          <context context-type="linenumber">141</context>
         </context-group>
       </trans-unit>
       <trans-unit id="6ada4473c92d116603c91027d15e0ccf388f985d" datatype="html">
         <source>Stück </source>
         <context-group purpose="location">
           <context context-type="sourcefile">app/webshop/metalwebs/metalwebs.component.ts</context>
-          <context context-type="linenumber">154</context>
+          <context context-type="linenumber">145</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">app/webshop/binderwinkel/binderwinkel.component.ts</context>
-          <context context-type="linenumber">151</context>
+          <context context-type="linenumber">142</context>
         </context-group>
       </trans-unit>
       <trans-unit id="94ec529ffd5e11df627ed6124712f820e2ccd974" datatype="html">
         <source>Zwischensumme</source>
         <context-group purpose="location">
           <context context-type="sourcefile">app/webshop/metalwebs/metalwebs.component.ts</context>
-          <context context-type="linenumber">175</context>
+          <context context-type="linenumber">166</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">app/webshop/nagelplatten/nagelplatten.component.ts</context>
-          <context context-type="linenumber">278</context>
+          <context context-type="linenumber">290</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">app/webshop/binderwinkel/binderwinkel.component.ts</context>
-          <context context-type="linenumber">171</context>
+          <context context-type="linenumber">162</context>
         </context-group>
       </trans-unit>
       <trans-unit id="2363ca5ef46676814627a090afeeb1f4f4e7d428" datatype="html">
         <source>% Mengenrabatt (ab</source>
         <context-group purpose="location">
           <context context-type="sourcefile">app/webshop/metalwebs/metalwebs.component.ts</context>
-          <context context-type="linenumber">183</context>
+          <context context-type="linenumber">174</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">app/webshop/nagelplatten/nagelplatten.component.ts</context>
-          <context context-type="linenumber">286</context>
+          <context context-type="linenumber">298</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">app/webshop/binderwinkel/binderwinkel.component.ts</context>
-          <context context-type="linenumber">179</context>
+          <context context-type="linenumber">170</context>
         </context-group>
       </trans-unit>
       <trans-unit id="4e95a3e8fa70c2c094dae01d1de83d859f03fbca" datatype="html">
         <source>Bestellsumme in Euro</source>
         <context-group purpose="location">
           <context context-type="sourcefile">app/webshop/metalwebs/metalwebs.component.ts</context>
-          <context context-type="linenumber">194</context>
+          <context context-type="linenumber">185</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">app/webshop/nagelplatten/nagelplatten.component.ts</context>
-          <context context-type="linenumber">297</context>
+          <context context-type="linenumber">309</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">app/webshop/binderwinkel/binderwinkel.component.ts</context>
-          <context context-type="linenumber">190</context>
+          <context context-type="linenumber">181</context>
         </context-group>
       </trans-unit>
       <trans-unit id="2fbb9000f95c8ee7f86039f2b0ac2d4b77c77ead" datatype="html">
         <source>(Gesamtgewicht</source>
         <context-group purpose="location">
           <context context-type="sourcefile">app/webshop/metalwebs/metalwebs.component.ts</context>
-          <context context-type="linenumber">196</context>
+          <context context-type="linenumber">187</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">app/webshop/nagelplatten/nagelplatten.component.ts</context>
-          <context context-type="linenumber">299</context>
+          <context context-type="linenumber">311</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">app/webshop/binderwinkel/binderwinkel.component.ts</context>
-          <context context-type="linenumber">192</context>
+          <context context-type="linenumber">183</context>
         </context-group>
       </trans-unit>
       <trans-unit id="22fd3b2ecacd00c908d4a4c0ac5bb2c73dc87147" datatype="html">
         <source>Kundendaten eingeben &amp; bestellen</source>
         <context-group purpose="location">
           <context context-type="sourcefile">app/webshop/metalwebs/metalwebs.component.ts</context>
-          <context context-type="linenumber">202</context>
+          <context context-type="linenumber">193</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">app/webshop/nagelplatten/nagelplatten.component.ts</context>
-          <context context-type="linenumber">305</context>
+          <context context-type="linenumber">317</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">app/webshop/binderwinkel/binderwinkel.component.ts</context>
-          <context context-type="linenumber">198</context>
+          <context context-type="linenumber">189</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="766a9dff22798101b247f099badd700782f47e3c" datatype="html">
-        <source>Nagelplatten Bestellformular</source>
+      <trans-unit id="c7351d29d1631d287c93e6ce2498029a65902ddb" datatype="html">
+        <source>Metal Webs Bestellformular</source>
         <context-group purpose="location">
           <context context-type="sourcefile">app/webshop/metalwebs/metalwebs.component.ts</context>
-          <context context-type="linenumber">218</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/webshop/metalwebs/metalwebs.component.ts</context>
-          <context context-type="linenumber">343</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/webshop/nagelplatten/nagelplatten.component.ts</context>
-          <context context-type="linenumber">321</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/webshop/nagelplatten/nagelplatten.component.ts</context>
-          <context context-type="linenumber">446</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/webshop/binderwinkel/binderwinkel.component.ts</context>
-          <context context-type="linenumber">214</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/webshop/binderwinkel/binderwinkel.component.ts</context>
-          <context context-type="linenumber">339</context>
+          <context context-type="linenumber">209</context>
         </context-group>
       </trans-unit>
       <trans-unit id="349958690466fa73690f410243efcdbf4cbb55fb" datatype="html">
         <source>Anrede</source>
         <context-group purpose="location">
           <context context-type="sourcefile">app/webshop/metalwebs/metalwebs.component.ts</context>
-          <context context-type="linenumber">229</context>
+          <context context-type="linenumber">220</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">app/webshop/nagelplatten/nagelplatten.component.ts</context>
-          <context context-type="linenumber">332</context>
+          <context context-type="linenumber">344</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">app/webshop/binderwinkel/binderwinkel.component.ts</context>
-          <context context-type="linenumber">225</context>
+          <context context-type="linenumber">216</context>
         </context-group>
       </trans-unit>
       <trans-unit id="a236401305fa334e3256b469befc454313201296" datatype="html">
         <source>eMail</source>
         <context-group purpose="location">
           <context context-type="sourcefile">app/webshop/metalwebs/metalwebs.component.ts</context>
-          <context context-type="linenumber">238</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/webshop/nagelplatten/nagelplatten.component.ts</context>
-          <context context-type="linenumber">341</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/webshop/binderwinkel/binderwinkel.component.ts</context>
-          <context context-type="linenumber">234</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="d6507e7b5ae51f1734f3e169ef4cf6ef56f0001f" datatype="html">
-        <source>Vorname</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/webshop/metalwebs/metalwebs.component.ts</context>
-          <context context-type="linenumber">245</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/webshop/nagelplatten/nagelplatten.component.ts</context>
-          <context context-type="linenumber">348</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/webshop/binderwinkel/binderwinkel.component.ts</context>
-          <context context-type="linenumber">241</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="074a550816cde9894e6c6d3bafcbc7be199f059b" datatype="html">
-        <source>Nachname</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/webshop/metalwebs/metalwebs.component.ts</context>
-          <context context-type="linenumber">250</context>
+          <context context-type="linenumber">229</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">app/webshop/nagelplatten/nagelplatten.component.ts</context>
@@ -699,14 +641,14 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">app/webshop/binderwinkel/binderwinkel.component.ts</context>
-          <context context-type="linenumber">246</context>
+          <context context-type="linenumber">225</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="2d585ceb745c52cf8f2e9e4192b5c97a685c24fe" datatype="html">
-        <source>Firma</source>
+      <trans-unit id="d6507e7b5ae51f1734f3e169ef4cf6ef56f0001f" datatype="html">
+        <source>Vorname</source>
         <context-group purpose="location">
           <context context-type="sourcefile">app/webshop/metalwebs/metalwebs.component.ts</context>
-          <context context-type="linenumber">257</context>
+          <context context-type="linenumber">236</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">app/webshop/nagelplatten/nagelplatten.component.ts</context>
@@ -714,14 +656,14 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">app/webshop/binderwinkel/binderwinkel.component.ts</context>
-          <context context-type="linenumber">253</context>
+          <context context-type="linenumber">232</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="5de99bb0cc963bbbd0e375f53b640a2bedf9b681" datatype="html">
-        <source>Straße</source>
+      <trans-unit id="074a550816cde9894e6c6d3bafcbc7be199f059b" datatype="html">
+        <source>Nachname</source>
         <context-group purpose="location">
           <context context-type="sourcefile">app/webshop/metalwebs/metalwebs.component.ts</context>
-          <context context-type="linenumber">262</context>
+          <context context-type="linenumber">241</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">app/webshop/nagelplatten/nagelplatten.component.ts</context>
@@ -729,14 +671,14 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">app/webshop/binderwinkel/binderwinkel.component.ts</context>
-          <context context-type="linenumber">258</context>
+          <context context-type="linenumber">237</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="ed37dcd55787de115dbd112d42f48aee50527f28" datatype="html">
-        <source>PLZ</source>
+      <trans-unit id="2d585ceb745c52cf8f2e9e4192b5c97a685c24fe" datatype="html">
+        <source>Firma</source>
         <context-group purpose="location">
           <context context-type="sourcefile">app/webshop/metalwebs/metalwebs.component.ts</context>
-          <context context-type="linenumber">269</context>
+          <context context-type="linenumber">248</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">app/webshop/nagelplatten/nagelplatten.component.ts</context>
@@ -744,14 +686,14 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">app/webshop/binderwinkel/binderwinkel.component.ts</context>
-          <context context-type="linenumber">265</context>
+          <context context-type="linenumber">244</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="21c7f50a98ed6ee10bbea74803213979b9c6cb66" datatype="html">
-        <source>Ort</source>
+      <trans-unit id="5de99bb0cc963bbbd0e375f53b640a2bedf9b681" datatype="html">
+        <source>Straße</source>
         <context-group purpose="location">
           <context context-type="sourcefile">app/webshop/metalwebs/metalwebs.component.ts</context>
-          <context context-type="linenumber">274</context>
+          <context context-type="linenumber">253</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">app/webshop/nagelplatten/nagelplatten.component.ts</context>
@@ -759,63 +701,108 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">app/webshop/binderwinkel/binderwinkel.component.ts</context>
-          <context context-type="linenumber">270</context>
+          <context context-type="linenumber">249</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ed37dcd55787de115dbd112d42f48aee50527f28" datatype="html">
+        <source>PLZ</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/webshop/metalwebs/metalwebs.component.ts</context>
+          <context context-type="linenumber">260</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/webshop/nagelplatten/nagelplatten.component.ts</context>
+          <context context-type="linenumber">384</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/webshop/binderwinkel/binderwinkel.component.ts</context>
+          <context context-type="linenumber">256</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="21c7f50a98ed6ee10bbea74803213979b9c6cb66" datatype="html">
+        <source>Ort</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/webshop/metalwebs/metalwebs.component.ts</context>
+          <context context-type="linenumber">265</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/webshop/nagelplatten/nagelplatten.component.ts</context>
+          <context context-type="linenumber">389</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/webshop/binderwinkel/binderwinkel.component.ts</context>
+          <context context-type="linenumber">261</context>
         </context-group>
       </trans-unit>
       <trans-unit id="7584280252b97acbb03011f8ad00bf1546c1509f" datatype="html">
         <source>Land</source>
         <context-group purpose="location">
           <context context-type="sourcefile">app/webshop/metalwebs/metalwebs.component.ts</context>
-          <context context-type="linenumber">279</context>
+          <context context-type="linenumber">270</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">app/webshop/nagelplatten/nagelplatten.component.ts</context>
-          <context context-type="linenumber">382</context>
+          <context context-type="linenumber">394</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">app/webshop/binderwinkel/binderwinkel.component.ts</context>
-          <context context-type="linenumber">275</context>
+          <context context-type="linenumber">266</context>
         </context-group>
       </trans-unit>
       <trans-unit id="cbbc5fc52b2dbad2f6313f78cd491475b7df01a9" datatype="html">
         <source>Telefon</source>
         <context-group purpose="location">
           <context context-type="sourcefile">app/webshop/metalwebs/metalwebs.component.ts</context>
-          <context context-type="linenumber">290</context>
+          <context context-type="linenumber">281</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">app/webshop/nagelplatten/nagelplatten.component.ts</context>
-          <context context-type="linenumber">393</context>
+          <context context-type="linenumber">405</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">app/webshop/binderwinkel/binderwinkel.component.ts</context>
-          <context context-type="linenumber">286</context>
+          <context context-type="linenumber">277</context>
         </context-group>
       </trans-unit>
       <trans-unit id="84ba8a255b59415785f39ecd60bb66769f800a97" datatype="html">
         <source>gewünschter Liefertermin</source>
         <context-group purpose="location">
           <context context-type="sourcefile">app/webshop/metalwebs/metalwebs.component.ts</context>
-          <context context-type="linenumber">295</context>
+          <context context-type="linenumber">286</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">app/webshop/nagelplatten/nagelplatten.component.ts</context>
-          <context context-type="linenumber">398</context>
+          <context context-type="linenumber">410</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">app/webshop/binderwinkel/binderwinkel.component.ts</context>
-          <context context-type="linenumber">291</context>
+          <context context-type="linenumber">282</context>
         </context-group>
       </trans-unit>
       <trans-unit id="548f9212c76c87feda3601349622b8a40a55fe8e" datatype="html">
         <source>Bemerkung</source>
         <context-group purpose="location">
           <context context-type="sourcefile">app/webshop/metalwebs/metalwebs.component.ts</context>
+          <context context-type="linenumber">294</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/webshop/nagelplatten/nagelplatten.component.ts</context>
+          <context context-type="linenumber">418</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/webshop/binderwinkel/binderwinkel.component.ts</context>
+          <context context-type="linenumber">290</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="bcc3892bb8ae66c6917a3518e8a38e9362c6e726" datatype="html">
+        <source>* Pflichtfelder</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/webshop/metalwebs/metalwebs.component.ts</context>
           <context context-type="linenumber">303</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">app/webshop/nagelplatten/nagelplatten.component.ts</context>
-          <context context-type="linenumber">406</context>
+          <context context-type="linenumber">427</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">app/webshop/binderwinkel/binderwinkel.component.ts</context>
@@ -826,52 +813,22 @@
         <source>Abbrechen</source>
         <context-group purpose="location">
           <context context-type="sourcefile">app/webshop/metalwebs/metalwebs.component.ts</context>
-          <context context-type="linenumber">313</context>
+          <context context-type="linenumber">305</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">app/webshop/nagelplatten/nagelplatten.component.ts</context>
-          <context context-type="linenumber">416</context>
+          <context context-type="linenumber">429</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">app/webshop/binderwinkel/binderwinkel.component.ts</context>
-          <context context-type="linenumber">309</context>
+          <context context-type="linenumber">301</context>
         </context-group>
       </trans-unit>
       <trans-unit id="f504721f06d60b5f234278f84ffeb23086f292ba" datatype="html">
         <source>Absenden</source>
         <context-group purpose="location">
           <context context-type="sourcefile">app/webshop/metalwebs/metalwebs.component.ts</context>
-          <context context-type="linenumber">316</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/webshop/nagelplatten/nagelplatten.component.ts</context>
-          <context context-type="linenumber">419</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/webshop/binderwinkel/binderwinkel.component.ts</context>
-          <context context-type="linenumber">312</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="e7a616084cd471d01c82dc63c30cce9ea673226a" datatype="html">
-        <source>Herzlichen Dank für Ihre Bestellung</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/webshop/metalwebs/metalwebs.component.ts</context>
-          <context context-type="linenumber">322</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/webshop/nagelplatten/nagelplatten.component.ts</context>
-          <context context-type="linenumber">425</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/webshop/binderwinkel/binderwinkel.component.ts</context>
-          <context context-type="linenumber">318</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="124920d01e98dd5a1c98d50f8c61c9f2da67cb32" datatype="html">
-        <source>Die Bestellung wurde erfolgreich gespeichert !</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/webshop/metalwebs/metalwebs.component.ts</context>
-          <context context-type="linenumber">329</context>
+          <context context-type="linenumber">308</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">app/webshop/nagelplatten/nagelplatten.component.ts</context>
@@ -879,49 +836,98 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">app/webshop/binderwinkel/binderwinkel.component.ts</context>
-          <context context-type="linenumber">325</context>
+          <context context-type="linenumber">304</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="e7a616084cd471d01c82dc63c30cce9ea673226a" datatype="html">
+        <source>Herzlichen Dank für Ihre Bestellung</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/webshop/metalwebs/metalwebs.component.ts</context>
+          <context context-type="linenumber">314</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/webshop/nagelplatten/nagelplatten.component.ts</context>
+          <context context-type="linenumber">438</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/webshop/binderwinkel/binderwinkel.component.ts</context>
+          <context context-type="linenumber">310</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="124920d01e98dd5a1c98d50f8c61c9f2da67cb32" datatype="html">
+        <source>Die Bestellung wurde erfolgreich gespeichert !</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/webshop/metalwebs/metalwebs.component.ts</context>
+          <context context-type="linenumber">321</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/webshop/nagelplatten/nagelplatten.component.ts</context>
+          <context context-type="linenumber">445</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/webshop/binderwinkel/binderwinkel.component.ts</context>
+          <context context-type="linenumber">317</context>
         </context-group>
       </trans-unit>
       <trans-unit id="90f333c776b6fe06dab05f9d25aefbb0a98de2af" datatype="html">
         <source>Sie bekommen in den nächsten Minuten eine Bestätigungsmail.</source>
         <context-group purpose="location">
           <context context-type="sourcefile">app/webshop/metalwebs/metalwebs.component.ts</context>
-          <context context-type="linenumber">332</context>
+          <context context-type="linenumber">324</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">app/webshop/nagelplatten/nagelplatten.component.ts</context>
-          <context context-type="linenumber">435</context>
+          <context context-type="linenumber">448</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">app/webshop/binderwinkel/binderwinkel.component.ts</context>
-          <context context-type="linenumber">328</context>
+          <context context-type="linenumber">320</context>
         </context-group>
       </trans-unit>
       <trans-unit id="1ead0ad1063d0c9e005fe56c9529aef4c1ef9d21" datatype="html">
         <source>Schließen</source>
         <context-group purpose="location">
           <context context-type="sourcefile">app/webshop/metalwebs/metalwebs.component.ts</context>
-          <context context-type="linenumber">337</context>
+          <context context-type="linenumber">329</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">app/webshop/metalwebs/metalwebs.component.ts</context>
-          <context context-type="linenumber">363</context>
+          <context context-type="linenumber">355</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">app/webshop/nagelplatten/nagelplatten.component.ts</context>
-          <context context-type="linenumber">440</context>
+          <context context-type="linenumber">453</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">app/webshop/nagelplatten/nagelplatten.component.ts</context>
-          <context context-type="linenumber">466</context>
+          <context context-type="linenumber">479</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">app/webshop/binderwinkel/binderwinkel.component.ts</context>
+          <context context-type="linenumber">325</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/webshop/binderwinkel/binderwinkel.component.ts</context>
+          <context context-type="linenumber">351</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="766a9dff22798101b247f099badd700782f47e3c" datatype="html">
+        <source>Nagelplatten Bestellformular</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/webshop/metalwebs/metalwebs.component.ts</context>
+          <context context-type="linenumber">335</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/webshop/nagelplatten/nagelplatten.component.ts</context>
           <context context-type="linenumber">333</context>
         </context-group>
         <context-group purpose="location">
+          <context context-type="sourcefile">app/webshop/nagelplatten/nagelplatten.component.ts</context>
+          <context context-type="linenumber">459</context>
+        </context-group>
+        <context-group purpose="location">
           <context context-type="sourcefile">app/webshop/binderwinkel/binderwinkel.component.ts</context>
-          <context context-type="linenumber">359</context>
+          <context context-type="linenumber">331</context>
         </context-group>
       </trans-unit>
       <trans-unit id="6755c30f5428f05c3d394969f19a946f6ee732ee" datatype="html">
@@ -932,26 +938,26 @@
             </source>
         <context-group purpose="location">
           <context context-type="sourcefile">app/webshop/metalwebs/metalwebs.component.ts</context>
-          <context context-type="linenumber">350</context>
+          <context context-type="linenumber">342</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">app/webshop/nagelplatten/nagelplatten.component.ts</context>
-          <context context-type="linenumber">453</context>
+          <context context-type="linenumber">466</context>
         </context-group>
       </trans-unit>
       <trans-unit id="e06cc3c31a2cddd8f456ba6c46af4389b0ae8e6a" datatype="html">
         <source>Danke</source>
         <context-group purpose="location">
           <context context-type="sourcefile">app/webshop/metalwebs/metalwebs.component.ts</context>
-          <context context-type="linenumber">358</context>
+          <context context-type="linenumber">350</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">app/webshop/nagelplatten/nagelplatten.component.ts</context>
-          <context context-type="linenumber">461</context>
+          <context context-type="linenumber">474</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">app/webshop/binderwinkel/binderwinkel.component.ts</context>
-          <context context-type="linenumber">354</context>
+          <context context-type="linenumber">346</context>
         </context-group>
       </trans-unit>
       <trans-unit id="04e88b7eea6113393b64716aa43c7f6b20ca46b2" datatype="html">
@@ -1011,22 +1017,22 @@
         <source>Blechdicke:</source>
         <context-group purpose="location">
           <context context-type="sourcefile">app/webshop/nagelplatten/nagelplatten.component.ts</context>
-          <context context-type="linenumber">86</context>
+          <context context-type="linenumber">95</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">app/webshop/nagelplatten/nagelplatten.component.ts</context>
-          <context context-type="linenumber">166</context>
+          <context context-type="linenumber">177</context>
         </context-group>
       </trans-unit>
       <trans-unit id="3962e7326246d57ace36efd878bf6eb977ecd809" datatype="html">
         <source>Zulassungsnummer:</source>
         <context-group purpose="location">
           <context context-type="sourcefile">app/webshop/nagelplatten/nagelplatten.component.ts</context>
-          <context context-type="linenumber">87</context>
+          <context context-type="linenumber">97</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">app/webshop/nagelplatten/nagelplatten.component.ts</context>
-          <context context-type="linenumber">167</context>
+          <context context-type="linenumber">179</context>
         </context-group>
       </trans-unit>
       <trans-unit id="af0f91f01e2487d8400eb1483c12f61ed09c2658" datatype="html">
@@ -1040,14 +1046,14 @@
         <source>Edelstahl</source>
         <context-group purpose="location">
           <context context-type="sourcefile">app/webshop/nagelplatten/nagelplatten.component.ts</context>
-          <context context-type="linenumber">136</context>
+          <context context-type="linenumber">146</context>
         </context-group>
       </trans-unit>
       <trans-unit id="b3b1c71e0e99f9d63efa9016b434fdd9dfa6ad78" datatype="html">
         <source>Stück</source>
         <context-group purpose="location">
           <context context-type="sourcefile">app/webshop/nagelplatten/nagelplatten.component.ts</context>
-          <context context-type="linenumber">255</context>
+          <context context-type="linenumber">267</context>
         </context-group>
       </trans-unit>
       <trans-unit id="614bb7fd7651205797a926e8ae13d52af87c213c" datatype="html">
@@ -1086,7 +1092,7 @@
         <source>Binderwinkel</source>
         <context-group purpose="location">
           <context context-type="sourcefile">app/webshop/binderwinkel/binderwinkel.component.ts</context>
-          <context context-type="linenumber">62</context>
+          <context context-type="linenumber">53</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">app/webshop/binderwinkel/binderwinkel.component.ts</context>
@@ -1097,7 +1103,7 @@
         <source>Zulassungsnummer: ETA-10/0067</source>
         <context-group purpose="location">
           <context context-type="sourcefile">app/webshop/binderwinkel/binderwinkel.component.ts</context>
-          <context context-type="linenumber">78</context>
+          <context context-type="linenumber">69</context>
         </context-group>
       </trans-unit>
       <trans-unit id="f48676a68444f917a5c93b089ce83e7b9bc7eeb3" datatype="html">
@@ -1106,7 +1112,14 @@
               </source>
         <context-group purpose="location">
           <context context-type="sourcefile">app/webshop/binderwinkel/binderwinkel.component.ts</context>
-          <context context-type="linenumber">128</context>
+          <context context-type="linenumber">119</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="d8a807ff7c54201674cb3f65b3135cf990c151aa" datatype="html">
+        <source>Binderwinkel Bestellformular</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/webshop/binderwinkel/binderwinkel.component.ts</context>
+          <context context-type="linenumber">205</context>
         </context-group>
       </trans-unit>
       <trans-unit id="a189f45264eaef25b08359225efdce10632c8773" datatype="html">
@@ -1117,7 +1130,7 @@
               </source>
         <context-group purpose="location">
           <context context-type="sourcefile">app/webshop/binderwinkel/binderwinkel.component.ts</context>
-          <context context-type="linenumber">346</context>
+          <context context-type="linenumber">338</context>
         </context-group>
       </trans-unit>
       <trans-unit id="8fdf00fc0ae160560fa4b7e148d4872b569d3a3f" datatype="html">
