@@ -1,14 +1,23 @@
 <!-- MENÜ ENDE-->
+
 <div class="content-wrapper">
+    <span class="restolow">
+        <img src="https://bilder.wolfsystem.at/wolflogo.png" width="160" alt="Wolf_Logo">
+        <br/><br/><br/><span style="font-size:15px; font-weight:bold;">Wolf Nagelplattenshop</span><br/><br/><br/><br/><br/>
+        <img src="https://bilder.wolfsystem.at/rotate-phone.png" width="150" alt="Wolf_Logo">
+        <br><br>
+        Diese Auflösung wird nicht unterstützt! <br>Versuche das Gerät zu drehen.
+      </span>
+      <span class="resolution">
   <!-- Content Header -->
   <section class="content-header">
   <div class="row">
-      <div class="col">
+      <div class="col-8 col-lg-9">
           <h2 i18n>Bestellung Nagelplatten</h2>
           <a href='#/agb/agb_nagelplatten' routerLinkActive="active-link" [routerLinkActiveOptions]="{exact:
             true}" i18n>Allgemeine Geschäftsbedingungen </a>
       </div>
-      <div class="col col-lg-2 col-xl-2">
+      <div class="col-4 col-lg-2 col-xl-2">
           <img src="https://bilder.wolfsystem.at/wolflogo.png" width="160" alt="Wolf_Logo">
       </div>
     </div>
@@ -56,7 +65,7 @@
   <section>
     <div id="container">
       <div class="row">
-        <div class="col-lg-12 col-xl-6" #ancher>
+        <div class=" col-sm-12 col-md-12 col-lg-12 col-xl-6" #ancher>
           <div class="site_width">
             <mat-tab-group class="tab-group">
               <mat-tab i18n-label label="Verzinkt">
@@ -106,17 +115,17 @@
                                     <button type="button" class="buttonWarenkorb" (click)="toAncher(target)" i18n>Übernehmen und Warenkorb berechnen</button>
                                     <br> </div>
                                   <div class="row">
-                                    <div class="artWidthHeader col-12 col-sm-3 col-lg-3 col-xl-3" i18n>Menge</div>
-                                    <div class="artikelheader2 col-12 col-sm-2 col-lg-2 col-xl-2" i18n>Art.Nr.</div>
-                                    <div class="artikelheader2 col-12 col-sm-3 col-lg-2 col-xl-2" i18n>Größe</div>
-                                    <div class="artikelheader1 col-12 col-sm-2 col-lg-2 col-xl-2 text-right" i18n>kg/ME</div>
-                                    <div class="artikelheader2 col-12 col-sm-1 col-lg-1 col-xl-1 text-right" i18n>ME</div>
-                                    <div class="artikelheader1 col-12 col-sm-1 col-lg-2 col-xl-2 text-right" i18n>Preis/ME</div>
+                                    <div class="artWidthHeader col-2 col-sm-3 col-lg-3 col-xl-3" i18n>Menge</div>
+                                    <div class="artikelheader2 col-2 col-sm-2 col-lg-2 col-xl-2" i18n>Art.Nr.</div>
+                                    <div class="artikelheader2 col-3 col-sm-3 col-lg-2 col-xl-2" i18n>Größe</div>
+                                    <div class="artikelheader1 col-2 col-sm-2 col-lg-2 col-xl-2 text-right" i18n>kg/ME</div>
+                                    <div class="artikelheader2 col-1 col-sm-1 col-lg-1 col-xl-1 text-right" i18n>ME</div>
+                                    <div class="artikelheader1 col-1 col-sm-1 col-lg-2 col-xl-2 text-right" i18n>Preis/ME</div>
                                   </div>
                                   <table class="table">
                                     <tr class="" *ngFor="let n of nagelplatten; let in = index; index as i; odd as isOdd; even as isEven" [ngClass]="{ odd: isOdd, even: isEven }">
                                       <div class="row">
-                                        <div class="artWidth col-sm-3 col-lg-3 col-xl-3">
+                                        <div class="artWidth col-2 col-sm-3 col-lg-3 col-xl-3">
                                           <span>
                                             <input type="number" class="input-no-spinner input-fix-mousewheel1" pattern=[0-9] name='name' [(ngModel)]="n.Stk" (change)="addToCart(name.value, in, n.PKArtikelID, t.npShopTypID)"
                                               #name>
@@ -125,11 +134,11 @@
                                           <ng-template #karton i18n> Karton</ng-template>
                                           <ng-template #stueck i18n> Stück</ng-template>
                                         </div>
-                                        <div class="artikel col col-sm-2 col-lg-2 col-xl-2">{{ n.PKArtikelID }}</div>
-                                        <div class="artikel col col-sm-3 col-lg-2 col-xl-2">{{ n.Breite }} x {{ n.Laenge }} mm </div>
-                                        <div class="artikel col col-sm-2 col-lg-2 col-xl-2 text-right">{{ n.Gewicht | number: '1.4-4' }}</div>
-                                        <div class="artikel col col-sm-1 col-lg-1 col-xl-1 text-right">{{ n.ME }}</div>
-                                        <div class="artikel padding col col-sm-1 col-lg-2 col-xl-2 text-right">{{ n.Preis | number: '1.4-4'}}</div>
+                                        <div class="artikel col-2 col-sm-2 col-lg-2 col-xl-2">{{ n.PKArtikelID }}</div>
+                                        <div class="artikel col-3 col-sm-3 col-lg-2 col-xl-2">{{ n.Breite }} x {{ n.Laenge }} mm </div>
+                                        <div class="artikel col-2 col-sm-2 col-lg-2 col-xl-2 text-right">{{ n.Gewicht | number: '1.4-4' }}</div>
+                                        <div class="artikel col-1 col-sm-1 col-lg-1 col-xl-1 text-right">{{ n.ME }}</div>
+                                        <div class="artikel padding col-1 col-sm-1 col-lg-2 col-xl-2 text-right">{{ n.Preis | number: '1.4-4'}}</div>
                                       </div>
                                     </tr>
                                   </table>
@@ -246,14 +255,14 @@
             <br>
             <div class="basketDetailHeader">
               <div class="row">
-                <div class="artikelheader col-md-3 col-lg-3 col-xl-2" i18n>Menge</div>
-                <div class="artikelheader2 col-md-1 col-lg-1 col-xl-1" i18n>Art.Nr.</div>
-                <div class="artikelheader2 col-md-1 col-lg-1 col-xl-1" i18n>Typ</div>
-                <div class="artikelheader2 col-md-2 col-lg-2 col-xl-3" i18n>Größe</div>
-                <div class="artikelheader1 col-md-1 col-lg-1 col-xl-1 text-right" i18n>kg/ME</div>
-                <div class="artikelheader1 col-md-1 col-lg-1 col-xl-1 text-right" i18n>ME</div>
-                <div class="artikelheader1 col-md-1 col-lg-1 col-xl-1 text-right" i18n>Preis/ME</div>
-                <div class="artikelheader1 col-md-2 col-lg-2 col-xl-2 text-right" i18n>Gesamt €</div>
+                <div class="artikelheader col-sm-2 col-md-3 col-lg-3 col-xl-2" i18n>Menge</div>
+                <div class="artikelheader2 col-sm-1 col-md-1 col-lg-1 col-xl-1" i18n>Art.Nr.</div>
+                <div class="artikelheader2 col-sm-1 col-md-1 col-lg-1 col-xl-1" i18n>Typ</div>
+                <div class="artikelheader2 col-sm-3 col-md-2 col-lg-2 col-xl-3" i18n>Größe</div>
+                <div class="artikelheader1 col-sm-1 col-md-1 col-lg-1 col-xl-1 text-right" i18n>kg/ME</div>
+                <div class="artikelheader1 col-sm-1 col-md-1 col-lg-1 col-xl-1 text-right" i18n>ME</div>
+                <div class="artikelheader1 col-sm-1 col-md-1 col-lg-1 col-xl-1 text-right" i18n>Preis/ME</div>
+                <div class="artikelheader1 col-sm-2 col-md-2 col-lg-2 col-xl-2 text-right" i18n>Gesamt €</div>
               </div>
             </div>
             <div class="basketDetailTable">
@@ -261,7 +270,7 @@
               <table class="table wolf">
                 <tr *ngFor="let n of warenkorb; let in = index; index as i; odd as isOdd; even as isEven" [ngClass]="{ odd: isOdd, even: isEven }">
                   <div class="row">
-                  <div class="menge col-md-3 col-lg-3 col-xl-2 text-left">
+                  <div class="menge col-sm-2 col-md-3 col-lg-3 col-xl-2 text-left">
                     <span>
                       <i class="far fa-trash-alt" (click)="deleteEntry(in, n.PKArtikelID)"></i>
                       <div *ngIf="n.ME > 1;then karton else stueck"></div>
@@ -273,13 +282,13 @@
                       <ng-container i18n>Stück</ng-container>
                     </ng-template>
                   </div>
-                  <div class="artikelbasket col-md-1 col-lg-1 col-xl-1">{{ n.PKArtikelID }}</div>
-                  <div class="artikelbasket col-md-1 col-lg-1 col-xl-1">{{ n.Typ }}</div>
-                  <div class="artikelbasket col-md-2 col-lg-2 col-xl-3">{{ n.Breite }} x {{ n.Laenge }} mm</div>
-                  <div class="artikelbasket col-md-1 col-lg-1 col-xl-1 text-right">{{ n.Gewicht | number: '1.2-2' }}</div>
-                  <div class="artikelbasket col-md-1 col-lg-1 col-xl-1 text-right">{{ n.ME }}</div>
-                  <div class="artikelbasket col-md-1 col-lg-1 col-xl-1 text-right">{{ n.Preis | number: '1.2-2'}}</div>
-                  <div class="artikelbasket col-md-2 col-lg-2 col-xl-2 text-right">{{ n.Gesamt | number: '1.2-2' }}</div>
+                  <div class="artikelbasket col-sm-1 col-md-1 col-lg-1 col-xl-1">{{ n.PKArtikelID }}</div>
+                  <div class="artikelbasket col-sm-1 col-md-1 col-lg-1 col-xl-1">{{ n.Typ }}</div>
+                  <div class="artikelbasket col-sm-3 col-md-2 col-lg-2 col-xl-3">{{ n.Breite }} x {{ n.Laenge }} mm</div>
+                  <div class="artikelbasket col-sm-1 col-md-1 col-lg-1 col-xl-1 text-right">{{ n.Gewicht | number: '1.2-2' }}</div>
+                  <div class="artikelbasket col-sm-1 col-md-1 col-lg-1 col-xl-1 text-right">{{ n.ME }}</div>
+                  <div class="artikelbasket col-sm-1 col-md-1 col-lg-1 col-xl-1 text-right">{{ n.Preis | number: '1.2-2'}}</div>
+                  <div class="artikelbasket col-sm-2 col-md-2 col-lg-2 col-xl-2 text-right">{{ n.Gesamt | number: '1.2-2' }}</div>
                   </div>
                 </tr>
               </table>
@@ -487,6 +496,9 @@
         </div>
       </div>
     </div>
+  
+</div>
+</span>
   </div>
   <script>
   $('.input-fix-mousewheel1').on('focus', function (e) {
