@@ -580,6 +580,20 @@ body {
 }
 
 
+.confirmok {
+    font-size: 100px;
+    text-align: center;
+    right: 0px;
+    left: 0px;
+    width: 100%;
+    color: rgb(2, 90, 2);
+}
+
+i.far.fa-check-circle {
+    text-align: center;
+    left: 0px;
+    width: 100%;
+}
 
 @media only screen and (min-width: 1366px) {
     .warenkorb {
@@ -642,6 +656,11 @@ body {
     font-weight: normal;
     padding-top: 0.4em;
 }
+
+.restolow {
+    display: none;
+}
+
 
 /* MEDIAQUERY */
 @media (max-width: 768px) {
@@ -810,35 +829,21 @@ and (max-device-width : 667px) and (orientation : portrait) {
     }
 }
 
-@media only screen and (min-width:375px) and (max-width:440px){
-    .info-box-icon {
+@media only screen and (max-width:375px) {
+    .resolution {
         display: none;
     }
 
-    .info-box {
-        min-height: 30px;
-    }
-
-    .info-box-number {
-        margin-top: -19px;
-        font-size: 0.9em;
-    }
-
-    .info-box-content {
-        margin-left: 5px;
-        padding-top: 7px;
-    }
-
-    .info-box-text {
-        font-size: 0.7em;
-    }
-
-    .th_align_left {
-        display: none;
-    }
-
-    .iphone_horizontal {
-        display: none;
+    .restolow {
+        display: block;
+        text-align: center;
+        font-size: 12px;
+        margin-left: -10px;
+        top: 10%;
+        height: 100%;
+        width: 200px;
+        /* min-height: 50%; */
+        position: absolute;
     }
 }
 

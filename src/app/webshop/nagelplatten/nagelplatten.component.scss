@@ -604,6 +604,21 @@ body {
     padding-right: 0px;
 }
 
+.confirmok {
+    font-size: 100px;
+    text-align: center;
+    right: 0px;
+    left: 0px;
+    width: 100%;
+    color: rgb(2, 90, 2);
+}
+
+i.far.fa-check-circle {
+    text-align: center;
+    left: 0px;
+    width: 100%;
+}
+
 @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {  
     /* IE10+ specific styles go here */  
     .warenkorb {
@@ -677,6 +692,8 @@ body {
 .restolow {
     display: none;
 }
+
+
 
 /* MEDIAQUERY */
 @media (max-width: 768px) {

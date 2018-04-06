@@ -67,6 +67,7 @@ export class databaseProvider {
       }
     }  
 
+/* Nagelplattentypen werden aus der DB gelesen */
     public typenSelect() {
       return {
         Befehl: encodeURIComponent(
@@ -87,7 +88,7 @@ export class databaseProvider {
         PKMitarbeiterID: this.pkEmployeeId
       }
     }  
-/* */
+/* Nagelplattentypen ENDE*/
 
 /* BestellungKopfID auslesen */
     public getID() {
@@ -126,8 +127,8 @@ export class databaseProvider {
     public makeOrderDetails(bestellungKopfDetail) {
       return {
         Befehl: encodeURIComponent(
-          `INSERT INTO PESchnittstelle.dbo.npBestellungKopfDetail ( npBestellungKopfID ,BestellMenge ,ArtNr ,Typ ,Laenge, Breite ,Gewicht , MengenEinheit ,PreisMenge ,PreisGesamt )
-          VALUES (`+bestellungKopfDetail.FKNpBestellungKopfID+` ,`+bestellungKopfDetail.BestellMenge+`, `+bestellungKopfDetail.PKArtikelID+` ,'`+bestellungKopfDetail.Typ+`' ,'`+bestellungKopfDetail.Laenge+`','`+bestellungKopfDetail.Breite+`' ,`+bestellungKopfDetail.Gewicht+` ,`+bestellungKopfDetail.MengenEinheit+` ,`+bestellungKopfDetail.PreisMenge+` ,`+bestellungKopfDetail.PreisGesamt+`)`
+          `INSERT INTO PESchnittstelle.dbo.npBestellungKopfDetail ( npBestellungKopfID ,BestellMenge ,ArtNr ,Typ ,Laenge, Breite ,Gewicht , MengenEinheit ,PreisMenge ,PreisGesamt, sortierung )
+          VALUES (`+bestellungKopfDetail.FKNpBestellungKopfID+` ,`+bestellungKopfDetail.BestellMenge+`, `+bestellungKopfDetail.PKArtikelID+` ,'`+bestellungKopfDetail.Typ+`' ,'`+bestellungKopfDetail.Laenge+`','`+bestellungKopfDetail.Breite+`' ,`+bestellungKopfDetail.Gewicht+` ,`+bestellungKopfDetail.MengenEinheit+` ,`+bestellungKopfDetail.PreisMenge+` ,`+bestellungKopfDetail.PreisGesamt+`,`+bestellungKopfDetail.Sortierung+`)`
         ),
         Datenbank: this.databaseName,
         Login: this.userName,

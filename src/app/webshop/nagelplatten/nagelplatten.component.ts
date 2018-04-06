@@ -27,7 +27,7 @@ export class NagelplattenComponent implements OnInit {
   typen: Typen[] = [];
   bestellungKopfID: ID[];
   details = '';
-  showBasket = true; showBasketZwischensumme = false;showBasketSumme = false;
+  showBasket = true; showBasketZwischensumme = false; showBasketSumme = false;
   basketSumme; basketGewicht; public basketZwischenSumme; public basketZwischenSummeRabatt;
   basketRabattProzent; basketRabattAbKG; basketTransport; Gesamt; basketSummeGesamt;
   bookName: String;
@@ -54,34 +54,34 @@ export class NagelplattenComponent implements OnInit {
   bestellungDetail = new BestellungKopfDetail();
 
   constructor(private ns: NagelplattenService, private router: Router, private injector: Injector) {
-  //  this.ns.getAllArticel().subscribe(data => this.nagelplattenTyp = data);
-  this.ns.getTypenSelect().subscribe(data => this.typen = data);
-  this.getArticelTyp(0);
+    this.ns.getTypenSelect().subscribe(data => this.typen = data);
+    this.getArticelTyp(0);
     this.Math = Math;
     this.sprache = this.injector.get(LOCALE_ID);
     this.typen = null;
     this.nagelplatten = null;
     this.nagelplattenTyp = null;
-    if(this.sprache == 'de') {
+    if (this.sprache == 'de') {
       this.spracheID = '0'
     } else {
       this.spracheID = '1'
     }
   }
 
-
-
   ngOnInit() {
     this.ns.getRabatt(this.sprache).subscribe((res: any) => this.rabatte = res[0].nagelplatten);
     this.getAnrede(this.sprache);
-    this.loadLaenderliste();
+    
+    /* Länderliste laden */
+    this.loadLaenderliste(this.sprache);
   }
 
-
-getAnrede(sprache) {
-  this.ns.getAnrede(sprache).subscribe(data => this.anreden = data);
-  //this.getArticelTyp(0);
-}
+/* Anrede wird aus der assets/anrede_.json geladen.
+   Es wird der Parameter sprache übergeben für die Übersetzung welche json geladen wird */ 
+  getAnrede(sprache) {
+    this.ns.getAnrede(sprache).subscribe(data => this.anreden = data);
+  }
+/* ENDE */  
 
   getArticelTyp(typ: number) {
     if (this.open == true) {
@@ -91,14 +91,16 @@ getAnrede(sprache) {
       this.open = true;
     }
     this.nagelplatten = this.nagelplatten.filter(t => t.FKArtikelgruppeID == typ);
-    
   }
 
-  loadLaenderliste() {
-    this.ns.getLaenderliste(this.sprache).subscribe((land: Laenderliste[]) => {
+/* Länder werden aus der assets/land_.json geladen.
+   Es wird der Parameter sprache übergeben für die Übersetzung welche json geladen wird */  
+  loadLaenderliste(sprache) {
+    this.ns.getLaenderliste(sprache).subscribe((land: Laenderliste[]) => {
       this.land = land;
     });
   }
+/* ENDE */  
 
   addToCart(stk, index, artnr, typ: string) {
     this.nagelplatten[index].Stk = stk;
@@ -110,11 +112,10 @@ getAnrede(sprache) {
       if (this.nagelplatten[i].PKArtikelID == artnr) {
         for (let a = 0; a < this.warenkorb.length; a++) {
           if (this.warenkorb[a].Stk == stk && this.warenkorb[a].PKArtikelID == artnr) {
-           // this.warenkorb.splice(a, 1);
-           this.calcSumme();
-           this.calczwischensumme();
-           this.checkBasket();
-           return;
+            this.calcSumme();
+            this.calczwischensumme();
+            this.checkBasket();
+            return;
           }
         }
         this.warenkorb.push(this.nagelplatten[i]);
@@ -126,8 +127,8 @@ getAnrede(sprache) {
   }
 
   checkBasket() {
-    for(let i = 0; i < this.warenkorb.length; i++) {
-      if(this.warenkorb[i].Gesamt == 0) {
+    for (let i = 0; i < this.warenkorb.length; i++) {
+      if (this.warenkorb[i].Gesamt == 0) {
         this.warenkorb.splice(i, 1);
       }
     }
@@ -138,7 +139,7 @@ getAnrede(sprache) {
       if (this.warenkorb[i].PKArtikelID == artnr) {
         for (let a = 0; a < this.nagelplattenTyp.length; a++) {
           if (this.nagelplattenTyp[a].PKArtikelID == artnr) {
-           this.nagelplattenTyp[a].Stk = null;
+            this.nagelplattenTyp[a].Stk = null;
           }
         }
 
@@ -176,12 +177,12 @@ getAnrede(sprache) {
         this.basketZwischenSummeRabatt = Math.round(zw * 100) / 100;
       }
       this.basketSummeGesamt = (this.basketSumme - this.basketZwischenSummeRabatt);
-      if(this.basketSummeGesamt > 0) {
+      if (this.basketSummeGesamt > 0) {
         this.showBasketSumme = true;
       } else {
         this.showBasketSumme = false;
       }
-      
+
     }
 
     if (this.basketGewicht > 1000) {
@@ -197,30 +198,30 @@ getAnrede(sprache) {
     this.bestellung.npBestellungKopfID = this.bestellID;
     this.bestellungDetail.FKNpBestellungKopfID = this.bestellID;
     this.bestellung.sprache = this.sprache;
-    if(this.bestellung.Bemerkung == "") {
+    if (this.bestellung.Bemerkung == "") {
       this.bestellung.Bemerkung = null;
     } else {
-      this.bestellung.Bemerkung = "'"+ this.bestellung.Bemerkung +"'";
+      this.bestellung.Bemerkung = "'" + this.bestellung.Bemerkung + "'";
     }
-    if(this.bestellung.Liefertermin == "") {
+    if (this.bestellung.Liefertermin == "") {
       this.bestellung.Liefertermin = null;
     } else {
-      this.bestellung.Liefertermin = "'"+ this.bestellung.Liefertermin +"'";
+      this.bestellung.Liefertermin = "'" + this.bestellung.Liefertermin + "'";
     }
-    if(this.bestellung.Anrede == "") {
+    if (this.bestellung.Anrede == "") {
       this.bestellung.Anrede = null;
     } else {
-      this.bestellung.Anrede = "'"+ this.bestellung.Anrede +"'";
+      this.bestellung.Anrede = "'" + this.bestellung.Anrede + "'";
     }
-    if(this.bestellung.Telefon == "") {
+    if (this.bestellung.Telefon == "") {
       this.bestellung.Telefon = null;
     } else {
-      this.bestellung.Telefon = "'"+ this.bestellung.Telefon +"'";
+      this.bestellung.Telefon = "'" + this.bestellung.Telefon + "'";
     }
-    if(this.bestellung.Strasse == "") {
+    if (this.bestellung.Strasse == "") {
       this.bestellung.Strasse = null;
     } else {
-      this.bestellung.Strasse = "'"+ this.bestellung.Strasse +"'";
+      this.bestellung.Strasse = "'" + this.bestellung.Strasse + "'";
     }
 
     if (this.basketZwischenSumme == null) {
@@ -276,9 +277,10 @@ getAnrede(sprache) {
       this.bestellungDetail.PreisMenge = this.warenkorb[i].Preis;
       this.bestellungDetail.MengenEinheit = this.warenkorb[i].ME;
       this.bestellungDetail.PreisGesamt = this.warenkorb[i].Gesamt;
-  
+      this.bestellungDetail.Sortierung = i;
 
-    
+
+
       this.ns.makeBestellungDetails(this.bestellungDetail).subscribe((response) => {
         console.log("Value Received: " + this.bestellung);
       },
@@ -297,7 +299,7 @@ getAnrede(sprache) {
         () => {
           console.log("COMPLETE");
         })
-      }
+    }
   }
 
   makeOrder() {

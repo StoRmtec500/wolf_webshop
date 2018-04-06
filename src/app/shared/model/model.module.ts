@@ -85,4 +85,5 @@ export class BestellungKopfDetail {
   MengenEinheit: number;
   PreisMenge: number;
   PreisGesamt: number;
+  Sortierung: number;
 }

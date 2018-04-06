@@ -263,6 +263,7 @@ land: Laenderliste[] = [];
       this.bestellungDetail.PreisMenge = this.warenkorb[i].Preis;
       this.bestellungDetail.MengenEinheit = this.warenkorb[i].ME;
       this.bestellungDetail.PreisGesamt = this.warenkorb[i].Gesamt;
+      this.bestellungDetail.Sortierung = i;
   
 
     
