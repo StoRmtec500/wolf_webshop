@@ -138,7 +138,7 @@
                                         <div class="row">
                                           <div class="artWidth col-2 col-sm-3 col-lg-3 col-xl-3">
                                             <span>
-                                              <input type="number" class="input-no-spinner input-fix-mousewheel1" pattern=[0-9] name='name' [(ngModel)]="n.Stk" (change)="addToCart(name.value, in, n.PKArtikelID, t.npShopTypID)"
+                                              <input type="number" class="input-no-spinner input-fix-mousewheel1" ng-pattern="/^[0-9]+(\.[0-9]{1,2})?$/" step="any" name='name' [(ngModel)]="n.Stk" (change)="addToCart(name.value, in, n.PKArtikelID, t.npShopTypID)"
                                                 #name>
                                               <div *ngIf="n.ME > 1;then karton else stueck"></div>
                                             </span>
@@ -395,12 +395,12 @@
                 <div class="row">
                   <div class="col-6">
                     <mat-form-field class="example-full-width">
-                      <input matInput i18n-placeholder placeholder="Firma" [(ngModel)]="bestellung.Firma" name="firma" required>
+                      <input matInput i18n-placeholder placeholder="Firma / Käufer" [(ngModel)]="bestellung.Firma" name="firma" required>
                     </mat-form-field>
                   </div>
                   <div class="col-6">
                     <mat-form-field class="example-full-width">
-                      <input matInput i18n-placeholder placeholder="Straße" [(ngModel)]="bestellung.Strasse" name="strasse">
+                      <input matInput i18n-placeholder placeholder="Straße" [(ngModel)]="bestellung.Strasse" name="strasse" required>
                     </mat-form-field>
                   </div>
                 </div>
@@ -444,6 +444,14 @@
                       <textarea matInput i18n-placeholder placeholder="Bemerkung" matTextareaAutosize matAutosizeMinRows="3" matAutosizeMaxRows="5"
                         [(ngModel)]="bestellung.Bemerkung" name="bemerkung"></textarea>
                     </mat-form-field>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-xl-12 col-lg-12 col-md-6">
+                    <div class="zustimmung">
+                      <mat-checkbox [(ngModel)]="bestellung.zustimmung" name="zustimmung" required> </mat-checkbox>
+                      <ng-container i18n>  Zustimmungserklärung: Der Internet-Nutzer ist damit einverstanden, dass die im Rahmen einer Internet-Nutzung erhobenen Daten zum Zwecke der Kommunikation zwischen ihm und der Wolf Systembau Gesellschaft m.b.H. verwendet und gespeichert werden dürfen. Diese Einwilligung kann jederzeit mit Wirkung für die Zukunft widerrufen werden*.</ng-container>
+                    </div>
                   </div>
                 </div>
               </form>

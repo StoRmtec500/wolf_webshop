@@ -221,6 +221,24 @@ mat-ink-bar.mat-ink-bar {
     color: #717274;    
 }
 
+label.mat-checkbox-layout {
+    margin-bottom: 0px;
+}
+
+.mat-checkbox-checked.mat-accent .mat-checkbox-background, .mat-checkbox-indeterminate.mat-accent .mat-checkbox-background {
+    background-color: #fd0;
+}
+
+.mat-ripple-element {
+    background: #fd0 !important;
+    opacity: 0.5;
+  }
+
+.zustimmung .mat-checkbox-inner-container.mat-checkbox-inner-container-no-side-margin {
+    width: 15px !important;
+    height: 15px !important;
+}
+
 .mat-form-field.mat-focused .mat-form-field-ripple {
     background-color: #717274;
 }

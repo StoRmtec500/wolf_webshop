@@ -150,7 +150,6 @@ export class NagelplattenComponent implements OnInit {
     this.calczwischensumme();
   }
 
-
   calcSumme() {
     var basketSumme = 0;
     var basketGewicht = 0;

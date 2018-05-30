@@ -70,6 +70,7 @@ export class BestellungKopf {
   GesamtSumme  = 0;
   GesamtGewicht = 0;
   sprache: string = '';
+  zustimmung: boolean;
 }
 
 

@@ -1,7 +1,7 @@
 import { AppRoutingModule } from './app-routing.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, LOCALE_ID } from '@angular/core';
-import {MatTabsModule, MatFormFieldModule, MatInputModule, MatSelectModule, MatDatepickerModule, MatIconModule, MatNativeDateModule, MAT_DATE_LOCALE, MatAutocomplete, MatAutocompleteModule, MatProgressSpinnerModule, MatProgressBarModule} from '@angular/material';
+import {MatTabsModule, MatFormFieldModule, MatInputModule, MatSelectModule, MatDatepickerModule, MatIconModule, MatNativeDateModule, MAT_DATE_LOCALE, MatAutocomplete, MatAutocompleteModule, MatProgressSpinnerModule, MatProgressBarModule, MatCheckbox, MatCheckboxModule} from '@angular/material';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatExpansionModule} from '@angular/material/expansion';
 import { AppComponent } from './app.component';
@@ -51,6 +51,7 @@ registerLocaleData(localeDe)
     ReactiveFormsModule,
     MatDatepickerModule,
     MatIconModule,
+    MatCheckboxModule,
     MatNativeDateModule,
     MatAutocompleteModule,
     MatProgressSpinnerModule,
