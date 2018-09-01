@@ -215,7 +215,7 @@
       <target state="final">AGB Bestellung</target><context-group purpose="location"><context context-type="sourcefile">app/sidenav/sidenav/sidenav.component.ts</context><context context-type="linenumber">20</context></context-group></trans-unit><trans-unit id="8fe73a4787b8068b2ba61f54ab7e0f9af2ea1fc9" datatype="html">
         <source>Version</source>
         
-      <target state="final">Version</target><context-group purpose="location"><context context-type="sourcefile">app/sidenav/sidenav/sidenav.component.ts</context><context context-type="linenumber">28</context></context-group></trans-unit><trans-unit id="074a550816cde9894e6c6d3bafcbc7be199f059b" datatype="html">
+      <target state="final">Version</target><context-group purpose="location"><context context-type="sourcefile">app/sidenav/sidenav/sidenav.component.ts</context><context context-type="linenumber">29</context></context-group></trans-unit><trans-unit id="074a550816cde9894e6c6d3bafcbc7be199f059b" datatype="html">
         <source>Nachname</source>
         
       <target state="final">Nachname</target><context-group purpose="location"><context context-type="sourcefile">app/webshop/metalwebs/metalwebs.component.ts</context><context context-type="linenumber">281</context></context-group><context-group purpose="location"><context context-type="sourcefile">app/webshop/nagelplatten/nagelplatten.component.ts</context><context context-type="linenumber">391</context></context-group><context-group purpose="location"><context context-type="sourcefile">app/webshop/binderwinkel/binderwinkel.component.ts</context><context context-type="linenumber">277</context></context-group></trans-unit><trans-unit id="349958690466fa73690f410243efcdbf4cbb55fb" datatype="html">
@@ -769,6 +769,12 @@
           <context context-type="sourcefile">app/webshop/binderwinkel/binderwinkel.component.ts</context>
           <context context-type="linenumber">284</context>
         </context-group>
-      <target state="final">Firma / Käufer</target></trans-unit></body>
+      <target state="final">Firma / Käufer</target></trans-unit><trans-unit id="d8062417e174603544f2f421382c2741c121dc87" datatype="html">
+        <source>Datenschutzerklärung</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/sidenav/sidenav/sidenav.component.ts</context>
+          <context context-type="linenumber">21</context>
+        </context-group>
+      <target state="final">Datenschutzerklärung</target></trans-unit></body>
   </file>
 </xliff>

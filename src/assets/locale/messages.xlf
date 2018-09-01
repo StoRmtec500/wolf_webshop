@@ -1324,11 +1324,18 @@
           <context context-type="linenumber">20</context>
         </context-group>
       </trans-unit>
+      <trans-unit id="d8062417e174603544f2f421382c2741c121dc87" datatype="html">
+        <source>Datenschutzerklärung</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/sidenav/sidenav/sidenav.component.ts</context>
+          <context context-type="linenumber">21</context>
+        </context-group>
+      </trans-unit>
       <trans-unit id="8fe73a4787b8068b2ba61f54ab7e0f9af2ea1fc9" datatype="html">
         <source>Version</source>
         <context-group purpose="location">
           <context context-type="sourcefile">app/sidenav/sidenav/sidenav.component.ts</context>
-          <context context-type="linenumber">28</context>
+          <context context-type="linenumber">29</context>
         </context-group>
       </trans-unit>
     </body>
