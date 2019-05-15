@@ -49,7 +49,7 @@ export class databaseProvider {
         Passwort: this.userPassword,
         PKMitarbeiterID: this.pkEmployeeId
       }
-    }  
+    }
 
     public binderwinkel() {
       return {
@@ -65,7 +65,7 @@ export class databaseProvider {
         Passwort: this.userPassword,
         PKMitarbeiterID: this.pkEmployeeId
       }
-    }  
+    }
 
 /* Nagelplattentypen werden aus der DB gelesen */
     public typenSelect() {
@@ -87,7 +87,7 @@ export class databaseProvider {
         Passwort: this.userPassword,
         PKMitarbeiterID: this.pkEmployeeId
       }
-    }  
+    }
 /* Nagelplattentypen ENDE*/
 
 /* BestellungKopfID auslesen */

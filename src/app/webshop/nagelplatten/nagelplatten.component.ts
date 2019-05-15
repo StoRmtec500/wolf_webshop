@@ -71,17 +71,17 @@ export class NagelplattenComponent implements OnInit {
   ngOnInit() {
     this.ns.getRabatt(this.sprache).subscribe((res: any) => this.rabatte = res[0].nagelplatten);
     this.getAnrede(this.sprache);
-    
+
     /* Länderliste laden */
     this.loadLaenderliste(this.sprache);
   }
 
 /* Anrede wird aus der assets/anrede_.json geladen.
-   Es wird der Parameter sprache übergeben für die Übersetzung welche json geladen wird */ 
+   Es wird der Parameter sprache übergeben für die Übersetzung welche json geladen wird */
   getAnrede(sprache) {
     this.ns.getAnrede(sprache).subscribe(data => this.anreden = data);
   }
-/* ENDE */  
+/* ENDE */
 
   getArticelTyp(typ: number) {
     if (this.open == true) {
@@ -94,13 +94,13 @@ export class NagelplattenComponent implements OnInit {
   }
 
 /* Länder werden aus der assets/land_.json geladen.
-   Es wird der Parameter sprache übergeben für die Übersetzung welche json geladen wird */  
+   Es wird der Parameter sprache übergeben für die Übersetzung welche json geladen wird */
   loadLaenderliste(sprache) {
     this.ns.getLaenderliste(sprache).subscribe((land: Laenderliste[]) => {
       this.land = land;
     });
   }
-/* ENDE */  
+/* ENDE */
 
   addToCart(stk, index, artnr, typ: string) {
     this.nagelplatten[index].Stk = stk;
@@ -194,13 +194,14 @@ export class NagelplattenComponent implements OnInit {
   }
 
   saveBestellung() {
+    let re = /[']/gi;
     this.bestellung.npBestellungKopfID = this.bestellID;
     this.bestellungDetail.FKNpBestellungKopfID = this.bestellID;
     this.bestellung.sprache = this.sprache;
     if (this.bestellung.Bemerkung == "") {
       this.bestellung.Bemerkung = null;
     } else {
-      this.bestellung.Bemerkung = "'" + this.bestellung.Bemerkung + "'";
+      this.bestellung.Bemerkung = "'" + this.bestellung.Bemerkung.replace(re, " ") + "'";
     }
     if (this.bestellung.Liefertermin == "") {
       this.bestellung.Liefertermin = null;
